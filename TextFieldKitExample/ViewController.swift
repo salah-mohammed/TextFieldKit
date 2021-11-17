@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import FloatingTextField
+import TextFieldKit
 class ViewController: UIViewController {
     @IBOutlet weak var txt: AdvancedSearchRadioView!
 

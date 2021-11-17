@@ -9,46 +9,65 @@
 
 import UIKit
 
+class FieldStyle{
+    public var titleFont:UIFont?{
+        didSet{
+            
+        }
+    }
+    public var font:UIFont?{
+        didSet{
+            
+        }
+    }
+    public var selectedIndicatorColor:UIColor?{
+        didSet{
+            
+        }
+    }
+    public var indicatorColor:UIColor?{
+        didSet{
+            
+        }
+    }
+    public var selectedTitleColor:UIColor?{
+        didSet{
+            
+        }
+    }
+    public var titleColor:UIColor?{
+        didSet{
+            
+        }
+    }
+    public var indicatorHeight:CGFloat?{
+        didSet{
+            
+        }
+    }
+    public var textColor:UIColor?{
+        didSet{
+            
+        }
+    }
+    public var selectedTextColor:UIColor?{
+        didSet{
+            
+        }
+    }
+    
+}
 @IBDesignable
 open class AdvancedSearchRadioView: UIView {
-
-//    @IBInspectable var normalImage: UIImage?
-//    @IBInspectable var selectedImage: UIImage?
-
-//    @IBInspectable var normalColor: UIColor? = UIColor.gray
-//    @IBInspectable var selectedColor: UIColor?=UIColor.red
-//    @IBInspectable var title: String? {
-//        get {
-//            return self.lblTitle.text;
-//        }
-//        set {
-//            self.lblTitle.text = newValue;
-//        }
-//    }
-    var contentView : UIView?
-    @IBOutlet weak var lblTitle: UILabel!
-    @IBOutlet weak var txtSearch: UITextField!
-    @IBOutlet weak var viewSeprator: UIView!
-
-    @IBAction func btnAction(_ sender:UIButton){
-    }
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
+     // private
+     private var contentView : UIView?
+     @IBOutlet weak private var layoutConstraintHeightOfIndicator: NSLayoutConstraint!
+     @IBOutlet weak private var lblTitle: UILabel!
+     @IBOutlet weak private var txtField: UITextField!
+     @IBOutlet weak private var viewIndicator: UIView!
+     //
+    var style = FieldStyle.init();
     
-//    override init(frame: CGRect) {
-//        super.init(frame: frame)
-//        xibSetup()
-//    }
-//     init(frame: CGRect) {
-//    super.init(frame:frame)
-//
-//    }
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         xibSetup()
@@ -90,8 +109,29 @@ open class AdvancedSearchRadioView: UIView {
     
     open override func awakeFromNib() {
         super.awakeFromNib();
-//        self.img.image = self.normalImage
-//        self.lblTitle.textColor = self.normalColor;
+        self.txtField.addTarget(self, action: #selector(Self.textFieldDidBegin(_:)), for: .editingDidBegin)
+        self.txtField.addTarget(self, action: #selector(Self.textFieldDidBegin(_:)), for: .editingDidEnd)
+
+    }
+    @objc func textFieldDidBegin(_ txt:UITextField){
+        self.editingStyle();
+    }
+    @objc func textFieldDidEnd(_ txt:UITextField){
+        self.normalStyle();
+    }
+    @IBAction func btnAction(_ sender:UIButton){
+    }
+    func setup(){
         
+    }
+    func editingStyle(){
+        self.viewIndicator.backgroundColor = self.style.selectedIndicatorColor;
+        self.lblTitle.textColor = self.style.selectedTitleColor;
+        self.txtField.textColor = self.style.selectedTextColor
+    }
+    func normalStyle(){
+        self.viewIndicator.backgroundColor = self.style.indicatorColor;
+        self.lblTitle.textColor = self.style.titleColor;
+        self.txtField.textColor = self.style.textColor
     }
 }
