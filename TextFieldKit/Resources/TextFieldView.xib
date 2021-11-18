@@ -21,6 +21,7 @@
                 </userDefinedRuntimeAttribute>
             </userDefinedRuntimeAttributes>
             <connections>
+                <outlet property="imgIconDown" destination="EGl-T0-JNb" id="Ug8-aY-4DO"/>
                 <outlet property="layoutConstraintHeightOfIndicator" destination="9tS-9B-sor" id="s7X-OH-gAe"/>
                 <outlet property="lblTitle" destination="i9G-wT-Hfa" id="C4p-ZM-0bp"/>
                 <outlet property="txtField" destination="r0G-cA-Q3v" id="SHa-aZ-AEE"/>
@@ -35,20 +36,42 @@
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="NdG-nw-03V">
                     <rect key="frame" x="0.0" y="0.0" width="281" height="95"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i9G-wT-Hfa">
-                            <rect key="frame" x="0.0" y="0.0" width="281" height="21.5"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                            <color key="textColor" name="#A5A7A3"/>
-                            <nil key="highlightedColor"/>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="string" keyPath="localized" value="Message"/>
-                            </userDefinedRuntimeAttributes>
-                        </label>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r0G-cA-Q3v">
-                            <rect key="frame" x="0.0" y="21.5" width="281" height="72.5"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </textField>
+                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="woQ-Jo-Nuk">
+                            <rect key="frame" x="0.0" y="0.0" width="281" height="94"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dl1-PD-fYA">
+                                    <rect key="frame" x="0.0" y="0.0" width="102" height="94"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="1" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1" image="icloud.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="EGl-T0-JNb">
+                                            <rect key="frame" x="0.0" y="1" width="94" height="90.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="EGl-T0-JNb" secondAttribute="height" multiplier="1:1" id="Yjg-nW-pbc"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <directionalEdgeInsets key="directionalLayoutMargins" top="0.0" leading="0.0" bottom="0.0" trailing="8"/>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2QQ-ff-9Dc">
+                                    <rect key="frame" x="102" y="0.0" width="179" height="94"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i9G-wT-Hfa">
+                                            <rect key="frame" x="0.0" y="0.0" width="179" height="21.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" name="#A5A7A3"/>
+                                            <nil key="highlightedColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="localized" value="Message"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </label>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r0G-cA-Q3v">
+                                            <rect key="frame" x="0.0" y="21.5" width="179" height="72.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                        </stackView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rpj-X6-yFH">
                             <rect key="frame" x="0.0" y="94" width="281" height="1"/>
                             <color key="backgroundColor" systemColor="systemBlueColor"/>
@@ -74,6 +97,7 @@
     <resources>
         <image name="ic_checkbox_selected" width="21" height="21"/>
         <image name="ic_checkbox_unselected" width="21" height="21"/>
+        <image name="icloud.fill" catalog="system" width="128" height="88"/>
         <namedColor name="#A5A7A3">
             <color red="0.6470588235294118" green="0.65490196078431373" blue="0.63921568627450975" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

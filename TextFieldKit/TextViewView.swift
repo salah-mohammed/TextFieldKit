@@ -19,6 +19,8 @@ open class TextViewView: UIView {
      @IBOutlet weak private var lblTitle: UILabel!
      @IBOutlet weak private var txtField: UITextView!
      @IBOutlet weak private var viewIndicator: UIView!
+     @IBOutlet weak private var imgIconDown: UIImageView!
+
      //
     open var style = FieldStyle.init(){
         didSet{
@@ -45,6 +47,12 @@ open class TextViewView: UIView {
             self.layoutConstraintHeightOfSpaceView?.constant = space;
         }
     }
+    open var icon:UIImage?{
+         didSet{
+            self.imgIconDown.image=icon;
+            self.imgIconDown.superview?.isHidden = (self.imgIconDown.image == nil)
+         }
+     }
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         xibSetup()
@@ -91,6 +99,8 @@ open class TextViewView: UIView {
         self.lblTitle.font = self.style.titleFont ?? self.lblTitle.font;
         self.txtField.font = self.style.textFont ?? self.txtField.font
         self.layoutConstraintHeightOfSpaceView?.constant = space;
+        let tempIcon = self.icon;
+        self.icon = tempIcon;
 
     }
 //    @objc func textFieldDidBegin(_ txt:UITextField){

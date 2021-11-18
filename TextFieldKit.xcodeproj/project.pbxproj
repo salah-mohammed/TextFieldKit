@@ -21,6 +21,8 @@
 		4EA57E1C2746580400C183A2 /* TextFieldKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E46B762272A8B2300DCB3B4 /* TextFieldKit.framework */; };
 		4EA57E1D2746580400C183A2 /* TextFieldKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4E46B762272A8B2300DCB3B4 /* TextFieldKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4EA57E23274658B900C183A2 /* TextFieldKitEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA57E22274658B900C183A2 /* TextFieldKitEx.swift */; };
+		4EA57E2527466D5C00C183A2 /* DropDownTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA57E2427466D5C00C183A2 /* DropDownTextField.swift */; };
+		4EA57E2727466DD600C183A2 /* DropDownTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EA57E2627466DD600C183A2 /* DropDownTextField.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +66,8 @@
 		4EA57E152746537600C183A2 /* TextViewView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextViewView.xib; sourceTree = "<group>"; };
 		4EA57E162746537600C183A2 /* TextViewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewView.swift; sourceTree = "<group>"; };
 		4EA57E22274658B900C183A2 /* TextFieldKitEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldKitEx.swift; sourceTree = "<group>"; };
+		4EA57E2427466D5C00C183A2 /* DropDownTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownTextField.swift; sourceTree = "<group>"; };
+		4EA57E2627466DD600C183A2 /* DropDownTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DropDownTextField.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +114,7 @@
 				4E46B765272A8B2300DCB3B4 /* TextFieldKit.h */,
 				4E46B787272A900300DCB3B4 /* TextFieldView.swift */,
 				4EA57E162746537600C183A2 /* TextViewView.swift */,
+				4EA57E2427466D5C00C183A2 /* DropDownTextField.swift */,
 				4EA57E22274658B900C183A2 /* TextFieldKitEx.swift */,
 				4EA57E212746588800C183A2 /* Resources */,
 			);
@@ -142,6 +147,7 @@
 			children = (
 				4E46B786272A900300DCB3B4 /* TextFieldView.xib */,
 				4EA57E152746537600C183A2 /* TextViewView.xib */,
+				4EA57E2627466DD600C183A2 /* DropDownTextField.xib */,
 				4E46B766272A8B2300DCB3B4 /* Info.plist */,
 			);
 			path = Resources;
@@ -240,6 +246,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4EA57E2727466DD600C183A2 /* DropDownTextField.xib in Resources */,
 				4EA57E1A274654B800C183A2 /* TextFieldView.xib in Resources */,
 				4EA57E172746537600C183A2 /* TextViewView.xib in Resources */,
 			);
@@ -262,6 +269,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4EA57E2527466D5C00C183A2 /* DropDownTextField.swift in Sources */,
 				4EA57E19274654B500C183A2 /* TextFieldView.swift in Sources */,
 				4EA57E182746537600C183A2 /* TextViewView.swift in Sources */,
 				4EA57E23274658B900C183A2 /* TextFieldKitEx.swift in Sources */,

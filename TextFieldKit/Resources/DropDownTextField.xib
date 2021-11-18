@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DropDownTextField" customModule="TextFieldKit" customModuleProvider="target">
+            <connections>
+                <outlet property="btnDropDown" destination="ZsO-hg-TsP" id="NIu-HG-6jd"/>
+                <outlet property="imgDropDown" destination="IFE-hQ-d4O" id="9L0-Ss-PJg"/>
+                <outlet property="imgIconDown" destination="rFR-6e-rjI" id="zzq-G7-avV"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="dzG-VD-d4n">
+            <rect key="frame" x="0.0" y="0.0" width="281" height="95"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="xEh-6w-ykI">
+                    <rect key="frame" x="0.0" y="0.0" width="281" height="95"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bPo-8o-ymP">
+                            <rect key="frame" x="0.0" y="0.0" width="281" height="94"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TAr-Eh-P28">
+                                    <rect key="frame" x="0.0" y="0.0" width="58" height="94"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="1" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1" image="icloud.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="rFR-6e-rjI">
+                                            <rect key="frame" x="0.0" y="45" width="50" height="46.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="rFR-6e-rjI" secondAttribute="height" multiplier="1:1" id="0ce-nH-ilS"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <directionalEdgeInsets key="directionalLayoutMargins" top="0.0" leading="0.0" bottom="0.0" trailing="8"/>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="bOO-55-QK2">
+                                    <rect key="frame" x="58" y="0.0" width="157" height="94"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nnt-b4-bTk">
+                                            <rect key="frame" x="0.0" y="0.0" width="157" height="21.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" name="#A5A7A3"/>
+                                            <nil key="highlightedColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="localized" value="Message"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </label>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XMY-OF-dMA">
+                                            <rect key="frame" x="0.0" y="21.5" width="157" height="72.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                    </subviews>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z4d-PH-hbq">
+                                    <rect key="frame" x="215" y="0.0" width="66" height="94"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="1" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1" image="icloud.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="IFE-hQ-d4O">
+                                            <rect key="frame" x="0.0" y="45" width="50" height="46.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="IFE-hQ-d4O" secondAttribute="height" multiplier="1:1" id="NeH-cS-y4c"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <directionalEdgeInsets key="directionalLayoutMargins" top="0.0" leading="0.0" bottom="0.0" trailing="16"/>
+                                </stackView>
+                            </subviews>
+                        </stackView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yAR-lu-TlI">
+                            <rect key="frame" x="0.0" y="94" width="281" height="1"/>
+                            <color key="backgroundColor" systemColor="systemBlueColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="TRZ-ys-OiM"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZsO-hg-TsP">
+                    <rect key="frame" x="0.0" y="0.0" width="281" height="95"/>
+                    <connections>
+                        <action selector="btnDropdown:" destination="-1" eventType="touchUpInside" id="fR6-cZ-EMc"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="YIJ-RB-mrf"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="ZsO-hg-TsP" firstAttribute="leading" secondItem="YIJ-RB-mrf" secondAttribute="leading" id="55y-yE-ogd"/>
+                <constraint firstItem="xEh-6w-ykI" firstAttribute="top" secondItem="dzG-VD-d4n" secondAttribute="top" id="CMm-Na-X3C"/>
+                <constraint firstItem="xEh-6w-ykI" firstAttribute="leading" secondItem="YIJ-RB-mrf" secondAttribute="leading" id="ZAa-bc-RI6"/>
+                <constraint firstItem="YIJ-RB-mrf" firstAttribute="trailing" secondItem="xEh-6w-ykI" secondAttribute="trailing" id="aOK-bD-gub"/>
+                <constraint firstItem="YIJ-RB-mrf" firstAttribute="bottom" secondItem="ZsO-hg-TsP" secondAttribute="bottom" id="eGm-6y-HND"/>
+                <constraint firstItem="YIJ-RB-mrf" firstAttribute="bottom" secondItem="xEh-6w-ykI" secondAttribute="bottom" id="qIg-rm-RCq"/>
+                <constraint firstItem="YIJ-RB-mrf" firstAttribute="trailing" secondItem="ZsO-hg-TsP" secondAttribute="trailing" id="uWB-qK-GLb"/>
+                <constraint firstItem="ZsO-hg-TsP" firstAttribute="top" secondItem="dzG-VD-d4n" secondAttribute="top" id="xbH-qe-H2G"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-42.399999999999999" y="113.79310344827587"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icloud.fill" catalog="system" width="128" height="88"/>
+        <namedColor name="#A5A7A3">
+            <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
