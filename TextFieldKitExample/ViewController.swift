@@ -8,12 +8,20 @@
 import UIKit
 import TextFieldKit
 class ViewController: UIViewController {
-    @IBOutlet weak var txt: AdvancedSearchRadioView!
-   
+    @IBOutlet weak var txtAddress: TextViewView!
+    @IBOutlet weak var txtFirstName:TextFieldView!
+    @IBOutlet weak var txtLastName:TextFieldView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.txt.style = AppDelegate.style;
-        txt.placeholder = "Name";
+        self.txtFirstName.style = AppDelegate.style;
+        txtFirstName.placeholder = "FirstName";
+        
+        self.txtLastName.style = AppDelegate.style;
+        txtLastName.placeholder = "LastName";
+        
+        self.txtAddress.style = AppDelegate.style;
+        txtAddress.placeholder = "Address";
         // Do any additional setup after loading the view.
     }
     @IBAction func tapGesture(_ sender:Any){

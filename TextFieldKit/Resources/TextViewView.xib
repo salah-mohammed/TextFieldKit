@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AdvancedSearchRadioView" customModule="TextFieldKitExample" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TextViewView" customModule="TextFieldKit" customModuleProvider="target">
             <userDefinedRuntimeAttributes>
                 <userDefinedRuntimeAttribute type="image" keyPath="normalImage" value="ic_checkbox_unselected"/>
                 <userDefinedRuntimeAttribute type="image" keyPath="selectedImage" value="ic_checkbox_selected"/>
@@ -23,7 +23,7 @@
             <connections>
                 <outlet property="layoutConstraintHeightOfIndicator" destination="9tS-9B-sor" id="s7X-OH-gAe"/>
                 <outlet property="lblTitle" destination="i9G-wT-Hfa" id="C4p-ZM-0bp"/>
-                <outlet property="txtField" destination="r0G-cA-Q3v" id="SHa-aZ-AEE"/>
+                <outlet property="txtField" destination="uAl-ur-9s6" id="0vg-zi-iHS"/>
                 <outlet property="viewIndicator" destination="Rpj-X6-yFH" id="3cZ-PN-bZg"/>
             </connections>
         </placeholder>
@@ -44,11 +44,14 @@
                                 <userDefinedRuntimeAttribute type="string" keyPath="localized" value="Message"/>
                             </userDefinedRuntimeAttributes>
                         </label>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r0G-cA-Q3v">
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="uAl-ur-9s6">
                             <rect key="frame" x="0.0" y="21.5" width="281" height="72.5"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                            <color key="textColor" systemColor="labelColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </textField>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rpj-X6-yFH">
                             <rect key="frame" x="0.0" y="94" width="281" height="1"/>
                             <color key="backgroundColor" systemColor="systemBlueColor"/>
@@ -83,6 +86,12 @@
         <namedColor name="#C09C67">
             <color red="0.75294117647058822" green="0.61176470588235299" blue="0.40392156862745099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
