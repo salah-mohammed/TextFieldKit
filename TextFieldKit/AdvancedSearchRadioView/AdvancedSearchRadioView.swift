@@ -9,53 +9,23 @@
 
 import UIKit
 
-class FieldStyle{
-    public var titleFont:UIFont?{
-        didSet{
-            
-        }
-    }
-    public var font:UIFont?{
-        didSet{
-            
-        }
-    }
-    public var selectedIndicatorColor:UIColor?{
-        didSet{
-            
-        }
-    }
-    public var indicatorColor:UIColor?{
-        didSet{
-            
-        }
-    }
-    public var selectedTitleColor:UIColor?{
-        didSet{
-            
-        }
-    }
-    public var titleColor:UIColor?{
-        didSet{
-            
-        }
-    }
-    public var indicatorHeight:CGFloat?{
-        didSet{
-            
-        }
-    }
-    public var textColor:UIColor?{
-        didSet{
-            
-        }
-    }
-    public var selectedTextColor:UIColor?{
-        didSet{
-            
-        }
-    }
+public class FieldColorStyle{
+    public var textColor:UIColor?
+    public var indicatorColor:UIColor?
+    public var titleColor:UIColor?
     
+    init(_ textColor:UIColor,_ indicatorColor:UIColor,_ titleColor:UIColor) {
+        self.textColor=textColor
+        self.indicatorColor=indicatorColor
+        self.titleColor=titleColor;
+    }
+}
+public class FieldStyle{
+    var indicatorHeight:CGFloat=1
+    var normal:FieldColorStyle?
+    var selected:FieldColorStyle?
+    var filled:FieldColorStyle?
+
 }
 @IBDesignable
 open class AdvancedSearchRadioView: UIView {
@@ -66,8 +36,24 @@ open class AdvancedSearchRadioView: UIView {
      @IBOutlet weak private var txtField: UITextField!
      @IBOutlet weak private var viewIndicator: UIView!
      //
-    var style = FieldStyle.init();
-    
+    var style = FieldStyle.init(){
+        didSet{
+            if self.isFirstResponder{
+                self.selectedStyle();
+            }else
+            if self.txtField.text?.count ?? 0 == 0{
+                self.normalStyle();
+            }else{
+                self.filledStyle();
+            }
+        }
+    }
+    var placeholder:String?{
+        didSet{
+            self.lblTitle.text = placeholder
+            self.txtField.placeholder = placeholder;
+        }
+    }
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         xibSetup()
@@ -103,35 +89,44 @@ open class AdvancedSearchRadioView: UIView {
         return view
     }
     func setupView(){
-
-    
     }
     
     open override func awakeFromNib() {
         super.awakeFromNib();
         self.txtField.addTarget(self, action: #selector(Self.textFieldDidBegin(_:)), for: .editingDidBegin)
-        self.txtField.addTarget(self, action: #selector(Self.textFieldDidBegin(_:)), for: .editingDidEnd)
+        self.txtField.addTarget(self, action: #selector(Self.textFieldDidEnd(_:)), for: .editingDidEnd)
+        self.layoutConstraintHeightOfIndicator.constant = self.style.indicatorHeight;
+        normalStyle()
 
     }
     @objc func textFieldDidBegin(_ txt:UITextField){
-        self.editingStyle();
+        self.selectedStyle();
     }
     @objc func textFieldDidEnd(_ txt:UITextField){
+        if (self.txtField.text?.count ?? 0) == 0{
         self.normalStyle();
+        }else{
+        filledStyle();
+        }
     }
     @IBAction func btnAction(_ sender:UIButton){
     }
     func setup(){
         
     }
-    func editingStyle(){
-        self.viewIndicator.backgroundColor = self.style.selectedIndicatorColor;
-        self.lblTitle.textColor = self.style.selectedTitleColor;
-        self.txtField.textColor = self.style.selectedTextColor
+    func selectedStyle(){
+        self.viewIndicator.backgroundColor = self.style.selected?.indicatorColor;
+        self.lblTitle.textColor = self.style.selected?.titleColor;
+        self.txtField.textColor = self.style.selected?.textColor
     }
     func normalStyle(){
-        self.viewIndicator.backgroundColor = self.style.indicatorColor;
-        self.lblTitle.textColor = self.style.titleColor;
-        self.txtField.textColor = self.style.textColor
+        self.viewIndicator.backgroundColor = self.style.normal?.indicatorColor;
+        self.lblTitle.textColor = self.style.normal?.titleColor;
+        self.txtField.textColor = self.style.normal?.textColor
+    }
+    func filledStyle(){
+        self.viewIndicator.backgroundColor = self.style.filled?.indicatorColor;
+        self.lblTitle.textColor = self.style.filled?.titleColor;
+        self.txtField.textColor = self.style.filled?.textColor
     }
 }
