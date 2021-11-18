@@ -20,6 +20,8 @@ open class TextViewView: UIView {
      //
     open var style = FieldStyle.init(){
         didSet{
+            self.lblTitle.font = self.style.titleFont;
+            self.txtField.font = self.style.textFont;
             if self.isFirstResponder{
                 self.selectedStyle();
             }else
@@ -79,6 +81,8 @@ open class TextViewView: UIView {
         self.layoutConstraintHeightOfIndicator.constant = self.style.indicatorHeight;
         normalStyle()
         self.txtField.delegate=self;
+        self.lblTitle.font = self.style.titleFont;
+        self.txtField.font = self.style.textFont;
     }
 //    @objc func textFieldDidBegin(_ txt:UITextField){
 //        self.selectedStyle();

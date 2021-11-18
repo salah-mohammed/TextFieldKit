@@ -23,6 +23,8 @@ public class FieldColorStyle{
 public class FieldStyle{
     public var autoHideTitle:Bool=true;
     public var indicatorHeight:CGFloat=1
+    public var titleFont:UIFont?
+    public var textFont:UIFont?
     public var normal:FieldColorStyle?
     public var selected:FieldColorStyle?
     public var filled:FieldColorStyle?
@@ -42,6 +44,8 @@ open class TextFieldView: UIView {
      //
     open var style = FieldStyle.init(){
         didSet{
+            self.lblTitle.font = self.style.titleFont;
+            self.txtField.font = self.style.textFont;
             if self.isFirstResponder{
                 self.selectedStyle();
             }else
@@ -99,6 +103,8 @@ open class TextFieldView: UIView {
         self.txtField.addTarget(self, action: #selector(Self.textFieldDidBegin(_:)), for: .editingDidBegin)
         self.txtField.addTarget(self, action: #selector(Self.textFieldDidEnd(_:)), for: .editingDidEnd)
         self.layoutConstraintHeightOfIndicator.constant = self.style.indicatorHeight;
+        self.lblTitle.font = self.style.titleFont;
+        self.txtField.font = self.style.textFont;
         normalStyle()
 
     }
