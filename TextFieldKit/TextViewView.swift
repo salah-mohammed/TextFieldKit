@@ -96,13 +96,13 @@ open class TextViewView: UIView {
         
     }
     func selectedStyle(){
-        self.viewIndicator.backgroundColor = self.style.selected?.indicatorColor;
+        self.indicatorColor(self.style.selected?.indicatorColor)
         self.lblTitle.textColor = self.style.selected?.titleColor;
         self.txtField.textColor = self.style.selected?.textColor
         self.showLabelTitle();
     }
     func normalStyle(){
-        self.viewIndicator.backgroundColor = self.style.normal?.indicatorColor;
+        self.indicatorColor(self.style.normal?.indicatorColor)
         self.lblTitle.textColor = self.style.normal?.titleColor;
         self.txtField.textColor = self.style.normal?.textColor
         if self.style.autoHideTitle{
@@ -110,16 +110,23 @@ open class TextViewView: UIView {
         }
     }
     func filledStyle(){
-        self.viewIndicator.backgroundColor = self.style.filled?.indicatorColor;
+        self.indicatorColor(self.style.filled?.indicatorColor)
         self.lblTitle.textColor = self.style.filled?.titleColor;
         self.txtField.textColor = self.style.filled?.textColor
         self.showLabelTitle();
     }
+    func indicatorColor(_ color:UIColor?){
+        self.viewIndicator.backgroundColor=color
+    }
     func showLabelTitle(){
+        UIView.animate(withDuration:0.3, animations: {
         self.lblTitle.isHidden=false;
+        })
     }
     func hideLabelTitle(){
+        UIView.animate(withDuration:0.3, animations: {
         self.lblTitle.isHidden=true;
+        })
     }
 }
 extension TextViewView:UITextViewDelegate{
