@@ -116,7 +116,9 @@ open class TextViewView: UIView {
         self.showLabelTitle();
     }
     func indicatorColor(_ color:UIColor?){
+        UIView.animate(withDuration:0.2, animations: {
         self.viewIndicator.backgroundColor=color
+        })
     }
     func showLabelTitle(){
         UIView.animate(withDuration:0.3, animations: {
