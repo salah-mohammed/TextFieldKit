@@ -14,14 +14,16 @@ open class TextViewView: UIView {
      // private
      private var contentView : UIView?
      @IBOutlet weak private var layoutConstraintHeightOfIndicator: NSLayoutConstraint!
+     @IBOutlet weak private var layoutConstraintHeightOfSpaceView: NSLayoutConstraint?
+
      @IBOutlet weak private var lblTitle: UILabel!
      @IBOutlet weak private var txtField: UITextView!
      @IBOutlet weak private var viewIndicator: UIView!
      //
     open var style = FieldStyle.init(){
         didSet{
-            self.lblTitle.font = self.style.titleFont;
-            self.txtField.font = self.style.textFont;
+            self.lblTitle.font = self.style.titleFont ?? self.lblTitle.font;
+            self.txtField.font = self.style.textFont ?? self.txtField.font
             if self.isFirstResponder{
                 self.selectedStyle();
             }else
@@ -36,6 +38,11 @@ open class TextViewView: UIView {
         didSet{
             self.lblTitle.text = placeholder
 //            self.txtField.placeholder = placeholder;
+        }
+    }
+    open var space:CGFloat=0{
+        didSet{
+            self.layoutConstraintHeightOfSpaceView?.constant = space;
         }
     }
     required public init?(coder aDecoder: NSCoder) {
@@ -81,8 +88,10 @@ open class TextViewView: UIView {
         self.layoutConstraintHeightOfIndicator.constant = self.style.indicatorHeight;
         normalStyle()
         self.txtField.delegate=self;
-        self.lblTitle.font = self.style.titleFont;
-        self.txtField.font = self.style.textFont;
+        self.lblTitle.font = self.style.titleFont ?? self.lblTitle.font;
+        self.txtField.font = self.style.textFont ?? self.txtField.font
+        self.layoutConstraintHeightOfSpaceView?.constant = space;
+
     }
 //    @objc func textFieldDidBegin(_ txt:UITextField){
 //        self.selectedStyle();

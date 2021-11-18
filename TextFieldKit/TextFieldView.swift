@@ -44,8 +44,8 @@ open class TextFieldView: UIView {
      //
     open var style = FieldStyle.init(){
         didSet{
-            self.lblTitle.font = self.style.titleFont;
-            self.txtField.font = self.style.textFont;
+            self.lblTitle.font = self.style.titleFont ?? self.lblTitle.font;
+            self.txtField.font = self.style.textFont ?? self.txtField.font
             if self.isFirstResponder{
                 self.selectedStyle();
             }else
@@ -103,8 +103,8 @@ open class TextFieldView: UIView {
         self.txtField.addTarget(self, action: #selector(Self.textFieldDidBegin(_:)), for: .editingDidBegin)
         self.txtField.addTarget(self, action: #selector(Self.textFieldDidEnd(_:)), for: .editingDidEnd)
         self.layoutConstraintHeightOfIndicator.constant = self.style.indicatorHeight;
-        self.lblTitle.font = self.style.titleFont;
-        self.txtField.font = self.style.textFont;
+        self.lblTitle.font = self.style.titleFont ?? self.lblTitle.font;
+        self.txtField.font = self.style.textFont ?? self.txtField.font
         normalStyle()
 
     }

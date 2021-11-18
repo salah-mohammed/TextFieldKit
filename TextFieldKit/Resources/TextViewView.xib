@@ -22,6 +22,7 @@
             </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="layoutConstraintHeightOfIndicator" destination="9tS-9B-sor" id="s7X-OH-gAe"/>
+                <outlet property="layoutConstraintHeightOfSpaceView" destination="qru-d2-Fhd" id="Ety-8b-db8"/>
                 <outlet property="lblTitle" destination="i9G-wT-Hfa" id="C4p-ZM-0bp"/>
                 <outlet property="txtField" destination="uAl-ur-9s6" id="0vg-zi-iHS"/>
                 <outlet property="viewIndicator" destination="Rpj-X6-yFH" id="3cZ-PN-bZg"/>
@@ -52,6 +53,13 @@
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D72-pb-bnr">
+                            <rect key="frame" x="0.0" y="94" width="281" height="0.0"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" id="qru-d2-Fhd"/>
+                            </constraints>
+                        </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rpj-X6-yFH">
                             <rect key="frame" x="0.0" y="94" width="281" height="1"/>
                             <color key="backgroundColor" systemColor="systemBlueColor"/>
