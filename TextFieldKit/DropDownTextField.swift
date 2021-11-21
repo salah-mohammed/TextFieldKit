@@ -8,19 +8,33 @@
 import Foundation
 import UIKit
 open class DropDownTextField: TextFieldView {
-    typealias DropDownHandler = (()->Void)
+    public typealias DropDownHandler = ((DropDownTextField)->Void)
     @IBOutlet weak private var imgDropDown: UIImageView!
     @IBOutlet weak private var btnDropDown: UIButton!
-    var dropDownHandler:DropDownHandler?
+    @IBOutlet weak private var stackViewDropDown: UIStackView!
+
+    public var dropDownHandler:DropDownHandler?
     
     open var dropDownIcon:UIImage?{
          didSet{
-            self.imgDropDown.image=icon;
+            self.imgDropDown.image=dropDownIcon;
             self.imgDropDown.superview?.isHidden = (self.imgDropDown.image == nil)
          }
      }
+    open var dropDownTraling:CGFloat=16{
+        didSet{
+            self.stackViewDropDown.layoutMargins = UIEdgeInsets.init(top: 0, left: 0, bottom: 0, right: dropDownTraling)
+        }
+     }
     @IBAction func btnDropdown(_ sender:UIButton){
-        dropDownHandler?();
+        dropDownHandler?(self);
     }
-    
+    open override func awakeFromNib() {
+        super.awakeFromNib();
+        let tempDropDownIcon = self.dropDownIcon
+        self.dropDownIcon = tempDropDownIcon;
+        
+        let tempDropDownTraling = self.dropDownTraling
+        self.dropDownTraling = tempDropDownTraling;
+    }
 }

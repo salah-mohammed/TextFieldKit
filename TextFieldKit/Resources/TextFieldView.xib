@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -24,7 +25,7 @@
                 <outlet property="imgIconDown" destination="EGl-T0-JNb" id="Ug8-aY-4DO"/>
                 <outlet property="layoutConstraintHeightOfIndicator" destination="9tS-9B-sor" id="s7X-OH-gAe"/>
                 <outlet property="lblTitle" destination="i9G-wT-Hfa" id="C4p-ZM-0bp"/>
-                <outlet property="txtField" destination="r0G-cA-Q3v" id="SHa-aZ-AEE"/>
+                <outlet property="txtField" destination="r0G-cA-Q3v" id="EUq-Yg-hXI"/>
                 <outlet property="viewIndicator" destination="Rpj-X6-yFH" id="3cZ-PN-bZg"/>
             </connections>
         </placeholder>

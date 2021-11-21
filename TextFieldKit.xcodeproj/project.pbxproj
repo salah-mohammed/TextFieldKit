@@ -23,6 +23,8 @@
 		4EA57E23274658B900C183A2 /* TextFieldKitEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA57E22274658B900C183A2 /* TextFieldKitEx.swift */; };
 		4EA57E2527466D5C00C183A2 /* DropDownTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA57E2427466D5C00C183A2 /* DropDownTextField.swift */; };
 		4EA57E2727466DD600C183A2 /* DropDownTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EA57E2627466DD600C183A2 /* DropDownTextField.xib */; };
+		4EB6807B274A56D800363E69 /* PhoneNumberField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EB6807A274A56D800363E69 /* PhoneNumberField.xib */; };
+		4EB6807D274A573000363E69 /* PhoneNumberField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB6807C274A573000363E69 /* PhoneNumberField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +70,8 @@
 		4EA57E22274658B900C183A2 /* TextFieldKitEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldKitEx.swift; sourceTree = "<group>"; };
 		4EA57E2427466D5C00C183A2 /* DropDownTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownTextField.swift; sourceTree = "<group>"; };
 		4EA57E2627466DD600C183A2 /* DropDownTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DropDownTextField.xib; sourceTree = "<group>"; };
+		4EB6807A274A56D800363E69 /* PhoneNumberField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhoneNumberField.xib; sourceTree = "<group>"; };
+		4EB6807C274A573000363E69 /* PhoneNumberField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhoneNumberField.swift; path = TextFieldKit/PhoneNumberField.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +120,7 @@
 				4EA57E162746537600C183A2 /* TextViewView.swift */,
 				4EA57E2427466D5C00C183A2 /* DropDownTextField.swift */,
 				4EA57E22274658B900C183A2 /* TextFieldKitEx.swift */,
+				4EB6807C274A573000363E69 /* PhoneNumberField.swift */,
 				4EA57E212746588800C183A2 /* Resources */,
 			);
 			path = TextFieldKit;
@@ -149,6 +154,7 @@
 				4EA57E152746537600C183A2 /* TextViewView.xib */,
 				4EA57E2627466DD600C183A2 /* DropDownTextField.xib */,
 				4E46B766272A8B2300DCB3B4 /* Info.plist */,
+				4EB6807A274A56D800363E69 /* PhoneNumberField.xib */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -246,6 +252,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4EB6807B274A56D800363E69 /* PhoneNumberField.xib in Resources */,
 				4EA57E2727466DD600C183A2 /* DropDownTextField.xib in Resources */,
 				4EA57E1A274654B800C183A2 /* TextFieldView.xib in Resources */,
 				4EA57E172746537600C183A2 /* TextViewView.xib in Resources */,
@@ -270,6 +277,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4EA57E2527466D5C00C183A2 /* DropDownTextField.swift in Sources */,
+				4EB6807D274A573000363E69 /* PhoneNumberField.swift in Sources */,
 				4EA57E19274654B500C183A2 /* TextFieldView.swift in Sources */,
 				4EA57E182746537600C183A2 /* TextViewView.swift in Sources */,
 				4EA57E23274658B900C183A2 /* TextFieldKitEx.swift in Sources */,

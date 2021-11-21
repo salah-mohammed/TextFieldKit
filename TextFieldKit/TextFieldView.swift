@@ -41,7 +41,7 @@ open class TextFieldView: UIView {
      @IBOutlet weak private var lblTitle: UILabel!
      @IBOutlet weak private var txtField: UITextField!
      @IBOutlet weak private var viewIndicator: UIView!
-     @IBOutlet weak private var imgIconDown: UIImageView!
+     @IBOutlet weak private var imgIconDown: UIImageView?
 
      //
     open var style = FieldStyle.init(){
@@ -58,6 +58,15 @@ open class TextFieldView: UIView {
             }
         }
     }
+    open var text:String?{
+        set{
+            self.txtField.text = newValue;
+            self.endEditing(text);
+        }
+        get{
+            return self.txtField.text;
+        }
+     }
    open var placeholder:String?{
         didSet{
             self.lblTitle.text = placeholder
@@ -66,8 +75,8 @@ open class TextFieldView: UIView {
     }
     open var icon:UIImage?{
          didSet{
-            self.imgIconDown.image=icon;
-            self.imgIconDown.superview?.isHidden = (self.imgIconDown.image == nil)
+            self.imgIconDown?.image=icon;
+            self.imgIconDown?.superview?.isHidden = (self.imgIconDown?.image == nil)
          }
      }
     required public init?(coder aDecoder: NSCoder) {
@@ -110,6 +119,8 @@ open class TextFieldView: UIView {
         super.awakeFromNib();
         self.txtField.addTarget(self, action: #selector(Self.textFieldDidBegin(_:)), for: .editingDidBegin)
         self.txtField.addTarget(self, action: #selector(Self.textFieldDidEnd(_:)), for: .editingDidEnd)
+        self.txtField.addTarget(self, action: #selector(Self.textFieldValueChanged(_:)), for: .valueChanged)
+
         self.layoutConstraintHeightOfIndicator.constant = self.style.indicatorHeight;
         self.lblTitle.font = self.style.titleFont ?? self.lblTitle.font;
         self.txtField.font = self.style.textFont ?? self.txtField.font
@@ -118,20 +129,25 @@ open class TextFieldView: UIView {
         self.icon = tempIcon;
 
     }
+    @objc func textFieldValueChanged(_ txt:UITextField){
+    }
     @objc func textFieldDidBegin(_ txt:UITextField){
         self.selectedStyle();
     }
     @objc func textFieldDidEnd(_ txt:UITextField){
-        if (self.txtField.text?.count ?? 0) == 0{
-        self.normalStyle();
-        }else{
-        filledStyle();
-        }
+        self.endEditing(txt.text);
     }
     @IBAction func btnAction(_ sender:UIButton){
     }
     func setup(){
         
+    }
+    func endEditing(_ text:String?){
+        if (text?.count ?? 0) == 0{
+        self.normalStyle();
+        }else{
+        filledStyle();
+        }
     }
     func selectedStyle(){
         self.indicatorColor(self.style.selected?.indicatorColor)
@@ -159,13 +175,17 @@ open class TextFieldView: UIView {
         })
     }
     func showLabelTitle(){
-        UIView.animate(withDuration:0.3, animations: {
-        self.lblTitle.isHidden=false;
-        })
+//        UIView.transition(with: lblTitle, duration: 0.3,
+//                          options: .allowAnimatedContent,
+//                          animations: {
+            self.lblTitle.isHidden=false;
+//                      })
     }
     func hideLabelTitle(){
-        UIView.animate(withDuration:0.3, animations: {
-        self.lblTitle.isHidden=true;
-        })
+//        UIView.transition(with: lblTitle, duration: 0.3,
+//                          options: .allowAnimatedContent,
+//                          animations: {
+            self.lblTitle.isHidden=true;
+//                      })
     }
 }
