@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E2DF748274D111B0020AE25 /* UITextView+Placeholder.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E2DF746274D111A0020AE25 /* UITextView+Placeholder.h */; };
+		4E2DF749274D111B0020AE25 /* UITextView+Placeholder.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E2DF747274D111B0020AE25 /* UITextView+Placeholder.m */; };
+		4E2DF74C274D2D490020AE25 /* Header.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E2DF74A274D14B20020AE25 /* Header.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4E2DF74E274D32190020AE25 /* UITextViewEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2DF74D274D32190020AE25 /* UITextViewEx.swift */; };
 		4E46B767272A8B2300DCB3B4 /* TextFieldKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E46B765272A8B2300DCB3B4 /* TextFieldKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4E46B774272A8B7D00DCB3B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E46B773272A8B7D00DCB3B4 /* AppDelegate.swift */; };
 		4E46B776272A8B7D00DCB3B4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E46B775272A8B7D00DCB3B4 /* SceneDelegate.swift */; };
@@ -52,6 +56,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4E2DF746274D111A0020AE25 /* UITextView+Placeholder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+Placeholder.h"; sourceTree = "<group>"; };
+		4E2DF747274D111B0020AE25 /* UITextView+Placeholder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+Placeholder.m"; sourceTree = "<group>"; };
+		4E2DF74A274D14B20020AE25 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		4E2DF74D274D32190020AE25 /* UITextViewEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextViewEx.swift; sourceTree = "<group>"; };
 		4E46B762272A8B2300DCB3B4 /* TextFieldKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TextFieldKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E46B765272A8B2300DCB3B4 /* TextFieldKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TextFieldKit.h; sourceTree = "<group>"; };
 		4E46B766272A8B2300DCB3B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -115,13 +123,17 @@
 		4E46B764272A8B2300DCB3B4 /* TextFieldKit */ = {
 			isa = PBXGroup;
 			children = (
+				4E2DF74A274D14B20020AE25 /* Header.h */,
 				4E46B765272A8B2300DCB3B4 /* TextFieldKit.h */,
 				4E46B787272A900300DCB3B4 /* TextFieldView.swift */,
 				4EA57E162746537600C183A2 /* TextViewView.swift */,
 				4EA57E2427466D5C00C183A2 /* DropDownTextField.swift */,
 				4EA57E22274658B900C183A2 /* TextFieldKitEx.swift */,
 				4EB6807C274A573000363E69 /* PhoneNumberField.swift */,
+				4E2DF746274D111A0020AE25 /* UITextView+Placeholder.h */,
+				4E2DF747274D111B0020AE25 /* UITextView+Placeholder.m */,
 				4EA57E212746588800C183A2 /* Resources */,
+				4E2DF74D274D32190020AE25 /* UITextViewEx.swift */,
 			);
 			path = TextFieldKit;
 			sourceTree = "<group>";
@@ -166,6 +178,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E2DF748274D111B0020AE25 /* UITextView+Placeholder.h in Headers */,
+				4E2DF74C274D2D490020AE25 /* Header.h in Headers */,
 				4E46B767272A8B2300DCB3B4 /* TextFieldKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -221,7 +235,7 @@
 				TargetAttributes = {
 					4E46B761272A8B2300DCB3B4 = {
 						CreatedOnToolsVersion = 12.5.1;
-						LastSwiftMigration = 1250;
+						LastSwiftMigration = 1310;
 					};
 					4E46B770272A8B7D00DCB3B4 = {
 						CreatedOnToolsVersion = 12.5.1;
@@ -277,7 +291,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4EA57E2527466D5C00C183A2 /* DropDownTextField.swift in Sources */,
+				4E2DF749274D111B0020AE25 /* UITextView+Placeholder.m in Sources */,
 				4EB6807D274A573000363E69 /* PhoneNumberField.swift in Sources */,
+				4E2DF74E274D32190020AE25 /* UITextViewEx.swift in Sources */,
 				4EA57E19274654B500C183A2 /* TextFieldView.swift in Sources */,
 				4EA57E182746537600C183A2 /* TextViewView.swift in Sources */,
 				4EA57E23274658B900C183A2 /* TextFieldKitEx.swift in Sources */,
@@ -466,6 +482,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.salahmohamedText-wr.TextFieldKit";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -492,6 +509,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.salahmohamedText-wr.TextFieldKit";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
