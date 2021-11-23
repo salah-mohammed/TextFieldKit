@@ -11,19 +11,31 @@ import UIKit
 
 @IBDesignable
 open class TextViewView: UIView {
+    static func caluclateSpace(fieldHeight:TextFieldView)->CGFloat{
+    var a = "a".height(withConstrainedWidth: 200, font: fieldHeight.txtField.font!)
+    var a2 = (32.5 - a)/2
+    return a2
+    }
      // private
      private var contentView : UIView?
      @IBOutlet weak private var layoutConstraintHeightOfIndicator: NSLayoutConstraint!
-     @IBOutlet weak private var layoutConstraintHeightOfSpaceView: NSLayoutConstraint?
+     @IBOutlet weak private var layoutConstraintHeightOfViewBetweenFieldAndIndicator: NSLayoutConstraint?
+     @IBOutlet weak private var layoutConstraintHeightOfViewBetweenTitleAndField: NSLayoutConstraint?
 
      @IBOutlet weak private var lblTitle: UILabel!
      @IBOutlet weak private var txtField: UITextView!
      @IBOutlet weak private var viewIndicator: UIView!
      @IBOutlet weak private var imgIconDown: UIImageView!
+     @IBOutlet weak open var txtOther:TextFieldView!
+     @IBOutlet weak private var viewBetweenTitleAndField:UIView?
 
      //
     open var style = FieldStyle.init(){
         didSet{
+            if let style:TextViewStyle = style as? TextViewStyle {
+            self.spaceBetweenFieldAndIndicator = style.spaceBetweenFieldAndIndicator;
+            self.spaceBetweenTitleAndField = style.spaceBetweenTitleAndField;
+            }
             self.lblTitle.font = self.style.titleFont ?? self.lblTitle.font;
             self.txtField.font = self.style.textFont ?? self.txtField.font
             if self.isFirstResponder{
@@ -39,12 +51,17 @@ open class TextViewView: UIView {
     open var placeholder:String?{
         didSet{
             self.lblTitle.text = placeholder
-//            self.txtField.placeholder = placeholder;
+            self.txtField.placeholder = placeholder;
         }
     }
-    open var space:CGFloat=0{
+    open var spaceBetweenFieldAndIndicator:CGFloat=0{
         didSet{
-            self.layoutConstraintHeightOfSpaceView?.constant = space;
+            self.layoutConstraintHeightOfViewBetweenFieldAndIndicator?.constant = spaceBetweenFieldAndIndicator;
+        }
+    }
+    open var spaceBetweenTitleAndField:CGFloat=0{
+        didSet{
+            self.layoutConstraintHeightOfViewBetweenTitleAndField?.constant = spaceBetweenTitleAndField;
         }
     }
     open var icon:UIImage?{
@@ -87,8 +104,18 @@ open class TextViewView: UIView {
         return view
     }
     func setupView(){
+        
     }
-    
+    open override func layoutSubviews() {
+        super.layoutSubviews();
+        self.txtField.textContainer.lineFragmentPadding = 0
+        // this for padding from top and bottom and left and right
+        self.txtField.textContainerInset = .zero
+        
+        var aa = TextViewView.caluclateSpace(fieldHeight: self.txtOther)
+        self.spaceBetweenFieldAndIndicator = aa
+        self.spaceBetweenTitleAndField = aa
+    }
     open override func awakeFromNib() {
         super.awakeFromNib();
 //        self.txtField.addTarget(self, action: #selector(Self.textFieldDidBegin(_:)), for: .editingDidBegin)
@@ -98,7 +125,9 @@ open class TextViewView: UIView {
         self.txtField.delegate=self;
         self.lblTitle.font = self.style.titleFont ?? self.lblTitle.font;
         self.txtField.font = self.style.textFont ?? self.txtField.font
-        self.layoutConstraintHeightOfSpaceView?.constant = space;
+//        self.layoutConstraintHeightOfViewBetweenFieldAndIndicator?.constant = spaceBetweenFieldAndIndicator;
+//        self.layoutConstraintHeightOfViewBetweenTitleAndField?.constant = spaceBetweenTitleAndField;
+
         let tempIcon = self.icon;
         self.icon = tempIcon;
 
@@ -146,11 +175,13 @@ open class TextViewView: UIView {
     func showLabelTitle(){
         UIView.animate(withDuration:0.3, animations: {
         self.lblTitle.isHidden=false;
+        self.viewBetweenTitleAndField?.isHidden=false;
         })
     }
     func hideLabelTitle(){
         UIView.animate(withDuration:0.3, animations: {
         self.lblTitle.isHidden=true;
+        self.viewBetweenTitleAndField?.isHidden=true;
         })
     }
 }

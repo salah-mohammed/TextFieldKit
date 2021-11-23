@@ -41,6 +41,10 @@ class ViewController: UIViewController {
         }
         // Do any additional setup after loading the view.
     }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated);
+//        self.txt
+    }
     @IBAction func tapGesture(_ sender:Any){
         self.view.endEditing(true);
     }

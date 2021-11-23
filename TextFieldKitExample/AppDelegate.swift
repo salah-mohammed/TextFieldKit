@@ -12,9 +12,20 @@ import TextFieldKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+//    static var style:FieldStyle = {
+//        var fieldStyle = FieldStyle.init();
+//        fieldStyle.indicatorHeight = 1.0;
+//
+//        fieldStyle.selected = FieldColorStyle.init(.red,.red,.red)
+//        fieldStyle.normal = FieldColorStyle.init(.brown,.brown,.brown)
+//        fieldStyle.filled = FieldColorStyle.init(.green,.green,.green)
+//
+//        return fieldStyle;
+//    }()
     static var style:FieldStyle = {
-        var fieldStyle = FieldStyle.init();
-        fieldStyle.indicatorHeight = 1.0;
+        var fieldStyle = TextViewStyle.init();
+//        fieldStyle.spaceBetweenFieldAndIndicator = 16;
+//        fieldStyle.spaceBetweenTitleAndField = 8;
 
         fieldStyle.selected = FieldColorStyle.init(.red,.red,.red)
         fieldStyle.normal = FieldColorStyle.init(.brown,.brown,.brown)
