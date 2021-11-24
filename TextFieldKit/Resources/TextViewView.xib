@@ -28,6 +28,7 @@
                 <outlet property="layoutConstraintHeightOfViewBetweenTitleAndField" destination="iLl-a1-nqm" id="qeD-E0-4Nu"/>
                 <outlet property="lblTitle" destination="i9G-wT-Hfa" id="C4p-ZM-0bp"/>
                 <outlet property="txtField" destination="uAl-ur-9s6" id="jFW-WR-d8S"/>
+                <outlet property="viewBetweenTitleAndField" destination="fRI-KB-y3B" id="BQY-jt-E5U"/>
                 <outlet property="viewIndicator" destination="Rpj-X6-yFH" id="3cZ-PN-bZg"/>
             </connections>
         </placeholder>

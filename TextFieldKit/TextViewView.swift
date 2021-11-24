@@ -9,32 +9,42 @@
 
 import UIKit
 
+public enum SpaceStyle{
+    case auto
+    case cutome(CGFloat)
+}
+public class TextViewStyle:FieldStyle{
+    open var spaceBetweenFieldAndIndicator:CGFloat=0
+    open var spaceBetweenTitleAndField:SpaceStyle = .auto
+    
+    
+}
 @IBDesignable
 open class TextViewView: UIView {
-    static func caluclateSpace(fieldHeight:TextFieldView)->CGFloat{
-    var a = "a".height(withConstrainedWidth: 200, font: fieldHeight.txtField.font!)
-    var a2 = (32.5 - a)/2
-    return a2
+    func caluclateSpace(_ textfield:TextFieldView)->CGFloat{
+        var heightOfTextInsideTextField = "a".height(withConstrainedWidth: 200, font: textfield.txtField.font!)
+        var heightOfTitle = "a".height(withConstrainedWidth: 200, font: textfield.lblTitle.font!)
+        return (textfield.txtField.frame.height - heightOfTextInsideTextField - heightOfTitle)/2
     }
-     // private
-     private var contentView : UIView?
-     @IBOutlet weak private var layoutConstraintHeightOfIndicator: NSLayoutConstraint!
-     @IBOutlet weak private var layoutConstraintHeightOfViewBetweenFieldAndIndicator: NSLayoutConstraint?
-     @IBOutlet weak private var layoutConstraintHeightOfViewBetweenTitleAndField: NSLayoutConstraint?
-
-     @IBOutlet weak private var lblTitle: UILabel!
-     @IBOutlet weak private var txtField: UITextView!
-     @IBOutlet weak private var viewIndicator: UIView!
-     @IBOutlet weak private var imgIconDown: UIImageView!
-     @IBOutlet weak open var txtOther:TextFieldView!
-     @IBOutlet weak private var viewBetweenTitleAndField:UIView?
-
-     //
-    open var style = FieldStyle.init(){
+    // private
+    private var contentView : UIView?
+    @IBOutlet weak private var layoutConstraintHeightOfIndicator: NSLayoutConstraint!
+    @IBOutlet weak private var layoutConstraintHeightOfViewBetweenFieldAndIndicator: NSLayoutConstraint?
+    @IBOutlet weak private var layoutConstraintHeightOfViewBetweenTitleAndField: NSLayoutConstraint?
+    
+    @IBOutlet weak private var lblTitle: UILabel!
+    @IBOutlet weak private var txtField: UITextView!
+    @IBOutlet weak private var viewIndicator: UIView!
+    @IBOutlet weak private var imgIconDown: UIImageView!
+    @IBOutlet weak open var txtOther:TextFieldView!
+    @IBOutlet weak private var viewBetweenTitleAndField:UIView?
+    
+    //
+    open var style = TextViewStyle.init(){
         didSet{
             if let style:TextViewStyle = style as? TextViewStyle {
-            self.spaceBetweenFieldAndIndicator = style.spaceBetweenFieldAndIndicator;
-            self.spaceBetweenTitleAndField = style.spaceBetweenTitleAndField;
+                self.spaceBetweenFieldAndIndicator = style.spaceBetweenFieldAndIndicator;
+                self.spaceBetweenTitleAndField = style.spaceBetweenTitleAndField;
             }
             self.lblTitle.font = self.style.titleFont ?? self.lblTitle.font;
             self.txtField.font = self.style.textFont ?? self.txtField.font
@@ -59,22 +69,27 @@ open class TextViewView: UIView {
             self.layoutConstraintHeightOfViewBetweenFieldAndIndicator?.constant = spaceBetweenFieldAndIndicator;
         }
     }
-    open var spaceBetweenTitleAndField:CGFloat=0{
+    open var spaceBetweenTitleAndField:SpaceStyle = .auto{
         didSet{
-            self.layoutConstraintHeightOfViewBetweenTitleAndField?.constant = spaceBetweenTitleAndField;
+            switch spaceBetweenTitleAndField{
+            case .auto:
+                self.updateSpaces();
+            case .cutome(let value):
+                self.layoutConstraintHeightOfViewBetweenTitleAndField?.constant = value;
+            }
         }
     }
     open var icon:UIImage?{
-         didSet{
+        didSet{
             self.imgIconDown.image=icon;
             self.imgIconDown.superview?.isHidden = (self.imgIconDown.image == nil)
-         }
-     }
+        }
+    }
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         xibSetup()
     }
-
+    
     func xibSetup(){
         contentView = loadViewFromNib()
         
@@ -111,37 +126,24 @@ open class TextViewView: UIView {
         self.txtField.textContainer.lineFragmentPadding = 0
         // this for padding from top and bottom and left and right
         self.txtField.textContainerInset = .zero
+        self.txtField.delegate=self;
         
-        var aa = TextViewView.caluclateSpace(fieldHeight: self.txtOther)
-        self.spaceBetweenFieldAndIndicator = aa
-        self.spaceBetweenTitleAndField = aa
+        
     }
     open override func awakeFromNib() {
         super.awakeFromNib();
-//        self.txtField.addTarget(self, action: #selector(Self.textFieldDidBegin(_:)), for: .editingDidBegin)
-//        self.txtField.addTarget(self, action: #selector(Self.textFieldDidEnd(_:)), for: .editingDidEnd)
         self.layoutConstraintHeightOfIndicator.constant = self.style.indicatorHeight;
         normalStyle()
-        self.txtField.delegate=self;
         self.lblTitle.font = self.style.titleFont ?? self.lblTitle.font;
         self.txtField.font = self.style.textFont ?? self.txtField.font
-//        self.layoutConstraintHeightOfViewBetweenFieldAndIndicator?.constant = spaceBetweenFieldAndIndicator;
-//        self.layoutConstraintHeightOfViewBetweenTitleAndField?.constant = spaceBetweenTitleAndField;
-
+        //        self.layoutConstraintHeightOfViewBetweenFieldAndIndicator?.constant = spaceBetweenFieldAndIndicator;
+        //        self.layoutConstraintHeightOfViewBetweenTitleAndField?.constant = spaceBetweenTitleAndField;
+        
         let tempIcon = self.icon;
         self.icon = tempIcon;
-
+        
     }
-//    @objc func textFieldDidBegin(_ txt:UITextField){
-//        self.selectedStyle();
-//    }
-//    @objc func textFieldDidEnd(_ txt:UITextField){
-//        if (self.txtField.text?.count ?? 0) == 0{
-//        self.normalStyle();
-//        }else{
-//        filledStyle();
-//        }
-//    }
+    
     @IBAction func btnAction(_ sender:UIButton){
     }
     func setup(){
@@ -158,7 +160,7 @@ open class TextViewView: UIView {
         self.lblTitle.textColor = self.style.normal?.titleColor;
         self.txtField.textColor = self.style.normal?.textColor
         if self.style.autoHideTitle{
-        self.hideLabelTitle();
+            self.hideLabelTitle();
         }
     }
     func filledStyle(){
@@ -169,20 +171,39 @@ open class TextViewView: UIView {
     }
     func indicatorColor(_ color:UIColor?){
         UIView.animate(withDuration:0.2, animations: {
-        self.viewIndicator.backgroundColor=color
+            self.viewIndicator.backgroundColor=color
         })
     }
     func showLabelTitle(){
         UIView.animate(withDuration:0.3, animations: {
-        self.lblTitle.isHidden=false;
-        self.viewBetweenTitleAndField?.isHidden=false;
+            self.lblTitle.isHidden=false;
+            self.viewBetweenTitleAndField?.isHidden=false;
+            switch self.style.spaceBetweenTitleAndField {
+            case .auto:
+                self.updateSpaces();
+                break;
+            case .cutome(_):
+                break;
+            }
         })
     }
     func hideLabelTitle(){
         UIView.animate(withDuration:0.3, animations: {
-        self.lblTitle.isHidden=true;
-        self.viewBetweenTitleAndField?.isHidden=true;
+            self.lblTitle.isHidden=true;
+            self.viewBetweenTitleAndField?.isHidden=true;
+            switch self.style.spaceBetweenTitleAndField {
+            case .auto:
+                self.updateSpaces();
+                break;
+            case .cutome(_):
+                break;
+            }
         })
+    }
+    func updateSpaces(){
+        let value = self.caluclateSpace(self.txtOther)
+        self.spaceBetweenFieldAndIndicator = value
+        self.layoutConstraintHeightOfViewBetweenTitleAndField?.constant = value
     }
 }
 extension TextViewView:UITextViewDelegate{
@@ -191,9 +212,9 @@ extension TextViewView:UITextViewDelegate{
     }
     public func textViewDidEndEditing(_ textView: UITextView) {
         if (self.txtField.text?.count ?? 0) == 0{
-        self.normalStyle();
+            self.normalStyle();
         }else{
-        filledStyle();
+            filledStyle();
         }
     }
 }

@@ -8,29 +8,25 @@
 import UIKit
 import TextFieldKit
 
+extension UIColor {
+    public static var placeholder: UIColor {
+          return UIColor.init(red: 0, green: 0, blue: 0.0980392, alpha: 0.22);
+  }
+}
+
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-//    static var style:FieldStyle = {
-//        var fieldStyle = FieldStyle.init();
-//        fieldStyle.indicatorHeight = 1.0;
-//
-//        fieldStyle.selected = FieldColorStyle.init(.red,.red,.red)
-//        fieldStyle.normal = FieldColorStyle.init(.brown,.brown,.brown)
-//        fieldStyle.filled = FieldColorStyle.init(.green,.green,.green)
-//
-//        return fieldStyle;
-//    }()
-    static var style:FieldStyle = {
+    static var style:TextViewStyle = {
         var fieldStyle = TextViewStyle.init();
 //        fieldStyle.spaceBetweenFieldAndIndicator = 16;
-//        fieldStyle.spaceBetweenTitleAndField = 8;
-
         fieldStyle.selected = FieldColorStyle.init(.red,.red,.red)
-        fieldStyle.normal = FieldColorStyle.init(.brown,.brown,.brown)
+        fieldStyle.normal = FieldColorStyle.init(UIColor.placeholderText,UIColor.placeholderText,UIColor.placeholderText)
         fieldStyle.filled = FieldColorStyle.init(.green,.green,.green)
-
+        fieldStyle.titleFont = UIFont.systemFont(ofSize: 16);
+        fieldStyle.textFont = UIFont.systemFont(ofSize: 14);
+        fieldStyle.spaceBetweenTitleAndField = .auto;
         return fieldStyle;
     }()
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {

@@ -34,11 +34,7 @@ public class FieldColorStyle{
         self.titleColor=titleColor;
     }
 }
-public class TextViewStyle:FieldStyle{
-    open var spaceBetweenFieldAndIndicator:CGFloat=0
-    open var spaceBetweenTitleAndField:CGFloat=0
 
-}
 public class FieldStyle{
     public var autoHideTitle:Bool=true;
     public var indicatorHeight:CGFloat=1
@@ -57,7 +53,7 @@ open class TextFieldView: UIView {
      // private
      private var contentView : UIView?
      @IBOutlet weak private var layoutConstraintHeightOfIndicator: NSLayoutConstraint!
-     @IBOutlet weak private var lblTitle: UILabel!
+     @IBOutlet weak  var lblTitle: UILabel!
      @IBOutlet weak open var txtField: UITextField!
      @IBOutlet weak private var viewIndicator: UIView!
      @IBOutlet weak private var imgIconDown: UIImageView?
