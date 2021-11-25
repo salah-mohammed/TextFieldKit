@@ -18,6 +18,7 @@
                 <outlet property="layoutConstraintHeightOfIndicator" destination="TRZ-ys-OiM" id="RWa-tF-iOj"/>
                 <outlet property="lblTitle" destination="Nnt-b4-bTk" id="95A-yG-Q6n"/>
                 <outlet property="stackViewDropDown" destination="Z4d-PH-hbq" id="oGV-ln-yYy"/>
+                <outlet property="stackViewIcon" destination="TAr-Eh-P28" id="Q6d-0I-AF4"/>
                 <outlet property="txtField" destination="XMY-OF-dMA" id="HeF-Mf-fSe"/>
                 <outlet property="viewIndicator" destination="yAR-lu-TlI" id="7cO-aj-ACh"/>
             </connections>

@@ -30,13 +30,13 @@ class ViewController: UIViewController {
         self.txtEducation.style = AppDelegate.style;
         txtEducation.placeholder = "Education";
         
-        self.txtCity.style = AppDelegate.style;
+        self.txtCity.style = AppDelegate.dropDownStyle;
         txtCity.placeholder = "City";
         txtCity.icon = UIImage.init(named:"01185")
         txtCity.dropDownIcon = UIImage.init(named:"ic_drop_down")
 
         txtCity.dropDownHandler = { textfield in
-            self.txtCity.text = "sadsadsad";
+            self.txtCity.text = "sadsadsad sadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsad";
         }
         txtPhoneNumber.flag = UIImage.init(named:"AE");
         txtPhoneNumber.countryCode = "+972";

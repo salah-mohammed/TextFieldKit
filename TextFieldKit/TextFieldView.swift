@@ -35,7 +35,7 @@ public class FieldColorStyle{
     }
 }
 
-public class FieldStyle{
+open class FieldStyle{
     public var autoHideTitle:Bool=true;
     public var indicatorHeight:CGFloat=1
     public var titleFont:UIFont?
@@ -43,6 +43,7 @@ public class FieldStyle{
     public var normal:FieldColorStyle?
     public var selected:FieldColorStyle?
     public var filled:FieldColorStyle?
+    public var spaceBetweenIconAndField:CGFloat=8
 
     public init() {
         
@@ -57,6 +58,7 @@ open class TextFieldView: UIView {
      @IBOutlet weak open var txtField: UITextField!
      @IBOutlet weak private var viewIndicator: UIView!
      @IBOutlet weak private var imgIconDown: UIImageView?
+     @IBOutlet weak private var stackViewIcon: UIStackView?
 
      //
     open var style = FieldStyle.init(){
@@ -71,6 +73,7 @@ open class TextFieldView: UIView {
             }else{
                 self.filledStyle();
             }
+            self.spaceBetweenIconAndField = self.style.spaceBetweenIconAndField
         }
     }
     open var text:String?{
@@ -92,8 +95,14 @@ open class TextFieldView: UIView {
          didSet{
             self.imgIconDown?.image=icon;
             self.imgIconDown?.superview?.isHidden = (self.imgIconDown?.image == nil)
+
          }
      }
+    public var spaceBetweenIconAndField:CGFloat=8{
+        didSet{
+            self.stackViewIcon?.directionalLayoutMargins = NSDirectionalEdgeInsets.init(top: 0, leading: 0, bottom: 0, trailing:spaceBetweenIconAndField)
+        }
+    }
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         xibSetup()

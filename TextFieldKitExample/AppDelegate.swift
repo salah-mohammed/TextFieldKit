@@ -17,15 +17,33 @@ extension UIColor {
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-    static var style:TextViewStyle = {
-        var fieldStyle = TextViewStyle.init();
+    
+    static var dropDownStyle:DropDownStyle = {
+        var fieldStyle = DropDownStyle.init();
 //        fieldStyle.spaceBetweenFieldAndIndicator = 16;
+        fieldStyle.indicatorHeight = 3.0
+        fieldStyle.selected = FieldColorStyle.init(.red,.red,.red)
         fieldStyle.selected = FieldColorStyle.init(.red,.red,.red)
         fieldStyle.normal = FieldColorStyle.init(UIColor.placeholderText,UIColor.placeholderText,UIColor.placeholderText)
         fieldStyle.filled = FieldColorStyle.init(.green,.green,.green)
         fieldStyle.titleFont = UIFont.systemFont(ofSize: 16);
         fieldStyle.textFont = UIFont.systemFont(ofSize: 14);
+        fieldStyle.spaceBetweenIconAndField = 8
+        fieldStyle.dropDownTraling = 16;
+        fieldStyle.spaceBetweenTextAndDropDownIcon = 0
+        return fieldStyle;
+    }()
+    
+    static var style:TextViewStyle = {
+        var fieldStyle = TextViewStyle.init();
+//        fieldStyle.spaceBetweenFieldAndIndicator = 16;
+        fieldStyle.indicatorHeight = 3.0
+        fieldStyle.selected = FieldColorStyle.init(.red,.red,.red)
+        fieldStyle.normal = FieldColorStyle.init(UIColor.placeholderText,UIColor.placeholderText,UIColor.placeholderText)
+        fieldStyle.filled = FieldColorStyle.init(.green,.green,.green)
+        fieldStyle.titleFont = UIFont.systemFont(ofSize: 16);
+        fieldStyle.textFont = UIFont.systemFont(ofSize: 14);
+        fieldStyle.spaceBetweenIconAndField = 8
         fieldStyle.spaceBetweenTitleAndField = .auto;
         return fieldStyle;
     }()

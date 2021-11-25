@@ -25,6 +25,7 @@
                 <outlet property="imgIconDown" destination="EGl-T0-JNb" id="Ug8-aY-4DO"/>
                 <outlet property="layoutConstraintHeightOfIndicator" destination="9tS-9B-sor" id="s7X-OH-gAe"/>
                 <outlet property="lblTitle" destination="i9G-wT-Hfa" id="C4p-ZM-0bp"/>
+                <outlet property="stackViewIcon" destination="Dl1-PD-fYA" id="qQb-3o-3LZ"/>
                 <outlet property="txtField" destination="r0G-cA-Q3v" id="EUq-Yg-hXI"/>
                 <outlet property="viewIndicator" destination="Rpj-X6-yFH" id="3cZ-PN-bZg"/>
             </connections>
