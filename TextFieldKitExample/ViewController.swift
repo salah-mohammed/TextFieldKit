@@ -9,6 +9,7 @@ import UIKit
 import TextFieldKit
 class ViewController: UIViewController {
     @IBOutlet weak var txtAddress: TextViewView!
+    @IBOutlet weak var txtEducation: TextViewView!
     @IBOutlet weak var txtFirstName:TextFieldView!
     @IBOutlet weak var txtLastName:TextFieldView!
     @IBOutlet weak var txtCity:DropDownTextField!
@@ -25,6 +26,9 @@ class ViewController: UIViewController {
         
         self.txtAddress.style = AppDelegate.style;
         txtAddress.placeholder = "Address";
+        
+        self.txtEducation.style = AppDelegate.style;
+        txtEducation.placeholder = "Education";
         
         self.txtCity.style = AppDelegate.style;
         txtCity.placeholder = "City";

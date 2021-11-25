@@ -24,7 +24,7 @@ open class TextViewView: UIView {
     func caluclateSpace(_ textfield:TextFieldView)->CGFloat{
         var heightOfTextInsideTextField = "a".height(withConstrainedWidth: 200, font: textfield.txtField.font!)
         var heightOfTitle = "a".height(withConstrainedWidth: 200, font: textfield.lblTitle.font!)
-        return (textfield.txtField.frame.height - heightOfTextInsideTextField - heightOfTitle)/2
+        return (textfield.frame.height - heightOfTextInsideTextField - heightOfTitle)/2
     }
     // private
     private var contentView : UIView?
@@ -142,6 +142,7 @@ open class TextViewView: UIView {
         let tempIcon = self.icon;
         self.icon = tempIcon;
         
+        
     }
     
     @IBAction func btnAction(_ sender:UIButton){
@@ -216,6 +217,9 @@ extension TextViewView:UITextViewDelegate{
         }else{
             filledStyle();
         }
+    }
+    public func textViewDidChange(_ textView: UITextView) {
+        textView.textViewDidChange(textView);
     }
 }
 

@@ -7,7 +7,8 @@
 
 import Foundation
 import UIKit
-extension UITextView :UITextViewDelegate
+typealias ChangeHandler = ()->Void
+extension UITextView //:UITextViewDelegate
 {
     
     /// Resize the placeholder when the UITextView bounds change
@@ -74,6 +75,7 @@ extension UITextView :UITextViewDelegate
         
         self.addSubview(placeholderLabel)
         self.resizePlaceholder()
-        self.delegate = self
+//        self.delegate = self
     }
+
 }
