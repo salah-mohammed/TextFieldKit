@@ -28,6 +28,7 @@
 		4EA57E2527466D5C00C183A2 /* DropDownTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA57E2427466D5C00C183A2 /* DropDownTextField.swift */; };
 		4EA57E2727466DD600C183A2 /* DropDownTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EA57E2627466DD600C183A2 /* DropDownTextField.xib */; };
 		4EA60C20274FD85400AC9745 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA60C1F274FD85400AC9745 /* SecondViewController.swift */; };
+		4EA60C22274FD9BE00AC9745 /* ThiredViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA60C21274FD9BE00AC9745 /* ThiredViewController.swift */; };
 		4EB6807B274A56D800363E69 /* PhoneNumberField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EB6807A274A56D800363E69 /* PhoneNumberField.xib */; };
 		4EB6807D274A573000363E69 /* PhoneNumberField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB6807C274A573000363E69 /* PhoneNumberField.swift */; };
 /* End PBXBuildFile section */
@@ -80,6 +81,7 @@
 		4EA57E2427466D5C00C183A2 /* DropDownTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownTextField.swift; sourceTree = "<group>"; };
 		4EA57E2627466DD600C183A2 /* DropDownTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DropDownTextField.xib; sourceTree = "<group>"; };
 		4EA60C1F274FD85400AC9745 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		4EA60C21274FD9BE00AC9745 /* ThiredViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThiredViewController.swift; sourceTree = "<group>"; };
 		4EB6807A274A56D800363E69 /* PhoneNumberField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhoneNumberField.xib; sourceTree = "<group>"; };
 		4EB6807C274A573000363E69 /* PhoneNumberField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhoneNumberField.swift; path = TextFieldKit/PhoneNumberField.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -146,11 +148,12 @@
 				4E46B773272A8B7D00DCB3B4 /* AppDelegate.swift */,
 				4E46B775272A8B7D00DCB3B4 /* SceneDelegate.swift */,
 				4E46B777272A8B7D00DCB3B4 /* ViewController.swift */,
+				4EA60C1F274FD85400AC9745 /* SecondViewController.swift */,
+				4EA60C21274FD9BE00AC9745 /* ThiredViewController.swift */,
 				4E46B779272A8B7D00DCB3B4 /* Main.storyboard */,
 				4E46B77C272A8B8100DCB3B4 /* Assets.xcassets */,
 				4E46B77E272A8B8100DCB3B4 /* LaunchScreen.storyboard */,
 				4E46B781272A8B8100DCB3B4 /* Info.plist */,
-				4EA60C1F274FD85400AC9745 /* SecondViewController.swift */,
 			);
 			path = TextFieldKitExample;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 				4E46B778272A8B7D00DCB3B4 /* ViewController.swift in Sources */,
 				4E46B774272A8B7D00DCB3B4 /* AppDelegate.swift in Sources */,
 				4E46B776272A8B7D00DCB3B4 /* SceneDelegate.swift in Sources */,
+				4EA60C22274FD9BE00AC9745 /* ThiredViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
