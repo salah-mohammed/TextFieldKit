@@ -95,17 +95,15 @@ class AppStyle {
     }()
 }
 
-class CutomeViewController:UIViewController{
-    
-}
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
  
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        TextFieldView.appearance(whenContainedInInstancesOf: [CutomeViewController.self]).style=AppStyle.textViewStyle2
-        TextViewView.appearance(whenContainedInInstancesOf: [CutomeViewController.self]).style=AppStyle.textViewStyle2
-        DropDownTextField.appearance(whenContainedInInstancesOf: [CutomeViewController.self]).style=AppStyle.textFieldStyle2
+        TextFieldView.appearance(whenContainedInInstancesOf: [SecondViewController.self]).style=AppStyle.textViewStyle2
+        TextViewView.appearance(whenContainedInInstancesOf: [SecondViewController.self]).style=AppStyle.textViewStyle2
+        DropDownTextField.appearance(whenContainedInInstancesOf: [SecondViewController.self]).style=AppStyle.textFieldStyle2
 
         TextFieldView.appearance().style = AppStyle.textViewStyle;
         TextViewView.appearance().style = AppStyle.textViewStyle;
