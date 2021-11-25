@@ -139,8 +139,8 @@ open class TextViewView: UIView {
         super.awakeFromNib();
         self.layoutConstraintHeightOfIndicator.constant = self.style.indicatorHeight;
         normalStyle()
-        let tempStyle = self.style
-        self.style = tempStyle;
+//        let tempStyle = self.style
+//        self.style = tempStyle;
         //        self.layoutConstraintHeightOfViewBetweenFieldAndIndicator?.constant = spaceBetweenFieldAndIndicator;
         //        self.layoutConstraintHeightOfViewBetweenTitleAndField?.constant = spaceBetweenTitleAndField;
         

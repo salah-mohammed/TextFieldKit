@@ -17,11 +17,8 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        TextFieldView.appearance().style = UIColor.textViewStyle;
-        TextViewView.appearance().style = UIColor.textViewStyle;
-        DropDownTextField.appearance().style = UIColor.textFieldStyle;
+
         
-        var a =  DropDownTextField.appearance().style;
 //        self.txtFirstName.style = AppDelegate.style;
         txtFirstName.icon = UIImage.init(named:"01185")
         txtFirstName.placeholder = "FirstName";
@@ -52,7 +49,8 @@ class ViewController: UIViewController {
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated);
-//        self.txt
+        
+
     }
     @IBAction func tapGesture(_ sender:Any){
         self.view.endEditing(true);
@@ -60,51 +58,3 @@ class ViewController: UIViewController {
 
 }
 
-
-
-extension UIColor {
-    public static var placeholder: UIColor {
-          return UIColor.init(red: 0, green: 0, blue: 0.0980392, alpha: 0.22);
-  }
-    static var dropDownStyle:DropDownStyle = {
-        var fieldStyle = DropDownStyle.init();
-//        fieldStyle.spaceBetweenFieldAndIndicator = 16;
-        fieldStyle.indicatorHeight = 3.0
-        fieldStyle.selected = FieldColorStyle.init(.red,.red,.red)
-        fieldStyle.selected = FieldColorStyle.init(.red,.red,.red)
-        fieldStyle.normal = FieldColorStyle.init(UIColor.placeholderText,UIColor.placeholderText,UIColor.placeholderText)
-        fieldStyle.filled = FieldColorStyle.init(.green,.green,.green)
-        fieldStyle.titleFont = UIFont.systemFont(ofSize: 16);
-        fieldStyle.textFont = UIFont.systemFont(ofSize: 14);
-        fieldStyle.spaceBetweenIconAndField = 8
-        fieldStyle.dropDownTraling = 16;
-        fieldStyle.spaceBetweenTextAndDropDownIcon = 0
-        return fieldStyle;
-    }()
-    
-    static var textViewStyle:TextViewStyle = {
-        var fieldStyle = TextViewStyle.init();
-//        fieldStyle.spaceBetweenFieldAndIndicator = 16;
-        fieldStyle.indicatorHeight = 3.0
-        fieldStyle.selected = FieldColorStyle.init(.red,.red,.red)
-        fieldStyle.normal = FieldColorStyle.init(UIColor.placeholderText,UIColor.placeholderText,UIColor.placeholderText)
-        fieldStyle.filled = FieldColorStyle.init(.green,.green,.green)
-        fieldStyle.titleFont = UIFont.systemFont(ofSize: 16);
-        fieldStyle.textFont = UIFont.systemFont(ofSize: 14);
-        fieldStyle.spaceBetweenIconAndField = 8
-        fieldStyle.spaceBetweenTitleAndField = .auto;
-        return fieldStyle;
-    }()
-    static var textFieldStyle:FieldStyle = {
-        var fieldStyle = FieldStyle.init();
-//        fieldStyle.spaceBetweenFieldAndIndicator = 16;
-        fieldStyle.indicatorHeight = 3.0
-        fieldStyle.selected = FieldColorStyle.init(.red,.red,.red)
-        fieldStyle.normal = FieldColorStyle.init(UIColor.placeholderText,UIColor.placeholderText,UIColor.placeholderText)
-        fieldStyle.filled = FieldColorStyle.init(.green,.green,.green)
-        fieldStyle.titleFont = UIFont.systemFont(ofSize: 16);
-        fieldStyle.textFont = UIFont.systemFont(ofSize: 14);
-        fieldStyle.spaceBetweenIconAndField = 8
-        return fieldStyle;
-    }()
-}

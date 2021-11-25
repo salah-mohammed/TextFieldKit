@@ -154,8 +154,8 @@ open class TextFieldView: UIView {
         self.txtField.addTarget(self, action: #selector(Self.textFieldDidEnd(_:)), for: .editingDidEnd)
         self.txtField.addTarget(self, action: #selector(Self.textFieldValueChanged(_:)), for: .valueChanged)
         
-        let tempStyle = self.style
-        self.style = tempStyle;
+//        let tempStyle = self.style
+//        self.style = tempStyle;
         
         normalStyle()
         let tempIcon = self.icon;

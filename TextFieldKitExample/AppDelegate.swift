@@ -8,13 +8,108 @@
 import UIKit
 import TextFieldKit
 
+class AppStyle {
+    public static var placeholder: UIColor {
+          return UIColor.init(red: 0, green: 0, blue: 0.0980392, alpha: 0.22);
+  }
+    static var dropDownStyle:DropDownStyle = {
+        var fieldStyle = DropDownStyle.init();
+//        fieldStyle.spaceBetweenFieldAndIndicator = 16;
+        fieldStyle.indicatorHeight = 3.0
+        fieldStyle.selected = FieldColorStyle.init(.red,.red,.red)
+        fieldStyle.normal = FieldColorStyle.init(UIColor.placeholderText,UIColor.placeholderText,UIColor.placeholderText)
+        fieldStyle.filled = FieldColorStyle.init(.green,.green,.green)
+        fieldStyle.titleFont = UIFont.systemFont(ofSize: 16);
+        fieldStyle.textFont = UIFont.systemFont(ofSize: 14);
+        fieldStyle.spaceBetweenIconAndField = 8
+        fieldStyle.dropDownTraling = 16;
+        fieldStyle.spaceBetweenTextAndDropDownIcon = 0
+        return fieldStyle;
+    }()
+    
+    static var textViewStyle:TextViewStyle = {
+        var fieldStyle = TextViewStyle.init();
+//        fieldStyle.spaceBetweenFieldAndIndicator = 16;
+        fieldStyle.indicatorHeight = 3.0
+        fieldStyle.selected = FieldColorStyle.init(.red,.red,.red)
+        fieldStyle.normal = FieldColorStyle.init(UIColor.placeholderText,UIColor.placeholderText,UIColor.placeholderText)
+        fieldStyle.filled = FieldColorStyle.init(.green,.green,.green)
+        fieldStyle.titleFont = UIFont.systemFont(ofSize: 16);
+        fieldStyle.textFont = UIFont.systemFont(ofSize: 14);
+        fieldStyle.spaceBetweenIconAndField = 8
+        fieldStyle.spaceBetweenTitleAndField = .auto;
+        return fieldStyle;
+    }()
+    static var textFieldStyle:FieldStyle = {
+        var fieldStyle = FieldStyle.init();
+//        fieldStyle.spaceBetweenFieldAndIndicator = 16;
+        fieldStyle.indicatorHeight = 3.0
+        fieldStyle.selected = FieldColorStyle.init(.red,.red,.red)
+        fieldStyle.normal = FieldColorStyle.init(UIColor.placeholderText,UIColor.placeholderText,UIColor.placeholderText)
+        fieldStyle.filled = FieldColorStyle.init(.green,.green,.green)
+        fieldStyle.titleFont = UIFont.systemFont(ofSize: 16);
+        fieldStyle.textFont = UIFont.systemFont(ofSize: 14);
+        fieldStyle.spaceBetweenIconAndField = 8
+        return fieldStyle;
+    }()
+    /////////
+    static var dropDownStyl2:DropDownStyle = {
+        var fieldStyle = DropDownStyle.init();
+//        fieldStyle.spaceBetweenFieldAndIndicator = 16;
+        fieldStyle.indicatorHeight = 3.0
+        fieldStyle.selected = FieldColorStyle.init(.yellow,.yellow,.yellow)
+        fieldStyle.normal = FieldColorStyle.init(UIColor.placeholderText,UIColor.placeholderText,UIColor.placeholderText)
+        fieldStyle.filled = FieldColorStyle.init(.green,.green,.green)
+        fieldStyle.titleFont = UIFont.systemFont(ofSize: 16);
+        fieldStyle.textFont = UIFont.systemFont(ofSize: 14);
+        fieldStyle.spaceBetweenIconAndField = 8
+        fieldStyle.dropDownTraling = 16;
+        fieldStyle.spaceBetweenTextAndDropDownIcon = 0
+        return fieldStyle;
+    }()
+    
+    static var textViewStyle2:TextViewStyle = {
+        var fieldStyle = TextViewStyle.init();
+//        fieldStyle.spaceBetweenFieldAndIndicator = 16;
+        fieldStyle.indicatorHeight = 3.0
+        fieldStyle.selected = FieldColorStyle.init(.yellow,.yellow,.yellow)
+        fieldStyle.normal = FieldColorStyle.init(UIColor.placeholderText,UIColor.placeholderText,UIColor.placeholderText)
+        fieldStyle.filled = FieldColorStyle.init(.green,.green,.green)
+        fieldStyle.titleFont = UIFont.systemFont(ofSize: 16);
+        fieldStyle.textFont = UIFont.systemFont(ofSize: 14);
+        fieldStyle.spaceBetweenIconAndField = 8
+        fieldStyle.spaceBetweenTitleAndField = .auto;
+        return fieldStyle;
+    }()
+    static var textFieldStyle2:FieldStyle = {
+        var fieldStyle = FieldStyle.init();
+//        fieldStyle.spaceBetweenFieldAndIndicator = 16;
+        fieldStyle.indicatorHeight = 3.0
+        fieldStyle.selected = FieldColorStyle.init(.yellow,.yellow,.yellow)
+        fieldStyle.normal = FieldColorStyle.init(UIColor.placeholderText,UIColor.placeholderText,UIColor.placeholderText)
+        fieldStyle.filled = FieldColorStyle.init(.green,.green,.green)
+        fieldStyle.titleFont = UIFont.systemFont(ofSize: 16);
+        fieldStyle.textFont = UIFont.systemFont(ofSize: 14);
+        fieldStyle.spaceBetweenIconAndField = 8
+        return fieldStyle;
+    }()
+}
+
+class CutomeViewController:UIViewController{
+    
+}
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
  
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    
+        TextFieldView.appearance(whenContainedInInstancesOf: [CutomeViewController.self]).style=AppStyle.textViewStyle2
+        TextViewView.appearance(whenContainedInInstancesOf: [CutomeViewController.self]).style=AppStyle.textViewStyle2
+        DropDownTextField.appearance(whenContainedInInstancesOf: [CutomeViewController.self]).style=AppStyle.textFieldStyle2
 
+        TextFieldView.appearance().style = AppStyle.textViewStyle;
+        TextViewView.appearance().style = AppStyle.textViewStyle;
+        DropDownTextField.appearance().style = AppStyle.textFieldStyle;
         // Override point for customization after application launch.
         return true
     }

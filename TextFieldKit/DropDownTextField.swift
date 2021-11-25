@@ -66,7 +66,7 @@ open class DropDownTextField: TextFieldView {
         let tempDropDownIcon = self.dropDownIcon
         self.dropDownIcon = tempDropDownIcon;
         
-        let tempStyle = self.style
-        self.style = tempStyle;
+//        let tempStyle = self.style
+//        self.style = tempStyle;
     }
 }
