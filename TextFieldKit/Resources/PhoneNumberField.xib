@@ -40,9 +40,6 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <color key="textColor" name="#A5A7A3"/>
                                             <nil key="highlightedColor"/>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="localized" value="Message"/>
-                                            </userDefinedRuntimeAttributes>
                                         </label>
                                         <stackView opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="pAP-5A-wUc">
                                             <rect key="frame" x="0.0" y="61" width="281" height="33"/>
@@ -59,7 +56,7 @@
                                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="zye-s8-D9P">
                                                                             <rect key="frame" x="0.0" y="6.5" width="30" height="20"/>
                                                                             <subviews>
-                                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Eritrea.png" translatesAutoresizingMaskIntoConstraints="NO" id="qPT-gg-S2G">
+                                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qPT-gg-S2G">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="30" height="20"/>
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="height" constant="20" id="CfW-ab-bVa"/>
@@ -110,9 +107,6 @@
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <textInputTraits key="textInputTraits" keyboardType="ASCIICapableNumberPad"/>
-                                                            <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="string" keyPath="localized" value="PhoneNumber"/>
-                                                            </userDefinedRuntimeAttributes>
                                                         </textField>
                                                     </subviews>
                                                 </stackView>
@@ -145,7 +139,6 @@
         </view>
     </objects>
     <resources>
-        <image name="Eritrea.png" width="70" height="47"/>
         <namedColor name="#A5A7A3">
             <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

@@ -37,8 +37,8 @@
                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TAr-Eh-P28">
                                     <rect key="frame" x="0.0" y="0.0" width="58" height="94"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="1" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1" image="icloud.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="rFR-6e-rjI">
-                                            <rect key="frame" x="0.0" y="45" width="50" height="46.5"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="1" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1" translatesAutoresizingMaskIntoConstraints="NO" id="rFR-6e-rjI">
+                                            <rect key="frame" x="0.0" y="44" width="50" height="50"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="rFR-6e-rjI" secondAttribute="height" multiplier="1:1" id="0ce-nH-ilS"/>
                                             </constraints>
@@ -47,19 +47,16 @@
                                     <directionalEdgeInsets key="directionalLayoutMargins" top="0.0" leading="0.0" bottom="0.0" trailing="8"/>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="bOO-55-QK2">
-                                    <rect key="frame" x="58" y="0.0" width="183" height="94"/>
+                                    <rect key="frame" x="58" y="0.0" width="157" height="94"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nnt-b4-bTk">
-                                            <rect key="frame" x="0.0" y="0.0" width="183" height="21.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="157" height="21.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <color key="textColor" name="#A5A7A3"/>
                                             <nil key="highlightedColor"/>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="localized" value="Message"/>
-                                            </userDefinedRuntimeAttributes>
                                         </label>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XMY-OF-dMA">
-                                            <rect key="frame" x="0.0" y="21.5" width="183" height="72.5"/>
+                                            <rect key="frame" x="0.0" y="21.5" width="157" height="72.5"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
@@ -67,10 +64,10 @@
                                     </subviews>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Z4d-PH-hbq">
-                                    <rect key="frame" x="241" y="0.0" width="40" height="94"/>
+                                    <rect key="frame" x="215" y="0.0" width="66" height="94"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icloud.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="IFE-hQ-d4O">
-                                            <rect key="frame" x="0.0" y="60" width="24" height="16.5"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IFE-hQ-d4O">
+                                            <rect key="frame" x="0.0" y="44" width="50" height="50"/>
                                         </imageView>
                                     </subviews>
                                     <directionalEdgeInsets key="directionalLayoutMargins" top="0.0" leading="0.0" bottom="0.0" trailing="16"/>
@@ -110,7 +107,6 @@
         </view>
     </objects>
     <resources>
-        <image name="icloud.fill" catalog="system" width="128" height="88"/>
         <namedColor name="#A5A7A3">
             <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

@@ -13,13 +13,18 @@ public enum SpaceStyle{
     case auto
     case cutome(CGFloat)
 }
+@objcMembers
 public class TextViewStyle:FieldStyle{
     open var spaceBetweenFieldAndIndicator:CGFloat=0
     open var spaceBetweenTitleAndField:SpaceStyle = .auto
     
+    public override func copy(with zone: NSZone? = nil) -> Any {
+        let copy = TextViewStyle()
+        return copy
+    }
     
 }
-@IBDesignable
+@objcMembers
 open class TextViewView: UIView {
     func caluclateSpace(_ textfield:TextFieldView)->CGFloat{
         var heightOfTextInsideTextField = "a".height(withConstrainedWidth: 200, font: textfield.txtField.font!)
@@ -40,7 +45,7 @@ open class TextViewView: UIView {
     @IBOutlet weak private var viewBetweenTitleAndField:UIView?
     
     //
-    open var style = TextViewStyle.init(){
+    @objc open dynamic var style = TextViewStyle.init(){
         didSet{
             if let style:TextViewStyle = style as? TextViewStyle {
                 self.spaceBetweenFieldAndIndicator = style.spaceBetweenFieldAndIndicator;
@@ -134,8 +139,8 @@ open class TextViewView: UIView {
         super.awakeFromNib();
         self.layoutConstraintHeightOfIndicator.constant = self.style.indicatorHeight;
         normalStyle()
-        self.lblTitle.font = self.style.titleFont ?? self.lblTitle.font;
-        self.txtField.font = self.style.textFont ?? self.txtField.font
+        let tempStyle = self.style
+        self.style = tempStyle;
         //        self.layoutConstraintHeightOfViewBetweenFieldAndIndicator?.constant = spaceBetweenFieldAndIndicator;
         //        self.layoutConstraintHeightOfViewBetweenTitleAndField?.constant = spaceBetweenTitleAndField;
         

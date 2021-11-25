@@ -24,7 +24,12 @@ extension String {
         return ceil(boundingBox.width)
     }
 }
-public class FieldColorStyle{
+public class FieldColorStyle:NSCopying{
+    
+    public func copy(with zone: NSZone? = nil) -> Any {
+        let copy = FieldColorStyle()
+        return copy
+    }
     public var textColor:UIColor?
     public var indicatorColor:UIColor?
     public var titleColor:UIColor?
@@ -33,9 +38,15 @@ public class FieldColorStyle{
         self.indicatorColor=indicatorColor
         self.titleColor=titleColor;
     }
+    init(){
+        
+    }
 }
-
-open class FieldStyle{
+@objc open class FieldStyle:NSObject,NSCopying{
+    public func copy(with zone: NSZone? = nil) -> Any {
+        let copy = FieldStyle()
+        return copy
+    }
     public var autoHideTitle:Bool=true;
     public var indicatorHeight:CGFloat=1
     public var titleFont:UIFont?
@@ -45,11 +56,10 @@ open class FieldStyle{
     public var filled:FieldColorStyle?
     public var spaceBetweenIconAndField:CGFloat=8
 
-    public init() {
-        
+    public override init() {
+        super.init();
     }
 }
-@IBDesignable
 open class TextFieldView: UIView {
      // private
      private var contentView : UIView?
@@ -60,8 +70,7 @@ open class TextFieldView: UIView {
      @IBOutlet weak private var imgIconDown: UIImageView?
      @IBOutlet weak private var stackViewIcon: UIStackView?
 
-     //
-    open var style = FieldStyle.init(){
+     @objc open dynamic var style = FieldStyle.init(){
         didSet{
             self.lblTitle.font = self.style.titleFont ?? self.lblTitle.font;
             self.txtField.font = self.style.textFont ?? self.txtField.font
@@ -79,7 +88,7 @@ open class TextFieldView: UIView {
     open var text:String?{
         set{
             self.txtField.text = newValue;
-            self.endEditing(text);
+            self.endEditingField(text);
         }
         get{
             return self.txtField.text;
@@ -144,10 +153,10 @@ open class TextFieldView: UIView {
         self.txtField.addTarget(self, action: #selector(Self.textFieldDidBegin(_:)), for: .editingDidBegin)
         self.txtField.addTarget(self, action: #selector(Self.textFieldDidEnd(_:)), for: .editingDidEnd)
         self.txtField.addTarget(self, action: #selector(Self.textFieldValueChanged(_:)), for: .valueChanged)
-
-        self.layoutConstraintHeightOfIndicator.constant = self.style.indicatorHeight;
-        self.lblTitle.font = self.style.titleFont ?? self.lblTitle.font;
-        self.txtField.font = self.style.textFont ?? self.txtField.font
+        
+        let tempStyle = self.style
+        self.style = tempStyle;
+        
         normalStyle()
         let tempIcon = self.icon;
         self.icon = tempIcon;
@@ -159,14 +168,14 @@ open class TextFieldView: UIView {
         self.selectedStyle();
     }
     @objc func textFieldDidEnd(_ txt:UITextField){
-        self.endEditing(txt.text);
+        self.endEditingField(txt.text);
     }
     @IBAction func btnAction(_ sender:UIButton){
     }
     func setup(){
         
     }
-    func endEditing(_ text:String?){
+    func endEditingField(_ text:String?){
         if (text?.count ?? 0) == 0{
         self.normalStyle();
         }else{

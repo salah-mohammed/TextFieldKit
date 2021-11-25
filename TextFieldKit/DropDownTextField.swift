@@ -15,7 +15,13 @@ open class  DropDownStyle:FieldStyle{
     public override init() {
         super.init()
     }
+    
+    public override func copy(with zone: NSZone? = nil) -> Any {
+        let copy = DropDownStyle()
+        return copy
+    }
 }
+@objcMembers
 open class DropDownTextField: TextFieldView {
     public typealias DropDownHandler = ((DropDownTextField)->Void)
     @IBOutlet weak private var imgDropDown: UIImageView!
@@ -36,7 +42,6 @@ open class DropDownTextField: TextFieldView {
                 if let style:DropDownStyle = style as? DropDownStyle{
                     self.dropDownTraling = style.dropDownTraling;
                     self.spaceBetweenTextAndDropDownIcon = style.spaceBetweenTextAndDropDownIcon;
-
                 }
             }
         }
@@ -61,7 +66,7 @@ open class DropDownTextField: TextFieldView {
         let tempDropDownIcon = self.dropDownIcon
         self.dropDownIcon = tempDropDownIcon;
         
-        let tempDropDownTraling = self.dropDownTraling
-        self.dropDownTraling = tempDropDownTraling;
+        let tempStyle = self.style
+        self.style = tempStyle;
     }
 }
