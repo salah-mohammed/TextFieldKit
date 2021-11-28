@@ -15,7 +15,7 @@ class AppStyle {
     static var dropDownStyle:DropDownStyle = {
         var fieldStyle = DropDownStyle.init();
 //        fieldStyle.spaceBetweenFieldAndIndicator = 16;
-        fieldStyle.indicatorHeight = 3.0
+        fieldStyle.indicatorHeight = 1.0
         fieldStyle.selected = FieldColorStyle.init(.red,.red,.red)
         fieldStyle.normal = FieldColorStyle.init(UIColor.placeholderText,UIColor.placeholderText,UIColor.placeholderText)
         fieldStyle.filled = FieldColorStyle.init(.green,.green,.green)
@@ -30,7 +30,7 @@ class AppStyle {
     static var textViewStyle:TextViewStyle = {
         var fieldStyle = TextViewStyle.init();
 //        fieldStyle.spaceBetweenFieldAndIndicator = 16;
-        fieldStyle.indicatorHeight = 3.0
+        fieldStyle.indicatorHeight = 1.0
         fieldStyle.selected = FieldColorStyle.init(.red,.red,.red)
         fieldStyle.normal = FieldColorStyle.init(UIColor.placeholderText,UIColor.placeholderText,UIColor.placeholderText)
         fieldStyle.filled = FieldColorStyle.init(.green,.green,.green)
@@ -43,7 +43,7 @@ class AppStyle {
     static var textFieldStyle:FieldStyle = {
         var fieldStyle = FieldStyle.init();
 //        fieldStyle.spaceBetweenFieldAndIndicator = 16;
-        fieldStyle.indicatorHeight = 3.0
+        fieldStyle.indicatorHeight = 1.0
         fieldStyle.selected = FieldColorStyle.init(.red,.red,.red)
         fieldStyle.normal = FieldColorStyle.init(UIColor.placeholderText,UIColor.placeholderText,UIColor.placeholderText)
         fieldStyle.filled = FieldColorStyle.init(.green,.green,.green)
@@ -56,7 +56,7 @@ class AppStyle {
     static var dropDownStyl2:DropDownStyle = {
         var fieldStyle = DropDownStyle.init();
 //        fieldStyle.spaceBetweenFieldAndIndicator = 16;
-        fieldStyle.indicatorHeight = 3.0
+        fieldStyle.indicatorHeight = 1.0
         fieldStyle.selected = FieldColorStyle.init(.yellow,.yellow,.yellow)
         fieldStyle.normal = FieldColorStyle.init(UIColor.placeholderText,UIColor.placeholderText,UIColor.placeholderText)
         fieldStyle.filled = FieldColorStyle.init(.green,.green,.green)
@@ -71,7 +71,7 @@ class AppStyle {
     static var textViewStyle2:TextViewStyle = {
         var fieldStyle = TextViewStyle.init();
 //        fieldStyle.spaceBetweenFieldAndIndicator = 16;
-        fieldStyle.indicatorHeight = 3.0
+        fieldStyle.indicatorHeight = 1.0
         fieldStyle.selected = FieldColorStyle.init(.yellow,.yellow,.yellow)
         fieldStyle.normal = FieldColorStyle.init(UIColor.placeholderText,UIColor.placeholderText,UIColor.placeholderText)
         fieldStyle.filled = FieldColorStyle.init(.green,.green,.green)
@@ -84,7 +84,7 @@ class AppStyle {
     static var textFieldStyle2:FieldStyle = {
         var fieldStyle = FieldStyle.init();
 //        fieldStyle.spaceBetweenFieldAndIndicator = 16;
-        fieldStyle.indicatorHeight = 3.0
+        fieldStyle.indicatorHeight = 1.0
         fieldStyle.selected = FieldColorStyle.init(.yellow,.yellow,.yellow)
         fieldStyle.normal = FieldColorStyle.init(UIColor.placeholderText,UIColor.placeholderText,UIColor.placeholderText)
         fieldStyle.filled = FieldColorStyle.init(.green,.green,.green)
@@ -103,11 +103,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         TextFieldView.appearance(whenContainedInInstancesOf: [SecondViewController.self]).style=AppStyle.textViewStyle2
         TextViewView.appearance(whenContainedInInstancesOf: [SecondViewController.self]).style=AppStyle.textViewStyle2
-        DropDownTextField.appearance(whenContainedInInstancesOf: [SecondViewController.self]).style=AppStyle.textFieldStyle2
+        DropDownTextField.appearance(whenContainedInInstancesOf: [SecondViewController.self]).style=AppStyle.dropDownStyl2
 
         TextFieldView.appearance().style = AppStyle.textViewStyle;
         TextViewView.appearance().style = AppStyle.textViewStyle;
-        DropDownTextField.appearance().style = AppStyle.textFieldStyle;
+        DropDownTextField.appearance().style = AppStyle.dropDownStyle;
         // Override point for customization after application launch.
         return true
     }

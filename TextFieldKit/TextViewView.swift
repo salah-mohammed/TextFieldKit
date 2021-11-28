@@ -10,6 +10,7 @@
 import UIKit
 
 public enum SpaceStyle{
+    // default = 7
     case auto
     case cutome(CGFloat)
 }
@@ -26,10 +27,13 @@ public class TextViewStyle:FieldStyle{
 }
 @objcMembers
 open class TextViewView: UIView {
-    func caluclateSpace(_ textfield:TextFieldView)->CGFloat{
+    func caluclateSpace(_ textfield:TextFieldView?)->CGFloat?{
+        if let textfield:TextFieldView = textfield{
         var heightOfTextInsideTextField = "a".height(withConstrainedWidth: 200, font: textfield.txtField.font!)
         var heightOfTitle = "a".height(withConstrainedWidth: 200, font: textfield.lblTitle.font!)
         return (textfield.frame.height - heightOfTextInsideTextField - heightOfTitle)/2
+        }
+        return nil;
     }
     // private
     private var contentView : UIView?
@@ -41,7 +45,7 @@ open class TextViewView: UIView {
     @IBOutlet weak private var txtField: UITextView!
     @IBOutlet weak private var viewIndicator: UIView!
     @IBOutlet weak private var imgIconDown: UIImageView!
-    @IBOutlet weak open var txtOther:TextFieldView!
+    @IBOutlet weak open var txtOther:TextFieldView?
     @IBOutlet weak private var viewBetweenTitleAndField:UIView?
     
     //
@@ -61,6 +65,7 @@ open class TextViewView: UIView {
             }else{
                 self.filledStyle();
             }
+            self.indicatorHeight = self.style.indicatorHeight;
         }
     }
     open var placeholder:String?{
@@ -88,6 +93,11 @@ open class TextViewView: UIView {
         didSet{
             self.imgIconDown.image=icon;
             self.imgIconDown.superview?.isHidden = (self.imgIconDown.image == nil)
+        }
+    }
+    public var indicatorHeight:CGFloat=1{
+        didSet{
+            self.layoutConstraintHeightOfIndicator.constant = indicatorHeight
         }
     }
     required public init?(coder aDecoder: NSCoder) {
@@ -137,17 +147,9 @@ open class TextViewView: UIView {
     }
     open override func awakeFromNib() {
         super.awakeFromNib();
-        self.layoutConstraintHeightOfIndicator.constant = self.style.indicatorHeight;
         normalStyle()
-//        let tempStyle = self.style
-//        self.style = tempStyle;
-        //        self.layoutConstraintHeightOfViewBetweenFieldAndIndicator?.constant = spaceBetweenFieldAndIndicator;
-        //        self.layoutConstraintHeightOfViewBetweenTitleAndField?.constant = spaceBetweenTitleAndField;
-        
         let tempIcon = self.icon;
         self.icon = tempIcon;
-        
-        
     }
     
     @IBAction func btnAction(_ sender:UIButton){
@@ -181,7 +183,7 @@ open class TextViewView: UIView {
         })
     }
     func showLabelTitle(){
-        UIView.animate(withDuration:0.3, animations: {
+//        UIView.animate(withDuration:0.3, animations: {
             self.lblTitle.isHidden=false;
             self.viewBetweenTitleAndField?.isHidden=false;
             switch self.style.spaceBetweenTitleAndField {
@@ -191,10 +193,10 @@ open class TextViewView: UIView {
             case .cutome(_):
                 break;
             }
-        })
+//        })
     }
     func hideLabelTitle(){
-        UIView.animate(withDuration:0.3, animations: {
+//        UIView.animate(withDuration:0.3, animations: {
             self.lblTitle.isHidden=true;
             self.viewBetweenTitleAndField?.isHidden=true;
             switch self.style.spaceBetweenTitleAndField {
@@ -204,12 +206,16 @@ open class TextViewView: UIView {
             case .cutome(_):
                 break;
             }
-        })
+//        })
     }
     func updateSpaces(){
-        let value = self.caluclateSpace(self.txtOther)
+        if let value:CGFloat = self.caluclateSpace(self.txtOther){
         self.spaceBetweenFieldAndIndicator = value
         self.layoutConstraintHeightOfViewBetweenTitleAndField?.constant = value
+        }else{
+            self.spaceBetweenFieldAndIndicator = 7.0
+            self.layoutConstraintHeightOfViewBetweenTitleAndField?.constant = 7.0
+        }
     }
 }
 extension TextViewView:UITextViewDelegate{

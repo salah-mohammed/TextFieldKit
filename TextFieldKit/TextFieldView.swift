@@ -83,6 +83,7 @@ open class TextFieldView: UIView {
                 self.filledStyle();
             }
             self.spaceBetweenIconAndField = self.style.spaceBetweenIconAndField
+            self.indicatorHeight = self.style.indicatorHeight;
         }
     }
     open var text:String?{
@@ -112,6 +113,12 @@ open class TextFieldView: UIView {
             self.stackViewIcon?.directionalLayoutMargins = NSDirectionalEdgeInsets.init(top: 0, leading: 0, bottom: 0, trailing:spaceBetweenIconAndField)
         }
     }
+    public var indicatorHeight:CGFloat=1{
+        didSet{
+            self.layoutConstraintHeightOfIndicator.constant = indicatorHeight
+        }
+    }
+
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         xibSetup()
