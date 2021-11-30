@@ -47,7 +47,8 @@ open class TextViewView: UIView {
     @IBOutlet weak private var imgIconDown: UIImageView!
     @IBOutlet weak open var txtOther:TextFieldView?
     @IBOutlet weak private var viewBetweenTitleAndField:UIView?
-    
+    @IBOutlet weak private var lblError:UILabel!
+
     //
     @objc open dynamic var style = TextViewStyle.init(){
         didSet{
@@ -72,6 +73,15 @@ open class TextViewView: UIView {
         didSet{
             self.lblTitle.text = placeholder
             self.txtField.placeholder = placeholder;
+        }
+    }
+    open var error:String?{
+        set{
+            self.lblError.text = newValue
+            self.lblError.isHidden = (newValue?.count ?? 0 == 0) ? true:false;
+        }
+        get{
+            return self.lblError.text
         }
     }
     open var spaceBetweenFieldAndIndicator:CGFloat=0{
@@ -150,6 +160,8 @@ open class TextViewView: UIView {
         normalStyle()
         let tempIcon = self.icon;
         self.icon = tempIcon;
+        self.error = nil;
+
     }
     
     @IBAction func btnAction(_ sender:UIButton){

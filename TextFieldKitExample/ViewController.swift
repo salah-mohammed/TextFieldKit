@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        txtFirstName.error = "ads";
 //        self.txtFirstName.style = AppDelegate.style;
         txtFirstName.icon = UIImage.init(named:"01185")
         txtFirstName.placeholder = "FirstName";

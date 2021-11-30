@@ -96,6 +96,15 @@ open class TextFieldView: UIView {
             return self.txtField.text;
         }
      }
+    open var error:String?{
+        set{
+            self.lblError.text = newValue
+            self.lblError.isHidden = (newValue?.count ?? 0 == 0) ? true:false;
+        }
+        get{
+            return self.lblError.text
+        }
+    }
    open var placeholder:String?{
         didSet{
             self.lblTitle.text = placeholder
@@ -168,6 +177,7 @@ open class TextFieldView: UIView {
         normalStyle()
         let tempIcon = self.icon;
         self.icon = tempIcon;
+        self.error = nil;
 
     }
     @objc func textFieldValueChanged(_ txt:UITextField){

@@ -27,8 +27,10 @@ open class DropDownTextField: TextFieldView {
     @IBOutlet weak private var imgDropDown: UIImageView!
     @IBOutlet weak private var btnDropDown: UIButton!
     @IBOutlet weak private var stackViewDropDown: UIStackView!
+    @IBOutlet weak private var lblError:UILabel!
 
     public var dropDownHandler:DropDownHandler?
+    
     
     open var dropDownIcon:UIImage?{
          didSet{
