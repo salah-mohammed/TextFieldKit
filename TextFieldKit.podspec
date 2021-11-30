@@ -105,7 +105,9 @@ Pod::Spec.new do |s|
 
   # s.resource  = "icon.png"
   # s.resources = "Resources/*.png"
-
+  s.resource_bundles = {
+    'TextFieldKit' => ['TextFieldKit/Resources/**/*.{xib,xcassets,json,imageset,bundle,strings,storyboard}','TextFieldKit/View/*.{lproj,storybard}']
+  }
   # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
 
 
