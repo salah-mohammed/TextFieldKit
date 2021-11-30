@@ -57,7 +57,7 @@ class AppStyle {
         var fieldStyle = DropDownStyle.init();
 //        fieldStyle.spaceBetweenFieldAndIndicator = 16;
         fieldStyle.indicatorHeight = 1.0
-        fieldStyle.selected = FieldColorStyle.init(.yellow,.yellow,.yellow)
+        fieldStyle.selected = FieldColorStyle.init(.orange,.orange,.orange)
         fieldStyle.normal = FieldColorStyle.init(UIColor.placeholderText,UIColor.placeholderText,UIColor.placeholderText)
         fieldStyle.filled = FieldColorStyle.init(.green,.green,.green)
         fieldStyle.titleFont = UIFont.systemFont(ofSize: 16);
@@ -72,7 +72,7 @@ class AppStyle {
         var fieldStyle = TextViewStyle.init();
 //        fieldStyle.spaceBetweenFieldAndIndicator = 16;
         fieldStyle.indicatorHeight = 1.0
-        fieldStyle.selected = FieldColorStyle.init(.yellow,.yellow,.yellow)
+        fieldStyle.selected = FieldColorStyle.init(.orange,.orange,.orange)
         fieldStyle.normal = FieldColorStyle.init(UIColor.placeholderText,UIColor.placeholderText,UIColor.placeholderText)
         fieldStyle.filled = FieldColorStyle.init(.green,.green,.green)
         fieldStyle.titleFont = UIFont.systemFont(ofSize: 16);
@@ -85,7 +85,7 @@ class AppStyle {
         var fieldStyle = FieldStyle.init();
 //        fieldStyle.spaceBetweenFieldAndIndicator = 16;
         fieldStyle.indicatorHeight = 1.0
-        fieldStyle.selected = FieldColorStyle.init(.yellow,.yellow,.yellow)
+        fieldStyle.selected = FieldColorStyle.init(.orange,.orange,.orange)
         fieldStyle.normal = FieldColorStyle.init(UIColor.placeholderText,UIColor.placeholderText,UIColor.placeholderText)
         fieldStyle.filled = FieldColorStyle.init(.green,.green,.green)
         fieldStyle.titleFont = UIFont.systemFont(ofSize: 16);
