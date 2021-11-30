@@ -69,6 +69,7 @@ open class TextFieldView: UIView {
      @IBOutlet weak private var viewIndicator: UIView!
      @IBOutlet weak private var imgIconDown: UIImageView?
      @IBOutlet weak private var stackViewIcon: UIStackView?
+     @IBOutlet weak private var lblError:UILabel!
 
      @objc open dynamic var style = FieldStyle.init(){
         didSet{
