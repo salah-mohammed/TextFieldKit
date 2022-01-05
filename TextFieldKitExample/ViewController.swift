@@ -20,7 +20,7 @@ class ViewController: UIViewController {
 
         
 //        self.txtFirstName.style = AppDelegate.style;
-        txtFirstName.icon = UIImage.init(named:"01185")
+        txtFirstName.icon = UIImage.init(named:"ic_setting_phone")
         txtFirstName.placeholder = "FirstName";
         
 //        self.txtLastName.style = AppDelegate.style;
@@ -31,10 +31,11 @@ class ViewController: UIViewController {
         
 //        self.txtEducation.style = AppDelegate.style;
         txtEducation.placeholder = "Education";
-        
+//        txtEducation.icon = UIImage.init(named:"ic_setting_phone")
+
 //        self.txtCity.style = AppDelegate.dropDownStyle;
         txtCity.placeholder = "City";
-        txtCity.icon = UIImage.init(named:"01185")
+        txtCity.icon = UIImage.init(named:"ic_setting_phone")
         txtCity.dropDownIcon = UIImage.init(named:"ic_drop_down")
 
         txtCity.dropDownHandler = { textfield in

@@ -32,28 +32,25 @@
                             <rect key="frame" x="0.0" y="0.0" width="281" height="94"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dl1-PD-fYA">
-                                    <rect key="frame" x="0.0" y="0.0" width="102" height="94"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="32" height="94"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="1" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1" image="icloud.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="EGl-T0-JNb">
-                                            <rect key="frame" x="0.0" y="1" width="94" height="90.5"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" secondItem="EGl-T0-JNb" secondAttribute="height" multiplier="1:1" id="Yjg-nW-pbc"/>
-                                            </constraints>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icloud.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="EGl-T0-JNb">
+                                            <rect key="frame" x="0.0" y="1" width="24" height="90.5"/>
                                         </imageView>
                                     </subviews>
                                     <directionalEdgeInsets key="directionalLayoutMargins" top="0.0" leading="0.0" bottom="0.0" trailing="8"/>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2QQ-ff-9Dc">
-                                    <rect key="frame" x="102" y="0.0" width="179" height="94"/>
+                                    <rect key="frame" x="32" y="0.0" width="249" height="94"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i9G-wT-Hfa">
-                                            <rect key="frame" x="0.0" y="0.0" width="179" height="21.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i9G-wT-Hfa">
+                                            <rect key="frame" x="0.0" y="0.0" width="249" height="21.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <color key="textColor" name="#A5A7A3"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r0G-cA-Q3v">
-                                            <rect key="frame" x="0.0" y="21.5" width="179" height="72.5"/>
+                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r0G-cA-Q3v">
+                                            <rect key="frame" x="0.0" y="21.5" width="249" height="72.5"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
