@@ -142,7 +142,7 @@ public extension Array where Element == FieldError {
         return (self.count == 0);
     }
     var strings:[String]{
-    return self.map {$0.message}
+    return self.map {"- "+$0.message}
     }
     var string:String{
         return self.strings.joined(separator:"\n");

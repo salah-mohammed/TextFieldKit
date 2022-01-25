@@ -11,6 +11,9 @@ import UIKit
 
 @IBDesignable
 open class PhoneNumberField: TextFieldView {
+    override var nibName: String{
+        return "PhoneNumberField";
+    }
     public typealias CountryPickerHandler = ((PhoneNumberField)->Void)
     public var countryPickerHandler:CountryPickerHandler?
 

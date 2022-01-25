@@ -61,6 +61,9 @@ public class FieldColorStyle:NSCopying{
     }
 }
 open class TextFieldView: UIView,GeneralFieldViewProrocol {
+    var nibName:String{
+        return "TextFieldView";
+    }
      // private
      private var contentView : UIView?
      @IBOutlet weak private var layoutConstraintHeightOfIndicator: NSLayoutConstraint!
@@ -148,7 +151,7 @@ open class TextFieldView: UIView,GeneralFieldViewProrocol {
     func loadViewFromNib() -> UIView! {
         
 //        let nib = UINib(nibName: String(describing: type(of: self)), bundle: Bundle.module)
-        let nib = UINib(nibName: String(describing: type(of: self)), bundle: Bundle.module)
+        let nib = UINib(nibName:nibName, bundle: Bundle.module)
         let view = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
         
         return view

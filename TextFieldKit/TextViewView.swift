@@ -27,6 +27,9 @@ public class TextViewStyle:FieldStyle{
 }
 @objcMembers
 open class TextViewView:UIView,GeneralFieldViewProrocol {
+    var nibName:String{
+        return "TextViewView";
+    }
     func caluclateSpace(_ textfield:TextFieldView?)->CGFloat?{
         if let textfield:TextFieldView = textfield{
         var heightOfTextInsideTextField = "a".height(withConstrainedWidth: 200, font: textfield.txtField.font!)
@@ -137,7 +140,7 @@ open class TextViewView:UIView,GeneralFieldViewProrocol {
     }
     func loadViewFromNib() -> UIView! {
         
-        let nib = UINib(nibName: String(describing: type(of: self)), bundle: Bundle.module)
+        let nib = UINib(nibName:self.nibName, bundle: Bundle.module)
         let view = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
         
         return view
