@@ -52,9 +52,9 @@ case newPassword="NewPassword"
 case confirmPassword="ConfirmPassword"
 case email="Email"
 
-    var title:String{
+var title:String{
         return self.rawValue.customLocalize_;
-    }
+}
 }
 
 public enum FieldError{
@@ -79,17 +79,28 @@ var message:String{
     }
 }
 }
-protocol FieldValiadtion{
-    var valid: (Bool,[FieldError]) {get};
-}
 public protocol Field{
     var field:Fields {get};
 }
+public protocol FieldValiadtion{
+    var valid: (Bool,[FieldError]) {get};
+}
+
 protocol GeneralFieldViewProrocol{
 var text:String? {set get};
 var placeholder:String? {set get};
 }
+protocol GeneralConnection:Field,FieldValiadtion{
 
+}
+extension GeneralFieldViewProrocol where Self: GeneralConnection {
+    func emptyError()->[FieldError]{
+        if self.text == nil {
+        return [.empty(self.field.title)]
+        }
+        return []
+    }
+}
 extension GeneralFieldViewProrocol where Self: FieldValiadtion {
     func emptyError()->[FieldError]{
         if self.text == nil {

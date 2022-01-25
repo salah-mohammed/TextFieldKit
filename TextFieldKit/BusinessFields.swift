@@ -30,7 +30,7 @@ open class ConfirmPasswordField:TextFieldView,FieldValiadtion,Field{
     }
     @IBOutlet weak open var txtNewPasswordField: NewPasswordField?
     
-    var valid: (Bool, [FieldError]){
+    public var valid: (Bool, [FieldError]){
         var messages:[FieldError]=[FieldError]();
         if self.text == nil {
             messages.append(.empty(self.field.title))
@@ -50,7 +50,7 @@ open class PasswordField:TextFieldView,FieldValiadtion,Field{
     public var field: Fields{
         return .password
     }
-    var valid: (Bool, [FieldError]){
+    public var valid: (Bool, [FieldError]){
         var messages:[FieldError]=[FieldError]();
         if self.text == nil {
             messages.append(.empty(self.field.title))
@@ -71,12 +71,9 @@ open class UserNameField:TextFieldView,FieldValiadtion,Field{
     public var field: Fields{
         return .username
     }
-    var valid: (Bool, [FieldError]){
+    public var valid: (Bool, [FieldError]){
         var messages:[FieldError]=[FieldError]();
-        if self.text == nil {
-            messages.append(.empty(self.field.title))
-        }
-        
+        messages.append(contentsOf: self.emptyError());
         return (messages.valid,messages)
     }
     open override func awakeFromNib() {
@@ -88,11 +85,9 @@ open class FullNameField:TextFieldView,FieldValiadtion,Field{
     public var field: Fields{
         return .fullName
     }
-    var valid: (Bool, [FieldError]){
+    public var valid: (Bool, [FieldError]){
         var messages:[FieldError]=[FieldError]();
-        if self.text == nil {
-            messages.append(.empty(self.field.title))
-        }
+        messages.append(contentsOf: self.emptyError());
         return (messages.valid,messages)
     }
     open override func awakeFromNib() {
@@ -104,7 +99,7 @@ open class EmailField:TextFieldView,FieldValiadtion,Field{
     public var field: Fields{
         return .email
     }
-    var valid: (Bool, [FieldError]){
+    public var valid: (Bool, [FieldError]){
         var messages:[FieldError]=[FieldError]();
         if self.text == nil {
             messages.append(.empty(self.field.title))
@@ -121,16 +116,14 @@ open class EmailField:TextFieldView,FieldValiadtion,Field{
 }
 
 open class CutomeDropDownTextField:DropDownTextField,FieldValiadtion{
-    var valid: (Bool, [FieldError]){
+    public var valid: (Bool, [FieldError]){
         var messages:[FieldError]=[FieldError]();
-        if self.text == nil {
-            messages.append(.empty(self.placeholder ?? ""))
-        }
+        messages.append(contentsOf: self.emptyError());
         return (messages.valid,messages)
     }
 }
 open class CutomeTextView:TextFieldView,FieldValiadtion{
-    var valid: (Bool, [FieldError]){
+    public var valid: (Bool, [FieldError]){
         var messages:[FieldError]=[FieldError]();
         messages.append(contentsOf: self.emptyError());
         return (messages.valid,messages)
