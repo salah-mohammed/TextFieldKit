@@ -26,7 +26,7 @@ public class TextViewStyle:FieldStyle{
     
 }
 @objcMembers
-open class TextViewView: UIView {
+open class TextViewView:UIView,GeneralFieldViewProrocol {
     func caluclateSpace(_ textfield:TextFieldView?)->CGFloat?{
         if let textfield:TextFieldView = textfield{
         var heightOfTextInsideTextField = "a".height(withConstrainedWidth: 200, font: textfield.txtField.font!)
@@ -74,6 +74,15 @@ open class TextViewView: UIView {
             self.txtField.placeholder = placeholder;
         }
     }
+    open var text:String?{
+        set{
+            self.txtField.text = newValue;
+            self.didEndEditing(txtField.text);
+        }
+        get{
+            return self.txtField.text;
+        }
+     }
     open var spaceBetweenFieldAndIndicator:CGFloat=0{
         didSet{
             self.layoutConstraintHeightOfViewBetweenFieldAndIndicator?.constant = spaceBetweenFieldAndIndicator;
@@ -217,17 +226,20 @@ open class TextViewView: UIView {
             self.layoutConstraintHeightOfViewBetweenTitleAndField?.constant = 7.0
         }
     }
+    func didEndEditing(_ text:String?){
+        if (text?.count ?? 0) == 0{
+        self.normalStyle();
+        }else{
+        filledStyle();
+        }
+    }
 }
 extension TextViewView:UITextViewDelegate{
     public func textViewDidBeginEditing(_ textView: UITextView) {
         self.selectedStyle();
     }
     public func textViewDidEndEditing(_ textView: UITextView) {
-        if (self.txtField.text?.count ?? 0) == 0{
-            self.normalStyle();
-        }else{
-            filledStyle();
-        }
+        self.didEndEditing(textView.text);
     }
     public func textViewDidChange(_ textView: UITextView) {
         textView.textViewDidChange(textView);

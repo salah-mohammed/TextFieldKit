@@ -1,0 +1,18 @@
+/* 
+  Localizable.strings
+  TextFieldKit
+
+  Created by Salah on 1/10/22.
+  
+*/
+"Username"="Username";
+"FullName"="Fullname";
+"Password"="Password";
+"NewPassword"="New Password";
+"ConfirmPassword"="ConfirmPassword";
+"Email"="Email";
+
+"NotValid"="Sorry, The %@ not valid";
+"TextFeildValidation"  = "Sorry, The %@ is required";
+"PasswordNotMatch"="Password does not match";
+"PasswordMustHave6"="Password must be more than six characters";

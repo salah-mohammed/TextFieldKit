@@ -60,7 +60,7 @@ public class FieldColorStyle:NSCopying{
         super.init();
     }
 }
-open class TextFieldView: UIView {
+open class TextFieldView: UIView,GeneralFieldViewProrocol {
      // private
      private var contentView : UIView?
      @IBOutlet weak private var layoutConstraintHeightOfIndicator: NSLayoutConstraint!

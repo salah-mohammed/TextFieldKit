@@ -37,7 +37,7 @@ class ViewController: UIViewController {
         txtCity.placeholder = "City";
         txtCity.icon = UIImage.init(named:"ic_setting_phone")
         txtCity.dropDownIcon = UIImage.init(named:"ic_drop_down")
-
+        
         txtCity.dropDownHandler = { textfield in
             self.txtCity.text = "sadsadsad sadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsad";
         }
