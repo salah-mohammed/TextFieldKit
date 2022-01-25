@@ -94,7 +94,6 @@ class AppStyle {
         return fieldStyle;
     }()
 }
-
 // 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {

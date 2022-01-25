@@ -34,6 +34,7 @@
 		4EB6807D274A573000363E69 /* PhoneNumberField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB6807C274A573000363E69 /* PhoneNumberField.swift */; };
 		4EDF13FE278AFE840095A02D /* BusinessFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDF13FD278AFE840095A02D /* BusinessFields.swift */; };
 		4EF57CA6279FEED2000CFD0E /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF57CA5279FEED2000CFD0E /* Regex.swift */; };
+		4EF57CA827A011DC000CFD0E /* ForthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF57CA727A011DC000CFD0E /* ForthViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,7 @@
 		4EB6807C274A573000363E69 /* PhoneNumberField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhoneNumberField.swift; path = TextFieldKit/PhoneNumberField.swift; sourceTree = SOURCE_ROOT; };
 		4EDF13FD278AFE840095A02D /* BusinessFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessFields.swift; sourceTree = "<group>"; };
 		4EF57CA5279FEED2000CFD0E /* Regex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Regex.swift; sourceTree = "<group>"; };
+		4EF57CA727A011DC000CFD0E /* ForthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForthViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +160,7 @@
 				4E46B777272A8B7D00DCB3B4 /* ViewController.swift */,
 				4EA60C1F274FD85400AC9745 /* SecondViewController.swift */,
 				4EA60C21274FD9BE00AC9745 /* ThiredViewController.swift */,
+				4EF57CA727A011DC000CFD0E /* ForthViewController.swift */,
 				4E46B779272A8B7D00DCB3B4 /* Main.storyboard */,
 				4E46B77C272A8B8100DCB3B4 /* Assets.xcassets */,
 				4E46B77E272A8B8100DCB3B4 /* LaunchScreen.storyboard */,
@@ -322,6 +325,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4EF57CA827A011DC000CFD0E /* ForthViewController.swift in Sources */,
 				4EA60C20274FD85400AC9745 /* SecondViewController.swift in Sources */,
 				4E46B778272A8B7D00DCB3B4 /* ViewController.swift in Sources */,
 				4E46B774272A8B7D00DCB3B4 /* AppDelegate.swift in Sources */,

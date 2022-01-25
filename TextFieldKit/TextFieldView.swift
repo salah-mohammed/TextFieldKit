@@ -147,6 +147,7 @@ open class TextFieldView: UIView,GeneralFieldViewProrocol {
     }
     func loadViewFromNib() -> UIView! {
         
+//        let nib = UINib(nibName: String(describing: type(of: self)), bundle: Bundle.module)
         let nib = UINib(nibName: String(describing: type(of: self)), bundle: Bundle.module)
         let view = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
         

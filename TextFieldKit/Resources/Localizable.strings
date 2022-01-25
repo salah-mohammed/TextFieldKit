@@ -12,7 +12,15 @@
 "ConfirmPassword"="ConfirmPassword";
 "Email"="Email";
 
+"Title"="Title";
+"Description"="Description";
+"Address"="Address";
+"Requirements"="Requirements";
+
 "NotValid"="Sorry, The %@ not valid";
 "TextFeildValidation"  = "Sorry, The %@ is required";
 "PasswordNotMatch"="Password does not match";
 "PasswordMustHave6"="Password must be more than six characters";
+
+"Error"="Error";
+"Ok"="Ok";

@@ -38,25 +38,27 @@ extension String{
     }
 }
 
-extension Array where Element == FieldError {
-    var valid:Bool{
-        return (self.count == 0);
-    }
-}
 
-public enum Fields:String{
+// MARK: FieldType
+public enum FieldType:String{
 case username="Username"
 case fullName="FullName"
 case password="Password"
 case newPassword="NewPassword"
 case confirmPassword="ConfirmPassword"
 case email="Email"
-
+case title="Title"
+case description="Description"
+case address="Address"
+case requirements="Requirements"
+    
+    
 var title:String{
-        return self.rawValue.customLocalize_;
+    return self.rawValue.customLocalize_;
 }
 }
 
+// MARK: FieldError
 public enum FieldError{
 case empty(_ name:String)
 case notValid(_ name:String)
@@ -79,29 +81,55 @@ var message:String{
     }
 }
 }
+// MARK: Field
 public protocol Field{
-    var field:Fields {get};
+    var fieldType:FieldType {get};
 }
+// MARK: FieldValiadtion
 public protocol FieldValiadtion{
-    var valid: (Bool,[FieldError]) {get};
+    var valid:[FieldError] {get};
 }
-
+// MARK: GeneralFieldViewProrocol
 protocol GeneralFieldViewProrocol{
 var text:String? {set get};
 var placeholder:String? {set get};
 }
+// MARK: GeneralConnection
 protocol GeneralConnection:Field,FieldValiadtion{
 
 }
+
 extension GeneralFieldViewProrocol where Self: GeneralConnection {
     func emptyError()->[FieldError]{
         if self.text == nil {
-        return [.empty(self.field.title)]
+        return [.empty(self.fieldType.title)]
         }
         return []
     }
+    func newPassword()->[FieldError]{
+        var messages:[FieldError]=[FieldError]();
+        if self.text == nil {
+            messages.append(.empty(self.fieldType.title))
+        }else
+        if (self.text?.count ?? 0) < 6 {
+            messages.append(.passwordLessThan6)
+        }
+        return messages;
+    }
+    func confirmPassword(_ txtNewPasswordField:NewPasswordField?)->[FieldError]{
+        var messages:[FieldError]=[FieldError]();
+        if self.text == nil {
+            messages.append(.empty(self.fieldType.title))
+        }
+        if txtNewPasswordField?.text != self.text {
+            messages.append(.passwordNotMatch)
+        }
+        return messages;
+    }
+    
 }
 extension GeneralFieldViewProrocol where Self: FieldValiadtion {
+    // validation
     func emptyError()->[FieldError]{
         if self.text == nil {
         return [.empty(self.placeholder ?? "")]
@@ -109,3 +137,24 @@ extension GeneralFieldViewProrocol where Self: FieldValiadtion {
         return []
     }
 }
+public extension Array where Element == FieldError {
+    var valid:Bool{
+        return (self.count == 0);
+    }
+    var strings:[String]{
+    return self.map {$0.message}
+    }
+    var string:String{
+        return self.strings.joined(separator:"\n");
+    }
+    public func showAlert(_ viewController:UIViewController,handler:((UIAlertAction)->Void)?){
+    let errors = self.string;
+    let alert = UIAlertController.init(title:"Error".customLocalize_, message: errors, preferredStyle:.alert)
+    alert.addAction(UIAlertAction.init(title:"Ok".customLocalize_, style: .default, handler: handler));
+    viewController.present(alert, animated: true, completion: nil);
+    }
+}
+
+//extension Array where Self:GeneralFieldViewProrocol {
+//
+//}
