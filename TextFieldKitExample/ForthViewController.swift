@@ -18,13 +18,15 @@ class ForthViewController: UIViewController {
     @IBOutlet weak var txtEmail:EmailField!
 
     var fields:[FieldValiadtion]{
-    return [txtTitle,
-            txtFullName,
-            txtRequirements,
-            txtNewPassword,
-            txtConfirmPassword,
-            txtPasswordField,
-          txtEmail]
+    return [
+        txtFullName,
+        txtPasswordField,
+        txtNewPassword,
+        txtConfirmPassword,
+        txtEmail,
+        txtTitle,
+        txtRequirements
+        ]
     }
     override func viewDidLoad() {
         super.viewDidLoad()

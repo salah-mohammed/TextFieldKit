@@ -26,15 +26,27 @@ if let secondBundle:Bundle = Bundle(path: "\(Bundle.main.bundlePath)/Frameworks/
       return nil
     }()
 }
-
+public enum RegularExpression:String{
+    case email="[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+    case phone = "[+]+[0-9 ]{1,}|[00]+[0-9 ]{1,}|[0-9 ]{9,}"
+    case empty=".*[^ ].*"
+    var regex:Regex{
+        return Regex.init(self.rawValue);
+    }
+    func  matches(_ input:String)->Bool{
+    return self.regex.matches(input:input)
+    }
+}
 extension String{
-    static var emailRegix = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}";
-
     var customLocalize_ : String {
        return NSLocalizedString(self, tableName: nil, bundle:Bundle.module ?? Bundle.main, value: "", comment: "")
    }
     public func cutomelocalizedWith(variables: CVarArg...) -> String {
         return String(format: self.customLocalize_, arguments: variables)
+    }
+    
+    var isEmpty:Bool{
+        return (RegularExpression.empty.matches(self)==false)
     }
 }
 
@@ -101,14 +113,14 @@ protocol GeneralConnection:Field,FieldValiadtion{
 
 extension GeneralFieldViewProrocol where Self: GeneralConnection {
     func emptyError()->[FieldError]{
-        if self.text == nil {
+        if ((self.text?.count ?? 0) == 0) || (self.text?.isEmpty ?? true) {
         return [.empty(self.fieldType.title)]
         }
         return []
     }
     func newPassword()->[FieldError]{
         var messages:[FieldError]=[FieldError]();
-        if self.text == nil {
+        if ((self.text?.count ?? 0) == 0) ||  (self.text?.isEmpty ?? true){
             messages.append(.empty(self.fieldType.title))
         }else
         if (self.text?.count ?? 0) < 6 {
@@ -118,20 +130,29 @@ extension GeneralFieldViewProrocol where Self: GeneralConnection {
     }
     func confirmPassword(_ txtNewPasswordField:NewPasswordField?)->[FieldError]{
         var messages:[FieldError]=[FieldError]();
-        if self.text == nil {
+        if ((self.text?.count ?? 0) == 0) || (self.text?.isEmpty ?? true){
             messages.append(.empty(self.fieldType.title))
-        }
+        }else
         if txtNewPasswordField?.text != self.text {
             messages.append(.passwordNotMatch)
         }
         return messages;
     }
-    
+    func email()->[FieldError]{
+        var messages:[FieldError]=[FieldError]();
+        if ((self.text?.count ?? 0) == 0) || (self.text?.isEmpty ?? true){
+            messages.append(.empty(self.fieldType.title))
+        }else
+        if  RegularExpression.email.regex.matches(input: self.text ?? "")==false {
+            messages.append(.notValid(self.fieldType.title))
+        }
+     return messages
+    }
 }
 extension GeneralFieldViewProrocol where Self: FieldValiadtion {
     // validation
     func emptyError()->[FieldError]{
-        if self.text == nil {
+        if ((self.text?.count ?? 0) == 0)  || (self.text?.isEmpty ?? true){
         return [.empty(self.placeholder ?? "")]
         }
         return []

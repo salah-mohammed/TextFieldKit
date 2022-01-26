@@ -84,7 +84,7 @@ open class EmailField:TextFieldView,GeneralConnection{
         return .email
     }
     public var valid:[FieldError]{
-        return self.emptyError()
+        return self.email();
     }
     open override func awakeFromNib() {
         super.awakeFromNib();

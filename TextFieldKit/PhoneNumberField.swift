@@ -34,6 +34,8 @@ open class PhoneNumberField: TextFieldView {
      }
     open override func awakeFromNib() {
         super.awakeFromNib();
+        self.placeholder="PhoneNumber".customLocalize_;
+        self.txtField.delegate=self;
         let tempFlag = self.flag
         self.flag = tempFlag;
         let tempCountryCode = self.countryCode
@@ -41,5 +43,16 @@ open class PhoneNumberField: TextFieldView {
     }
     @IBAction func btnCountryCode(_ sender:UIButton){
         countryPickerHandler?(self);
+    }
+}
+extension PhoneNumberField:UITextFieldDelegate {
+    public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+            guard let textFieldText = textField.text,
+                let rangeOfTextToReplace = Range(range, in: textFieldText) else {
+                    return false
+            }
+            let substringToReplace = textFieldText[rangeOfTextToReplace]
+            let count = textFieldText.count - substringToReplace.count + string.count
+            return count <= 11
     }
 }
