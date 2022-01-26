@@ -8,6 +8,18 @@
 import Foundation
 import UIKit
 
+extension UIImage {
+    class func bs_frameWorkInit(named:String)->UIImage?{
+        return UIImage.init(named: named, in:Bundle.module, compatibleWith: nil);
+    }
+}
+extension UIColor {
+    class func bs_frameWorkInit(named:String)->UIColor?{
+        return UIColor.init(named: named, in: Bundle.module, compatibleWith: nil)
+    }
+}
+
+
 extension Bundle {
     static var module: Bundle? = {
         //firstBundle -> this will used when libarary used in example

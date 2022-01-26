@@ -32,6 +32,7 @@
 		4EA60C22274FD9BE00AC9745 /* ThiredViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA60C21274FD9BE00AC9745 /* ThiredViewController.swift */; };
 		4EB6807B274A56D800363E69 /* PhoneNumberField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EB6807A274A56D800363E69 /* PhoneNumberField.xib */; };
 		4EB6807D274A573000363E69 /* PhoneNumberField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB6807C274A573000363E69 /* PhoneNumberField.swift */; };
+		4EC35BE727A1548700DD42D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EC35BE627A1548700DD42D6 /* Assets.xcassets */; };
 		4EDF13FE278AFE840095A02D /* BusinessFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDF13FD278AFE840095A02D /* BusinessFields.swift */; };
 		4EF57CA6279FEED2000CFD0E /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF57CA5279FEED2000CFD0E /* Regex.swift */; };
 		4EF57CA827A011DC000CFD0E /* ForthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF57CA727A011DC000CFD0E /* ForthViewController.swift */; };
@@ -89,6 +90,7 @@
 		4EA60C21274FD9BE00AC9745 /* ThiredViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThiredViewController.swift; sourceTree = "<group>"; };
 		4EB6807A274A56D800363E69 /* PhoneNumberField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhoneNumberField.xib; sourceTree = "<group>"; };
 		4EB6807C274A573000363E69 /* PhoneNumberField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhoneNumberField.swift; path = TextFieldKit/PhoneNumberField.swift; sourceTree = SOURCE_ROOT; };
+		4EC35BE627A1548700DD42D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4EDF13FD278AFE840095A02D /* BusinessFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessFields.swift; sourceTree = "<group>"; };
 		4EF57CA5279FEED2000CFD0E /* Regex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Regex.swift; sourceTree = "<group>"; };
 		4EF57CA727A011DC000CFD0E /* ForthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForthViewController.swift; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 		4EA57E212746588800C183A2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4EC35BE627A1548700DD42D6 /* Assets.xcassets */,
 				4E46B786272A900300DCB3B4 /* TextFieldView.xib */,
 				4EA57E152746537600C183A2 /* TextViewView.xib */,
 				4EA57E2627466DD600C183A2 /* DropDownTextField.xib */,
@@ -288,6 +291,7 @@
 				4EB6807B274A56D800363E69 /* PhoneNumberField.xib in Resources */,
 				4EA57E2727466DD600C183A2 /* DropDownTextField.xib in Resources */,
 				4EA57E1A274654B800C183A2 /* TextFieldView.xib in Resources */,
+				4EC35BE727A1548700DD42D6 /* Assets.xcassets in Resources */,
 				4EA57E172746537600C183A2 /* TextViewView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

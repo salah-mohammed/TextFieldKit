@@ -21,6 +21,11 @@ open class PhoneNumberField: TextFieldView {
     @IBOutlet weak private var lblCountryCode:UILabel!
     @IBOutlet weak private var btnCountryCode:UIButton!
 
+    open var countryCodeColor:UIColor?{
+         didSet{
+             self.lblCountryCode.textColor = countryCodeColor;
+         }
+     }
     open var flag:UIImage?{
          didSet{
             self.imgFlag.image=flag;
@@ -40,6 +45,8 @@ open class PhoneNumberField: TextFieldView {
         self.flag = tempFlag;
         let tempCountryCode = self.countryCode
         self.countryCode = tempCountryCode;
+        let tempCountryCodeColor = self.countryCodeColor ?? UIColor.bs_frameWorkInit(named:"CountryCode")
+        self.countryCodeColor = tempCountryCodeColor;
     }
     @IBAction func btnCountryCode(_ sender:UIButton){
         countryPickerHandler?(self);
