@@ -7,7 +7,9 @@
 
 import Foundation
 import UIKit
-
+#if canImport(PhoneKit)
+import PhoneKit
+#endif
 extension UIImage {
     class func bs_frameWorkInit(named:String)->UIImage?{
         return UIImage.init(named: named, in:Bundle.module, compatibleWith: nil);
@@ -18,7 +20,19 @@ extension UIColor {
         return UIColor.init(named: named, in: Bundle.module, compatibleWith: nil)
     }
 }
-
+extension UIView{
+        var bs_parent: UIViewController? {
+            // Starts from next (As we know self is not a UIViewController).
+            var parentResponder: UIResponder? = self.next
+            while parentResponder != nil {
+                if let viewController = parentResponder as? UIViewController {
+                    return viewController
+                }
+                parentResponder = parentResponder?.next
+            }
+            return nil
+        }
+}
 
 extension Bundle {
     static var module: Bundle? = {
@@ -75,7 +89,8 @@ case title="Title"
 case description="Description"
 case address="Address"
 case requirements="Requirements"
-    
+case phoneNumber="PhoneNumber"
+
     
 var title:String{
     return self.rawValue.customLocalize_;
@@ -156,6 +171,18 @@ extension GeneralFieldViewProrocol where Self: GeneralConnection {
             messages.append(.empty(self.fieldType.title))
         }else
         if  RegularExpression.email.regex.matches(input: self.text ?? "")==false {
+            messages.append(.notValid(self.fieldType.title))
+    }
+     return messages
+    }
+    func phoneNumber()->[FieldError]{
+        var messages:[FieldError]=[FieldError]();
+        var countryCode = (self as? AdvancedPhoneNumber)?.countryObject
+
+        if countryCode == nil || (self.text?.isEmpty ?? true){
+            messages.append(.empty(self.fieldType.title))
+        }else
+        if  CountryListManager.shared.validatePhoneNumber(countryCode: countryCode, phoneNumber: self.text) == false {
             messages.append(.notValid(self.fieldType.title))
         }
      return messages

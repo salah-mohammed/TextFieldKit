@@ -36,6 +36,8 @@
 		4EDF13FE278AFE840095A02D /* BusinessFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDF13FD278AFE840095A02D /* BusinessFields.swift */; };
 		4EF57CA6279FEED2000CFD0E /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF57CA5279FEED2000CFD0E /* Regex.swift */; };
 		4EF57CA827A011DC000CFD0E /* ForthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF57CA727A011DC000CFD0E /* ForthViewController.swift */; };
+		8FA29984B62E3E43B77E22B8 /* Pods_TextFieldKitExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE1283F15A683755B1336DDE /* Pods_TextFieldKitExample.framework */; };
+		AA204D4AFE59CDED92717038 /* Pods_TextFieldKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CE6D6682AE22280744A437A /* Pods_TextFieldKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1CE6D6682AE22280744A437A /* Pods_TextFieldKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TextFieldKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		39B8252992820EDCC17A1F35 /* Pods-TextFieldKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TextFieldKit.release.xcconfig"; path = "Target Support Files/Pods-TextFieldKit/Pods-TextFieldKit.release.xcconfig"; sourceTree = "<group>"; };
+		4A9D7F08044021DF8ECFF7AF /* Pods-TextFieldKitExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TextFieldKitExample.debug.xcconfig"; path = "Target Support Files/Pods-TextFieldKitExample/Pods-TextFieldKitExample.debug.xcconfig"; sourceTree = "<group>"; };
 		4E2DF746274D111A0020AE25 /* UITextView+Placeholder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+Placeholder.h"; sourceTree = "<group>"; };
 		4E2DF747274D111B0020AE25 /* UITextView+Placeholder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+Placeholder.m"; sourceTree = "<group>"; };
 		4E2DF74A274D14B20020AE25 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
@@ -94,6 +99,9 @@
 		4EDF13FD278AFE840095A02D /* BusinessFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessFields.swift; sourceTree = "<group>"; };
 		4EF57CA5279FEED2000CFD0E /* Regex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Regex.swift; sourceTree = "<group>"; };
 		4EF57CA727A011DC000CFD0E /* ForthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForthViewController.swift; sourceTree = "<group>"; };
+		8F6567E059F82800E6C3387E /* Pods-TextFieldKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TextFieldKit.debug.xcconfig"; path = "Target Support Files/Pods-TextFieldKit/Pods-TextFieldKit.debug.xcconfig"; sourceTree = "<group>"; };
+		AC6AE9A068B84A0F58EAD619 /* Pods-TextFieldKitExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TextFieldKitExample.release.xcconfig"; path = "Target Support Files/Pods-TextFieldKitExample/Pods-TextFieldKitExample.release.xcconfig"; sourceTree = "<group>"; };
+		BE1283F15A683755B1336DDE /* Pods_TextFieldKitExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TextFieldKitExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +109,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA204D4AFE59CDED92717038 /* Pods_TextFieldKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,12 +118,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				4EA57E1C2746580400C183A2 /* TextFieldKit.framework in Frameworks */,
+				8FA29984B62E3E43B77E22B8 /* Pods_TextFieldKitExample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B5D7DBD1650050D2F87D018 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8F6567E059F82800E6C3387E /* Pods-TextFieldKit.debug.xcconfig */,
+				39B8252992820EDCC17A1F35 /* Pods-TextFieldKit.release.xcconfig */,
+				4A9D7F08044021DF8ECFF7AF /* Pods-TextFieldKitExample.debug.xcconfig */,
+				AC6AE9A068B84A0F58EAD619 /* Pods-TextFieldKitExample.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		4E46B758272A8B2300DCB3B4 = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +144,7 @@
 				4E46B772272A8B7D00DCB3B4 /* TextFieldKitExample */,
 				4E46B763272A8B2300DCB3B4 /* Products */,
 				4EA57E1B2746580400C183A2 /* Frameworks */,
+				1B5D7DBD1650050D2F87D018 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -174,6 +197,8 @@
 		4EA57E1B2746580400C183A2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1CE6D6682AE22280744A437A /* Pods_TextFieldKit.framework */,
+				BE1283F15A683755B1336DDE /* Pods_TextFieldKitExample.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -212,6 +237,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4E46B76A272A8B2300DCB3B4 /* Build configuration list for PBXNativeTarget "TextFieldKit" */;
 			buildPhases = (
+				C7240920C014A6F37197C2EE /* [CP] Check Pods Manifest.lock */,
 				4E46B75D272A8B2300DCB3B4 /* Headers */,
 				4E46B75E272A8B2300DCB3B4 /* Sources */,
 				4E46B75F272A8B2300DCB3B4 /* Frameworks */,
@@ -230,10 +256,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4E46B784272A8B8100DCB3B4 /* Build configuration list for PBXNativeTarget "TextFieldKitExample" */;
 			buildPhases = (
+				5F1B8CC710108928026DD5DE /* [CP] Check Pods Manifest.lock */,
 				4E46B76D272A8B7D00DCB3B4 /* Sources */,
 				4E46B76E272A8B7D00DCB3B4 /* Frameworks */,
 				4E46B76F272A8B7D00DCB3B4 /* Resources */,
 				4EA57E202746580400C183A2 /* Embed Frameworks */,
+				E3A38260B6C9898CE2267BAE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -307,6 +335,70 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5F1B8CC710108928026DD5DE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TextFieldKitExample-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C7240920C014A6F37197C2EE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TextFieldKit-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E3A38260B6C9898CE2267BAE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TextFieldKitExample/Pods-TextFieldKitExample-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TextFieldKitExample/Pods-TextFieldKitExample-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TextFieldKitExample/Pods-TextFieldKitExample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4E46B75E272A8B2300DCB3B4 /* Sources */ = {
@@ -492,6 +584,7 @@
 		};
 		4E46B76B272A8B2300DCB3B4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8F6567E059F82800E6C3387E /* Pods-TextFieldKit.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -519,6 +612,7 @@
 		};
 		4E46B76C272A8B2300DCB3B4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 39B8252992820EDCC17A1F35 /* Pods-TextFieldKit.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -545,6 +639,7 @@
 		};
 		4E46B782272A8B8100DCB3B4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4A9D7F08044021DF8ECFF7AF /* Pods-TextFieldKitExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -564,6 +659,7 @@
 		};
 		4E46B783272A8B8100DCB3B4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC6AE9A068B84A0F58EAD619 /* Pods-TextFieldKitExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

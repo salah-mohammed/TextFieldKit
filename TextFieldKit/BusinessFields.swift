@@ -6,7 +6,10 @@
 //
 
 import Foundation
+#if canImport(PhoneKit)
+import PhoneKit
 
+#endif
 // MARK: NewPasswordField
 open class NewPasswordField:TextFieldView,GeneralConnection{
     public var fieldType: FieldType{
@@ -143,6 +146,39 @@ open class RequirementsField:TextViewView,GeneralConnection{
         self.placeholder=self.fieldType.title
     }
 }
+#if canImport(PhoneKit)
+// MARK: CustomePhoneNumber
+open class AdvancedPhoneNumber:PhoneNumberField,GeneralConnection{
+    public var fieldType: FieldType{
+        return FieldType.phoneNumber
+    }
+    
+    public var valid: [FieldError]{
+        return self.phoneNumber();
+    }
+    
+    open var countryObject:CountryCode?{
+        didSet{
+            self.countryCode = countryObject?.dial_code;
+            self.flag = countryObject?.flag
+        }
+    }
+    open var viewController:UIViewController?
+    
+    open override func awakeFromNib() {
+        super.awakeFromNib();
+        self.viewController = self.bs_parent;
+        self.countryObject=CountryListManager.shared.currentCountry
+        self.countryPickerHandler = { textfield in
+            UIAlertController.showCountryPicker(self,self.viewController) { (object) in
+                self.countryObject = object;
+            } cancelHandler: {
+            }
+        }
+    }
+    
+}
+#endif
 
 // MARK: CutomeDropDownTextField
 open class CutomeDropDownTextField:DropDownTextField,FieldValiadtion{

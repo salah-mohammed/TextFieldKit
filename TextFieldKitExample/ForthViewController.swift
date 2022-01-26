@@ -9,6 +9,7 @@ import UIKit
 import TextFieldKit
 
 class ForthViewController: UIViewController {
+    @IBOutlet weak var txtAdvancedPhoneNumber:AdvancedPhoneNumber!
     @IBOutlet weak var txtTitle:TitleField!
     @IBOutlet weak var txtFullName:FullNameField!
     @IBOutlet weak var txtRequirements:RequirementsField!
@@ -18,15 +19,14 @@ class ForthViewController: UIViewController {
     @IBOutlet weak var txtEmail:EmailField!
 
     var fields:[FieldValiadtion]{
-    return [
+    return [txtAdvancedPhoneNumber,
         txtFullName,
         txtPasswordField,
         txtNewPassword,
         txtConfirmPassword,
         txtEmail,
         txtTitle,
-        txtRequirements
-        ]
+        txtRequirements]
     }
     override func viewDidLoad() {
         super.viewDidLoad()

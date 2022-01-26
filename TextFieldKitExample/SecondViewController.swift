@@ -15,6 +15,7 @@ class SecondViewController: UIViewController {
     @IBOutlet weak var txtLastName:TextFieldView!
     @IBOutlet weak var txtCity:DropDownTextField!
     @IBOutlet weak var txtPhoneNumber:PhoneNumberField!
+    @IBOutlet weak var txtAdvancedPhoneNumber:AdvancedPhoneNumber!
 
     override func viewDidLoad() {
         super.viewDidLoad()

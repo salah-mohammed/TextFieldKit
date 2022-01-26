@@ -1,0 +1,21 @@
+PODS:
+  - PhoneKit (0.0.6)
+
+DEPENDENCIES:
+  - PhoneKit (from `https://github.com/salah-mohammed/PhoneKit.git`)
+
+EXTERNAL SOURCES:
+  PhoneKit:
+    :git: https://github.com/salah-mohammed/PhoneKit.git
+
+CHECKOUT OPTIONS:
+  PhoneKit:
+    :commit: 112c7bc3ebd24a52992f9ddbeb767720dbf179e4
+    :git: https://github.com/salah-mohammed/PhoneKit.git
+
+SPEC CHECKSUMS:
+  PhoneKit: 492d2bc8f8cba4835e65cacbca6d9650e87ddbd8
+
+PODFILE CHECKSUM: 570b689dcdee16494017c91e4a548debf0050923
+
+COCOAPODS: 1.11.2

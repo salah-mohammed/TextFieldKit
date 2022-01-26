@@ -17,9 +17,9 @@ open class PhoneNumberField: TextFieldView {
     public typealias CountryPickerHandler = ((PhoneNumberField)->Void)
     public var countryPickerHandler:CountryPickerHandler?
 
-    @IBOutlet weak private var imgFlag: UIImageView!
-    @IBOutlet weak private var lblCountryCode:UILabel!
-    @IBOutlet weak private var btnCountryCode:UIButton!
+    @IBOutlet weak  var imgFlag: UIImageView!
+    @IBOutlet weak  var lblCountryCode:UILabel!
+    @IBOutlet weak  var btnCountryCode:UIButton!
 
     open var countryCodeColor:UIColor?{
          didSet{
@@ -39,7 +39,7 @@ open class PhoneNumberField: TextFieldView {
      }
     open override func awakeFromNib() {
         super.awakeFromNib();
-        self.placeholder="PhoneNumber".customLocalize_;
+        self.placeholder=FieldType.phoneNumber.title;
         self.txtField.delegate=self;
         let tempFlag = self.flag
         self.flag = tempFlag;

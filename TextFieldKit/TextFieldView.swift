@@ -8,6 +8,10 @@
 
 
 import UIKit
+#if canImport(PhoneKit)
+import PhoneKit
+
+#endif
 
 extension String {
     func height(withConstrainedWidth width: CGFloat, font: UIFont) -> CGFloat {
