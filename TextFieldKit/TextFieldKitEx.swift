@@ -126,7 +126,7 @@ public protocol Field{
 }
 // MARK: FieldValiadtion
 public protocol FieldValiadtion{
-    var valid:[FieldError] {get};
+    var messages:[FieldError] {get};
 }
 // MARK: GeneralFieldViewProrocol
 protocol GeneralFieldViewProrocol{

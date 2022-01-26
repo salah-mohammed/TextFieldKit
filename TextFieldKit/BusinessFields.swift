@@ -15,7 +15,7 @@ open class NewPasswordField:TextFieldView,GeneralConnection{
     public var fieldType: FieldType{
         return .newPassword
     }
-    public var valid:[FieldError]{
+    public var messages:[FieldError]{
         return self.newPassword();
     }
     open override func awakeFromNib() {
@@ -31,7 +31,7 @@ open class ConfirmPasswordField:TextFieldView,GeneralConnection{
     }
     @IBOutlet weak open var txtNewPasswordField: NewPasswordField?
     
-    public var valid:[FieldError]{
+    public var messages:[FieldError]{
         return self.confirmPassword(txtNewPasswordField);
     }
     open override func awakeFromNib() {
@@ -45,7 +45,7 @@ open class PasswordField:TextFieldView,GeneralConnection{
     public var fieldType: FieldType{
         return .password
     }
-    public var valid:[FieldError]{
+    public var messages:[FieldError]{
         return self.emptyError()
     }
     open override func awakeFromNib() {
@@ -60,7 +60,7 @@ open class UserNameField:TextFieldView,GeneralConnection{
     public var fieldType: FieldType{
         return .username
     }
-    public var valid:[FieldError]{
+    public var messages:[FieldError]{
         return self.emptyError()
     }
     open override func awakeFromNib() {
@@ -73,7 +73,7 @@ open class FullNameField:TextFieldView,GeneralConnection{
     public var fieldType: FieldType{
         return .fullName
     }
-    public var valid:[FieldError]{
+    public var messages:[FieldError]{
         return self.emptyError()
     }
     open override func awakeFromNib() {
@@ -86,7 +86,7 @@ open class EmailField:TextFieldView,GeneralConnection{
     public var fieldType: FieldType{
         return .email
     }
-    public var valid:[FieldError]{
+    public var messages:[FieldError]{
         return self.email();
     }
     open override func awakeFromNib() {
@@ -99,7 +99,7 @@ open class TitleField:TextFieldView,GeneralConnection{
     public var fieldType: FieldType{
         return .title
     }
-    public var valid:[FieldError]{
+    public var messages:[FieldError]{
         return self.emptyError()
     }
     open override func awakeFromNib() {
@@ -112,7 +112,7 @@ open class DescriptionField:TextViewView,GeneralConnection{
     public var fieldType: FieldType{
         return .description
     }
-    public var valid:[FieldError]{
+    public var messages:[FieldError]{
         return self.emptyError()
     }
     open override func awakeFromNib() {
@@ -125,7 +125,7 @@ open class AddressField:TextFieldView,GeneralConnection{
     public var fieldType: FieldType{
         return .address
     }
-    public var valid:[FieldError]{
+    public var messages:[FieldError]{
         return self.emptyError()
     }
     open override func awakeFromNib() {
@@ -138,7 +138,7 @@ open class RequirementsField:TextViewView,GeneralConnection{
     public var fieldType: FieldType{
         return .requirements
     }
-    public var valid:[FieldError]{
+    public var messages:[FieldError]{
         return self.emptyError()
     }
     open override func awakeFromNib() {
@@ -153,7 +153,7 @@ open class AdvancedPhoneNumber:PhoneNumberField,GeneralConnection{
         return FieldType.phoneNumber
     }
     
-    public var valid: [FieldError]{
+    public var messages: [FieldError]{
         return self.phoneNumber();
     }
     
@@ -182,13 +182,13 @@ open class AdvancedPhoneNumber:PhoneNumberField,GeneralConnection{
 
 // MARK: CutomeDropDownTextField
 open class CutomeDropDownTextField:DropDownTextField,FieldValiadtion{
-    public var valid:[FieldError]{
+    public var messages:[FieldError]{
         return self.emptyError()
     }
 }
 // MARK: CutomeTextView
 open class CutomeTextView:TextFieldView,FieldValiadtion{
-    public var valid:[FieldError]{
+    public var messages:[FieldError]{
         return self.emptyError()
     }
 }

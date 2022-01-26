@@ -43,7 +43,7 @@ class ForthViewController: UIViewController {
         self.view.endEditing(true);
     }
     @IBAction func btnValid(_ sender:Any?){
-    self.fields.flatMap({$0.valid}).showAlert(self, handler: nil);
+    self.fields.flatMap({$0.messages}).showAlert(self, handler: nil);
     }
 }
 
