@@ -10,6 +10,10 @@ import Foundation
 import PhoneKit
 
 #endif
+#if canImport(PhoneKit)
+import LocationPicker
+#endif
+
 // MARK: NewPasswordField
 open class NewPasswordField:TextFieldView,GeneralConnection{
     public var fieldType: FieldType{
@@ -177,6 +181,40 @@ open class AdvancedPhoneNumber:PhoneNumberField,GeneralConnection{
         }
     }
     
+}
+#endif
+#if canImport(LocationPicker)
+open class LocationTextField:DropDownTextField,GeneralConnection{
+    public var fieldType: FieldType{
+        return .location
+    }
+    public var messages: [FieldError]{
+        return self.location();
+    }
+    public var locationItem:LocationItem?{
+        didSet{
+            self.text = locationItem?.title ?? locationItem?.subtitle ?? self.locationItem?.coordinate?.stringValue ?? ""
+        }
+    }
+    open var viewController:UIViewController?
+
+    open var success: LocationPickerViewController.successClosure?
+    open var failure: LocationPickerViewController.failureClosure?
+    open var cancel: LocationPickerViewController.cancelClosure?
+    
+    open override func awakeFromNib(){
+        super.awakeFromNib();
+        self.placeholder = self.fieldType.title;
+        self.viewController = self.bs_parent;
+        self.dropDownHandler = { textfield in
+            if let vc:LocationPickerViewController = LocationPickerViewController.initPicker(self.locationItem, nil){
+                vc.success = self.success;
+                vc.failure = self.failure;
+                vc.cancel = self.cancel;
+                self.viewController?.present(vc, animated: true, completion: nil);
+            }
+        }
+    }
 }
 #endif
 

@@ -10,6 +10,7 @@ import TextFieldKit
 
 class ForthViewController: UIViewController {
     @IBOutlet weak var txtAdvancedPhoneNumber:AdvancedPhoneNumber!
+    @IBOutlet weak var txtLocationTextField:LocationTextField!
     @IBOutlet weak var txtTitle:TitleField!
     @IBOutlet weak var txtFullName:FullNameField!
     @IBOutlet weak var txtRequirements:RequirementsField!
@@ -20,6 +21,7 @@ class ForthViewController: UIViewController {
 
     var fields:[FieldValiadtion]{
     return [txtAdvancedPhoneNumber,
+        txtLocationTextField,
         txtFullName,
         txtPasswordField,
         txtNewPassword,

@@ -62,5 +62,11 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>to calculate the prayer we need access to your location</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>to calculate the prayer we need access to your location</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>to calculate the prayer we need access to your location</string>
 </dict>
 </plist>

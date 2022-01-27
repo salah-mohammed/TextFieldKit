@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import CoreLocation
 #if canImport(PhoneKit)
 import PhoneKit
 #endif
@@ -33,7 +34,11 @@ extension UIView{
             return nil
         }
 }
-
+extension CLLocationCoordinate2D{
+    var stringValue:String{
+        return "\(self.latitude),\(self.longitude)"
+    }
+}
 extension Bundle {
     static var module: Bundle? = {
         //firstBundle -> this will used when libarary used in example
@@ -90,6 +95,7 @@ case description="Description"
 case address="Address"
 case requirements="Requirements"
 case phoneNumber="PhoneNumber"
+case location="Location"
 
     
 var title:String{
@@ -186,6 +192,14 @@ extension GeneralFieldViewProrocol where Self: GeneralConnection {
             messages.append(.notValid(self.fieldType.title))
         }
      return messages
+    }
+    func location()->[FieldError]{
+    var messages:[FieldError]=[FieldError]();
+        let locationItem = (self as? LocationTextField)?.locationItem
+        if locationItem == nil || (self.text?.isEmpty ?? true){
+            messages.append(.empty(self.fieldType.title))
+        }
+        return messages;
     }
 }
 extension GeneralFieldViewProrocol where Self: FieldValiadtion {
