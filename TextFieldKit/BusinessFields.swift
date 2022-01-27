@@ -201,16 +201,25 @@ open class LocationTextField:DropDownTextField,GeneralConnection{
     open var success: LocationPickerViewController.successClosure?
     open var failure: LocationPickerViewController.failureClosure?
     open var cancel: LocationPickerViewController.cancelClosure?
-    
+    var locationPicker:LocationPickerViewController?
     open override func awakeFromNib(){
         super.awakeFromNib();
         self.placeholder = self.fieldType.title;
         self.viewController = self.bs_parent;
+
         self.dropDownHandler = { textfield in
             if let vc:LocationPickerViewController = LocationPickerViewController.initPicker(self.locationItem, nil){
-                vc.success = self.success;
                 vc.failure = self.failure;
                 vc.cancel = self.cancel;
+                vc.cancel = { 
+                    vc.dismiss(animated: true, completion: nil);
+                    self.cancel?();
+                }
+                vc.success = { (item,enable) in
+                    self.locationItem=item;
+                    self.success?(item,enable);
+                    vc.dismiss(animated: true, completion: nil);
+                }
                 self.viewController?.present(vc, animated: true, completion: nil);
             }
         }
