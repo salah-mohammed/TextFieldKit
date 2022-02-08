@@ -10,7 +10,7 @@ import Foundation
 import PhoneKit
 
 #endif
-#if canImport(PhoneKit)
+#if canImport(LocationPicker)
 import LocationPicker
 #endif
 
@@ -229,6 +229,24 @@ open class LocationTextField:DropDownTextField,GeneralConnection{
 
 // MARK: CutomeDropDownTextField
 open class CutomeDropDownTextField:DropDownTextField,FieldValiadtion{
+    public var messages:[FieldError]{
+        return self.emptyError()
+    }
+}
+// MARK: CityField
+open class CityField:DropDownTextField,GeneralConnection{
+    public var fieldType: FieldType{
+        return .city
+    }
+    public var messages:[FieldError]{
+        return self.emptyError()
+    }
+}
+// MARK: RegionField
+open class RegionField:DropDownTextField,GeneralConnection,FieldValiadtion{
+    public var fieldType: FieldType{
+        return .region
+    }
     public var messages:[FieldError]{
         return self.emptyError()
     }

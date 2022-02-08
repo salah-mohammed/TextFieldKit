@@ -7,7 +7,6 @@
 
 import UIKit
 import TextFieldKit
-
 class ForthViewController: UIViewController {
     @IBOutlet weak var txtAdvancedPhoneNumber:AdvancedPhoneNumber!
     @IBOutlet weak var txtLocationTextField:LocationTextField!
@@ -18,9 +17,10 @@ class ForthViewController: UIViewController {
     @IBOutlet weak var txtConfirmPassword:ConfirmPasswordField!
     @IBOutlet weak var txtPasswordField:PasswordField!
     @IBOutlet weak var txtEmail:EmailField!
-
+    @IBOutlet weak var txtCity:CustomCityField!
     var fields:[FieldValiadtion]{
-    return [txtAdvancedPhoneNumber,
+    return [
+        txtAdvancedPhoneNumber,
         txtLocationTextField,
         txtFullName,
         txtPasswordField,
@@ -28,11 +28,23 @@ class ForthViewController: UIViewController {
         txtConfirmPassword,
         txtEmail,
         txtTitle,
+        txtCity,
         txtRequirements]
     }
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        txtCity.placeholder = "City";
+        txtCity.icon = UIImage.init(named:"ic_setting_phone")
+        txtCity.dropDownIcon = UIImage.init(named:"ic_drop_down")
+
+        txtCity.dropDownHandler = { textfield in
+        self.txtCity.object = "Cairo";
+        }
+//        txtRegion.placeholder="Region";
+//        txtRegion.dropDownHandler = { textfield in
+//        self.txtRegion.text = "ahrammat";
+//        }
 
         // Do any additional setup after loading the view.
     }

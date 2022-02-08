@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -32,6 +32,8 @@
 		4EA60C22274FD9BE00AC9745 /* ThiredViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA60C21274FD9BE00AC9745 /* ThiredViewController.swift */; };
 		4EB6807B274A56D800363E69 /* PhoneNumberField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EB6807A274A56D800363E69 /* PhoneNumberField.xib */; };
 		4EB6807D274A573000363E69 /* PhoneNumberField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB6807C274A573000363E69 /* PhoneNumberField.swift */; };
+		4EB6F39127A7DD9A006A01BE /* AppFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB6F39027A7DD99006A01BE /* AppFields.swift */; };
+		4EB6F39327A7E3E3006A01BE /* FieldValiadtion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB6F39227A7E3E2006A01BE /* FieldValiadtion.swift */; };
 		4EC35BE727A1548700DD42D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EC35BE627A1548700DD42D6 /* Assets.xcassets */; };
 		4EDF13FE278AFE840095A02D /* BusinessFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDF13FD278AFE840095A02D /* BusinessFields.swift */; };
 		4EF57CA6279FEED2000CFD0E /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF57CA5279FEED2000CFD0E /* Regex.swift */; };
@@ -95,6 +97,8 @@
 		4EA60C21274FD9BE00AC9745 /* ThiredViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThiredViewController.swift; sourceTree = "<group>"; };
 		4EB6807A274A56D800363E69 /* PhoneNumberField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhoneNumberField.xib; sourceTree = "<group>"; };
 		4EB6807C274A573000363E69 /* PhoneNumberField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhoneNumberField.swift; path = TextFieldKit/PhoneNumberField.swift; sourceTree = SOURCE_ROOT; };
+		4EB6F39027A7DD99006A01BE /* AppFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFields.swift; sourceTree = "<group>"; };
+		4EB6F39227A7E3E2006A01BE /* FieldValiadtion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldValiadtion.swift; sourceTree = "<group>"; };
 		4EC35BE627A1548700DD42D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4EDF13FD278AFE840095A02D /* BusinessFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessFields.swift; sourceTree = "<group>"; };
 		4EF57CA5279FEED2000CFD0E /* Regex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Regex.swift; sourceTree = "<group>"; };
@@ -133,7 +137,6 @@
 				4A9D7F08044021DF8ECFF7AF /* Pods-TextFieldKitExample.debug.xcconfig */,
 				AC6AE9A068B84A0F58EAD619 /* Pods-TextFieldKitExample.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -171,6 +174,7 @@
 				4EF57CA5279FEED2000CFD0E /* Regex.swift */,
 				4E2DF746274D111A0020AE25 /* UITextView+Placeholder.h */,
 				4E2DF747274D111B0020AE25 /* UITextView+Placeholder.m */,
+				4EB6F39227A7E3E2006A01BE /* FieldValiadtion.swift */,
 				4EA57E212746588800C183A2 /* Resources */,
 				4E2DF74D274D32190020AE25 /* UITextViewEx.swift */,
 			);
@@ -183,6 +187,7 @@
 				4E46B773272A8B7D00DCB3B4 /* AppDelegate.swift */,
 				4E46B775272A8B7D00DCB3B4 /* SceneDelegate.swift */,
 				4E46B777272A8B7D00DCB3B4 /* ViewController.swift */,
+				4EB6F39027A7DD99006A01BE /* AppFields.swift */,
 				4EA60C1F274FD85400AC9745 /* SecondViewController.swift */,
 				4EA60C21274FD9BE00AC9745 /* ThiredViewController.swift */,
 				4EF57CA727A011DC000CFD0E /* ForthViewController.swift */,
@@ -408,6 +413,7 @@
 				4EA57E2527466D5C00C183A2 /* DropDownTextField.swift in Sources */,
 				4E2DF749274D111B0020AE25 /* UITextView+Placeholder.m in Sources */,
 				4EDF13FE278AFE840095A02D /* BusinessFields.swift in Sources */,
+				4EB6F39327A7E3E3006A01BE /* FieldValiadtion.swift in Sources */,
 				4EB6807D274A573000363E69 /* PhoneNumberField.swift in Sources */,
 				4E2DF74E274D32190020AE25 /* UITextViewEx.swift in Sources */,
 				4EF57CA6279FEED2000CFD0E /* Regex.swift in Sources */,
@@ -427,6 +433,7 @@
 				4E46B774272A8B7D00DCB3B4 /* AppDelegate.swift in Sources */,
 				4E46B776272A8B7D00DCB3B4 /* SceneDelegate.swift in Sources */,
 				4EA60C22274FD9BE00AC9745 /* ThiredViewController.swift in Sources */,
+				4EB6F39127A7DD9A006A01BE /* AppFields.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

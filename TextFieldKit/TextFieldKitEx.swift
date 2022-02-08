@@ -96,6 +96,8 @@ case address="Address"
 case requirements="Requirements"
 case phoneNumber="PhoneNumber"
 case location="Location"
+case city="City"
+case region="Region"
 
     
 var title:String{
@@ -109,7 +111,7 @@ case empty(_ name:String)
 case notValid(_ name:String)
 case passwordNotMatch
 case passwordLessThan6
-case other
+case other(_ message:String)
 var message:String{
     
     switch self{
@@ -121,8 +123,8 @@ var message:String{
         return "PasswordNotMatch".customLocalize_
     case .passwordLessThan6:
         return "PasswordMustHave6".customLocalize_
-    case .other:
-        return ""
+    case .other(let message):
+        return message
     }
 }
 }
@@ -142,74 +144,6 @@ var placeholder:String? {set get};
 // MARK: GeneralConnection
 protocol GeneralConnection:Field,FieldValiadtion{
 
-}
-
-extension GeneralFieldViewProrocol where Self: GeneralConnection {
-    func emptyError()->[FieldError]{
-        if ((self.text?.count ?? 0) == 0) || (self.text?.isEmpty ?? true) {
-        return [.empty(self.fieldType.title)]
-        }
-        return []
-    }
-    func newPassword()->[FieldError]{
-        var messages:[FieldError]=[FieldError]();
-        if ((self.text?.count ?? 0) == 0) ||  (self.text?.isEmpty ?? true){
-            messages.append(.empty(self.fieldType.title))
-        }else
-        if (self.text?.count ?? 0) < 6 {
-            messages.append(.passwordLessThan6)
-        }
-        return messages;
-    }
-    func confirmPassword(_ txtNewPasswordField:NewPasswordField?)->[FieldError]{
-        var messages:[FieldError]=[FieldError]();
-        if ((self.text?.count ?? 0) == 0) || (self.text?.isEmpty ?? true){
-            messages.append(.empty(self.fieldType.title))
-        }else
-        if txtNewPasswordField?.text != self.text {
-            messages.append(.passwordNotMatch)
-        }
-        return messages;
-    }
-    func email()->[FieldError]{
-        var messages:[FieldError]=[FieldError]();
-        if ((self.text?.count ?? 0) == 0) || (self.text?.isEmpty ?? true){
-            messages.append(.empty(self.fieldType.title))
-        }else
-        if  RegularExpression.email.regex.matches(input: self.text ?? "")==false {
-            messages.append(.notValid(self.fieldType.title))
-    }
-     return messages
-    }
-    func phoneNumber()->[FieldError]{
-        var messages:[FieldError]=[FieldError]();
-        var countryCode = (self as? AdvancedPhoneNumber)?.countryObject
-
-        if countryCode == nil || (self.text?.isEmpty ?? true){
-            messages.append(.empty(self.fieldType.title))
-        }else
-        if  CountryListManager.shared.validatePhoneNumber(countryCode: countryCode, phoneNumber: self.text) == false {
-            messages.append(.notValid(self.fieldType.title))
-        }
-     return messages
-    }
-    func location()->[FieldError]{
-    var messages:[FieldError]=[FieldError]();
-        let locationItem = (self as? LocationTextField)?.locationItem
-        if locationItem == nil || (self.text?.isEmpty ?? true){
-            messages.append(.empty(self.fieldType.title))
-        }
-        return messages;
-    }
-}
-extension GeneralFieldViewProrocol where Self: FieldValiadtion {
-    // validation
-    func emptyError()->[FieldError]{
-        if ((self.text?.count ?? 0) == 0)  || (self.text?.isEmpty ?? true){
-        return [.empty(self.placeholder ?? "")]
-        }
-        return []
-    }
 }
 public extension Array where Element == FieldError {
     var valid:Bool{

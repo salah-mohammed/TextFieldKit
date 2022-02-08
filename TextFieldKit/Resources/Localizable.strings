@@ -18,6 +18,10 @@
 "Address"="Address";
 "Requirements"="Requirements";
 
+"City"="City";
+"DateOfBirth"="Date Of Birth";
+"Region"="Region";
+
 "NotValid"="Sorry, The %@ not valid";
 "TextFeildValidation"  = "Sorry, The %@ is required";
 "PasswordNotMatch"="Password does not match";
