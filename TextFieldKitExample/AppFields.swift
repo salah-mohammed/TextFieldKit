@@ -18,7 +18,7 @@ class CustomCityField:DropDownTextField,FieldValiadtion{
     }
     var messages: [FieldError]{
         if self.object == nil {
-            return [.empty(self.placeholder ?? "")]
+            return  [.empty(self.placeholder ?? ""),.other("dasdsad")]
         }
       return []
     }
