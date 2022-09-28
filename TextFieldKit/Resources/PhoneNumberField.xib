@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -16,7 +16,9 @@
                 <outlet property="imgFlag" destination="qPT-gg-S2G" id="1g2-LL-Iz5"/>
                 <outlet property="layoutConstraintHeightOfIndicator" destination="VAk-kA-0R3" id="38g-35-cme"/>
                 <outlet property="lblCountryCode" destination="I65-7j-L4O" id="W0e-sB-vOx"/>
+                <outlet property="lblError" destination="C73-nV-KAg" id="ia3-Hb-rEo"/>
                 <outlet property="lblTitle" destination="DCT-Qv-ir6" id="5D8-oD-f27"/>
+                <outlet property="stackViewTitleAndText" destination="dq7-sR-H3G" id="Stu-Sc-pUO"/>
                 <outlet property="txtField" destination="3do-Bq-RBd" id="B2T-iI-ZvY"/>
                 <outlet property="viewIndicator" destination="SMV-ud-qr0" id="5iz-a5-VVS"/>
             </connections>
@@ -123,6 +125,12 @@
                                 <constraint firstAttribute="height" constant="1" id="VAk-kA-0R3"/>
                             </constraints>
                         </view>
+                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C73-nV-KAg">
+                            <rect key="frame" x="0.0" y="95" width="281" height="0.0"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                            <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                 </stackView>
             </subviews>

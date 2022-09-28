@@ -17,8 +17,12 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
+        txtFirstName.textFieldDidEnd = {
+            self.txtFirstName.error = "aa"
+        }
+        txtAddress.textFieldDidEnd = {
+            self.txtAddress.error = "qwqwqw"
+        }
 //        self.txtFirstName.style = AppDelegate.style;
         txtFirstName.icon = UIImage.init(named:"ic_setting_phone")
         txtFirstName.placeholder = "FirstName";

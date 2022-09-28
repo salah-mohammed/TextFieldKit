@@ -140,11 +140,20 @@ public protocol FieldValiadtion{
 protocol GeneralFieldViewProrocol{
 var text:String? {set get};
 var placeholder:String? {set get};
+var error:String? {set get};
 }
 // MARK: GeneralConnection
 protocol GeneralConnection:Field,FieldValiadtion{
 
 }
+public extension Array where Element == FieldValiadtion {
+//    func showFieldErros(){
+//        for item in self{
+////            (item as? TextField).error = item.messages
+//        }
+//    }
+}
+
 public extension Array where Element == FieldError {
     var valid:Bool{
         return (self.count == 0);

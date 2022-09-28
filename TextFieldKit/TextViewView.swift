@@ -45,6 +45,7 @@ open class TextViewView:UIView,GeneralFieldViewProrocol {
     @IBOutlet weak private var layoutConstraintHeightOfViewBetweenTitleAndField: NSLayoutConstraint?
     
     @IBOutlet weak private var lblTitle: UILabel!
+    @IBOutlet weak private var lblError: UILabel!
     @IBOutlet weak private var txtField: UITextView!
     @IBOutlet weak private var viewIndicator: UIView!
     @IBOutlet weak private var imgIconDown: UIImageView!
@@ -60,6 +61,8 @@ open class TextViewView:UIView,GeneralFieldViewProrocol {
             }
             self.lblTitle.font = self.style.titleFont ?? self.lblTitle.font;
             self.txtField.font = self.style.textFont ?? self.txtField.font
+            self.lblError.textColor = style.errorColor;
+            self.lblError.font = style.errorFont;
             if self.isFirstResponder{
                 self.selectedStyle();
             }else
@@ -69,6 +72,7 @@ open class TextViewView:UIView,GeneralFieldViewProrocol {
                 self.filledStyle();
             }
             self.indicatorHeight = self.style.indicatorHeight;
+            self.textFieldDidEnd=self.style.textFieldDidEnd;
         }
     }
     open var placeholder:String?{
@@ -86,6 +90,12 @@ open class TextViewView:UIView,GeneralFieldViewProrocol {
             return self.txtField.text;
         }
      }
+    open var error: String?{
+        didSet{
+            self.lblError?.isHidden = ((self.error?.count ?? 0) > 0) ? false:true
+            self.lblError?.text = error;
+        }
+    }
     open var spaceBetweenFieldAndIndicator:CGFloat=0{
         didSet{
             self.layoutConstraintHeightOfViewBetweenFieldAndIndicator?.constant = spaceBetweenFieldAndIndicator;
@@ -112,6 +122,11 @@ open class TextViewView:UIView,GeneralFieldViewProrocol {
             self.layoutConstraintHeightOfIndicator.constant = indicatorHeight
         }
     }
+    open var textFieldDidEnd:FieldHandler?
+    open var textFieldDidChange:FieldHandler?
+    open var textFieldDidBeginEditing:FieldHandler?
+
+    
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         xibSetup()
@@ -159,6 +174,7 @@ open class TextViewView:UIView,GeneralFieldViewProrocol {
     }
     open override func awakeFromNib() {
         super.awakeFromNib();
+
         normalStyle()
         let tempIcon = self.icon;
         self.icon = tempIcon;
@@ -240,12 +256,15 @@ open class TextViewView:UIView,GeneralFieldViewProrocol {
 extension TextViewView:UITextViewDelegate{
     public func textViewDidBeginEditing(_ textView: UITextView) {
         self.selectedStyle();
+        textFieldDidBeginEditing?();
     }
     public func textViewDidEndEditing(_ textView: UITextView) {
         self.didEndEditing(textView.text);
+        textFieldDidEnd?();
     }
     public func textViewDidChange(_ textView: UITextView) {
         textView.textViewDidChange(textView);
+        textFieldDidChange?();
     }
 }
 

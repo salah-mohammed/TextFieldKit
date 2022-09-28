@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -16,9 +16,11 @@
                 <outlet property="imgDropDown" destination="IFE-hQ-d4O" id="9L0-Ss-PJg"/>
                 <outlet property="imgIconDown" destination="rFR-6e-rjI" id="zzq-G7-avV"/>
                 <outlet property="layoutConstraintHeightOfIndicator" destination="TRZ-ys-OiM" id="RWa-tF-iOj"/>
+                <outlet property="lblError" destination="kIk-8h-V5n" id="ZdB-58-0TD"/>
                 <outlet property="lblTitle" destination="Nnt-b4-bTk" id="95A-yG-Q6n"/>
                 <outlet property="stackViewDropDown" destination="Z4d-PH-hbq" id="oGV-ln-yYy"/>
                 <outlet property="stackViewIcon" destination="TAr-Eh-P28" id="Q6d-0I-AF4"/>
+                <outlet property="stackViewTitleAndText" destination="bOO-55-QK2" id="5iY-iz-Nqv"/>
                 <outlet property="txtField" destination="XMY-OF-dMA" id="HeF-Mf-fSe"/>
                 <outlet property="viewIndicator" destination="yAR-lu-TlI" id="7cO-aj-ACh"/>
             </connections>
@@ -38,7 +40,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="58" height="94"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rFR-6e-rjI">
-                                            <rect key="frame" x="0.0" y="44" width="50" height="50"/>
+                                            <rect key="frame" x="0.0" y="48" width="50" height="46"/>
                                         </imageView>
                                     </subviews>
                                     <directionalEdgeInsets key="directionalLayoutMargins" top="0.0" leading="0.0" bottom="0.0" trailing="8"/>
@@ -64,7 +66,7 @@
                                     <rect key="frame" x="215" y="0.0" width="66" height="94"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IFE-hQ-d4O">
-                                            <rect key="frame" x="0.0" y="44" width="50" height="50"/>
+                                            <rect key="frame" x="0.0" y="48" width="50" height="46"/>
                                         </imageView>
                                     </subviews>
                                     <directionalEdgeInsets key="directionalLayoutMargins" top="0.0" leading="0.0" bottom="0.0" trailing="16"/>
@@ -78,6 +80,12 @@
                                 <constraint firstAttribute="height" constant="1" id="TRZ-ys-OiM"/>
                             </constraints>
                         </view>
+                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kIk-8h-V5n">
+                            <rect key="frame" x="0.0" y="95" width="281" height="0.0"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                            <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                 </stackView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZsO-hg-TsP">

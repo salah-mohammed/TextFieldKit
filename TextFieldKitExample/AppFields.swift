@@ -7,6 +7,7 @@
 
 import Foundation
 import TextFieldKit
+import UIKit
 // this for app busines only
 class CustomCityField:DropDownTextField,FieldValiadtion{
     var object:Any?{
@@ -16,10 +17,13 @@ class CustomCityField:DropDownTextField,FieldValiadtion{
             }
         }
     }
-    var messages: [FieldError]{
+    var messages:[FieldError]{
         if self.object == nil {
             return  [.empty(self.placeholder ?? ""),.other("dasdsad")]
         }
       return []
     }
+//    func textFieldDidEnd(_ txt:UITextField){
+//        super.textFieldDidEnd(txt);
+//    }
 }

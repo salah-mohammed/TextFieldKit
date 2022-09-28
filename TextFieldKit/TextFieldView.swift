@@ -59,11 +59,16 @@ public class FieldColorStyle:NSCopying{
     public var selected:FieldColorStyle?
     public var filled:FieldColorStyle?
     public var spaceBetweenIconAndField:CGFloat=8
-
+    public var errorColor:UIColor=UIColor.red
+    public var errorFont:UIFont=UIFont.systemFont(ofSize: 11, weight:.regular)
+    public var textFieldDidEnd:FieldHandler?
+    public var textFieldValueChanged:FieldHandler?
+    public var textFieldDidBegin:FieldHandler?
     public override init() {
         super.init();
     }
 }
+public typealias FieldHandler = ()->Void
 open class TextFieldView: UIView,GeneralFieldViewProrocol {
     var nibName:String{
         return "TextFieldView";
@@ -72,15 +77,19 @@ open class TextFieldView: UIView,GeneralFieldViewProrocol {
      private var contentView : UIView?
      @IBOutlet weak private var layoutConstraintHeightOfIndicator: NSLayoutConstraint!
      @IBOutlet weak  var lblTitle: UILabel!
+     @IBOutlet weak private var lblError: UILabel!
      @IBOutlet weak open var txtField: UITextField!
      @IBOutlet weak private var viewIndicator: UIView!
      @IBOutlet weak private var imgIconDown: UIImageView?
      @IBOutlet weak private var stackViewIcon: UIStackView?
+     @IBOutlet weak private var  stackViewTitleAndText: UIStackView?
 
      @objc open dynamic var style = FieldStyle.init(){
         didSet{
             self.lblTitle.font = self.style.titleFont ?? self.lblTitle.font;
             self.txtField.font = self.style.textFont ?? self.txtField.font
+            self.lblError.textColor = self.style.errorColor;
+            self.lblError.font = style.errorFont;
             if self.isFirstResponder{
                 self.selectedStyle();
             }else
@@ -91,6 +100,9 @@ open class TextFieldView: UIView,GeneralFieldViewProrocol {
             }
             self.spaceBetweenIconAndField = self.style.spaceBetweenIconAndField
             self.indicatorHeight = self.style.indicatorHeight;
+            self.textFieldDidEnd=self.style.textFieldDidEnd;
+            self.textFieldValueChanged=self.style.textFieldValueChanged;
+
         }
     }
     open var text:String?{
@@ -108,6 +120,13 @@ open class TextFieldView: UIView,GeneralFieldViewProrocol {
             self.txtField.placeholder = placeholder;
         }
     }
+    open var error: String?{
+        didSet{
+            self.lblError?.isHidden = ((self.error?.count ?? 0) > 0) ? false:true
+            self.lblError?.text = error;
+        }
+    }
+
     open var icon:UIImage?{
          didSet{
             self.imgIconDown?.image=icon;
@@ -125,7 +144,11 @@ open class TextFieldView: UIView,GeneralFieldViewProrocol {
             self.layoutConstraintHeightOfIndicator.constant = indicatorHeight
         }
     }
+    open var textFieldDidEnd:FieldHandler?
+    open var textFieldValueChanged:FieldHandler?
+    open var textFieldDidBegin:FieldHandler?
 
+    
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         xibSetup()
@@ -162,28 +185,33 @@ open class TextFieldView: UIView,GeneralFieldViewProrocol {
     }
     func setupView(){
     }
-    
+    open override func layoutSubviews() {
+        super.layoutSubviews();
+        let  value = (self.lblError?.frame.height ?? 0)
+        self.stackViewTitleAndText?.spacing=value;
+    }
     open override func awakeFromNib() {
         super.awakeFromNib();
         self.txtField.addTarget(self, action: #selector(Self.textFieldDidBegin(_:)), for: .editingDidBegin)
         self.txtField.addTarget(self, action: #selector(Self.textFieldDidEnd(_:)), for: .editingDidEnd)
         self.txtField.addTarget(self, action: #selector(Self.textFieldValueChanged(_:)), for: .valueChanged)
         
-//        let tempStyle = self.style
-//        self.style = tempStyle;
-        
         normalStyle()
         let tempIcon = self.icon;
         self.icon = tempIcon;
-
+        let tempError = self.error;
+        self.error = tempError;
     }
     @objc func textFieldValueChanged(_ txt:UITextField){
+        self.textFieldValueChanged?();
     }
     @objc func textFieldDidBegin(_ txt:UITextField){
         self.selectedStyle();
+        self.textFieldDidBegin?()
     }
     @objc func textFieldDidEnd(_ txt:UITextField){
         self.endEditingField(txt.text);
+        textFieldDidEnd?();
     }
     @IBAction func btnAction(_ sender:UIButton){
     }
