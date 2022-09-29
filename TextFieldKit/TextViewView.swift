@@ -26,8 +26,8 @@ public class TextViewStyle:FieldStyle{
     
 }
 @objcMembers
-open class TextViewView:UIView,GeneralFieldViewProrocol {
-    var nibName:String{
+open class TextViewView:UIView,GeneralFieldViewProrocol,CutomFieldProrocol {
+    public var nibName:String{
         return "TextViewView";
     }
     func caluclateSpace(_ textfield:TextFieldView?)->CGFloat?{
@@ -134,7 +134,9 @@ open class TextViewView:UIView,GeneralFieldViewProrocol {
         super.init(coder: aDecoder)
         xibSetup()
     }
-    
+    public func cutomLayoutSubviews() {
+        
+    }
     func xibSetup(){
         contentView = loadViewFromNib()
         
@@ -188,13 +190,13 @@ open class TextViewView:UIView,GeneralFieldViewProrocol {
     func setup(){
         
     }
-    func selectedStyle(){
+    public func selectedStyle(){
         self.indicatorColor(self.style.selected?.indicatorColor)
         self.lblTitle.textColor = self.style.selected?.titleColor;
         self.txtField.textColor = self.style.selected?.textColor
         self.showLabelTitle();
     }
-    func normalStyle(){
+    public func normalStyle(){
         self.indicatorColor(self.style.normal?.indicatorColor)
         self.lblTitle.textColor = self.style.normal?.titleColor;
         self.txtField.textColor = self.style.normal?.textColor
@@ -202,18 +204,18 @@ open class TextViewView:UIView,GeneralFieldViewProrocol {
             self.hideLabelTitle();
         }
     }
-    func filledStyle(){
+    public func filledStyle(){
         self.indicatorColor(self.style.filled?.indicatorColor)
         self.lblTitle.textColor = self.style.filled?.titleColor;
         self.txtField.textColor = self.style.filled?.textColor
         self.showLabelTitle();
     }
-    func indicatorColor(_ color:UIColor?){
+    private func indicatorColor(_ color:UIColor?){
         UIView.animate(withDuration:0.2, animations: {
             self.viewIndicator.backgroundColor=color
         })
     }
-    func showLabelTitle(){
+    private func showLabelTitle(){
 //        UIView.animate(withDuration:0.3, animations: {
             self.lblTitle.isHidden=false;
             self.viewBetweenTitleAndField?.isHidden=false;
@@ -226,7 +228,7 @@ open class TextViewView:UIView,GeneralFieldViewProrocol {
             }
 //        })
     }
-    func hideLabelTitle(){
+    private func hideLabelTitle(){
 //        UIView.animate(withDuration:0.3, animations: {
             self.lblTitle.isHidden=true;
             self.viewBetweenTitleAndField?.isHidden=true;
@@ -248,7 +250,7 @@ open class TextViewView:UIView,GeneralFieldViewProrocol {
             self.layoutConstraintHeightOfViewBetweenTitleAndField?.constant = 7.0
         }
     }
-    func didEndEditing(_ text:String?){
+    private func didEndEditing(_ text:String?){
         if (text?.count ?? 0) == 0{
         self.normalStyle();
         }else{

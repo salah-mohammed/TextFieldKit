@@ -142,6 +142,14 @@ var text:String? {set get};
 var placeholder:String? {set get};
 var error:String? {set get};
 }
+public protocol CutomFieldProrocol{
+     func selectedStyle();
+     func normalStyle();
+     func filledStyle();
+     func cutomLayoutSubviews()
+     var nibName:String { get}
+
+}
 // MARK: GeneralConnection
 protocol GeneralConnection:Field,FieldValiadtion{
 

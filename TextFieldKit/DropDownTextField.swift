@@ -23,7 +23,7 @@ open class  DropDownStyle:FieldStyle{
 }
 @objcMembers
 open class DropDownTextField: TextFieldView {
-    override var nibName: String{
+    public override var nibName: String{
         return "DropDownTextField";
     }
     public typealias DropDownHandler = ((DropDownTextField)->Void)

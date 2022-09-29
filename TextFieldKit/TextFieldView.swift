@@ -70,8 +70,8 @@ public class FieldColorStyle:NSCopying{
     }
 }
 public typealias FieldHandler = ()->Void
-open class TextFieldView: UIView,GeneralFieldViewProrocol {
-    var nibName:String{
+open class TextFieldView: UIView,GeneralFieldViewProrocol,CutomFieldProrocol {
+    public var nibName:String{
         return "TextFieldView";
     }
      // private
@@ -190,6 +190,9 @@ open class TextFieldView: UIView,GeneralFieldViewProrocol {
     }
     open override func layoutSubviews() {
         super.layoutSubviews();
+        cutomLayoutSubviews();
+    }
+    open func cutomLayoutSubviews(){
         let  value = (self.lblError?.frame.height ?? 0)
         self.stackViewTitleAndText?.spacing=value;
     }
@@ -205,14 +208,14 @@ open class TextFieldView: UIView,GeneralFieldViewProrocol {
         let tempError = self.error;
         self.error = tempError;
     }
-    @objc func textFieldValueChanged(_ txt:UITextField){
+    @objc private func textFieldValueChanged(_ txt:UITextField){
         self.fieldValueChanged?();
     }
-    @objc func textFieldDidBegin(_ txt:UITextField){
+    @objc private func textFieldDidBegin(_ txt:UITextField){
         self.selectedStyle();
         self.fieldDidBegin?()
     }
-    @objc func textFieldDidEnd(_ txt:UITextField){
+    @objc private func textFieldDidEnd(_ txt:UITextField){
         self.endEditingField(txt.text);
         self.fieldDidEnd?();
     }
@@ -221,20 +224,20 @@ open class TextFieldView: UIView,GeneralFieldViewProrocol {
     func setup(){
         
     }
-    func endEditingField(_ text:String?){
+    private func endEditingField(_ text:String?){
         if (text?.count ?? 0) == 0{
         self.normalStyle();
         }else{
         filledStyle();
         }
     }
-    func selectedStyle(){
+    public func selectedStyle(){
         self.indicatorColor(self.style.selected?.indicatorColor)
         self.lblTitle.textColor = self.style.selected?.titleColor;
         self.txtField.textColor = self.style.selected?.textColor
         self.showLabelTitle();
     }
-    func normalStyle(){
+    public func normalStyle(){
         self.indicatorColor(self.style.normal?.indicatorColor)
         self.lblTitle.textColor = self.style.normal?.titleColor;
         self.txtField.textColor = self.style.normal?.textColor
@@ -242,7 +245,7 @@ open class TextFieldView: UIView,GeneralFieldViewProrocol {
         self.hideLabelTitle();
         }
     }
-    func filledStyle(){
+    public func filledStyle(){
         self.indicatorColor(self.style.filled?.indicatorColor)
         self.lblTitle.textColor = self.style.filled?.titleColor;
         self.txtField.textColor = self.style.filled?.textColor
@@ -253,14 +256,14 @@ open class TextFieldView: UIView,GeneralFieldViewProrocol {
         self.viewIndicator.backgroundColor=color
         })
     }
-    func showLabelTitle(){
+    private  func showLabelTitle(){
 //        UIView.transition(with: lblTitle, duration: 0.3,
 //                          options: .allowAnimatedContent,
 //                          animations: {
             self.lblTitle.isHidden=false;
 //                      })
     }
-    func hideLabelTitle(){
+    private func hideLabelTitle(){
 //        UIView.transition(with: lblTitle, duration: 0.3,
 //                          options: .allowAnimatedContent,
 //                          animations: {
