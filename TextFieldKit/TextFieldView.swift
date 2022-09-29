@@ -61,9 +61,10 @@ public class FieldColorStyle:NSCopying{
     public var spaceBetweenIconAndField:CGFloat=8
     public var errorColor:UIColor=UIColor.red
     public var errorFont:UIFont=UIFont.systemFont(ofSize: 11, weight:.regular)
-    public var textFieldDidEnd:FieldHandler?
-    public var textFieldValueChanged:FieldHandler?
-    public var textFieldDidBegin:FieldHandler?
+//    public var fieldDidEnd:FieldHandler?
+//    public var fieldValueChanged:FieldHandler?
+//    public var fieldDidBegin:FieldHandler?
+    
     public override init() {
         super.init();
     }
@@ -100,8 +101,10 @@ open class TextFieldView: UIView,GeneralFieldViewProrocol {
             }
             self.spaceBetweenIconAndField = self.style.spaceBetweenIconAndField
             self.indicatorHeight = self.style.indicatorHeight;
-            self.textFieldDidEnd=self.style.textFieldDidEnd;
-            self.textFieldValueChanged=self.style.textFieldValueChanged;
+            
+//            self.fieldDidEnd=self.style.fieldDidEnd;
+//            self.fieldValueChanged=self.style.fieldValueChanged;
+//            self.fieldDidBegin=self.style.fieldDidBegin;
 
         }
     }
@@ -144,9 +147,9 @@ open class TextFieldView: UIView,GeneralFieldViewProrocol {
             self.layoutConstraintHeightOfIndicator.constant = indicatorHeight
         }
     }
-    open var textFieldDidEnd:FieldHandler?
-    open var textFieldValueChanged:FieldHandler?
-    open var textFieldDidBegin:FieldHandler?
+    open var fieldDidEnd:FieldHandler?
+    open var fieldValueChanged:FieldHandler?
+    open var fieldDidBegin:FieldHandler?
 
     
     required public init?(coder aDecoder: NSCoder) {
@@ -203,15 +206,15 @@ open class TextFieldView: UIView,GeneralFieldViewProrocol {
         self.error = tempError;
     }
     @objc func textFieldValueChanged(_ txt:UITextField){
-        self.textFieldValueChanged?();
+        self.fieldValueChanged?();
     }
     @objc func textFieldDidBegin(_ txt:UITextField){
         self.selectedStyle();
-        self.textFieldDidBegin?()
+        self.fieldDidBegin?()
     }
     @objc func textFieldDidEnd(_ txt:UITextField){
         self.endEditingField(txt.text);
-        textFieldDidEnd?();
+        self.fieldDidEnd?();
     }
     @IBAction func btnAction(_ sender:UIButton){
     }

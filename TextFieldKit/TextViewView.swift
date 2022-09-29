@@ -72,7 +72,10 @@ open class TextViewView:UIView,GeneralFieldViewProrocol {
                 self.filledStyle();
             }
             self.indicatorHeight = self.style.indicatorHeight;
-            self.textFieldDidEnd=self.style.textFieldDidEnd;
+            
+//            self.fieldDidEnd=self.style.fieldDidEnd;
+//            self.fieldDidChange=self.style.fieldValueChanged;
+//            self.fieldDidBeginEditing=self.style.fieldDidBegin;
         }
     }
     open var placeholder:String?{
@@ -122,9 +125,9 @@ open class TextViewView:UIView,GeneralFieldViewProrocol {
             self.layoutConstraintHeightOfIndicator.constant = indicatorHeight
         }
     }
-    open var textFieldDidEnd:FieldHandler?
-    open var textFieldDidChange:FieldHandler?
-    open var textFieldDidBeginEditing:FieldHandler?
+    open var fieldDidEnd:FieldHandler?
+    open var fieldDidChange:FieldHandler?
+    open var fieldDidBeginEditing:FieldHandler?
 
     
     required public init?(coder aDecoder: NSCoder) {
@@ -256,15 +259,15 @@ open class TextViewView:UIView,GeneralFieldViewProrocol {
 extension TextViewView:UITextViewDelegate{
     public func textViewDidBeginEditing(_ textView: UITextView) {
         self.selectedStyle();
-        textFieldDidBeginEditing?();
+        fieldDidBeginEditing?();
     }
     public func textViewDidEndEditing(_ textView: UITextView) {
         self.didEndEditing(textView.text);
-        textFieldDidEnd?();
+        fieldDidEnd?();
     }
     public func textViewDidChange(_ textView: UITextView) {
         textView.textViewDidChange(textView);
-        textFieldDidChange?();
+        fieldDidChange?();
     }
 }
 

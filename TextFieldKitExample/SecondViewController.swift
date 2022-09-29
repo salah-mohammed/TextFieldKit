@@ -24,8 +24,11 @@ class SecondViewController: UIViewController {
 //        self.txtFirstName.style = AppDelegate.style;
         txtFirstName.icon = UIImage.init(named:"ic_setting_phone")
         txtFirstName.placeholder = "FirstName";
-        self.txtFirstName.textFieldDidEnd = {
+        self.txtFirstName.fieldDidEnd = {
             self.txtFirstName.error="aa"
+        }
+        txtAddress.fieldDidEnd = {
+            self.txtAddress.error = "qwqwqw"
         }
 //        self.txtLastName.style = AppDelegate.style;
         txtLastName.placeholder = "LastName";
