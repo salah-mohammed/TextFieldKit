@@ -21,14 +21,15 @@ open class TextFieldView: UIView,GeneralFieldViewProrocol,CutomFieldProrocol {
     }
      // private
      private var contentView : UIView?
-     @IBOutlet weak private var layoutConstraintHeightOfIndicator: NSLayoutConstraint?
      @IBOutlet weak  var lblTitle: UILabel!
      @IBOutlet weak private var lblError: UILabel!
      @IBOutlet weak open var txtField: UITextField!
-     @IBOutlet weak private var viewIndicator: UIView?
-     @IBOutlet weak private var imgIconDown: UIImageView?
      @IBOutlet weak private var stackViewIcon: UIStackView?
      @IBOutlet weak private var  stackViewTitleAndText: UIStackView?
+     @IBOutlet weak private var imgIcon: UIImageView?
+    // MARK:Optional
+     @IBOutlet weak private var layoutConstraintHeightOfIndicator: NSLayoutConstraint?
+     @IBOutlet weak private var viewIndicator: UIView?
 
      @objc open dynamic var style = FieldStyle.init(){
         didSet{
@@ -77,8 +78,8 @@ open class TextFieldView: UIView,GeneralFieldViewProrocol,CutomFieldProrocol {
 
     open var icon:UIImage?{
          didSet{
-            self.imgIconDown?.image=icon;
-            self.imgIconDown?.superview?.isHidden = (self.imgIconDown?.image == nil)
+            self.imgIcon?.image=icon;
+            self.imgIcon?.superview?.isHidden = (self.imgIcon?.image == nil)
 
          }
      }
@@ -92,10 +93,13 @@ open class TextFieldView: UIView,GeneralFieldViewProrocol,CutomFieldProrocol {
             self.layoutConstraintHeightOfIndicator?.constant = indicatorHeight
         }
     }
-    open var fieldDidEnd:FieldHandler?
-    open var fieldValueChanged:FieldHandler?
-    open var fieldDidBegin:FieldHandler?
-
+    open var fieldDidEnd:FieldHandler?=TextFieldView.fieldDidEnd
+    open var fieldValueChanged:FieldHandler?=TextFieldView.fieldValueChanged
+    open var fieldDidBegin:FieldHandler?=TextFieldView.fieldDidBegin
+    
+    public static var fieldDidEnd:FieldHandler?
+    public static var fieldValueChanged:FieldHandler?
+    public static var fieldDidBegin:FieldHandler?
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

@@ -12,7 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CutomUIField" customModule="TextFieldKitExample" customModuleProvider="target">
             <connections>
-                <outlet property="imgIconDown" destination="H4t-Ha-dVE" id="0No-LZ-K0n"/>
+                <outlet property="imgIcon" destination="H4t-Ha-dVE" id="i41-P5-w7v"/>
                 <outlet property="lblError" destination="vZ0-Sm-7nA" id="lEN-RB-TFD"/>
                 <outlet property="lblTitle" destination="C2J-q2-NAX" id="JHD-Bd-kEW"/>
                 <outlet property="stackViewIcon" destination="9ht-HK-Ksk" id="je9-4M-NG9"/>

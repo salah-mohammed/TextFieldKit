@@ -144,38 +144,9 @@ var message:String{
     }
 }
 }
-// MARK: Field
-public protocol Field{
-    var fieldType:FieldType {get};
-}
-// MARK: FieldValiadtion
-public protocol FieldValiadtion{
-    var messages:[FieldError] {get};
-}
-// MARK: GeneralFieldViewProrocol
-public protocol GeneralFieldViewProrocol{
-var text:String? {set get};
-var placeholder:String? {set get};
-var error:String? {set get};
-}
-public protocol CutomFieldProrocol{
-    func selectedStyle();
-     func normalStyle();
-     func filledStyle();
-     func cutomLayoutSubviews()
-     var nibName:String { get}
 
-}
-// MARK: GeneralConnection
-protocol GeneralConnection:Field,FieldValiadtion{
-
-}
 public extension Array where Element == FieldValiadtion {
-//    func showFieldErros(){
-//        for item in self{
-////            (item as? TextField).error = item.messages
-//        }
-//    }
+
 }
 
 public extension Array where Element == FieldError {

@@ -40,19 +40,19 @@ open class TextViewView:UIView,GeneralFieldViewProrocol,CutomFieldProrocol {
     }
     // private
     private var contentView : UIView?
-    @IBOutlet weak private var layoutConstraintHeightOfIndicator: NSLayoutConstraint?
     @IBOutlet weak private var layoutConstraintHeightOfViewBetweenFieldAndIndicator: NSLayoutConstraint?
     @IBOutlet weak private var layoutConstraintHeightOfViewBetweenTitleAndField: NSLayoutConstraint?
     
     @IBOutlet weak private var lblTitle: UILabel!
     @IBOutlet weak private var lblError: UILabel!
     @IBOutlet weak private var txtField: UITextView!
-    @IBOutlet weak private var viewIndicator: UIView?
-    @IBOutlet weak private var imgIconDown: UIImageView!
-    @IBOutlet weak open var txtOther:TextFieldView?
+    @IBOutlet weak private var imgIcon: UIImageView!
     @IBOutlet weak private var viewBetweenTitleAndField:UIView?
-    
-    //
+    // MARK:Optional
+    @IBOutlet weak open var txtOther:TextFieldView?
+    @IBOutlet weak private var viewIndicator: UIView?
+    @IBOutlet weak private var layoutConstraintHeightOfIndicator: NSLayoutConstraint?
+
     @objc open dynamic var style = TextViewStyle.init(){
         didSet{
             if let style:TextViewStyle = style as? TextViewStyle {
@@ -72,10 +72,6 @@ open class TextViewView:UIView,GeneralFieldViewProrocol,CutomFieldProrocol {
                 self.filledStyle();
             }
             self.indicatorHeight = self.style.indicatorHeight;
-            
-//            self.fieldDidEnd=self.style.fieldDidEnd;
-//            self.fieldDidChange=self.style.fieldValueChanged;
-//            self.fieldDidBeginEditing=self.style.fieldDidBegin;
         }
     }
     open var placeholder:String?{
@@ -116,8 +112,8 @@ open class TextViewView:UIView,GeneralFieldViewProrocol,CutomFieldProrocol {
     }
     open var icon:UIImage?{
         didSet{
-            self.imgIconDown.image=icon;
-            self.imgIconDown.superview?.isHidden = (self.imgIconDown.image == nil)
+            self.imgIcon.image=icon;
+            self.imgIcon.superview?.isHidden = (self.imgIcon.image == nil)
         }
     }
     public var indicatorHeight:CGFloat=1{
@@ -125,10 +121,13 @@ open class TextViewView:UIView,GeneralFieldViewProrocol,CutomFieldProrocol {
             self.layoutConstraintHeightOfIndicator?.constant = indicatorHeight
         }
     }
-    open var fieldDidEnd:FieldHandler?
-    open var fieldDidChange:FieldHandler?
-    open var fieldDidBeginEditing:FieldHandler?
-
+    open var fieldDidEnd:FieldHandler?=TextViewView.fieldDidEnd
+    open var fieldDidChange:FieldHandler?=TextViewView.fieldDidChange
+    open var fieldDidBeginEditing:FieldHandler?=TextViewView.fieldDidBeginEditing
+    
+    public static var fieldDidEnd:FieldHandler?
+    public static var fieldDidChange:FieldHandler?
+    public static var fieldDidBeginEditing:FieldHandler?
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
