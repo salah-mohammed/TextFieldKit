@@ -22,7 +22,8 @@ var placeholder:String? {set get};
 var error:String? {set get};
 }
 public protocol CutomFieldProrocol{
-    func selectedStyle();
+     func cutomLayoutSubviews();
+     func selectedStyle();
      func normalStyle();
      func filledStyle();
      var nibName:String { get}

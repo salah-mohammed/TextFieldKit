@@ -29,6 +29,7 @@ public class TextViewStyle:FieldStyle{
 }
 @objcMembers
 open class TextViewView:UIView,GeneralFieldViewProrocol,CutomFieldProrocol {
+    // MARK:Customisable
     public var nibName:String{
         return "TextViewView";
     }
@@ -58,10 +59,7 @@ open class TextViewView:UIView,GeneralFieldViewProrocol,CutomFieldProrocol {
 
     @objc open dynamic var style = TextViewStyle.init(){
         didSet{
-            if let style:TextViewStyle = style as? TextViewStyle {
-                self.spaceBetweenFieldAndIndicator = style.spaceBetweenFieldAndIndicator;
-                self.spaceBetweenTitleAndField = style.spaceBetweenTitleAndField;
-            }
+            self.setSpacesCalculations();
             self.lblTitle.font = self.style.titleFont ?? self.lblTitle.font;
             self.txtField.font = self.style.textFont ?? self.txtField.font
             self.lblError.textColor = style.errorColor;
@@ -136,9 +134,6 @@ open class TextViewView:UIView,GeneralFieldViewProrocol,CutomFieldProrocol {
         super.init(coder: aDecoder)
         xibSetup()
     }
-    public func cutomLayoutSubviews() {
-        
-    }
     func xibSetup(){
         contentView = loadViewFromNib()
         
@@ -195,13 +190,19 @@ open class TextViewView:UIView,GeneralFieldViewProrocol,CutomFieldProrocol {
     func setup(){
         
     }
-    public func selectedStyle(){
+    // MARK:Customisable
+    open func cutomLayoutSubviews(){
+        
+    }
+    // MARK:Customisable
+    open func selectedStyle(){
         self.indicatorColor(self.style.selected?.indicatorColor)
         self.lblTitle.textColor = self.style.selected?.titleColor;
         self.txtField.textColor = self.style.selected?.textColor
         self.showLabelTitle();
     }
-    public func normalStyle(){
+    // MARK:Customisable
+    open func normalStyle(){
         self.indicatorColor(self.style.normal?.indicatorColor)
         self.lblTitle.textColor = self.style.normal?.titleColor;
         self.txtField.textColor = self.style.normal?.textColor
@@ -209,12 +210,20 @@ open class TextViewView:UIView,GeneralFieldViewProrocol,CutomFieldProrocol {
             self.hideLabelTitle();
         }
     }
-    public func filledStyle(){
+    // MARK:Customisable
+    open func filledStyle(){
         self.indicatorColor(self.style.filled?.indicatorColor)
         self.lblTitle.textColor = self.style.filled?.titleColor;
         self.txtField.textColor = self.style.filled?.textColor
         self.showLabelTitle();
     }
+    // MARK:Customisable
+    open func setSpacesCalculations(){
+         if let style:TextViewStyle = style as? TextViewStyle {
+             self.spaceBetweenFieldAndIndicator = style.spaceBetweenFieldAndIndicator;
+             self.spaceBetweenTitleAndField = style.spaceBetweenTitleAndField;
+         }
+     }
     private func indicatorColor(_ color:UIColor?){
         UIView.animate(withDuration:0.2, animations: {
             self.viewIndicator?.backgroundColor=color

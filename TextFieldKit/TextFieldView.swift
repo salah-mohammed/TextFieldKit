@@ -16,6 +16,7 @@ import PhoneKit
 
 public typealias FieldHandler = (GeneralFieldViewProrocol)->Void
 open class TextFieldView: UIView,GeneralFieldViewProrocol,CutomFieldProrocol {
+    // MARK:Customisable
     open var nibName:String{
         return "TextFieldView";
     }
@@ -141,13 +142,6 @@ open class TextFieldView: UIView,GeneralFieldViewProrocol,CutomFieldProrocol {
         super.layoutSubviews();
         cutomLayoutSubviews();
     }
-    open func cutomLayoutSubviews(){
-        let  value = (self.lblError?.frame.height ?? 0)
-        let  secondValue = (self.error?.count ?? 0) > 0 ? (value/2):0
-        self.stackViewTitleAndText?.spacing = secondValue
-        self.stackViewTitleAndText?.directionalLayoutMargins = NSDirectionalEdgeInsets.init(top: 0, leading: 0, bottom: secondValue, trailing: 0)
-
-    }
     open override func awakeFromNib() {
         super.awakeFromNib();
         self.txtField.addTarget(self, action: #selector(Self.textFieldDidBegin(_:)), for: .editingDidBegin)
@@ -183,12 +177,21 @@ open class TextFieldView: UIView,GeneralFieldViewProrocol,CutomFieldProrocol {
         filledStyle();
         }
     }
+    // MARK:Customisable
+    open func cutomLayoutSubviews(){
+        let  value = (self.lblError?.frame.height ?? 0)
+        let  secondValue = (self.error?.count ?? 0) > 0 ? (value/2):0
+        self.stackViewTitleAndText?.spacing = secondValue
+        self.stackViewTitleAndText?.directionalLayoutMargins = NSDirectionalEdgeInsets.init(top: 0, leading: 0, bottom: secondValue, trailing: 0)
+    }
+    // MARK:Customisable
     open func selectedStyle(){
         self.indicatorColor(self.style.selected?.indicatorColor)
         self.lblTitle.textColor = self.style.selected?.titleColor;
         self.txtField.textColor = self.style.selected?.textColor
         self.showLabelTitle();
     }
+    // MARK:Customisable
     open func normalStyle(){
         self.indicatorColor(self.style.normal?.indicatorColor)
         self.lblTitle.textColor = self.style.normal?.titleColor;
@@ -197,6 +200,7 @@ open class TextFieldView: UIView,GeneralFieldViewProrocol,CutomFieldProrocol {
         self.hideLabelTitle();
         }
     }
+    // MARK:Customisable
     open func filledStyle(){
         self.indicatorColor(self.style.filled?.indicatorColor)
         self.lblTitle.textColor = self.style.filled?.titleColor;
