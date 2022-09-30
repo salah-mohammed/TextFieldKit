@@ -33,9 +33,9 @@ class ForthViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-//        txtCity.handler = { in
-//            txtCity.error = txtPasswordField.messages.string
-//        }
+        txtFullName.fieldDidEnd = { _ in
+            self.txtFullName.error = "AA"
+        }
         txtCity.placeholder = "City";
         txtCity.icon = UIImage.init(named:"ic_setting_phone")
         txtCity.dropDownIcon = UIImage.init(named:"ic_drop_down")

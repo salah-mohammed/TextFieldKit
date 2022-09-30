@@ -27,7 +27,7 @@ open class TextFieldView: UIView,GeneralFieldViewProrocol,CutomFieldProrocol {
      @IBOutlet weak private var stackViewIcon: UIStackView?
      @IBOutlet weak private var  stackViewTitleAndText: UIStackView?
      @IBOutlet weak private var imgIcon: UIImageView?
-    // MARK:Optional
+     // MARK:Optional
      @IBOutlet weak private var layoutConstraintHeightOfIndicator: NSLayoutConstraint?
      @IBOutlet weak private var viewIndicator: UIView?
 

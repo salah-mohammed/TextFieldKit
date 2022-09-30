@@ -9,13 +9,15 @@
 
 import UIKit
 
+// MARK:  default = 7
 public enum SpaceStyle{
-    // default = 7
-    case auto
+    // MARK:  calclaute TextView spaces depend on TextField
+    case auto // MARK: for space between (TitleAndField) and (FieldAndIndicator)
     case cutome(CGFloat)
 }
 @objcMembers
 public class TextViewStyle:FieldStyle{
+    // MARK: you can't use spaceBetweenFieldAndIndicator while you use spaceBetweenTitleAndField = auto
     open var spaceBetweenFieldAndIndicator:CGFloat=0
     open var spaceBetweenTitleAndField:SpaceStyle = .auto
     
@@ -49,6 +51,7 @@ open class TextViewView:UIView,GeneralFieldViewProrocol,CutomFieldProrocol {
     @IBOutlet weak private var imgIcon: UIImageView!
     @IBOutlet weak private var viewBetweenTitleAndField:UIView?
     // MARK:Optional
+    // txtOther calclaute TextView spaces depend on TextField
     @IBOutlet weak open var txtOther:TextFieldView?
     @IBOutlet weak private var viewIndicator: UIView?
     @IBOutlet weak private var layoutConstraintHeightOfIndicator: NSLayoutConstraint?
