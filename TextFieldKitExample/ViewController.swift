@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         txtFirstName.fieldDidEnd = { _ in
-            self.txtFirstName.error = "aa"
+            self.txtFirstName.error = "A"
         }
         txtAddress.fieldDidEnd = { _ in
             self.txtAddress.error = "qwqwqw"

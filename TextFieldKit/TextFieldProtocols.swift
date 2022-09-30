@@ -25,7 +25,6 @@ public protocol CutomFieldProrocol{
     func selectedStyle();
      func normalStyle();
      func filledStyle();
-     func cutomLayoutSubviews()
      var nibName:String { get}
 
 }

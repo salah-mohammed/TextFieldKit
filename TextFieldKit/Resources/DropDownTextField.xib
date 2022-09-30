@@ -14,7 +14,7 @@
             <connections>
                 <outlet property="btnDropDown" destination="ZsO-hg-TsP" id="NIu-HG-6jd"/>
                 <outlet property="imgDropDown" destination="IFE-hQ-d4O" id="9L0-Ss-PJg"/>
-                <outlet property="imgIconDown" destination="rFR-6e-rjI" id="zzq-G7-avV"/>
+                <outlet property="imgIcon" destination="rFR-6e-rjI" id="RRU-Yp-xCG"/>
                 <outlet property="layoutConstraintHeightOfIndicator" destination="TRZ-ys-OiM" id="RWa-tF-iOj"/>
                 <outlet property="lblError" destination="kIk-8h-V5n" id="ZdB-58-0TD"/>
                 <outlet property="lblTitle" destination="Nnt-b4-bTk" id="95A-yG-Q6n"/>
@@ -40,7 +40,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="58" height="94"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rFR-6e-rjI">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="94"/>
+                                            <rect key="frame" x="0.0" y="48" width="50" height="46"/>
                                         </imageView>
                                     </subviews>
                                     <directionalEdgeInsets key="directionalLayoutMargins" top="0.0" leading="0.0" bottom="0.0" trailing="8"/>
@@ -48,14 +48,14 @@
                                 <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="bOO-55-QK2">
                                     <rect key="frame" x="58" y="0.0" width="157" height="94"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nnt-b4-bTk">
-                                            <rect key="frame" x="0.0" y="0.0" width="157" height="21.666666666666668"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1" verticalCompressionResistancePriority="1000" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nnt-b4-bTk">
+                                            <rect key="frame" x="0.0" y="0.0" width="157" height="21.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <color key="textColor" name="#A5A7A3"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XMY-OF-dMA">
-                                            <rect key="frame" x="0.0" y="21.666666666666664" width="157" height="72.333333333333343"/>
+                                            <rect key="frame" x="0.0" y="21.5" width="157" height="72.5"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
@@ -66,7 +66,7 @@
                                     <rect key="frame" x="215" y="0.0" width="66" height="94"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IFE-hQ-d4O">
-                                            <rect key="frame" x="0.0" y="22" width="50" height="50"/>
+                                            <rect key="frame" x="0.0" y="48" width="50" height="46"/>
                                         </imageView>
                                     </subviews>
                                     <directionalEdgeInsets key="directionalLayoutMargins" top="0.0" leading="0.0" bottom="0.0" trailing="16"/>

@@ -47,11 +47,6 @@ open class TextFieldView: UIView,GeneralFieldViewProrocol,CutomFieldProrocol {
             }
             self.spaceBetweenIconAndField = self.style.spaceBetweenIconAndField
             self.indicatorHeight = self.style.indicatorHeight;
-            
-//            self.fieldDidEnd=self.style.fieldDidEnd;
-//            self.fieldValueChanged=self.style.fieldValueChanged;
-//            self.fieldDidBegin=self.style.fieldDidBegin;
-
         }
     }
     open var text:String?{
@@ -73,6 +68,7 @@ open class TextFieldView: UIView,GeneralFieldViewProrocol,CutomFieldProrocol {
         didSet{
             self.lblError?.isHidden = ((self.error?.count ?? 0) > 0) ? false:true
             self.lblError?.text = error;
+            self.cutomLayoutSubviews();
         }
     }
 
@@ -147,7 +143,10 @@ open class TextFieldView: UIView,GeneralFieldViewProrocol,CutomFieldProrocol {
     }
     open func cutomLayoutSubviews(){
         let  value = (self.lblError?.frame.height ?? 0)
-        self.stackViewTitleAndText?.spacing=value;
+        let  secondValue = (self.error?.count ?? 0) > 0 ? (value/2):0
+        self.stackViewTitleAndText?.spacing = secondValue
+        self.stackViewTitleAndText?.directionalLayoutMargins = NSDirectionalEdgeInsets.init(top: 0, leading: 0, bottom: secondValue, trailing: 0)
+
     }
     open override func awakeFromNib() {
         super.awakeFromNib();

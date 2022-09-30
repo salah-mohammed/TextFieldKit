@@ -107,6 +107,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         TextFieldView.appearance().style = AppStyle.textViewStyle;
         TextViewView.appearance().style = AppStyle.textViewStyle;
         DropDownTextField.appearance().style = AppStyle.dropDownStyle;
+        
+        TextFieldView.fieldDidEnd = { field in
+        let messages = (field as? FieldValiadtion)?.messages
+            (field as? TextFieldView)?.error = messages?.valid == false ? messages?.string ?? "":nil
+        }
+        TextViewView.fieldDidEnd = { field in
+        let messages = (field as? FieldValiadtion)?.messages
+        (field as? TextFieldView)?.error = messages?.valid == false ? messages?.string ?? "":nil
+        }
+       
         // Override point for customization after application launch.
         return true
     }

@@ -20,9 +20,7 @@ open class CutomUIField: TextFieldView {
     open override func filledStyle(){
         
     }
-    open override func cutomLayoutSubviews(){
-        
-    }
+
     open override var nibName:String { return "CutomUIField"}
     /*
     // Only override draw() if you perform custom drawing.
