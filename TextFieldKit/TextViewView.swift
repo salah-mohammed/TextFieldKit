@@ -179,6 +179,7 @@ open class TextViewView:UIView,GeneralFieldViewProrocol,CutomFieldProrocol {
     }
     open override func awakeFromNib() {
         super.awakeFromNib();
+        self.lblError.isHidden=true;
 
         normalStyle()
         let tempIcon = self.icon;

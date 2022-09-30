@@ -69,7 +69,9 @@ open class TextFieldView: UIView,GeneralFieldViewProrocol,CutomFieldProrocol {
         didSet{
             self.lblError?.isHidden = ((self.error?.count ?? 0) > 0) ? false:true
             self.lblError?.text = error;
+            DispatchQueue.main.asyncAfter(deadline: .now()+0.2) {
             self.cutomLayoutSubviews();
+            }
         }
     }
 
@@ -144,6 +146,7 @@ open class TextFieldView: UIView,GeneralFieldViewProrocol,CutomFieldProrocol {
     }
     open override func awakeFromNib() {
         super.awakeFromNib();
+        self.lblError.isHidden=true;
         self.txtField.addTarget(self, action: #selector(Self.textFieldDidBegin(_:)), for: .editingDidBegin)
         self.txtField.addTarget(self, action: #selector(Self.textFieldDidEnd(_:)), for: .editingDidEnd)
         self.txtField.addTarget(self, action: #selector(Self.textFieldValueChanged(_:)), for: .valueChanged)
