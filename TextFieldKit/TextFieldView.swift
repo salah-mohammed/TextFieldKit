@@ -10,77 +10,22 @@
 import UIKit
 #if canImport(PhoneKit)
 import PhoneKit
-
 #endif
 
-extension String {
-    func height(withConstrainedWidth width: CGFloat, font: UIFont) -> CGFloat {
-        let constraintRect = CGSize(width: width, height: .greatestFiniteMagnitude)
-        let boundingBox = self.boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: font], context: nil)
-    
-        return ceil(boundingBox.height)
-    }
 
-    func width(withConstrainedHeight height: CGFloat, font: UIFont) -> CGFloat {
-        let constraintRect = CGSize(width: .greatestFiniteMagnitude, height: height)
-        let boundingBox = self.boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: font], context: nil)
 
-        return ceil(boundingBox.width)
-    }
-}
-public class FieldColorStyle:NSCopying{
-    
-    public func copy(with zone: NSZone? = nil) -> Any {
-        let copy = FieldColorStyle()
-        return copy
-    }
-    public var textColor:UIColor?
-    public var indicatorColor:UIColor?
-    public var titleColor:UIColor?
-    public init(_ textColor:UIColor,_ indicatorColor:UIColor,_ titleColor:UIColor) {
-        self.textColor=textColor
-        self.indicatorColor=indicatorColor
-        self.titleColor=titleColor;
-    }
-    init(){
-        
-    }
-}
-@objc open class FieldStyle:NSObject,NSCopying{
-    public func copy(with zone: NSZone? = nil) -> Any {
-        let copy = FieldStyle()
-        return copy
-    }
-    public var autoHideTitle:Bool=true;
-    public var indicatorHeight:CGFloat=1
-    public var titleFont:UIFont?
-    public var textFont:UIFont?
-    public var normal:FieldColorStyle?
-    public var selected:FieldColorStyle?
-    public var filled:FieldColorStyle?
-    public var spaceBetweenIconAndField:CGFloat=8
-    public var errorColor:UIColor=UIColor.red
-    public var errorFont:UIFont=UIFont.systemFont(ofSize: 11, weight:.regular)
-//    public var fieldDidEnd:FieldHandler?
-//    public var fieldValueChanged:FieldHandler?
-//    public var fieldDidBegin:FieldHandler?
-    
-    public override init() {
-        super.init();
-    }
-}
 public typealias FieldHandler = ()->Void
 open class TextFieldView: UIView,GeneralFieldViewProrocol,CutomFieldProrocol {
-    public var nibName:String{
+    open var nibName:String{
         return "TextFieldView";
     }
      // private
      private var contentView : UIView?
-     @IBOutlet weak private var layoutConstraintHeightOfIndicator: NSLayoutConstraint!
+     @IBOutlet weak private var layoutConstraintHeightOfIndicator: NSLayoutConstraint?
      @IBOutlet weak  var lblTitle: UILabel!
      @IBOutlet weak private var lblError: UILabel!
      @IBOutlet weak open var txtField: UITextField!
-     @IBOutlet weak private var viewIndicator: UIView!
+     @IBOutlet weak private var viewIndicator: UIView?
      @IBOutlet weak private var imgIconDown: UIImageView?
      @IBOutlet weak private var stackViewIcon: UIStackView?
      @IBOutlet weak private var  stackViewTitleAndText: UIStackView?
@@ -144,7 +89,7 @@ open class TextFieldView: UIView,GeneralFieldViewProrocol,CutomFieldProrocol {
     }
     public var indicatorHeight:CGFloat=1{
         didSet{
-            self.layoutConstraintHeightOfIndicator.constant = indicatorHeight
+            self.layoutConstraintHeightOfIndicator?.constant = indicatorHeight
         }
     }
     open var fieldDidEnd:FieldHandler?
@@ -181,7 +126,11 @@ open class TextFieldView: UIView,GeneralFieldViewProrocol,CutomFieldProrocol {
     func loadViewFromNib() -> UIView! {
         
 //        let nib = UINib(nibName: String(describing: type(of: self)), bundle: Bundle.module)
-        let nib = UINib(nibName:nibName, bundle: Bundle.module)
+        var module:Bundle?
+        if String.fieldsType.contains(nibName){
+            module = Bundle.module;
+        }
+        let nib = UINib(nibName:nibName, bundle:module)
         let view = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
         
         return view
@@ -231,13 +180,13 @@ open class TextFieldView: UIView,GeneralFieldViewProrocol,CutomFieldProrocol {
         filledStyle();
         }
     }
-    public func selectedStyle(){
+    open func selectedStyle(){
         self.indicatorColor(self.style.selected?.indicatorColor)
         self.lblTitle.textColor = self.style.selected?.titleColor;
         self.txtField.textColor = self.style.selected?.textColor
         self.showLabelTitle();
     }
-    public func normalStyle(){
+    open func normalStyle(){
         self.indicatorColor(self.style.normal?.indicatorColor)
         self.lblTitle.textColor = self.style.normal?.titleColor;
         self.txtField.textColor = self.style.normal?.textColor
@@ -245,7 +194,7 @@ open class TextFieldView: UIView,GeneralFieldViewProrocol,CutomFieldProrocol {
         self.hideLabelTitle();
         }
     }
-    public func filledStyle(){
+    open func filledStyle(){
         self.indicatorColor(self.style.filled?.indicatorColor)
         self.lblTitle.textColor = self.style.filled?.titleColor;
         self.txtField.textColor = self.style.filled?.textColor
@@ -253,7 +202,7 @@ open class TextFieldView: UIView,GeneralFieldViewProrocol,CutomFieldProrocol {
     }
     func indicatorColor(_ color:UIColor?){
         UIView.animate(withDuration:0.2, animations: {
-        self.viewIndicator.backgroundColor=color
+        self.viewIndicator?.backgroundColor=color
         })
     }
     private  func showLabelTitle(){

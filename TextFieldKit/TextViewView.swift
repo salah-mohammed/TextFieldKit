@@ -40,14 +40,14 @@ open class TextViewView:UIView,GeneralFieldViewProrocol,CutomFieldProrocol {
     }
     // private
     private var contentView : UIView?
-    @IBOutlet weak private var layoutConstraintHeightOfIndicator: NSLayoutConstraint!
+    @IBOutlet weak private var layoutConstraintHeightOfIndicator: NSLayoutConstraint?
     @IBOutlet weak private var layoutConstraintHeightOfViewBetweenFieldAndIndicator: NSLayoutConstraint?
     @IBOutlet weak private var layoutConstraintHeightOfViewBetweenTitleAndField: NSLayoutConstraint?
     
     @IBOutlet weak private var lblTitle: UILabel!
     @IBOutlet weak private var lblError: UILabel!
     @IBOutlet weak private var txtField: UITextView!
-    @IBOutlet weak private var viewIndicator: UIView!
+    @IBOutlet weak private var viewIndicator: UIView?
     @IBOutlet weak private var imgIconDown: UIImageView!
     @IBOutlet weak open var txtOther:TextFieldView?
     @IBOutlet weak private var viewBetweenTitleAndField:UIView?
@@ -122,7 +122,7 @@ open class TextViewView:UIView,GeneralFieldViewProrocol,CutomFieldProrocol {
     }
     public var indicatorHeight:CGFloat=1{
         didSet{
-            self.layoutConstraintHeightOfIndicator.constant = indicatorHeight
+            self.layoutConstraintHeightOfIndicator?.constant = indicatorHeight
         }
     }
     open var fieldDidEnd:FieldHandler?
@@ -159,8 +159,11 @@ open class TextViewView:UIView,GeneralFieldViewProrocol,CutomFieldProrocol {
         self.setupView();
     }
     func loadViewFromNib() -> UIView! {
-        
-        let nib = UINib(nibName:self.nibName, bundle: Bundle.module)
+        var module:Bundle?
+        if String.fieldsType.contains(nibName){
+            module = Bundle.module;
+        }
+        let nib = UINib(nibName:self.nibName, bundle:module)
         let view = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
         
         return view
@@ -212,7 +215,7 @@ open class TextViewView:UIView,GeneralFieldViewProrocol,CutomFieldProrocol {
     }
     private func indicatorColor(_ color:UIColor?){
         UIView.animate(withDuration:0.2, animations: {
-            self.viewIndicator.backgroundColor=color
+            self.viewIndicator?.backgroundColor=color
         })
     }
     private func showLabelTitle(){
