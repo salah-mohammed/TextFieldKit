@@ -264,15 +264,15 @@ open class TextViewView:UIView,GeneralFieldViewProrocol,CutomFieldProrocol {
 extension TextViewView:UITextViewDelegate{
     public func textViewDidBeginEditing(_ textView: UITextView) {
         self.selectedStyle();
-        fieldDidBeginEditing?();
+        fieldDidBeginEditing?(self);
     }
     public func textViewDidEndEditing(_ textView: UITextView) {
         self.didEndEditing(textView.text);
-        fieldDidEnd?();
+        fieldDidEnd?(self);
     }
     public func textViewDidChange(_ textView: UITextView) {
         textView.textViewDidChange(textView);
-        fieldDidChange?();
+        fieldDidChange?(self);
     }
 }
 

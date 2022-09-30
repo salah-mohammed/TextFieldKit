@@ -17,10 +17,10 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        txtFirstName.fieldDidEnd = {
+        txtFirstName.fieldDidEnd = { _ in
             self.txtFirstName.error = "aa"
         }
-        txtAddress.fieldDidEnd = {
+        txtAddress.fieldDidEnd = { _ in
             self.txtAddress.error = "qwqwqw"
         }
 //        self.txtFirstName.style = AppDelegate.style;

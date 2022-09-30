@@ -153,7 +153,7 @@ public protocol FieldValiadtion{
     var messages:[FieldError] {get};
 }
 // MARK: GeneralFieldViewProrocol
-protocol GeneralFieldViewProrocol{
+public protocol GeneralFieldViewProrocol{
 var text:String? {set get};
 var placeholder:String? {set get};
 var error:String? {set get};

@@ -14,7 +14,7 @@ import PhoneKit
 
 
 
-public typealias FieldHandler = ()->Void
+public typealias FieldHandler = (GeneralFieldViewProrocol)->Void
 open class TextFieldView: UIView,GeneralFieldViewProrocol,CutomFieldProrocol {
     open var nibName:String{
         return "TextFieldView";
@@ -158,15 +158,15 @@ open class TextFieldView: UIView,GeneralFieldViewProrocol,CutomFieldProrocol {
         self.error = tempError;
     }
     @objc private func textFieldValueChanged(_ txt:UITextField){
-        self.fieldValueChanged?();
+        self.fieldValueChanged?(self);
     }
     @objc private func textFieldDidBegin(_ txt:UITextField){
         self.selectedStyle();
-        self.fieldDidBegin?()
+        self.fieldDidBegin?(self)
     }
     @objc private func textFieldDidEnd(_ txt:UITextField){
         self.endEditingField(txt.text);
-        self.fieldDidEnd?();
+        self.fieldDidEnd?(self);
     }
     @IBAction func btnAction(_ sender:UIButton){
     }
