@@ -95,7 +95,7 @@ open class TextFieldView: UIView,GeneralFieldViewProrocol,CutomFieldProrocol {
     open var fieldDidEnd:FieldHandler?=TextFieldView.fieldDidEnd
     open var fieldValueChanged:FieldHandler?=TextFieldView.fieldValueChanged
     open var fieldDidBegin:FieldHandler?=TextFieldView.fieldDidBegin
-    
+    var tapGestureRecognizer:UITapGestureRecognizer?
     public static var fieldDidEnd:FieldHandler?
     public static var fieldValueChanged:FieldHandler?
     public static var fieldDidBegin:FieldHandler?
@@ -146,6 +146,9 @@ open class TextFieldView: UIView,GeneralFieldViewProrocol,CutomFieldProrocol {
     }
     open override func awakeFromNib() {
         super.awakeFromNib();
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.tapGestureRecognizerOpenKeyboard(_:)))
+        self.addGestureRecognizer(tap)
+        
         self.lblError.isHidden=true;
         self.txtField.addTarget(self, action: #selector(Self.textFieldDidBegin(_:)), for: .editingDidBegin)
         self.txtField.addTarget(self, action: #selector(Self.textFieldDidEnd(_:)), for: .editingDidEnd)
@@ -167,6 +170,9 @@ open class TextFieldView: UIView,GeneralFieldViewProrocol,CutomFieldProrocol {
     @objc private func textFieldDidEnd(_ txt:UITextField){
         self.endEditingField(txt.text);
         self.fieldDidEnd?(self);
+    }
+    @objc func tapGestureRecognizerOpenKeyboard(_ sender: UITapGestureRecognizer? = nil) {
+    self.txtField.becomeFirstResponder();
     }
     @IBAction func btnAction(_ sender:UIButton){
     }
