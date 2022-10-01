@@ -81,6 +81,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
+                    <gestureRecognizers/>
                 </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
