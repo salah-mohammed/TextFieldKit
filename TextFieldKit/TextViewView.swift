@@ -43,14 +43,14 @@ open class TextViewView:UIView,GeneralFieldViewProrocol,CutomFieldProrocol {
     }
     // private
     private var contentView : UIView?
-    @IBOutlet weak private var layoutConstraintHeightOfViewBetweenFieldAndIndicator: NSLayoutConstraint?
-    @IBOutlet weak private var layoutConstraintHeightOfViewBetweenTitleAndField: NSLayoutConstraint?
+    @IBOutlet weak open var layoutConstraintHeightOfViewBetweenFieldAndIndicator: NSLayoutConstraint?
+    @IBOutlet weak open var layoutConstraintHeightOfViewBetweenTitleAndField: NSLayoutConstraint?
     
-    @IBOutlet weak private var lblTitle: UILabel!
-    @IBOutlet weak private var lblError: UILabel!
-    @IBOutlet weak private var txtField: UITextView!
-    @IBOutlet weak private var imgIcon: UIImageView!
-    @IBOutlet weak private var viewBetweenTitleAndField:UIView?
+    @IBOutlet weak open var lblTitle: UILabel!
+    @IBOutlet weak open var lblError: UILabel!
+    @IBOutlet weak open var txtField: UITextView!
+    @IBOutlet weak open var imgIcon: UIImageView!
+    @IBOutlet weak open var viewBetweenTitleAndField:UIView?
     // MARK:Optional
     // txtOther calclaute TextView spaces depend on TextField
     @IBOutlet weak open var txtOther:TextFieldView?
