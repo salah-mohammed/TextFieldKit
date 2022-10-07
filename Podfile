@@ -10,7 +10,15 @@ target 'TextFieldKit' do
   # Pods for TextFieldKit
 
 end
+target 'TextFieldKitSwiftUIExample' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+  pod 'PhoneKit',:git => "https://github.com/salah-mohammed/PhoneKit.git"
+  pod 'LocationPicker', :git => 'https://github.com/salah-mohammed/LocationPicker.git'
 
+  # Pods for TextFieldKit
+
+end
 target 'TextFieldKitExample' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!

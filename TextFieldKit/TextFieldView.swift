@@ -21,12 +21,12 @@ open class TextFieldView: UIView,GeneralFieldViewProrocol,CutomFieldProrocol {
         return "TextFieldView";
     }
      // private
-     private var contentView : UIView?
+     @IBOutlet weak open var contentView : UIView?
      @IBOutlet weak open var lblTitle: UILabel!
      @IBOutlet weak open var lblError: UILabel!
      @IBOutlet weak open var txtField: UITextField!
      @IBOutlet weak open var stackViewIcon: UIStackView?
-     @IBOutlet weak open var  stackViewTitleAndText: UIStackView?
+     @IBOutlet weak open var stackViewTitleAndText: UIStackView?
      @IBOutlet weak open var imgIcon: UIImageView?
      // MARK:Optional
      @IBOutlet weak private var layoutConstraintHeightOfIndicator: NSLayoutConstraint?

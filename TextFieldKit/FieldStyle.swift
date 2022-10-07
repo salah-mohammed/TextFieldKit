@@ -40,10 +40,6 @@ public class FieldColorStyle:NSCopying{
     public var spaceBetweenIconAndField:CGFloat=8
     public var errorColor:UIColor=UIColor.red
     public var errorFont:UIFont=UIFont.systemFont(ofSize: 11, weight:.regular)
-//    public var fieldDidEnd:FieldHandler?
-//    public var fieldValueChanged:FieldHandler?
-//    public var fieldDidBegin:FieldHandler?
-    
     public override init() {
         super.init();
     }

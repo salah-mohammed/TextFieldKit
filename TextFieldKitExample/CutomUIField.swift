@@ -9,7 +9,7 @@ import UIKit
 import TextFieldKit
 open class CutomUIField: TextFieldView {
     @IBOutlet weak private var viewContent: UIView?
-    private var contentView : UIView?
+//    private var contentView : UIView?
 
     open override func selectedStyle(){
         
