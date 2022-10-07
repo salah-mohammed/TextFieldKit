@@ -15,6 +15,7 @@ struct TextFieldKitSwiftUIExampleApp: App {
             ContentView()
         }.onChange(of: lifecycle) { (lifecycle) in
             SUITextFieldView.style = AppStyle.textFieldStyle
+            SUITextViewView.style = AppStyle.textFieldStyle
 
             switch lifecycle {
             case .active:
