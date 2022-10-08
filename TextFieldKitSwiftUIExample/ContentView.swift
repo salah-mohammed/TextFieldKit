@@ -85,14 +85,17 @@ public struct SUITextViewView: View {
     }
     public var body: some View {
         ZStack{
-            VStack(spacing:0){
+            VStack(spacing:5){
                 if self.style.autoHideTitle == false || ($text.wrappedValue.count > 0 && self.style.autoHideTitle){
                     VStack{
                         Text(placeholder)
                         .foregroundColor(titleColor())
                         .font(Font.system(size: 13))
                         .frame(maxWidth:.infinity,alignment:.leading)
-                    }
+                    }.onAppear(perform: {
+                        UITextView.appearance().textContainer.lineFragmentPadding=0
+                        UITextView.appearance().textContainerInset = .zero
+                    })
                 }
                 HStack{
                     if let iconName:String = iconName{
@@ -105,7 +108,7 @@ public struct SUITextViewView: View {
                         .padding(.zero)
                         .focused($textFocused)
                         .scrollContentBackground(.hidden)
-                        .background(Color.clear)
+                        .font(Font.system(size:18, weight: .thin, design: .default))
                 }
             Rectangle.init()
                     .frame(height:self.style.indicatorHeight)
