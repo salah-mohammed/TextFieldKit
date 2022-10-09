@@ -5,6 +5,9 @@
   Created by Salah on 1/10/22.
   
 */
+"Firstname"="Firstname";
+"LastName"="Lastname";
+
 "PhoneNumber"="Phone Number";
 "Username"="Username";
 "FullName"="Fullname";

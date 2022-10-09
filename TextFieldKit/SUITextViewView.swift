@@ -1,33 +1,33 @@
 //
-//  SUITextFieldView.swift
+//  SUITextViewView.swift
 //  TextFieldKit
 //
-//  Created by Salah on 10/7/22.
+//  Created by Salah on 10/8/22.
 //
 
 import UIKit
 import SwiftUI
 
 @available(iOS 16.0, *)
-public struct SUITextFieldView: View {
-    public var placeholder:String?
+public struct SUITextViewView: View {
+    public var placeholder:String
     public var text: Binding<String>
     public var error:Binding<String>?
     @State public var iconName:String?
     public var onEditingChanged:((Bool) -> Void)?
-    @State private var changed:Bool=false;
-    public var style:FieldStyle = SUITextFieldView.style ?? FieldStyle.init()
+    @FocusState private var textFocused: Bool
+    public var style:FieldStyle = SUITextViewView.style ?? FieldStyle.init()
     public static var style:FieldStyle?
     public var validation:GeneralConnection?
 
-    public init(placeholder:String?=nil,
+    public init(placeholder:String?,
                 text:Binding<String>,
                 error:Binding<String>?=nil,
                 iconName:String?=nil,
                 onEditingChanged:((Bool) -> Void)?=nil,
                 style:FieldStyle?=nil,
-                validation:GeneralConnection) {
-        self.placeholder = placeholder ?? validation.fieldType.title
+                validation:GeneralConnection?=nil) {
+        self.placeholder = placeholder ?? validation?.fieldType.title ?? ""
         self.text=text;
         self.error=error;
         self.iconName=iconName;
@@ -35,7 +35,7 @@ public struct SUITextFieldView: View {
         self.style=style ?? SUITextFieldView.style ?? FieldStyle.init()
     }
     func textColor()->Color{
-        if changed{
+        if textFocused{
             return style.selected?.textColor?.bs_color ?? Color.clear
         }else
         if text.wrappedValue.count > 0{
@@ -44,7 +44,7 @@ public struct SUITextFieldView: View {
         return  style.normal?.textColor?.bs_color ?? Color.clear;
     }
     func titleColor()->Color{
-        if changed{
+        if textFocused{
             return style.selected?.titleColor?.bs_color ?? Color.clear
         }else
         if text.wrappedValue.count > 0{
@@ -53,7 +53,7 @@ public struct SUITextFieldView: View {
         return  style.normal?.titleColor?.bs_color ?? Color.clear;
     }
     func indicatorColor()->Color{
-        if changed{
+        if textFocused{
             return style.selected?.indicatorColor?.bs_color ?? Color.clear
         }else
         if text.wrappedValue.count > 0{
@@ -66,28 +66,35 @@ public struct SUITextFieldView: View {
             VStack(spacing:5){
                 if self.style.autoHideTitle == false || (text.wrappedValue.count > 0 && self.style.autoHideTitle){
                     VStack{
-                        Text(placeholder ?? "n")
+                        Text(placeholder)
                         .foregroundColor(titleColor())
                         .font(Font.system(size: 13))
                         .frame(maxWidth:.infinity,alignment:.leading)
-                    }
+                    }.onAppear(perform: {
+                        UITextView.appearance().textContainer.lineFragmentPadding=0
+                        UITextView.appearance().textContainerInset = .zero
+                    })
                 }
-                HStack(spacing:self.style.spaceBetweenIconAndField){
+                HStack{
                     if let iconName:String = iconName{
+                        VStack{
                         Image(iconName)
+                        Spacer()
+                        }
                     }
-                    TextField(placeholder ?? "n", text:text, onEditingChanged: { (changed) in
-                        self.changed=changed
-                        self.onEditingChanged?(changed);
-                        print("Username onEditingChanged - \(changed)")
-                    }) {
-                        print("Username onCommit")
-                    }.foregroundColor(textColor())
+                    TextEditor.init(text:text)
+                        .padding(.zero)
+                        .focused($textFocused)
+                        .scrollContentBackground(.hidden)
+                        .font(Font.system(size:18, weight: .thin, design: .default))
+                        .onChange(of:textFocused, perform: { newValue in
+                            self.onEditingChanged?(newValue);
+                        })
                 }
             Rectangle.init()
                     .frame(height:self.style.indicatorHeight)
                     .foregroundColor(indicatorColor())
-                if let error:String = self.error?.wrappedValue{
+                if let error:String = error?.wrappedValue{
                     VStack{
                         Text(error)
                         .foregroundColor(self.style.errorColor.bs_color)
@@ -96,30 +103,8 @@ public struct SUITextFieldView: View {
                     }
                 }
             }.onTapGesture {
-                
+
             }
         }.frame(minHeight:55)
     }
 }
-
-
-/*
- protocol ItemViewModel: ObservableObject {
-     @Published var title: String
-
-     func save()
-     func delete()
- }
-
- extension ItemViewModel {
-     @Published var title = "Some default Title"
-
-     func save() {
-         // some default behaviour
-     }
-
-     func delete() {
-         // some default behaviour
-     }
- }
- */

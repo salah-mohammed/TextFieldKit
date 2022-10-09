@@ -18,7 +18,34 @@ public extension UIApplication {
         keyWindow?.endEditing(true)
     }
 }
+
 struct ContentView: View {
+    func fullName()->Binding<String> {
+     return .init(
+        get: {viewModel.fullName },
+        set: {viewModel.fullName = $0 }
+    )
+    }
+    func firstName()->Binding<String> {
+     return .init(
+        get: {viewModel.firstName },
+        set: {viewModel.firstName = $0 }
+    )
+    }
+    func username()->Binding<String> {
+     return .init(
+        get: {viewModel.userName },
+        set: {viewModel.userName = $0 }
+    )
+    }
+    func requirements()->Binding<String> {
+     return .init(
+        get: {viewModel.requirements },
+        set: {viewModel.requirements = $0 }
+    )
+    }
+    @StateObject var viewModel = ContentViewModel.init()
+
     var body: some View {
         ZStack{
             VStack(spacing:0) {
@@ -26,10 +53,29 @@ struct ContentView: View {
                     .imageScale(.large)
                     .foregroundColor(.accentColor)
                 Text("Hello, world!")
-                SUITextFieldView(placeholder:"Username",text:"aa",error:"a", iconName:"ic_setting_phone");
-                SUITextFieldView(placeholder:"Fullname",text:"aa",error:"a");
-                SUITextFieldView(placeholder:"FirstName",text:"aa");
-                SUITextViewView.init(placeholder:"Email", text:"salah.mohamed@hotmail.com",iconName:"ic_setting_phone")
+                SUITextFieldView(placeholder: nil,
+                                 text:username(),
+                                 error:$viewModel.userNameError,
+                                 iconName:"ic_userOnlineTutor",
+                                 onEditingChanged:self.viewModel.onEditingChangedUsername(),
+                                 validation:Username())
+                SUITextFieldView(placeholder: nil,
+                                 text:fullName(),
+                                 error:$viewModel.fullNameError,
+                                 onEditingChanged:self.viewModel.onEditingChangedFullName(),
+                                 validation:FullName())
+                SUITextFieldView(placeholder:nil,
+                                 text:firstName(),
+                                 error:$viewModel.firstNameError,
+                                 onEditingChanged:self.viewModel.onEditingChangedFirstName(),
+                                 validation:FirstName());
+                SUITextViewView.init(placeholder: nil,
+                                     text:requirements(),
+                                     error:$viewModel.requirementsError,
+                                     iconName:"ic_userOnlineTutor",
+                                     onEditingChanged:self.viewModel.onEditingChangedRequirements(),
+                                     validation:Requirements())
+                Button.init(action: self.viewModel.save(), label:{Text("Save")})
             }
             .padding()
         }.frame(maxWidth:.infinity,maxHeight:.infinity).background(Color.gray.opacity(0.5)).gesture(TapGesture()
@@ -42,172 +88,5 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-    }
-}
-
-
-public struct SUITextViewView: View {
-    @State public var placeholder:String
-    @State public var text:String
-    @State public var error:String?
-    @State public var iconName:String?
-    public var onEditingChanged:((Bool) -> Void)?
-    @FocusState private var textFocused: Bool
-    public var style:FieldStyle = SUITextFieldView.style ?? FieldStyle.init()
-    static var style:FieldStyle?
-    
-    func textColor()->Color{
-        if textFocused{
-            return style.selected?.textColor?.bs_color ?? Color.clear
-        }else
-        if text.count > 0{
-        return  style.filled?.textColor?.bs_color ?? Color.clear
-        }
-        return  style.normal?.textColor?.bs_color ?? Color.clear;
-    }
-    func titleColor()->Color{
-        if textFocused{
-            return style.selected?.titleColor?.bs_color ?? Color.clear
-        }else
-        if text.count > 0{
-        return  style.filled?.titleColor?.bs_color ?? Color.clear
-        }
-        return  style.normal?.titleColor?.bs_color ?? Color.clear;
-    }
-    func indicatorColor()->Color{
-        if textFocused{
-            return style.selected?.indicatorColor?.bs_color ?? Color.clear
-        }else
-        if text.count > 0{
-        return  style.filled?.indicatorColor?.bs_color ?? Color.clear
-        }
-        return  style.normal?.indicatorColor?.bs_color ?? Color.clear;
-    }
-    public var body: some View {
-        ZStack{
-            VStack(spacing:5){
-                if self.style.autoHideTitle == false || ($text.wrappedValue.count > 0 && self.style.autoHideTitle){
-                    VStack{
-                        Text(placeholder)
-                        .foregroundColor(titleColor())
-                        .font(Font.system(size: 13))
-                        .frame(maxWidth:.infinity,alignment:.leading)
-                    }.onAppear(perform: {
-                        UITextView.appearance().textContainer.lineFragmentPadding=0
-                        UITextView.appearance().textContainerInset = .zero
-                    })
-                }
-                HStack{
-                    if let iconName:String = iconName{
-                        VStack{
-                        Image(iconName)
-                        Spacer()
-                        }
-                    }
-                    TextEditor.init(text:$text)
-                        .padding(.zero)
-                        .focused($textFocused)
-                        .scrollContentBackground(.hidden)
-                        .font(Font.system(size:18, weight: .thin, design: .default))
-                }
-            Rectangle.init()
-                    .frame(height:self.style.indicatorHeight)
-                    .foregroundColor(indicatorColor())
-                if let error:String = error{
-                    VStack{
-                        Text(error)
-                        .foregroundColor(self.style.errorColor.bs_color)
-                        .frame(maxWidth:.infinity,alignment:.leading)
-                        .font(Font.system(size: 11))
-                    }
-                }
-            }.onTapGesture {
-
-            }
-        }.frame(minHeight:55)
-    }
-}
-
-
-extension UIColor{
-    var bs_color:Color{
-        return Color(self);
-    }
-}
-public struct SUITextFieldView: View {
-    @State public var placeholder:String
-    @State public var text:String
-    @State public var error:String?
-    @State public var iconName:String?
-    public var onEditingChanged:((Bool) -> Void)?
-    @State private var changed:Bool=false;
-    public var style:FieldStyle = SUITextFieldView.style ?? FieldStyle.init()
-    static var style:FieldStyle?
-
-    func textColor()->Color{
-        if changed{
-            return style.selected?.textColor?.bs_color ?? Color.clear
-        }else
-        if text.count > 0{
-        return  style.filled?.textColor?.bs_color ?? Color.clear
-        }
-        return  style.normal?.textColor?.bs_color ?? Color.clear;
-    }
-    func titleColor()->Color{
-        if changed{
-            return style.selected?.titleColor?.bs_color ?? Color.clear
-        }else
-        if text.count > 0{
-        return  style.filled?.titleColor?.bs_color ?? Color.clear
-        }
-        return  style.normal?.titleColor?.bs_color ?? Color.clear;
-    }
-    func indicatorColor()->Color{
-        if changed{
-            return style.selected?.indicatorColor?.bs_color ?? Color.clear
-        }else
-        if text.count > 0{
-        return  style.filled?.indicatorColor?.bs_color ?? Color.clear
-        }
-        return  style.normal?.indicatorColor?.bs_color ?? Color.clear;
-    }
-    public var body: some View {
-        ZStack{
-            VStack(spacing:5){
-                if self.style.autoHideTitle == false || ($text.wrappedValue.count > 0 && self.style.autoHideTitle){
-                    VStack{
-                        Text(placeholder)
-                        .foregroundColor(titleColor())
-                        .font(Font.system(size: 13))
-                        .frame(maxWidth:.infinity,alignment:.leading)
-                    }
-                }
-                HStack(spacing:self.style.spaceBetweenIconAndField){
-                    if let iconName:String = iconName{
-                        Image(iconName)
-                    }
-                    TextField(placeholder, text:$text, onEditingChanged: { (changed) in
-                        self.changed=changed
-                        self.onEditingChanged?(changed);
-                        print("Username onEditingChanged - \(changed)")
-                    }) {
-                        print("Username onCommit")
-                    }.foregroundColor(textColor())
-                }
-            Rectangle.init()
-                    .frame(height:self.style.indicatorHeight)
-                    .foregroundColor(indicatorColor())
-                if let error:String = self.error{
-                    VStack{
-                        Text(error)
-                        .foregroundColor(self.style.errorColor.bs_color)
-                        .frame(maxWidth:.infinity,alignment:.leading)
-                        .font(Font.system(size: 11))
-                    }
-                }
-            }.onTapGesture {
-                
-            }
-        }.frame(minHeight:55)
     }
 }

@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import CoreLocation
+import SwiftUI
 #if canImport(PhoneKit)
 import PhoneKit
 #endif
@@ -100,6 +101,8 @@ extension String{
 
 // MARK: FieldType
 public enum FieldType:String{
+case firstName="Firstname"
+case lastName="Lastname"
 case username="Username"
 case fullName="FullName"
 case password="Password"
@@ -115,7 +118,6 @@ case location="Location"
 case city="City"
 case region="Region"
 
-    
 var title:String{
     return self.rawValue.customLocalize_;
 }
@@ -170,3 +172,10 @@ public extension Array where Element == FieldError {
 //extension Array where Self:GeneralFieldViewProrocol {
 //
 //}
+#if canImport(SwiftUI)
+extension UIColor{
+    var bs_color:Color{
+        return Color(self);
+    }
+}
+#endif

@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+import TextFieldKit
 @main
 struct TextFieldKitSwiftUIExampleApp: App {
     @Environment(\.scenePhase) private var lifecycle

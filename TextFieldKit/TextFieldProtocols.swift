@@ -11,6 +11,9 @@ import Foundation
 public protocol Field{
     var fieldType:FieldType {get};
 }
+public protocol SUIField:ObservableObject{
+    var fieldType:FieldType {get};
+}
 // MARK: FieldValiadtion
 public protocol FieldValiadtion{
     var messages:[FieldError] {get};
@@ -32,6 +35,10 @@ public protocol CutomFieldProrocol{
 
 }
 // MARK: GeneralConnection
-protocol GeneralConnection:Field,FieldValiadtion{
+
+public protocol GeneralConnection:Field,FieldValiadtion{
+
+}
+public protocol SUIGeneralConnection:SUIField,FieldValiadtion{
 
 }
