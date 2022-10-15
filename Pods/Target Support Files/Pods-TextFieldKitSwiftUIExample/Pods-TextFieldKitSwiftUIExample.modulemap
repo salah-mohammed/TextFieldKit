@@ -1,0 +1,6 @@
+framework module Pods_TextFieldKitSwiftUIExample {
+  umbrella header "Pods-TextFieldKitSwiftUIExample-umbrella.h"
+
+  export *
+  module * { export * }
+}

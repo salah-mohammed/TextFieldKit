@@ -1,0 +1,2116 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		00AC8E762AC42FFCE59EDD4714231BF7 /* PhoneKit-iOS16.0-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 49C952C4726B71CF4EA024E025503FA9 /* PhoneKit-iOS16.0-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		02C02D2C9455C521A5B1C5605E623366 /* LocationPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6647141CA8D499ECB8AEB8B0F34B97AB /* LocationPickerViewController.swift */; };
+		080AADF886374533BDF7B72B0E3B1FBA /* PhoneKit-iOS13.0-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D6B50EC8FE379739F7FFD718BE5ED015 /* PhoneKit-iOS13.0-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		083F066A655866E0ABEDBD2FB9AE81BB /* LocationPicker-iOS16.0-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 91CF801AD0F1D82C8B8EF5B364AB23A7 /* LocationPicker-iOS16.0-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0915A570B7011E1A5D471D8072F03B6B /* PhoneKit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDE60C0FEB93CC6793C984C2EFC03C4F /* PhoneKit.storyboard */; };
+		09BC9492662AC95B4E9CBFD6659FBBD1 /* LocationPicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B76631037B8FC8651391C1AB0A1D7F4 /* LocationPicker.storyboard */; };
+		0A13E58D46C8F154B78F557FE2AC691F /* Pods-TextFieldKitSwiftUIExample-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 31A4D8A3A6F9F79A644AC0326F437D90 /* Pods-TextFieldKitSwiftUIExample-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16425025124F27D6B59682505D50B263 /* PhoneKit.h in Headers */ = {isa = PBXBuildFile; fileRef = E13A9241E8B643F059F5DC32D1A20DC0 /* PhoneKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		189D482344C0D7BC00B2A8479CEB5672 /* LocationPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6647141CA8D499ECB8AEB8B0F34B97AB /* LocationPickerViewController.swift */; };
+		1FB2140ADB1B1D2C23D11C98DED4FCC7 /* SVGCountryFlags.zip in Sources */ = {isa = PBXBuildFile; fileRef = 4338002CC6E050F6A1966D52F1769F58 /* SVGCountryFlags.zip */; };
+		2221925448442988C8FE4E802BA1EB8B /* AlertCountryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 712AA00CA2BA29BAB50E1FEAC351824A /* AlertCountryTableViewCell.xib */; };
+		22748721A24B822CC7F784713A48A36E /* Pods-TextFieldKitSwiftUIExample-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E75693E3E19CAC6658D491E76E998E2D /* Pods-TextFieldKitSwiftUIExample-dummy.m */; };
+		2824685C42C6891676BBF1827FC2EA35 /* LocationPicker-iOS13.0-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 44664F8268EA603EBAD440CF3F729825 /* LocationPicker-iOS13.0-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2926CA65AC4ADB8EF0FF66BBAAC33E94 /* LocationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968851B24F292893CBD390825849A9BE /* LocationItem.swift */; };
+		2BCC42918DB25008FCAB8B1B28D7A0F4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		2EA001CA3E5FB1600B9C432CA69B136B /* SVGCountryFlags.zip in Sources */ = {isa = PBXBuildFile; fileRef = 4338002CC6E050F6A1966D52F1769F58 /* SVGCountryFlags.zip */; };
+		3022281A6283DC8E58B922C479BAB132 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D949B466C74F465602D69AA5CD6C63A /* SearchView.swift */; };
+		3ADE6260D80031D0923899A85BE9CB43 /* CountryListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243625266EB668F70072AAA4FA9257A5 /* CountryListManager.swift */; };
+		3D5B7DB7A121C638F20F1335DF2EF5BD /* AlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6B60D7E34B4D2C0E5F3EE8CD16DD93D /* AlertView.xib */; };
+		4531D105189AA0722281C62536F54A39 /* LocationPicker.h in Headers */ = {isa = PBXBuildFile; fileRef = E434DD9DBB8896E3CAF7460C35867617 /* LocationPicker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4723D309297BA9DEFEBEEDB08C513E63 /* LocationPicker-iOS13.0-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 98A022AF756DE5DD993003617E6B5E31 /* LocationPicker-iOS13.0-dummy.m */; };
+		4932F143F997DD5794DEDFC1823DB6A0 /* Podfile.lock in Sources */ = {isa = PBXBuildFile; fileRef = 736DD44140FB5B7633D5BF5C697141AB /* Podfile.lock */; };
+		4B035C738805999D6CAD52238F81BDB8 /* CountryListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243625266EB668F70072AAA4FA9257A5 /* CountryListManager.swift */; };
+		4B438416FFFD6B426C0EF7A635C11741 /* CountryListManager.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1747C06058F64F1E5C621603C03319C2 /* CountryListManager.bundle */; };
+		4E94DB581E1220AA3DBFBE771CC58B36 /* LocationPicker.h in Headers */ = {isa = PBXBuildFile; fileRef = E434DD9DBB8896E3CAF7460C35867617 /* LocationPicker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4FDAB8A246748A34B58BDF44666FE61F /* LocationPicker-iOS16.0-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 98FAAA8BBB4F997A108998CF3BA151FF /* LocationPicker-iOS16.0-dummy.m */; };
+		512A421125ACC77FE0EF92A6449E8357 /* PhoneKit.podspec in Sources */ = {isa = PBXBuildFile; fileRef = 7939879D95E0963CE4FACB7E7CF90029 /* PhoneKit.podspec */; };
+		532E8DE3DF62A251BE61F5D79C0265E0 /* FrameWorkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16145D641AD2276192DE32FF2BDBCAB /* FrameWorkConstants.swift */; };
+		55554C4C46C4515B6F40CAEDD2AB607D /* LocationPicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B76631037B8FC8651391C1AB0A1D7F4 /* LocationPicker.storyboard */; };
+		56138418A2FFF932F9FF46C53856B763 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = EADDFE854F4D34D7C323E5AAAC0E8593 /* README.md */; };
+		564BCBC638C19BBCD58DFC1102EC4AF3 /* Podfile in Sources */ = {isa = PBXBuildFile; fileRef = B6009D74110BD10DE1CF3A8E7AD51FFD /* Podfile */; };
+		5699D9B1CE612C99D94E5BD2E48C09AE /* CountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F2D84C564063D6B9CF6777BCFC646E /* CountryTableViewCell.swift */; };
+		5D90DDAA67923E3079B348002E85D0D6 /* CountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F2D84C564063D6B9CF6777BCFC646E /* CountryTableViewCell.swift */; };
+		5E31FD7323181DD827B119BFE51B33C7 /* FramwWorkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1231A903543911D6D60FC36D1E829AF /* FramwWorkConstants.swift */; };
+		6065B3061E6DAEAB15E7314FA4BA681E /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = EADDFE854F4D34D7C323E5AAAC0E8593 /* README.md */; };
+		61874A117ACC0982CED444996C30DC3A /* Podfile.lock in Sources */ = {isa = PBXBuildFile; fileRef = 736DD44140FB5B7633D5BF5C697141AB /* Podfile.lock */; };
+		61F77FA077C1643356D20B4704F06449 /* AlertCountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35BB9162824D2AC0EBC82B58C2C4D85 /* AlertCountryTableViewCell.swift */; };
+		62270ACB494B5B9A9F7D70D6201922F9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		64AFFCEB25740C135CEFF489F0011B00 /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD9C7123852D49A7E3D7BCDE2087FB4 /* LocationTableViewCell.swift */; };
+		6526A1F75F59F70146B782BBEE72E545 /* countryCodes.json in Resources */ = {isa = PBXBuildFile; fileRef = 464335517C3A2EE3036AA4BE8CCC6559 /* countryCodes.json */; };
+		65CDC66D84440C3E10E963BB1D290A5C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		662DD5680A98B3C8E8B29F19E7BCEFBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4F688D1AC324B5A2A1335667E539572 /* Assets.xcassets */; };
+		663AA710B826E05EC2D5246E9ABF404F /* FrameWorkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16145D641AD2276192DE32FF2BDBCAB /* FrameWorkConstants.swift */; };
+		67663420C211AA9776F3BF6F9709DFB0 /* LICENSE in Sources */ = {isa = PBXBuildFile; fileRef = BB7740551DDC534E0D8C892A2FC465FB /* LICENSE */; };
+		6EC94205BA006685ACD36BEF50637469 /* PhoneKitEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AE523DB747BF750F7A36C1663DBD7E /* PhoneKitEx.swift */; };
+		724433A0E5AA711BC58C00E68942B459 /* PhoneKit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDE60C0FEB93CC6793C984C2EFC03C4F /* PhoneKit.storyboard */; };
+		7A7D5B9D0AFC37F222195F4996A36963 /* LocationPickerEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58191905F1B1B5D4C4806BAB43F2C43 /* LocationPickerEx.swift */; };
+		7BEA52C8DE3A471E9E639B734367AB5A /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3AE97504D9C80548A42D177032544A /* AlertView.swift */; };
+		82C436AACFAF702F1AD84EBD13CC9247 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D949B466C74F465602D69AA5CD6C63A /* SearchView.swift */; };
+		85172D5ECC1FE01C3664678971A5F81A /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3AE97504D9C80548A42D177032544A /* AlertView.swift */; };
+		88B20FE968630C00BF887E408F1E151A /* PhoneKit.h in Headers */ = {isa = PBXBuildFile; fileRef = E13A9241E8B643F059F5DC32D1A20DC0 /* PhoneKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8A7147C8609C27C9E6A98371812D2A34 /* SearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6657EE865C232BB7A82D75472C7FCCD /* SearchView.xib */; };
+		8E696CFBEE7BF8C5CA385B68ADA7DD77 /* PhoneKit-iOS16.0-PhoneKit in Resources */ = {isa = PBXBuildFile; fileRef = 07B82C4E6C631E9FBE92EBD8CDD6B0D4 /* PhoneKit-iOS16.0-PhoneKit */; };
+		8FED1D5A77B227C02F76363A19B205B4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		90249CC7B3602C9D5B58F442A45078AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4F688D1AC324B5A2A1335667E539572 /* Assets.xcassets */; };
+		92997A06D49D82430E04A845A3A9165C /* Pods-TextFieldKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A2CF4D70EB71E3E881DB7255076B31 /* Pods-TextFieldKit-dummy.m */; };
+		97C183508AA0E55578CC223B0645D1FC /* Pods-TextFieldKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F14A5169ED128563F73E80D5A725FD7E /* Pods-TextFieldKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		98563BB5FDD5572FE674D3A7925F719C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EB195866EE666A137A4914BF05DE39C4 /* Localizable.strings */; };
+		9BCABC3F0727E95FFA2CBE860C0EF1E3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		9BFE3FF0B9246C6FED2C690CD2819EC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA4D6B95C0A07A3450FF9FDBE24CFD68 /* Assets.xcassets */; };
+		9E3EC0F1588528148019A7F5E8426790 /* SearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6657EE865C232BB7A82D75472C7FCCD /* SearchView.xib */; };
+		9E5B751C604745C49C21F00C9B55EC35 /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD9C7123852D49A7E3D7BCDE2087FB4 /* LocationTableViewCell.swift */; };
+		A0853D84F447CB0264528330C4FFF2CD /* LocationPicker-iOS16.0-LocationPicker in Resources */ = {isa = PBXBuildFile; fileRef = 1A4C410BAB3DC6E2139832A9A2CB9090 /* LocationPicker-iOS16.0-LocationPicker */; };
+		A7CBC21853B655AD2F5F0F5236BF6517 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		AB395C41FEB8D7A524E5A6F440E6E392 /* LocationPicker-iOS13.0-LocationPicker in Resources */ = {isa = PBXBuildFile; fileRef = 1C7E8616AE23C016A41C5BB57A50E6C0 /* LocationPicker-iOS13.0-LocationPicker */; };
+		ABCEBF4BC54F2D499E10B48E04F1E7F4 /* LICENSE in Sources */ = {isa = PBXBuildFile; fileRef = BB7740551DDC534E0D8C892A2FC465FB /* LICENSE */; };
+		B0D3EC04A3ADBDE99594E85316E95633 /* LocationPicker.podspec in Sources */ = {isa = PBXBuildFile; fileRef = 10945B1B325B0913AC554EDD1F0A307B /* LocationPicker.podspec */; };
+		B25D2FEE01BEBEEC70CA1386E5E3F901 /* AlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6B60D7E34B4D2C0E5F3EE8CD16DD93D /* AlertView.xib */; };
+		B97A316CF43B1FB917A18217C7AA7B67 /* PhoneKit-iOS13.0-PhoneKit in Resources */ = {isa = PBXBuildFile; fileRef = 5F679FD9B931D099D3DC036F6157E437 /* PhoneKit-iOS13.0-PhoneKit */; };
+		BB3DD10E610B23016475B53CF4794E49 /* CountryCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B1F6423B2AF8F8EC4E83905300D18F /* CountryCode.swift */; };
+		BF4B8025F347B3647EEB93E3CC46892A /* LocationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968851B24F292893CBD390825849A9BE /* LocationItem.swift */; };
+		C2B6347593D80C50540B17679EA26FD6 /* CountryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0707DF5074B44A88B04E1A37043E7B80 /* CountryViewController.swift */; };
+		C5B67D396C7224AF95F952BFE722FF55 /* LocationPicker.podspec in Sources */ = {isa = PBXBuildFile; fileRef = 10945B1B325B0913AC554EDD1F0A307B /* LocationPicker.podspec */; };
+		C704FB4DEFE595E7C90B063B97A702A7 /* AlertCountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35BB9162824D2AC0EBC82B58C2C4D85 /* AlertCountryTableViewCell.swift */; };
+		C7DFC9641933A31834AD94112E0501D5 /* FramwWorkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1231A903543911D6D60FC36D1E829AF /* FramwWorkConstants.swift */; };
+		C941237113C5097FD1FD88B67F995FE5 /* CountryListManager.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1747C06058F64F1E5C621603C03319C2 /* CountryListManager.bundle */; };
+		D2AF3BFB78C63AE6025B343B1D15CC7D /* Pods-TextFieldKitExample-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FF888DB008A46ECB96401E4C611775F /* Pods-TextFieldKitExample-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D30144F46AAC0A5143057F4FA352CF15 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4138920F7258F94F7A22C1BA212AD002 /* Localizable.strings */; };
+		D65FEC337C541BDD7485DC9D63639FAC /* LocationPickerEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58191905F1B1B5D4C4806BAB43F2C43 /* LocationPickerEx.swift */; };
+		DB1ACA1EEC07352EEEE2B4E791D3BE84 /* PhoneKitEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AE523DB747BF750F7A36C1663DBD7E /* PhoneKitEx.swift */; };
+		DBAFBC5773B9F92621CA72276553B7A6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EB195866EE666A137A4914BF05DE39C4 /* Localizable.strings */; };
+		DFA587C7A4BBC8CD4CE70E09B61B5F49 /* CountryCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B1F6423B2AF8F8EC4E83905300D18F /* CountryCode.swift */; };
+		E2ECB60B997DA3777426CEB553394306 /* PhoneKit-iOS16.0-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 602749C859193124D47D2A4A9B77F7B0 /* PhoneKit-iOS16.0-dummy.m */; };
+		E35A1D608C06FC980A85D2449BB775AD /* PhoneKit-iOS13.0-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A8391B5093ED94B2F927AB05DAF9834 /* PhoneKit-iOS13.0-dummy.m */; };
+		E5E65F3B4532EFF5214EF89C8492E375 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4138920F7258F94F7A22C1BA212AD002 /* Localizable.strings */; };
+		E74491A7E56C4D32F6874FCDB471206A /* Pods-TextFieldKitExample-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B415B75BF478A3AE82614A9EDD3F6C74 /* Pods-TextFieldKitExample-dummy.m */; };
+		EE70B896EAC3C56878D5BF04D8A80C71 /* PhoneKit.podspec in Sources */ = {isa = PBXBuildFile; fileRef = 7939879D95E0963CE4FACB7E7CF90029 /* PhoneKit.podspec */; };
+		F1B0CF98F42748FDD1E9543AE05E1B94 /* countryCodes.json in Resources */ = {isa = PBXBuildFile; fileRef = 464335517C3A2EE3036AA4BE8CCC6559 /* countryCodes.json */; };
+		F2CA0710C601712E48759C7371443C73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA4D6B95C0A07A3450FF9FDBE24CFD68 /* Assets.xcassets */; };
+		F89A276E56143399B0140C83F444DDB0 /* AlertCountryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 712AA00CA2BA29BAB50E1FEAC351824A /* AlertCountryTableViewCell.xib */; };
+		FA507558717782FE0D0CF1F72B9662CD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		FEC72ABBC5AAA18FEC8438C98B619408 /* Podfile in Sources */ = {isa = PBXBuildFile; fileRef = B6009D74110BD10DE1CF3A8E7AD51FFD /* Podfile */; };
+		FFF8F2C56FBF4B2B86C00E7A7EAF48A6 /* CountryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0707DF5074B44A88B04E1A37043E7B80 /* CountryViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		249BD0E06B6F32E956C745F5904620C0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D309D7B1B528FE1223C15BD568D11586;
+			remoteInfo = "PhoneKit-iOS13.0";
+		};
+		52EAAB30CAF3930572B831EB43E67FBC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A44548C617A69D82FE3346C92CF70E2B;
+			remoteInfo = "LocationPicker-iOS13.0-LocationPicker";
+		};
+		5C942ED8204002D4B4FF3265E5E78401 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 96E4416589F04C8E3093056D528F11C4;
+			remoteInfo = "PhoneKit-iOS13.0-PhoneKit";
+		};
+		6275FE4C6D4E2630969468CAA77C2F5F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D0FDAF68050E1093545F475C6D774000;
+			remoteInfo = "PhoneKit-iOS16.0-PhoneKit";
+		};
+		72A4A023D2035EDE6EB82C93D3B04101 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7955CBF827F1BC82094ADC3A2AAF8806;
+			remoteInfo = "LocationPicker-iOS13.0";
+		};
+		8006584402268C2267DB0AD39FDCD598 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 086182791B800BD7238BE4AA79E07A42;
+			remoteInfo = "PhoneKit-iOS16.0";
+		};
+		8034BD34A7A23E3CE8C4961315766896 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7955CBF827F1BC82094ADC3A2AAF8806;
+			remoteInfo = "LocationPicker-iOS13.0";
+		};
+		B7FA928CE9B2418DF34963C78995A09F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D309D7B1B528FE1223C15BD568D11586;
+			remoteInfo = "PhoneKit-iOS13.0";
+		};
+		F265C47806B59588FFE54CCDCDF128F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6F94D66A77EB528D0EBE7C9A860559CF;
+			remoteInfo = "LocationPicker-iOS16.0-LocationPicker";
+		};
+		FBD901541CE4E275E5CAE09934391476 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F7097D9B669DA8A69E4DD76A740FB8E1;
+			remoteInfo = "LocationPicker-iOS16.0";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0707DF5074B44A88B04E1A37043E7B80 /* CountryViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CountryViewController.swift; path = PhoneKit/CountryViewController.swift; sourceTree = "<group>"; };
+		07B82C4E6C631E9FBE92EBD8CDD6B0D4 /* PhoneKit-iOS16.0-PhoneKit */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "PhoneKit-iOS16.0-PhoneKit"; path = PhoneKit.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D12DB922F8518E27DB9E25CEEEDE896 /* Pods-TextFieldKitExample-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TextFieldKitExample-acknowledgements.plist"; sourceTree = "<group>"; };
+		0FB4AF243320AA1BC75E690437D2FE6F /* Pods-TextFieldKitExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TextFieldKitExample.release.xcconfig"; sourceTree = "<group>"; };
+		10945B1B325B0913AC554EDD1F0A307B /* LocationPicker.podspec */ = {isa = PBXFileReference; includeInIndex = 1; path = LocationPicker.podspec; sourceTree = "<group>"; };
+		1747C06058F64F1E5C621603C03319C2 /* CountryListManager.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = CountryListManager.bundle; path = PhoneKit/Resources/CountryListManager.bundle; sourceTree = "<group>"; };
+		18A2CF4D70EB71E3E881DB7255076B31 /* Pods-TextFieldKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TextFieldKit-dummy.m"; sourceTree = "<group>"; };
+		1A4C410BAB3DC6E2139832A9A2CB9090 /* LocationPicker-iOS16.0-LocationPicker */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "LocationPicker-iOS16.0-LocationPicker"; path = LocationPicker.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C7E8616AE23C016A41C5BB57A50E6C0 /* LocationPicker-iOS13.0-LocationPicker */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "LocationPicker-iOS13.0-LocationPicker"; path = LocationPicker.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FAC67CD9458286A3AE3BDCD61E69AE1 /* LocationPicker-iOS13.0 */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "LocationPicker-iOS13.0"; path = LocationPicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FF888DB008A46ECB96401E4C611775F /* Pods-TextFieldKitExample-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TextFieldKitExample-umbrella.h"; sourceTree = "<group>"; };
+		20F471B9940309A9D827B5D35103E536 /* Pods-TextFieldKitSwiftUIExample-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TextFieldKitSwiftUIExample-Info.plist"; sourceTree = "<group>"; };
+		243625266EB668F70072AAA4FA9257A5 /* CountryListManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CountryListManager.swift; path = PhoneKit/CountryListManager.swift; sourceTree = "<group>"; };
+		26C6BEB803D733442F1ECA4D8315F0F1 /* Pods-TextFieldKitSwiftUIExample */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-TextFieldKitSwiftUIExample"; path = Pods_TextFieldKitSwiftUIExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D40AA3F11DEC398182BB7A5AD4FE799 /* Pods-TextFieldKitSwiftUIExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TextFieldKitSwiftUIExample.release.xcconfig"; sourceTree = "<group>"; };
+		2EE265976CF19DE81735A84083707658 /* Pods-TextFieldKitExample-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TextFieldKitExample-acknowledgements.markdown"; sourceTree = "<group>"; };
+		31A4D8A3A6F9F79A644AC0326F437D90 /* Pods-TextFieldKitSwiftUIExample-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TextFieldKitSwiftUIExample-umbrella.h"; sourceTree = "<group>"; };
+		32003D9BF19B6DDA17A83731B4BA8196 /* ResourceBundle-LocationPicker-LocationPicker-iOS13.0-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-LocationPicker-LocationPicker-iOS13.0-Info.plist"; sourceTree = "<group>"; };
+		355F0628A7191E91761421BF09030457 /* Localizable.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
+		3625A01A9954D402E82729F7A789B815 /* Pods-TextFieldKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TextFieldKit.release.xcconfig"; sourceTree = "<group>"; };
+		3A8391B5093ED94B2F927AB05DAF9834 /* PhoneKit-iOS13.0-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PhoneKit-iOS13.0-dummy.m"; sourceTree = "<group>"; };
+		3F5962FA44E69238C6CF0553611AB417 /* PhoneKit-iOS16.0.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "PhoneKit-iOS16.0.debug.xcconfig"; path = "../PhoneKit-iOS16.0/PhoneKit-iOS16.0.debug.xcconfig"; sourceTree = "<group>"; };
+		40500666CA6FE7365D89798A47B56C7E /* LocationPicker-iOS16.0-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "LocationPicker-iOS16.0-prefix.pch"; path = "../LocationPicker-iOS16.0/LocationPicker-iOS16.0-prefix.pch"; sourceTree = "<group>"; };
+		4338002CC6E050F6A1966D52F1769F58 /* SVGCountryFlags.zip */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.zip; path = SVGCountryFlags.zip; sourceTree = "<group>"; };
+		44664F8268EA603EBAD440CF3F729825 /* LocationPicker-iOS13.0-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LocationPicker-iOS13.0-umbrella.h"; sourceTree = "<group>"; };
+		464335517C3A2EE3036AA4BE8CCC6559 /* countryCodes.json */ = {isa = PBXFileReference; includeInIndex = 1; name = countryCodes.json; path = PhoneKit/Resources/CountryListManager.bundle/countryCodes.json; sourceTree = "<group>"; };
+		46A76308265C2C85E9F31CD7087A1C2F /* Pods-TextFieldKitSwiftUIExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TextFieldKitSwiftUIExample.debug.xcconfig"; sourceTree = "<group>"; };
+		49C952C4726B71CF4EA024E025503FA9 /* PhoneKit-iOS16.0-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "PhoneKit-iOS16.0-umbrella.h"; path = "../PhoneKit-iOS16.0/PhoneKit-iOS16.0-umbrella.h"; sourceTree = "<group>"; };
+		4E687DC9CF60CEEE2C2E294467581A62 /* Localizable.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4FD9C7123852D49A7E3D7BCDE2087FB4 /* LocationTableViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LocationTableViewCell.swift; path = LocationPicker/LocationTableViewCell.swift; sourceTree = "<group>"; };
+		50E590798FCB42424CFD99CB47ABC34D /* ResourceBundle-PhoneKit-PhoneKit-iOS13.0-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-PhoneKit-PhoneKit-iOS13.0-Info.plist"; sourceTree = "<group>"; };
+		5C528B4BA580DCB63BA93674C922E2C9 /* Pods-TextFieldKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TextFieldKit.modulemap"; sourceTree = "<group>"; };
+		5F679FD9B931D099D3DC036F6157E437 /* PhoneKit-iOS13.0-PhoneKit */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "PhoneKit-iOS13.0-PhoneKit"; path = PhoneKit.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		602749C859193124D47D2A4A9B77F7B0 /* PhoneKit-iOS16.0-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "PhoneKit-iOS16.0-dummy.m"; path = "../PhoneKit-iOS16.0/PhoneKit-iOS16.0-dummy.m"; sourceTree = "<group>"; };
+		64C59C8D964EE84C3456F142A2020226 /* LocationPicker-iOS16.0.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "LocationPicker-iOS16.0.release.xcconfig"; path = "../LocationPicker-iOS16.0/LocationPicker-iOS16.0.release.xcconfig"; sourceTree = "<group>"; };
+		6647141CA8D499ECB8AEB8B0F34B97AB /* LocationPickerViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LocationPickerViewController.swift; path = LocationPicker/LocationPickerViewController.swift; sourceTree = "<group>"; };
+		68178548FCF141A11ACCE0621CBC9D40 /* Pods-TextFieldKitExample */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-TextFieldKitExample"; path = Pods_TextFieldKitExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		70E7E536099047C779C6CAC8634E3612 /* Localizable.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
+		712AA00CA2BA29BAB50E1FEAC351824A /* AlertCountryTableViewCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = AlertCountryTableViewCell.xib; path = PhoneKit/Resources/AlertCountryTableViewCell.xib; sourceTree = "<group>"; };
+		7190830D909048D84B5709849C5E8321 /* PhoneKit-iOS13.0.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "PhoneKit-iOS13.0.debug.xcconfig"; sourceTree = "<group>"; };
+		71AE523DB747BF750F7A36C1663DBD7E /* PhoneKitEx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PhoneKitEx.swift; path = PhoneKit/PhoneKitEx.swift; sourceTree = "<group>"; };
+		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		736DD44140FB5B7633D5BF5C697141AB /* Podfile.lock */ = {isa = PBXFileReference; includeInIndex = 1; path = Podfile.lock; sourceTree = "<group>"; };
+		739C1AB6A778D1837C711E3A2357286D /* PhoneKit-iOS13.0 */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "PhoneKit-iOS13.0"; path = PhoneKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		74516481540272AE81AC56D965E662CF /* LocationPicker-iOS13.0.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "LocationPicker-iOS13.0.modulemap"; sourceTree = "<group>"; };
+		79196DB285A231E3AD66721D5852B728 /* Pods-TextFieldKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TextFieldKit-Info.plist"; sourceTree = "<group>"; };
+		7939879D95E0963CE4FACB7E7CF90029 /* PhoneKit.podspec */ = {isa = PBXFileReference; includeInIndex = 1; path = PhoneKit.podspec; sourceTree = "<group>"; };
+		7D949B466C74F465602D69AA5CD6C63A /* SearchView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SearchView.swift; path = LocationPicker/SearchView.swift; sourceTree = "<group>"; };
+		80E84A8C7027E8E3EF124FFACA27102B /* LocationPicker-iOS13.0.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "LocationPicker-iOS13.0.release.xcconfig"; sourceTree = "<group>"; };
+		84974E197C0F5C8656147B95567E6991 /* PhoneKit-iOS16.0.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "PhoneKit-iOS16.0.release.xcconfig"; path = "../PhoneKit-iOS16.0/PhoneKit-iOS16.0.release.xcconfig"; sourceTree = "<group>"; };
+		8BE3AEBC85533FEE2BDBFD856FC49AEB /* Pods-TextFieldKitSwiftUIExample-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TextFieldKitSwiftUIExample-acknowledgements.markdown"; sourceTree = "<group>"; };
+		8F3AE97504D9C80548A42D177032544A /* AlertView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlertView.swift; path = PhoneKit/AlertView.swift; sourceTree = "<group>"; };
+		91CF801AD0F1D82C8B8EF5B364AB23A7 /* LocationPicker-iOS16.0-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "LocationPicker-iOS16.0-umbrella.h"; path = "../LocationPicker-iOS16.0/LocationPicker-iOS16.0-umbrella.h"; sourceTree = "<group>"; };
+		9572BD586BED8A91AD5150FBF6C90877 /* LocationPicker-iOS16.0.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; name = "LocationPicker-iOS16.0.modulemap"; path = "../LocationPicker-iOS16.0/LocationPicker-iOS16.0.modulemap"; sourceTree = "<group>"; };
+		964977E78E15EA321585BF4E4B4EF28F /* Pods-TextFieldKitExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TextFieldKitExample.debug.xcconfig"; sourceTree = "<group>"; };
+		968851B24F292893CBD390825849A9BE /* LocationItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LocationItem.swift; path = LocationPicker/LocationItem.swift; sourceTree = "<group>"; };
+		977C18F0F76CB3C366BDDEBFB241637A /* Pods-TextFieldKitSwiftUIExample-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TextFieldKitSwiftUIExample-frameworks.sh"; sourceTree = "<group>"; };
+		98798921B353536EF7CAC429EB62B68B /* LocationPicker-iOS16.0 */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "LocationPicker-iOS16.0"; path = LocationPicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		98A022AF756DE5DD993003617E6B5E31 /* LocationPicker-iOS13.0-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LocationPicker-iOS13.0-dummy.m"; sourceTree = "<group>"; };
+		98FAAA8BBB4F997A108998CF3BA151FF /* LocationPicker-iOS16.0-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "LocationPicker-iOS16.0-dummy.m"; path = "../LocationPicker-iOS16.0/LocationPicker-iOS16.0-dummy.m"; sourceTree = "<group>"; };
+		9AC93087A67D9C087CE140AFE9973F68 /* Pods-TextFieldKit-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TextFieldKit-acknowledgements.markdown"; sourceTree = "<group>"; };
+		9B9B2BB457EC2AD85EF4B6B58DB497F0 /* LocationPicker-iOS13.0-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "LocationPicker-iOS13.0-Info.plist"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A005B3FD197455265C933B47D2D789B8 /* Localizable.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A193A5085D63097EC171BCA9E7F36281 /* Pods-TextFieldKitSwiftUIExample-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TextFieldKitSwiftUIExample-acknowledgements.plist"; sourceTree = "<group>"; };
+		A58191905F1B1B5D4C4806BAB43F2C43 /* LocationPickerEx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LocationPickerEx.swift; path = LocationPicker/LocationPickerEx.swift; sourceTree = "<group>"; };
+		A5A7120A319F476D0A39186415722549 /* PhoneKit-iOS13.0-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PhoneKit-iOS13.0-prefix.pch"; sourceTree = "<group>"; };
+		AE0D429BD637AB86D3B86F9BA1ED1BDA /* PhoneKit-iOS16.0-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "PhoneKit-iOS16.0-prefix.pch"; path = "../PhoneKit-iOS16.0/PhoneKit-iOS16.0-prefix.pch"; sourceTree = "<group>"; };
+		AF86CD18E9E4A7B799913820E600D38B /* PhoneKit-iOS13.0-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "PhoneKit-iOS13.0-Info.plist"; sourceTree = "<group>"; };
+		B16145D641AD2276192DE32FF2BDBCAB /* FrameWorkConstants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FrameWorkConstants.swift; path = PhoneKit/FrameWorkConstants.swift; sourceTree = "<group>"; };
+		B3A75EB011F449813EA315578F26A24E /* Pods-TextFieldKitExample-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TextFieldKitExample-frameworks.sh"; sourceTree = "<group>"; };
+		B3F2D84C564063D6B9CF6777BCFC646E /* CountryTableViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CountryTableViewCell.swift; path = PhoneKit/CountryTableViewCell.swift; sourceTree = "<group>"; };
+		B415B75BF478A3AE82614A9EDD3F6C74 /* Pods-TextFieldKitExample-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TextFieldKitExample-dummy.m"; sourceTree = "<group>"; };
+		B6009D74110BD10DE1CF3A8E7AD51FFD /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; path = Podfile; sourceTree = "<group>"; };
+		B82C34D85D64E5BB84E7E0FE8CCB8068 /* Pods-TextFieldKit */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-TextFieldKit"; path = Pods_TextFieldKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA4D6B95C0A07A3450FF9FDBE24CFD68 /* Assets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = LocationPicker/Resources/Assets.xcassets; sourceTree = "<group>"; };
+		BB7740551DDC534E0D8C892A2FC465FB /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		C0C18C029C48DDB93D4C79B09AEA645E /* LocationPicker-iOS13.0-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LocationPicker-iOS13.0-prefix.pch"; sourceTree = "<group>"; };
+		C20402165533063A4C8EABEE3B801A56 /* PhoneKit-iOS13.0.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "PhoneKit-iOS13.0.release.xcconfig"; sourceTree = "<group>"; };
+		C44D988A9D138E19B84081232D64EB6F /* PhoneKit-iOS13.0.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "PhoneKit-iOS13.0.modulemap"; sourceTree = "<group>"; };
+		C4F688D1AC324B5A2A1335667E539572 /* Assets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = PhoneKit/Resources/Assets.xcassets; sourceTree = "<group>"; };
+		CB250FD63657D5EAA539B6AAB99FDC45 /* LocationPicker-iOS16.0.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "LocationPicker-iOS16.0.debug.xcconfig"; path = "../LocationPicker-iOS16.0/LocationPicker-iOS16.0.debug.xcconfig"; sourceTree = "<group>"; };
+		CC7C59246B033D0F182869A1A6B29669 /* PhoneKit-iOS16.0 */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "PhoneKit-iOS16.0"; path = PhoneKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CCA638191789D976BA0C5A6A79D958BB /* Pods-TextFieldKit-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TextFieldKit-acknowledgements.plist"; sourceTree = "<group>"; };
+		CDE036E23A892FEE752C7535D3D05BC7 /* ResourceBundle-PhoneKit-PhoneKit-iOS16.0-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = "ResourceBundle-PhoneKit-PhoneKit-iOS16.0-Info.plist"; path = "../PhoneKit-iOS16.0/ResourceBundle-PhoneKit-PhoneKit-iOS16.0-Info.plist"; sourceTree = "<group>"; };
+		CDE60C0FEB93CC6793C984C2EFC03C4F /* PhoneKit.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; name = PhoneKit.storyboard; path = PhoneKit/Resources/PhoneKit.storyboard; sourceTree = "<group>"; };
+		D35BB9162824D2AC0EBC82B58C2C4D85 /* AlertCountryTableViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlertCountryTableViewCell.swift; path = PhoneKit/AlertCountryTableViewCell.swift; sourceTree = "<group>"; };
+		D50DBADE68166D98165776F13219C12C /* LocationPicker.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; name = LocationPicker.storyboard; path = Base.lproj/LocationPicker.storyboard; sourceTree = "<group>"; };
+		D6B50EC8FE379739F7FFD718BE5ED015 /* PhoneKit-iOS13.0-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PhoneKit-iOS13.0-umbrella.h"; sourceTree = "<group>"; };
+		D6B60D7E34B4D2C0E5F3EE8CD16DD93D /* AlertView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = AlertView.xib; path = PhoneKit/Resources/AlertView.xib; sourceTree = "<group>"; };
+		D90BA1B753FD15649D90DFCB91BD9800 /* PhoneKit-iOS16.0.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; name = "PhoneKit-iOS16.0.modulemap"; path = "../PhoneKit-iOS16.0/PhoneKit-iOS16.0.modulemap"; sourceTree = "<group>"; };
+		DC57BA114C20BC6851167D890858179F /* Pods-TextFieldKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TextFieldKit.debug.xcconfig"; sourceTree = "<group>"; };
+		DC8C17C79485F4625EEDC5E5ACC428CF /* Pods-TextFieldKitSwiftUIExample.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TextFieldKitSwiftUIExample.modulemap"; sourceTree = "<group>"; };
+		E05E4571F3EFD501A714813AE5A5B362 /* Pods-TextFieldKitExample-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TextFieldKitExample-Info.plist"; sourceTree = "<group>"; };
+		E1231A903543911D6D60FC36D1E829AF /* FramwWorkConstants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FramwWorkConstants.swift; path = LocationPicker/FramwWorkConstants.swift; sourceTree = "<group>"; };
+		E13A9241E8B643F059F5DC32D1A20DC0 /* PhoneKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PhoneKit.h; path = PhoneKit/PhoneKit.h; sourceTree = "<group>"; };
+		E434DD9DBB8896E3CAF7460C35867617 /* LocationPicker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LocationPicker.h; path = LocationPicker/LocationPicker.h; sourceTree = "<group>"; };
+		E6657EE865C232BB7A82D75472C7FCCD /* SearchView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = SearchView.xib; path = LocationPicker/Resources/SearchView.xib; sourceTree = "<group>"; };
+		E75693E3E19CAC6658D491E76E998E2D /* Pods-TextFieldKitSwiftUIExample-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TextFieldKitSwiftUIExample-dummy.m"; sourceTree = "<group>"; };
+		E8B1F6423B2AF8F8EC4E83905300D18F /* CountryCode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CountryCode.swift; path = PhoneKit/CountryCode.swift; sourceTree = "<group>"; };
+		EA95110D43978B682B5F9583AD73EDC5 /* Pods-TextFieldKitExample.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TextFieldKitExample.modulemap"; sourceTree = "<group>"; };
+		EADDFE854F4D34D7C323E5AAAC0E8593 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		EC769C72FA5BD4B049B1BE72753B85B0 /* ResourceBundle-LocationPicker-LocationPicker-iOS16.0-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = "ResourceBundle-LocationPicker-LocationPicker-iOS16.0-Info.plist"; path = "../LocationPicker-iOS16.0/ResourceBundle-LocationPicker-LocationPicker-iOS16.0-Info.plist"; sourceTree = "<group>"; };
+		ECAB16EA6E3F6334C3850F5FA1943831 /* LocationPicker-iOS16.0-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = "LocationPicker-iOS16.0-Info.plist"; path = "../LocationPicker-iOS16.0/LocationPicker-iOS16.0-Info.plist"; sourceTree = "<group>"; };
+		F017FB29EB6F50B5C77653E369595082 /* LocationPicker-iOS13.0.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "LocationPicker-iOS13.0.debug.xcconfig"; sourceTree = "<group>"; };
+		F100AC9C30040EF79BFF6F89EC999D75 /* PhoneKit-iOS16.0-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = "PhoneKit-iOS16.0-Info.plist"; path = "../PhoneKit-iOS16.0/PhoneKit-iOS16.0-Info.plist"; sourceTree = "<group>"; };
+		F14A5169ED128563F73E80D5A725FD7E /* Pods-TextFieldKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TextFieldKit-umbrella.h"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0433DEB9B98C9CE974D937D2A7F4136A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA507558717782FE0D0CF1F72B9662CD /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		19BAB9CCB7BC23F9EF527D164764C7B6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A7CBC21853B655AD2F5F0F5236BF6517 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24353B0F1017091F7AB56C77EA5D1997 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8FED1D5A77B227C02F76363A19B205B4 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3E3587707A65EEDA90834CEFDCC593E7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				62270ACB494B5B9A9F7D70D6201922F9 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		46F07C79707984DB56E65CB10D435F65 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		683823C56FA6E136837FF2D9F49D0316 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7711992A24A1E8939CFD6C26936ABFCE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C25DB16DADE4EDDAB23CA684B8966128 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2BCC42918DB25008FCAB8B1B28D7A0F4 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CAFA5775F373F8D110B69C964E807D83 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65CDC66D84440C3E10E963BB1D290A5C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2E657A45DF9E344B115E36DD352EDAC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9BCABC3F0727E95FFA2CBE860C0EF1E3 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D350631D1B948D5FC2A1C07E25D2E68B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		09FD6E48D2E11C6C6B66E96B1F8DADA9 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				C44D988A9D138E19B84081232D64EB6F /* PhoneKit-iOS13.0.modulemap */,
+				3A8391B5093ED94B2F927AB05DAF9834 /* PhoneKit-iOS13.0-dummy.m */,
+				AF86CD18E9E4A7B799913820E600D38B /* PhoneKit-iOS13.0-Info.plist */,
+				A5A7120A319F476D0A39186415722549 /* PhoneKit-iOS13.0-prefix.pch */,
+				D6B50EC8FE379739F7FFD718BE5ED015 /* PhoneKit-iOS13.0-umbrella.h */,
+				7190830D909048D84B5709849C5E8321 /* PhoneKit-iOS13.0.debug.xcconfig */,
+				C20402165533063A4C8EABEE3B801A56 /* PhoneKit-iOS13.0.release.xcconfig */,
+				D90BA1B753FD15649D90DFCB91BD9800 /* PhoneKit-iOS16.0.modulemap */,
+				602749C859193124D47D2A4A9B77F7B0 /* PhoneKit-iOS16.0-dummy.m */,
+				F100AC9C30040EF79BFF6F89EC999D75 /* PhoneKit-iOS16.0-Info.plist */,
+				AE0D429BD637AB86D3B86F9BA1ED1BDA /* PhoneKit-iOS16.0-prefix.pch */,
+				49C952C4726B71CF4EA024E025503FA9 /* PhoneKit-iOS16.0-umbrella.h */,
+				3F5962FA44E69238C6CF0553611AB417 /* PhoneKit-iOS16.0.debug.xcconfig */,
+				84974E197C0F5C8656147B95567E6991 /* PhoneKit-iOS16.0.release.xcconfig */,
+				50E590798FCB42424CFD99CB47ABC34D /* ResourceBundle-PhoneKit-PhoneKit-iOS13.0-Info.plist */,
+				CDE036E23A892FEE752C7535D3D05BC7 /* ResourceBundle-PhoneKit-PhoneKit-iOS16.0-Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/PhoneKit-iOS13.0";
+			sourceTree = "<group>";
+		};
+		10D3396DF11659DDCEE3E88FEFD25AA3 /* Pods-TextFieldKit */ = {
+			isa = PBXGroup;
+			children = (
+				5C528B4BA580DCB63BA93674C922E2C9 /* Pods-TextFieldKit.modulemap */,
+				9AC93087A67D9C087CE140AFE9973F68 /* Pods-TextFieldKit-acknowledgements.markdown */,
+				CCA638191789D976BA0C5A6A79D958BB /* Pods-TextFieldKit-acknowledgements.plist */,
+				18A2CF4D70EB71E3E881DB7255076B31 /* Pods-TextFieldKit-dummy.m */,
+				79196DB285A231E3AD66721D5852B728 /* Pods-TextFieldKit-Info.plist */,
+				F14A5169ED128563F73E80D5A725FD7E /* Pods-TextFieldKit-umbrella.h */,
+				DC57BA114C20BC6851167D890858179F /* Pods-TextFieldKit.debug.xcconfig */,
+				3625A01A9954D402E82729F7A789B815 /* Pods-TextFieldKit.release.xcconfig */,
+			);
+			name = "Pods-TextFieldKit";
+			path = "Target Support Files/Pods-TextFieldKit";
+			sourceTree = "<group>";
+		};
+		529CAB49EDDEF55D7707682068A6CBA1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E1C8AD97602C75F115347BFFE859C5B5 /* LocationPicker */,
+				CD0F5597352A2F5563BAFB2765FB79DA /* PhoneKit */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		53EA190B932ACB096E94828C14C0E15A /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				74516481540272AE81AC56D965E662CF /* LocationPicker-iOS13.0.modulemap */,
+				98A022AF756DE5DD993003617E6B5E31 /* LocationPicker-iOS13.0-dummy.m */,
+				9B9B2BB457EC2AD85EF4B6B58DB497F0 /* LocationPicker-iOS13.0-Info.plist */,
+				C0C18C029C48DDB93D4C79B09AEA645E /* LocationPicker-iOS13.0-prefix.pch */,
+				44664F8268EA603EBAD440CF3F729825 /* LocationPicker-iOS13.0-umbrella.h */,
+				F017FB29EB6F50B5C77653E369595082 /* LocationPicker-iOS13.0.debug.xcconfig */,
+				80E84A8C7027E8E3EF124FFACA27102B /* LocationPicker-iOS13.0.release.xcconfig */,
+				9572BD586BED8A91AD5150FBF6C90877 /* LocationPicker-iOS16.0.modulemap */,
+				98FAAA8BBB4F997A108998CF3BA151FF /* LocationPicker-iOS16.0-dummy.m */,
+				ECAB16EA6E3F6334C3850F5FA1943831 /* LocationPicker-iOS16.0-Info.plist */,
+				40500666CA6FE7365D89798A47B56C7E /* LocationPicker-iOS16.0-prefix.pch */,
+				91CF801AD0F1D82C8B8EF5B364AB23A7 /* LocationPicker-iOS16.0-umbrella.h */,
+				CB250FD63657D5EAA539B6AAB99FDC45 /* LocationPicker-iOS16.0.debug.xcconfig */,
+				64C59C8D964EE84C3456F142A2020226 /* LocationPicker-iOS16.0.release.xcconfig */,
+				32003D9BF19B6DDA17A83731B4BA8196 /* ResourceBundle-LocationPicker-LocationPicker-iOS13.0-Info.plist */,
+				EC769C72FA5BD4B049B1BE72753B85B0 /* ResourceBundle-LocationPicker-LocationPicker-iOS16.0-Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/LocationPicker-iOS13.0";
+			sourceTree = "<group>";
+		};
+		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		7022AD4039E7260B4565FC9DFEC88DD0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				712AA00CA2BA29BAB50E1FEAC351824A /* AlertCountryTableViewCell.xib */,
+				D6B60D7E34B4D2C0E5F3EE8CD16DD93D /* AlertView.xib */,
+				C4F688D1AC324B5A2A1335667E539572 /* Assets.xcassets */,
+				464335517C3A2EE3036AA4BE8CCC6559 /* countryCodes.json */,
+				1747C06058F64F1E5C621603C03319C2 /* CountryListManager.bundle */,
+				EB195866EE666A137A4914BF05DE39C4 /* Localizable.strings */,
+				CDE60C0FEB93CC6793C984C2EFC03C4F /* PhoneKit.storyboard */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		A29756D5A3312F6AB7110660900565E1 /* Pods-TextFieldKitSwiftUIExample */ = {
+			isa = PBXGroup;
+			children = (
+				DC8C17C79485F4625EEDC5E5ACC428CF /* Pods-TextFieldKitSwiftUIExample.modulemap */,
+				8BE3AEBC85533FEE2BDBFD856FC49AEB /* Pods-TextFieldKitSwiftUIExample-acknowledgements.markdown */,
+				A193A5085D63097EC171BCA9E7F36281 /* Pods-TextFieldKitSwiftUIExample-acknowledgements.plist */,
+				E75693E3E19CAC6658D491E76E998E2D /* Pods-TextFieldKitSwiftUIExample-dummy.m */,
+				977C18F0F76CB3C366BDDEBFB241637A /* Pods-TextFieldKitSwiftUIExample-frameworks.sh */,
+				20F471B9940309A9D827B5D35103E536 /* Pods-TextFieldKitSwiftUIExample-Info.plist */,
+				31A4D8A3A6F9F79A644AC0326F437D90 /* Pods-TextFieldKitSwiftUIExample-umbrella.h */,
+				46A76308265C2C85E9F31CD7087A1C2F /* Pods-TextFieldKitSwiftUIExample.debug.xcconfig */,
+				2D40AA3F11DEC398182BB7A5AD4FE799 /* Pods-TextFieldKitSwiftUIExample.release.xcconfig */,
+			);
+			name = "Pods-TextFieldKitSwiftUIExample";
+			path = "Target Support Files/Pods-TextFieldKitSwiftUIExample";
+			sourceTree = "<group>";
+		};
+		AB9384B873FC7160767C6F2031A969FF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1FAC67CD9458286A3AE3BDCD61E69AE1 /* LocationPicker-iOS13.0 */,
+				1C7E8616AE23C016A41C5BB57A50E6C0 /* LocationPicker-iOS13.0-LocationPicker */,
+				98798921B353536EF7CAC429EB62B68B /* LocationPicker-iOS16.0 */,
+				1A4C410BAB3DC6E2139832A9A2CB9090 /* LocationPicker-iOS16.0-LocationPicker */,
+				739C1AB6A778D1837C711E3A2357286D /* PhoneKit-iOS13.0 */,
+				5F679FD9B931D099D3DC036F6157E437 /* PhoneKit-iOS13.0-PhoneKit */,
+				CC7C59246B033D0F182869A1A6B29669 /* PhoneKit-iOS16.0 */,
+				07B82C4E6C631E9FBE92EBD8CDD6B0D4 /* PhoneKit-iOS16.0-PhoneKit */,
+				B82C34D85D64E5BB84E7E0FE8CCB8068 /* Pods-TextFieldKit */,
+				68178548FCF141A11ACCE0621CBC9D40 /* Pods-TextFieldKitExample */,
+				26C6BEB803D733442F1ECA4D8315F0F1 /* Pods-TextFieldKitSwiftUIExample */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C277F7963787A8B2198039FBEF048050 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BA4D6B95C0A07A3450FF9FDBE24CFD68 /* Assets.xcassets */,
+				4138920F7258F94F7A22C1BA212AD002 /* Localizable.strings */,
+				4B76631037B8FC8651391C1AB0A1D7F4 /* LocationPicker.storyboard */,
+				E6657EE865C232BB7A82D75472C7FCCD /* SearchView.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		CD0F5597352A2F5563BAFB2765FB79DA /* PhoneKit */ = {
+			isa = PBXGroup;
+			children = (
+				D35BB9162824D2AC0EBC82B58C2C4D85 /* AlertCountryTableViewCell.swift */,
+				8F3AE97504D9C80548A42D177032544A /* AlertView.swift */,
+				E8B1F6423B2AF8F8EC4E83905300D18F /* CountryCode.swift */,
+				243625266EB668F70072AAA4FA9257A5 /* CountryListManager.swift */,
+				B3F2D84C564063D6B9CF6777BCFC646E /* CountryTableViewCell.swift */,
+				0707DF5074B44A88B04E1A37043E7B80 /* CountryViewController.swift */,
+				B16145D641AD2276192DE32FF2BDBCAB /* FrameWorkConstants.swift */,
+				BB7740551DDC534E0D8C892A2FC465FB /* LICENSE */,
+				E13A9241E8B643F059F5DC32D1A20DC0 /* PhoneKit.h */,
+				7939879D95E0963CE4FACB7E7CF90029 /* PhoneKit.podspec */,
+				71AE523DB747BF750F7A36C1663DBD7E /* PhoneKitEx.swift */,
+				EADDFE854F4D34D7C323E5AAAC0E8593 /* README.md */,
+				4338002CC6E050F6A1966D52F1769F58 /* SVGCountryFlags.zip */,
+				7022AD4039E7260B4565FC9DFEC88DD0 /* Resources */,
+				09FD6E48D2E11C6C6B66E96B1F8DADA9 /* Support Files */,
+			);
+			name = PhoneKit;
+			path = PhoneKit;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				529CAB49EDDEF55D7707682068A6CBA1 /* Pods */,
+				AB9384B873FC7160767C6F2031A969FF /* Products */,
+				E58B9B9A6244ABA19304BB903DD2B4EB /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				578452D2E740E91742655AC8F1636D1F /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E1C8AD97602C75F115347BFFE859C5B5 /* LocationPicker */ = {
+			isa = PBXGroup;
+			children = (
+				E1231A903543911D6D60FC36D1E829AF /* FramwWorkConstants.swift */,
+				968851B24F292893CBD390825849A9BE /* LocationItem.swift */,
+				E434DD9DBB8896E3CAF7460C35867617 /* LocationPicker.h */,
+				10945B1B325B0913AC554EDD1F0A307B /* LocationPicker.podspec */,
+				A58191905F1B1B5D4C4806BAB43F2C43 /* LocationPickerEx.swift */,
+				6647141CA8D499ECB8AEB8B0F34B97AB /* LocationPickerViewController.swift */,
+				4FD9C7123852D49A7E3D7BCDE2087FB4 /* LocationTableViewCell.swift */,
+				B6009D74110BD10DE1CF3A8E7AD51FFD /* Podfile */,
+				736DD44140FB5B7633D5BF5C697141AB /* Podfile.lock */,
+				7D949B466C74F465602D69AA5CD6C63A /* SearchView.swift */,
+				C277F7963787A8B2198039FBEF048050 /* Resources */,
+				53EA190B932ACB096E94828C14C0E15A /* Support Files */,
+			);
+			name = LocationPicker;
+			path = LocationPicker;
+			sourceTree = "<group>";
+		};
+		E58B9B9A6244ABA19304BB903DD2B4EB /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				10D3396DF11659DDCEE3E88FEFD25AA3 /* Pods-TextFieldKit */,
+				F87DFF5B85BBD97AD99EE58B9076FDDC /* Pods-TextFieldKitExample */,
+				A29756D5A3312F6AB7110660900565E1 /* Pods-TextFieldKitSwiftUIExample */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		F87DFF5B85BBD97AD99EE58B9076FDDC /* Pods-TextFieldKitExample */ = {
+			isa = PBXGroup;
+			children = (
+				EA95110D43978B682B5F9583AD73EDC5 /* Pods-TextFieldKitExample.modulemap */,
+				2EE265976CF19DE81735A84083707658 /* Pods-TextFieldKitExample-acknowledgements.markdown */,
+				0D12DB922F8518E27DB9E25CEEEDE896 /* Pods-TextFieldKitExample-acknowledgements.plist */,
+				B415B75BF478A3AE82614A9EDD3F6C74 /* Pods-TextFieldKitExample-dummy.m */,
+				B3A75EB011F449813EA315578F26A24E /* Pods-TextFieldKitExample-frameworks.sh */,
+				E05E4571F3EFD501A714813AE5A5B362 /* Pods-TextFieldKitExample-Info.plist */,
+				1FF888DB008A46ECB96401E4C611775F /* Pods-TextFieldKitExample-umbrella.h */,
+				964977E78E15EA321585BF4E4B4EF28F /* Pods-TextFieldKitExample.debug.xcconfig */,
+				0FB4AF243320AA1BC75E690437D2FE6F /* Pods-TextFieldKitExample.release.xcconfig */,
+			);
+			name = "Pods-TextFieldKitExample";
+			path = "Target Support Files/Pods-TextFieldKitExample";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		01992E79DFEE99B7CBEC71AAD1C708F2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				97C183508AA0E55578CC223B0645D1FC /* Pods-TextFieldKit-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3DC1B5CAB390DE0AC8B489E6701EE5F1 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88B20FE968630C00BF887E408F1E151A /* PhoneKit.h in Headers */,
+				080AADF886374533BDF7B72B0E3B1FBA /* PhoneKit-iOS13.0-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		508E059B9E332FE3FE3A3D0CD7E5FDBD /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E94DB581E1220AA3DBFBE771CC58B36 /* LocationPicker.h in Headers */,
+				2824685C42C6891676BBF1827FC2EA35 /* LocationPicker-iOS13.0-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		727EBC366FD3020DC0A918BB67931141 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2AF3BFB78C63AE6025B343B1D15CC7D /* Pods-TextFieldKitExample-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8ADCBC616E3EA40CDE2CCDEC08E23FDD /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A13E58D46C8F154B78F557FE2AC691F /* Pods-TextFieldKitSwiftUIExample-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		99846F4434175F2852B3B434F01CA0DE /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16425025124F27D6B59682505D50B263 /* PhoneKit.h in Headers */,
+				00AC8E762AC42FFCE59EDD4714231BF7 /* PhoneKit-iOS16.0-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE440D6F1D36CDD054BB7748F9245E41 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4531D105189AA0722281C62536F54A39 /* LocationPicker.h in Headers */,
+				083F066A655866E0ABEDBD2FB9AE81BB /* LocationPicker-iOS16.0-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		086182791B800BD7238BE4AA79E07A42 /* PhoneKit-iOS16.0 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3B06CB6A9B4A0558913564511F2C68BC /* Build configuration list for PBXNativeTarget "PhoneKit-iOS16.0" */;
+			buildPhases = (
+				99846F4434175F2852B3B434F01CA0DE /* Headers */,
+				4AB33B8130DFD7DEE03F21CB083BF69A /* Sources */,
+				CAFA5775F373F8D110B69C964E807D83 /* Frameworks */,
+				7C858697B26DB7049ABB36B97120F70D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B7A010667317482AA7E18459040F063E /* PBXTargetDependency */,
+			);
+			name = "PhoneKit-iOS16.0";
+			productName = PhoneKit;
+			productReference = CC7C59246B033D0F182869A1A6B29669 /* PhoneKit-iOS16.0 */;
+			productType = "com.apple.product-type.framework";
+		};
+		6F94D66A77EB528D0EBE7C9A860559CF /* LocationPicker-iOS16.0-LocationPicker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 30D4B993D29C0BED7F27D9BDE8A18535 /* Build configuration list for PBXNativeTarget "LocationPicker-iOS16.0-LocationPicker" */;
+			buildPhases = (
+				3CE84096D59B397E473E171E155129BE /* Sources */,
+				683823C56FA6E136837FF2D9F49D0316 /* Frameworks */,
+				167A55E0149CA55C1E2EBF3E458C1802 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "LocationPicker-iOS16.0-LocationPicker";
+			productName = LocationPicker;
+			productReference = 1A4C410BAB3DC6E2139832A9A2CB9090 /* LocationPicker-iOS16.0-LocationPicker */;
+			productType = "com.apple.product-type.bundle";
+		};
+		701BAEFCF19232F7EAE95433024CD715 /* Pods-TextFieldKitExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A192C56D880556DD29E8E3256BD0FABD /* Build configuration list for PBXNativeTarget "Pods-TextFieldKitExample" */;
+			buildPhases = (
+				727EBC366FD3020DC0A918BB67931141 /* Headers */,
+				BEC425A2CAA93D537B0B925FBF8CB4B3 /* Sources */,
+				3E3587707A65EEDA90834CEFDCC593E7 /* Frameworks */,
+				F5B4D9BD91236F7FFDB435910D299D3F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AE4FF4C635EFC18C9F708600E76D5DDA /* PBXTargetDependency */,
+				7517E2B8C1455B143600A61D6329E500 /* PBXTargetDependency */,
+			);
+			name = "Pods-TextFieldKitExample";
+			productName = Pods_TextFieldKitExample;
+			productReference = 68178548FCF141A11ACCE0621CBC9D40 /* Pods-TextFieldKitExample */;
+			productType = "com.apple.product-type.framework";
+		};
+		7955CBF827F1BC82094ADC3A2AAF8806 /* LocationPicker-iOS13.0 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B3E4AB8AFB208B192C1463E2BB7E5DB7 /* Build configuration list for PBXNativeTarget "LocationPicker-iOS13.0" */;
+			buildPhases = (
+				508E059B9E332FE3FE3A3D0CD7E5FDBD /* Headers */,
+				74F1C10E804100B4BA1B6B1D82DA18DE /* Sources */,
+				D2E657A45DF9E344B115E36DD352EDAC /* Frameworks */,
+				14B46696EB8BACE8337F7CA2D28B294B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1675FC7B5D57162EB3A13B2CCDE553F1 /* PBXTargetDependency */,
+			);
+			name = "LocationPicker-iOS13.0";
+			productName = LocationPicker;
+			productReference = 1FAC67CD9458286A3AE3BDCD61E69AE1 /* LocationPicker-iOS13.0 */;
+			productType = "com.apple.product-type.framework";
+		};
+		96E4416589F04C8E3093056D528F11C4 /* PhoneKit-iOS13.0-PhoneKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FD60A84ED8BCD0B836DD23EBEBF4FCDD /* Build configuration list for PBXNativeTarget "PhoneKit-iOS13.0-PhoneKit" */;
+			buildPhases = (
+				1E083C076293E0E57554C3DB755734AC /* Sources */,
+				46F07C79707984DB56E65CB10D435F65 /* Frameworks */,
+				A2F22C01F0C80CF7FF757F584EE19B40 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "PhoneKit-iOS13.0-PhoneKit";
+			productName = PhoneKit;
+			productReference = 5F679FD9B931D099D3DC036F6157E437 /* PhoneKit-iOS13.0-PhoneKit */;
+			productType = "com.apple.product-type.bundle";
+		};
+		A44548C617A69D82FE3346C92CF70E2B /* LocationPicker-iOS13.0-LocationPicker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2115D9780BC4081B2194108FEAF205DF /* Build configuration list for PBXNativeTarget "LocationPicker-iOS13.0-LocationPicker" */;
+			buildPhases = (
+				E77DC3680CE7897004FACF22C20C502A /* Sources */,
+				D350631D1B948D5FC2A1C07E25D2E68B /* Frameworks */,
+				ED561583A3F14A3E339AA69F36B7480F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "LocationPicker-iOS13.0-LocationPicker";
+			productName = LocationPicker;
+			productReference = 1C7E8616AE23C016A41C5BB57A50E6C0 /* LocationPicker-iOS13.0-LocationPicker */;
+			productType = "com.apple.product-type.bundle";
+		};
+		AE48444DD6C786C0DDC00413673CF0D6 /* Pods-TextFieldKitSwiftUIExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 239A80E902AAB764C37E808796688952 /* Build configuration list for PBXNativeTarget "Pods-TextFieldKitSwiftUIExample" */;
+			buildPhases = (
+				8ADCBC616E3EA40CDE2CCDEC08E23FDD /* Headers */,
+				2430662BA86AB06156EE8490057022C8 /* Sources */,
+				C25DB16DADE4EDDAB23CA684B8966128 /* Frameworks */,
+				FB5C9EFF6B834B748344574272969673 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1065C0CF15003C49678F212E62A1397B /* PBXTargetDependency */,
+				F1D3E06C1FE4CEB13DBC34FC878749D5 /* PBXTargetDependency */,
+			);
+			name = "Pods-TextFieldKitSwiftUIExample";
+			productName = Pods_TextFieldKitSwiftUIExample;
+			productReference = 26C6BEB803D733442F1ECA4D8315F0F1 /* Pods-TextFieldKitSwiftUIExample */;
+			productType = "com.apple.product-type.framework";
+		};
+		CBEB1A2C6AAB61624080B5A81920DFA6 /* Pods-TextFieldKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1C1A17B4DFF702914A4105B378815ACA /* Build configuration list for PBXNativeTarget "Pods-TextFieldKit" */;
+			buildPhases = (
+				01992E79DFEE99B7CBEC71AAD1C708F2 /* Headers */,
+				8999547BEA862494B9FED6B783DD0FD5 /* Sources */,
+				19BAB9CCB7BC23F9EF527D164764C7B6 /* Frameworks */,
+				A5DBB46C5523ADA9CFE13E3BCFC3D1CB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				732E3DA0851E1B6700CB3CF948E754BC /* PBXTargetDependency */,
+				4E4D39240FDDF61693F3223B2518532E /* PBXTargetDependency */,
+			);
+			name = "Pods-TextFieldKit";
+			productName = Pods_TextFieldKit;
+			productReference = B82C34D85D64E5BB84E7E0FE8CCB8068 /* Pods-TextFieldKit */;
+			productType = "com.apple.product-type.framework";
+		};
+		D0FDAF68050E1093545F475C6D774000 /* PhoneKit-iOS16.0-PhoneKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3F0C12AE8F84D15A3E05FC201FBF2E94 /* Build configuration list for PBXNativeTarget "PhoneKit-iOS16.0-PhoneKit" */;
+			buildPhases = (
+				62DF6618EBDFF1E9E2FD9738ECBA62C2 /* Sources */,
+				7711992A24A1E8939CFD6C26936ABFCE /* Frameworks */,
+				747EE06332DB013E1A1B378F058BEF10 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "PhoneKit-iOS16.0-PhoneKit";
+			productName = PhoneKit;
+			productReference = 07B82C4E6C631E9FBE92EBD8CDD6B0D4 /* PhoneKit-iOS16.0-PhoneKit */;
+			productType = "com.apple.product-type.bundle";
+		};
+		D309D7B1B528FE1223C15BD568D11586 /* PhoneKit-iOS13.0 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A67010AB15DF4BF4D74AA15D7B0B9C6F /* Build configuration list for PBXNativeTarget "PhoneKit-iOS13.0" */;
+			buildPhases = (
+				3DC1B5CAB390DE0AC8B489E6701EE5F1 /* Headers */,
+				7951B87171797538D3AEAB50A97F15BD /* Sources */,
+				24353B0F1017091F7AB56C77EA5D1997 /* Frameworks */,
+				FEC8389208F95845FC4BC9CDCA5338C3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3CD9F5EEBEF59AA09D6CE68B860D203E /* PBXTargetDependency */,
+			);
+			name = "PhoneKit-iOS13.0";
+			productName = PhoneKit;
+			productReference = 739C1AB6A778D1837C711E3A2357286D /* PhoneKit-iOS13.0 */;
+			productType = "com.apple.product-type.framework";
+		};
+		F7097D9B669DA8A69E4DD76A740FB8E1 /* LocationPicker-iOS16.0 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 522ACE744039E84BF52397ABDE156C55 /* Build configuration list for PBXNativeTarget "LocationPicker-iOS16.0" */;
+			buildPhases = (
+				EE440D6F1D36CDD054BB7748F9245E41 /* Headers */,
+				1B66896C339E35DC37ED211535D45956 /* Sources */,
+				0433DEB9B98C9CE974D937D2A7F4136A /* Frameworks */,
+				9BB878851719E6E734F3C436B505B76B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E8949D64B95D3F059665CE3B400BF7A3 /* PBXTargetDependency */,
+			);
+			name = "LocationPicker-iOS16.0";
+			productName = LocationPicker;
+			productReference = 98798921B353536EF7CAC429EB62B68B /* LocationPicker-iOS16.0 */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1300;
+				LastUpgradeCheck = 1300;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 10.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				ar,
+				en,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = AB9384B873FC7160767C6F2031A969FF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7955CBF827F1BC82094ADC3A2AAF8806 /* LocationPicker-iOS13.0 */,
+				A44548C617A69D82FE3346C92CF70E2B /* LocationPicker-iOS13.0-LocationPicker */,
+				F7097D9B669DA8A69E4DD76A740FB8E1 /* LocationPicker-iOS16.0 */,
+				6F94D66A77EB528D0EBE7C9A860559CF /* LocationPicker-iOS16.0-LocationPicker */,
+				D309D7B1B528FE1223C15BD568D11586 /* PhoneKit-iOS13.0 */,
+				96E4416589F04C8E3093056D528F11C4 /* PhoneKit-iOS13.0-PhoneKit */,
+				086182791B800BD7238BE4AA79E07A42 /* PhoneKit-iOS16.0 */,
+				D0FDAF68050E1093545F475C6D774000 /* PhoneKit-iOS16.0-PhoneKit */,
+				CBEB1A2C6AAB61624080B5A81920DFA6 /* Pods-TextFieldKit */,
+				701BAEFCF19232F7EAE95433024CD715 /* Pods-TextFieldKitExample */,
+				AE48444DD6C786C0DDC00413673CF0D6 /* Pods-TextFieldKitSwiftUIExample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		14B46696EB8BACE8337F7CA2D28B294B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB395C41FEB8D7A524E5A6F440E6E392 /* LocationPicker-iOS13.0-LocationPicker in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		167A55E0149CA55C1E2EBF3E458C1802 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9BFE3FF0B9246C6FED2C690CD2819EC5 /* Assets.xcassets in Resources */,
+				D30144F46AAC0A5143057F4FA352CF15 /* Localizable.strings in Resources */,
+				09BC9492662AC95B4E9CBFD6659FBBD1 /* LocationPicker.storyboard in Resources */,
+				8A7147C8609C27C9E6A98371812D2A34 /* SearchView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		747EE06332DB013E1A1B378F058BEF10 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F89A276E56143399B0140C83F444DDB0 /* AlertCountryTableViewCell.xib in Resources */,
+				3D5B7DB7A121C638F20F1335DF2EF5BD /* AlertView.xib in Resources */,
+				90249CC7B3602C9D5B58F442A45078AB /* Assets.xcassets in Resources */,
+				6526A1F75F59F70146B782BBEE72E545 /* countryCodes.json in Resources */,
+				C941237113C5097FD1FD88B67F995FE5 /* CountryListManager.bundle in Resources */,
+				98563BB5FDD5572FE674D3A7925F719C /* Localizable.strings in Resources */,
+				0915A570B7011E1A5D471D8072F03B6B /* PhoneKit.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7C858697B26DB7049ABB36B97120F70D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E696CFBEE7BF8C5CA385B68ADA7DD77 /* PhoneKit-iOS16.0-PhoneKit in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9BB878851719E6E734F3C436B505B76B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0853D84F447CB0264528330C4FFF2CD /* LocationPicker-iOS16.0-LocationPicker in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A2F22C01F0C80CF7FF757F584EE19B40 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2221925448442988C8FE4E802BA1EB8B /* AlertCountryTableViewCell.xib in Resources */,
+				B25D2FEE01BEBEEC70CA1386E5E3F901 /* AlertView.xib in Resources */,
+				662DD5680A98B3C8E8B29F19E7BCEFBD /* Assets.xcassets in Resources */,
+				F1B0CF98F42748FDD1E9543AE05E1B94 /* countryCodes.json in Resources */,
+				4B438416FFFD6B426C0EF7A635C11741 /* CountryListManager.bundle in Resources */,
+				DBAFBC5773B9F92621CA72276553B7A6 /* Localizable.strings in Resources */,
+				724433A0E5AA711BC58C00E68942B459 /* PhoneKit.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5DBB46C5523ADA9CFE13E3BCFC3D1CB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED561583A3F14A3E339AA69F36B7480F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F2CA0710C601712E48759C7371443C73 /* Assets.xcassets in Resources */,
+				E5E65F3B4532EFF5214EF89C8492E375 /* Localizable.strings in Resources */,
+				55554C4C46C4515B6F40CAEDD2AB607D /* LocationPicker.storyboard in Resources */,
+				9E3EC0F1588528148019A7F5E8426790 /* SearchView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5B4D9BD91236F7FFDB435910D299D3F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB5C9EFF6B834B748344574272969673 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FEC8389208F95845FC4BC9CDCA5338C3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B97A316CF43B1FB917A18217C7AA7B67 /* PhoneKit-iOS13.0-PhoneKit in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1B66896C339E35DC37ED211535D45956 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C7DFC9641933A31834AD94112E0501D5 /* FramwWorkConstants.swift in Sources */,
+				2926CA65AC4ADB8EF0FF66BBAAC33E94 /* LocationItem.swift in Sources */,
+				C5B67D396C7224AF95F952BFE722FF55 /* LocationPicker.podspec in Sources */,
+				4FDAB8A246748A34B58BDF44666FE61F /* LocationPicker-iOS16.0-dummy.m in Sources */,
+				7A7D5B9D0AFC37F222195F4996A36963 /* LocationPickerEx.swift in Sources */,
+				189D482344C0D7BC00B2A8479CEB5672 /* LocationPickerViewController.swift in Sources */,
+				64AFFCEB25740C135CEFF489F0011B00 /* LocationTableViewCell.swift in Sources */,
+				564BCBC638C19BBCD58DFC1102EC4AF3 /* Podfile in Sources */,
+				61874A117ACC0982CED444996C30DC3A /* Podfile.lock in Sources */,
+				82C436AACFAF702F1AD84EBD13CC9247 /* SearchView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1E083C076293E0E57554C3DB755734AC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2430662BA86AB06156EE8490057022C8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22748721A24B822CC7F784713A48A36E /* Pods-TextFieldKitSwiftUIExample-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3CE84096D59B397E473E171E155129BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4AB33B8130DFD7DEE03F21CB083BF69A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				61F77FA077C1643356D20B4704F06449 /* AlertCountryTableViewCell.swift in Sources */,
+				7BEA52C8DE3A471E9E639B734367AB5A /* AlertView.swift in Sources */,
+				DFA587C7A4BBC8CD4CE70E09B61B5F49 /* CountryCode.swift in Sources */,
+				4B035C738805999D6CAD52238F81BDB8 /* CountryListManager.swift in Sources */,
+				5D90DDAA67923E3079B348002E85D0D6 /* CountryTableViewCell.swift in Sources */,
+				C2B6347593D80C50540B17679EA26FD6 /* CountryViewController.swift in Sources */,
+				532E8DE3DF62A251BE61F5D79C0265E0 /* FrameWorkConstants.swift in Sources */,
+				67663420C211AA9776F3BF6F9709DFB0 /* LICENSE in Sources */,
+				512A421125ACC77FE0EF92A6449E8357 /* PhoneKit.podspec in Sources */,
+				E2ECB60B997DA3777426CEB553394306 /* PhoneKit-iOS16.0-dummy.m in Sources */,
+				DB1ACA1EEC07352EEEE2B4E791D3BE84 /* PhoneKitEx.swift in Sources */,
+				56138418A2FFF932F9FF46C53856B763 /* README.md in Sources */,
+				1FB2140ADB1B1D2C23D11C98DED4FCC7 /* SVGCountryFlags.zip in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		62DF6618EBDFF1E9E2FD9738ECBA62C2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		74F1C10E804100B4BA1B6B1D82DA18DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5E31FD7323181DD827B119BFE51B33C7 /* FramwWorkConstants.swift in Sources */,
+				BF4B8025F347B3647EEB93E3CC46892A /* LocationItem.swift in Sources */,
+				B0D3EC04A3ADBDE99594E85316E95633 /* LocationPicker.podspec in Sources */,
+				4723D309297BA9DEFEBEEDB08C513E63 /* LocationPicker-iOS13.0-dummy.m in Sources */,
+				D65FEC337C541BDD7485DC9D63639FAC /* LocationPickerEx.swift in Sources */,
+				02C02D2C9455C521A5B1C5605E623366 /* LocationPickerViewController.swift in Sources */,
+				9E5B751C604745C49C21F00C9B55EC35 /* LocationTableViewCell.swift in Sources */,
+				FEC72ABBC5AAA18FEC8438C98B619408 /* Podfile in Sources */,
+				4932F143F997DD5794DEDFC1823DB6A0 /* Podfile.lock in Sources */,
+				3022281A6283DC8E58B922C479BAB132 /* SearchView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7951B87171797538D3AEAB50A97F15BD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C704FB4DEFE595E7C90B063B97A702A7 /* AlertCountryTableViewCell.swift in Sources */,
+				85172D5ECC1FE01C3664678971A5F81A /* AlertView.swift in Sources */,
+				BB3DD10E610B23016475B53CF4794E49 /* CountryCode.swift in Sources */,
+				3ADE6260D80031D0923899A85BE9CB43 /* CountryListManager.swift in Sources */,
+				5699D9B1CE612C99D94E5BD2E48C09AE /* CountryTableViewCell.swift in Sources */,
+				FFF8F2C56FBF4B2B86C00E7A7EAF48A6 /* CountryViewController.swift in Sources */,
+				663AA710B826E05EC2D5246E9ABF404F /* FrameWorkConstants.swift in Sources */,
+				ABCEBF4BC54F2D499E10B48E04F1E7F4 /* LICENSE in Sources */,
+				EE70B896EAC3C56878D5BF04D8A80C71 /* PhoneKit.podspec in Sources */,
+				E35A1D608C06FC980A85D2449BB775AD /* PhoneKit-iOS13.0-dummy.m in Sources */,
+				6EC94205BA006685ACD36BEF50637469 /* PhoneKitEx.swift in Sources */,
+				6065B3061E6DAEAB15E7314FA4BA681E /* README.md in Sources */,
+				2EA001CA3E5FB1600B9C432CA69B136B /* SVGCountryFlags.zip in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8999547BEA862494B9FED6B783DD0FD5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92997A06D49D82430E04A845A3A9165C /* Pods-TextFieldKit-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BEC425A2CAA93D537B0B925FBF8CB4B3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E74491A7E56C4D32F6874FCDB471206A /* Pods-TextFieldKitExample-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E77DC3680CE7897004FACF22C20C502A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1065C0CF15003C49678F212E62A1397B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "LocationPicker-iOS16.0";
+			target = F7097D9B669DA8A69E4DD76A740FB8E1 /* LocationPicker-iOS16.0 */;
+			targetProxy = FBD901541CE4E275E5CAE09934391476 /* PBXContainerItemProxy */;
+		};
+		1675FC7B5D57162EB3A13B2CCDE553F1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "LocationPicker-iOS13.0-LocationPicker";
+			target = A44548C617A69D82FE3346C92CF70E2B /* LocationPicker-iOS13.0-LocationPicker */;
+			targetProxy = 52EAAB30CAF3930572B831EB43E67FBC /* PBXContainerItemProxy */;
+		};
+		3CD9F5EEBEF59AA09D6CE68B860D203E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "PhoneKit-iOS13.0-PhoneKit";
+			target = 96E4416589F04C8E3093056D528F11C4 /* PhoneKit-iOS13.0-PhoneKit */;
+			targetProxy = 5C942ED8204002D4B4FF3265E5E78401 /* PBXContainerItemProxy */;
+		};
+		4E4D39240FDDF61693F3223B2518532E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "PhoneKit-iOS13.0";
+			target = D309D7B1B528FE1223C15BD568D11586 /* PhoneKit-iOS13.0 */;
+			targetProxy = B7FA928CE9B2418DF34963C78995A09F /* PBXContainerItemProxy */;
+		};
+		732E3DA0851E1B6700CB3CF948E754BC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "LocationPicker-iOS13.0";
+			target = 7955CBF827F1BC82094ADC3A2AAF8806 /* LocationPicker-iOS13.0 */;
+			targetProxy = 8034BD34A7A23E3CE8C4961315766896 /* PBXContainerItemProxy */;
+		};
+		7517E2B8C1455B143600A61D6329E500 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "PhoneKit-iOS13.0";
+			target = D309D7B1B528FE1223C15BD568D11586 /* PhoneKit-iOS13.0 */;
+			targetProxy = 249BD0E06B6F32E956C745F5904620C0 /* PBXContainerItemProxy */;
+		};
+		AE4FF4C635EFC18C9F708600E76D5DDA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "LocationPicker-iOS13.0";
+			target = 7955CBF827F1BC82094ADC3A2AAF8806 /* LocationPicker-iOS13.0 */;
+			targetProxy = 72A4A023D2035EDE6EB82C93D3B04101 /* PBXContainerItemProxy */;
+		};
+		B7A010667317482AA7E18459040F063E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "PhoneKit-iOS16.0-PhoneKit";
+			target = D0FDAF68050E1093545F475C6D774000 /* PhoneKit-iOS16.0-PhoneKit */;
+			targetProxy = 6275FE4C6D4E2630969468CAA77C2F5F /* PBXContainerItemProxy */;
+		};
+		E8949D64B95D3F059665CE3B400BF7A3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "LocationPicker-iOS16.0-LocationPicker";
+			target = 6F94D66A77EB528D0EBE7C9A860559CF /* LocationPicker-iOS16.0-LocationPicker */;
+			targetProxy = F265C47806B59588FFE54CCDCDF128F7 /* PBXContainerItemProxy */;
+		};
+		F1D3E06C1FE4CEB13DBC34FC878749D5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "PhoneKit-iOS16.0";
+			target = 086182791B800BD7238BE4AA79E07A42 /* PhoneKit-iOS16.0 */;
+			targetProxy = 8006584402268C2267DB0AD39FDCD598 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4138920F7258F94F7A22C1BA212AD002 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				70E7E536099047C779C6CAC8634E3612 /* Localizable.strings */,
+				A005B3FD197455265C933B47D2D789B8 /* Localizable.strings */,
+			);
+			name = Localizable.strings;
+			path = LocationPicker/Resources;
+			sourceTree = "<group>";
+		};
+		4B76631037B8FC8651391C1AB0A1D7F4 /* LocationPicker.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D50DBADE68166D98165776F13219C12C /* LocationPicker.storyboard */,
+			);
+			name = LocationPicker.storyboard;
+			path = LocationPicker/Resources;
+			sourceTree = "<group>";
+		};
+		EB195866EE666A137A4914BF05DE39C4 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				355F0628A7191E91761421BF09030457 /* Localizable.strings */,
+				4E687DC9CF60CEEE2C2E294467581A62 /* Localizable.strings */,
+			);
+			name = Localizable.strings;
+			path = PhoneKit/Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0061AE2D99CCA7304CA813C08FCB36C7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C20402165533063A4C8EABEE3B801A56 /* PhoneKit-iOS13.0.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/PhoneKit-iOS13.0/PhoneKit-iOS13.0-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PhoneKit-iOS13.0/PhoneKit-iOS13.0-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/PhoneKit-iOS13.0/PhoneKit-iOS13.0.modulemap";
+				PRODUCT_MODULE_NAME = PhoneKit;
+				PRODUCT_NAME = PhoneKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		04A82CDFE085F92074ACEC4256FF1043 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F5962FA44E69238C6CF0553611AB417 /* PhoneKit-iOS16.0.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/PhoneKit-iOS16.0/PhoneKit-iOS16.0-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PhoneKit-iOS16.0/PhoneKit-iOS16.0-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/PhoneKit-iOS16.0/PhoneKit-iOS16.0.modulemap";
+				PRODUCT_MODULE_NAME = PhoneKit;
+				PRODUCT_NAME = PhoneKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		12D4CC73C686C80CD539BD8299C234ED /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 64C59C8D964EE84C3456F142A2020226 /* LocationPicker-iOS16.0.release.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/LocationPicker-iOS16.0";
+				IBSC_MODULE = LocationPicker;
+				INFOPLIST_FILE = "Target Support Files/LocationPicker-iOS16.0/ResourceBundle-LocationPicker-LocationPicker-iOS16.0-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				PRODUCT_NAME = LocationPicker;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		2EC58A83AD874F3E353FFD66A034223A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C20402165533063A4C8EABEE3B801A56 /* PhoneKit-iOS13.0.release.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/PhoneKit-iOS13.0";
+				IBSC_MODULE = PhoneKit;
+				INFOPLIST_FILE = "Target Support Files/PhoneKit-iOS13.0/ResourceBundle-PhoneKit-PhoneKit-iOS13.0-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_NAME = PhoneKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		3B026D4F5C57D1B1A93E87D084881414 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 46A76308265C2C85E9F31CD7087A1C2F /* Pods-TextFieldKitSwiftUIExample.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-TextFieldKitSwiftUIExample/Pods-TextFieldKitSwiftUIExample-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TextFieldKitSwiftUIExample/Pods-TextFieldKitSwiftUIExample.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		54C83B8C0094A15A6D8C6626AAC179B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC57BA114C20BC6851167D890858179F /* Pods-TextFieldKit.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-TextFieldKit/Pods-TextFieldKit-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TextFieldKit/Pods-TextFieldKit.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		6052278720F98E6E15B4BDD13BB96FC4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F017FB29EB6F50B5C77653E369595082 /* LocationPicker-iOS13.0.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/LocationPicker-iOS13.0/LocationPicker-iOS13.0-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/LocationPicker-iOS13.0/LocationPicker-iOS13.0-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/LocationPicker-iOS13.0/LocationPicker-iOS13.0.modulemap";
+				PRODUCT_MODULE_NAME = LocationPicker;
+				PRODUCT_NAME = LocationPicker;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		62D690B3D415D05E25BFAA14CBED9D57 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2D40AA3F11DEC398182BB7A5AD4FE799 /* Pods-TextFieldKitSwiftUIExample.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-TextFieldKitSwiftUIExample/Pods-TextFieldKitSwiftUIExample-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TextFieldKitSwiftUIExample/Pods-TextFieldKitSwiftUIExample.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		6F6942341012E367F8E52C0B3D408BB8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 84974E197C0F5C8656147B95567E6991 /* PhoneKit-iOS16.0.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/PhoneKit-iOS16.0/PhoneKit-iOS16.0-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PhoneKit-iOS16.0/PhoneKit-iOS16.0-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/PhoneKit-iOS16.0/PhoneKit-iOS16.0.modulemap";
+				PRODUCT_MODULE_NAME = PhoneKit;
+				PRODUCT_NAME = PhoneKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		71AD4680AB244C75CA5A72EAE40A3D6B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F5962FA44E69238C6CF0553611AB417 /* PhoneKit-iOS16.0.debug.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/PhoneKit-iOS16.0";
+				IBSC_MODULE = PhoneKit;
+				INFOPLIST_FILE = "Target Support Files/PhoneKit-iOS16.0/ResourceBundle-PhoneKit-PhoneKit-iOS16.0-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_NAME = PhoneKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		77FA51FDD45DD669EC52FA79719A46FB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 64C59C8D964EE84C3456F142A2020226 /* LocationPicker-iOS16.0.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/LocationPicker-iOS16.0/LocationPicker-iOS16.0-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/LocationPicker-iOS16.0/LocationPicker-iOS16.0-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/LocationPicker-iOS16.0/LocationPicker-iOS16.0.modulemap";
+				PRODUCT_MODULE_NAME = LocationPicker;
+				PRODUCT_NAME = LocationPicker;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		7F170A77F7A524D00FD81794EC52B001 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 80E84A8C7027E8E3EF124FFACA27102B /* LocationPicker-iOS13.0.release.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/LocationPicker-iOS13.0";
+				IBSC_MODULE = LocationPicker;
+				INFOPLIST_FILE = "Target Support Files/LocationPicker-iOS13.0/ResourceBundle-LocationPicker-LocationPicker-iOS13.0-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				PRODUCT_NAME = LocationPicker;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		8DE5143C03248BB6CD542DE3963D6F3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		90368D4EFD5129A7E4DD9B6118C74579 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 80E84A8C7027E8E3EF124FFACA27102B /* LocationPicker-iOS13.0.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/LocationPicker-iOS13.0/LocationPicker-iOS13.0-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/LocationPicker-iOS13.0/LocationPicker-iOS13.0-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/LocationPicker-iOS13.0/LocationPicker-iOS13.0.modulemap";
+				PRODUCT_MODULE_NAME = LocationPicker;
+				PRODUCT_NAME = LocationPicker;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		9E406C6AAF85E580207CD97B0044DEAB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		A596F878E874EE9BFB332316E719A814 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CB250FD63657D5EAA539B6AAB99FDC45 /* LocationPicker-iOS16.0.debug.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/LocationPicker-iOS16.0";
+				IBSC_MODULE = LocationPicker;
+				INFOPLIST_FILE = "Target Support Files/LocationPicker-iOS16.0/ResourceBundle-LocationPicker-LocationPicker-iOS16.0-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				PRODUCT_NAME = LocationPicker;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		B9B5531E3E8B29A1A014263FBA24BBBF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 84974E197C0F5C8656147B95567E6991 /* PhoneKit-iOS16.0.release.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/PhoneKit-iOS16.0";
+				IBSC_MODULE = PhoneKit;
+				INFOPLIST_FILE = "Target Support Files/PhoneKit-iOS16.0/ResourceBundle-PhoneKit-PhoneKit-iOS16.0-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_NAME = PhoneKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		C173522C3D2F4C3700342942F0BA2732 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F017FB29EB6F50B5C77653E369595082 /* LocationPicker-iOS13.0.debug.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/LocationPicker-iOS13.0";
+				IBSC_MODULE = LocationPicker;
+				INFOPLIST_FILE = "Target Support Files/LocationPicker-iOS13.0/ResourceBundle-LocationPicker-LocationPicker-iOS13.0-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				PRODUCT_NAME = LocationPicker;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		CDC410A93C99294A797987C6017BFE1B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3625A01A9954D402E82729F7A789B815 /* Pods-TextFieldKit.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-TextFieldKit/Pods-TextFieldKit-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TextFieldKit/Pods-TextFieldKit.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D02C55078CB2DC0D871CB020E2E619FA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0FB4AF243320AA1BC75E690437D2FE6F /* Pods-TextFieldKitExample.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-TextFieldKitExample/Pods-TextFieldKitExample-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TextFieldKitExample/Pods-TextFieldKitExample.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D1D10F93E7263B4DEC26DBA8B24C37FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CB250FD63657D5EAA539B6AAB99FDC45 /* LocationPicker-iOS16.0.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/LocationPicker-iOS16.0/LocationPicker-iOS16.0-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/LocationPicker-iOS16.0/LocationPicker-iOS16.0-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/LocationPicker-iOS16.0/LocationPicker-iOS16.0.modulemap";
+				PRODUCT_MODULE_NAME = LocationPicker;
+				PRODUCT_NAME = LocationPicker;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D909860E580997A6DB5EE1EAB6475E83 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 964977E78E15EA321585BF4E4B4EF28F /* Pods-TextFieldKitExample.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-TextFieldKitExample/Pods-TextFieldKitExample-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TextFieldKitExample/Pods-TextFieldKitExample.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E54C0CF3588E98B7FC5F20827ADF4CE7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7190830D909048D84B5709849C5E8321 /* PhoneKit-iOS13.0.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/PhoneKit-iOS13.0/PhoneKit-iOS13.0-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PhoneKit-iOS13.0/PhoneKit-iOS13.0-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/PhoneKit-iOS13.0/PhoneKit-iOS13.0.modulemap";
+				PRODUCT_MODULE_NAME = PhoneKit;
+				PRODUCT_NAME = PhoneKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E654218D29009FA2025C986DB3C7919A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7190830D909048D84B5709849C5E8321 /* PhoneKit-iOS13.0.debug.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/PhoneKit-iOS13.0";
+				IBSC_MODULE = PhoneKit;
+				INFOPLIST_FILE = "Target Support Files/PhoneKit-iOS13.0/ResourceBundle-PhoneKit-PhoneKit-iOS13.0-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_NAME = PhoneKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1C1A17B4DFF702914A4105B378815ACA /* Build configuration list for PBXNativeTarget "Pods-TextFieldKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				54C83B8C0094A15A6D8C6626AAC179B6 /* Debug */,
+				CDC410A93C99294A797987C6017BFE1B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2115D9780BC4081B2194108FEAF205DF /* Build configuration list for PBXNativeTarget "LocationPicker-iOS13.0-LocationPicker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C173522C3D2F4C3700342942F0BA2732 /* Debug */,
+				7F170A77F7A524D00FD81794EC52B001 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		239A80E902AAB764C37E808796688952 /* Build configuration list for PBXNativeTarget "Pods-TextFieldKitSwiftUIExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3B026D4F5C57D1B1A93E87D084881414 /* Debug */,
+				62D690B3D415D05E25BFAA14CBED9D57 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		30D4B993D29C0BED7F27D9BDE8A18535 /* Build configuration list for PBXNativeTarget "LocationPicker-iOS16.0-LocationPicker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A596F878E874EE9BFB332316E719A814 /* Debug */,
+				12D4CC73C686C80CD539BD8299C234ED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3B06CB6A9B4A0558913564511F2C68BC /* Build configuration list for PBXNativeTarget "PhoneKit-iOS16.0" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04A82CDFE085F92074ACEC4256FF1043 /* Debug */,
+				6F6942341012E367F8E52C0B3D408BB8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3F0C12AE8F84D15A3E05FC201FBF2E94 /* Build configuration list for PBXNativeTarget "PhoneKit-iOS16.0-PhoneKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				71AD4680AB244C75CA5A72EAE40A3D6B /* Debug */,
+				B9B5531E3E8B29A1A014263FBA24BBBF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8DE5143C03248BB6CD542DE3963D6F3A /* Debug */,
+				9E406C6AAF85E580207CD97B0044DEAB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		522ACE744039E84BF52397ABDE156C55 /* Build configuration list for PBXNativeTarget "LocationPicker-iOS16.0" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D1D10F93E7263B4DEC26DBA8B24C37FC /* Debug */,
+				77FA51FDD45DD669EC52FA79719A46FB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A192C56D880556DD29E8E3256BD0FABD /* Build configuration list for PBXNativeTarget "Pods-TextFieldKitExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D909860E580997A6DB5EE1EAB6475E83 /* Debug */,
+				D02C55078CB2DC0D871CB020E2E619FA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A67010AB15DF4BF4D74AA15D7B0B9C6F /* Build configuration list for PBXNativeTarget "PhoneKit-iOS13.0" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E54C0CF3588E98B7FC5F20827ADF4CE7 /* Debug */,
+				0061AE2D99CCA7304CA813C08FCB36C7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B3E4AB8AFB208B192C1463E2BB7E5DB7 /* Build configuration list for PBXNativeTarget "LocationPicker-iOS13.0" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6052278720F98E6E15B4BDD13BB96FC4 /* Debug */,
+				90368D4EFD5129A7E4DD9B6118C74579 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FD60A84ED8BCD0B836DD23EBEBF4FCDD /* Build configuration list for PBXNativeTarget "PhoneKit-iOS13.0-PhoneKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E654218D29009FA2025C986DB3C7919A /* Debug */,
+				2EC58A83AD874F3E353FFD66A034223A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}

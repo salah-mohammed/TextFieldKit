@@ -1,0 +1,53 @@
+/* 
+  Localize.strings
+  LocationPicker
+
+  Created by Salah on 2/18/20.
+  Copyright © 2020 Salah. All rights reserved.
+*/
+"Search"="Search";
+"CurrentLocation"="Current Location";
+"Cancel"="Cancel";
+"Done"="Done";
+"airport"="airport";
+"amusementPark"="amusement Park";
+"aquarium"="aquarium";
+"atm"="atm";
+"bakery"="bakery";
+"bank"="bank";
+"beach"="beach";
+"brewery"="brewery";
+"cafe"="cafe";
+"campground"="campground";
+"carRental"="carRental";
+"evCharger"="evCharger";
+"fireStation"="fireStation";
+"fitnessCenter"="fitnessCenter";
+"foodMarket"="foodMarket";
+"gasStation"="gasStation";
+"hospital"="hospital";
+"hotel"="hotel";
+"laundry"="laundry";
+"library"="library";
+"marina"="marina";
+"movieTheater"="movie Theater";
+"museum"="museum";
+"nationalPark"="national Park";
+"nightlife"="nightlife";
+"park"="park";
+"parking"="parking";
+"pharmacy"="pharmacy";
+"police"="police";
+"postOffice"="post Office";
+"publicTransport"="public Transport";
+"restaurant"="restaurant";
+"restroom"="restroom";
+"school"="school";
+"stadium"="stadium";
+"store"="store";
+"theater"="theater";
+"university"="university";
+"winery"="winery";
+"zoo"="zoo";
+"LocationPickerViewController.ActionType.center.title"="center";
+"LocationPickerViewController.ActionType.click.title"="click";

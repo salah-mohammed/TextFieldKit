@@ -1,0 +1,53 @@
+/* 
+  Localize.strings
+  LocationPicker
+
+  Created by Salah on 2/18/20.
+  Copyright © 2020 Salah. All rights reserved.
+*/
+"Search"="البحث";
+"CurrentLocation"="الموقع الحالي";
+"Cancel"="الغاء";
+"Done"="تم";
+"airport"="مطار";
+"amusementPark"="متنزه";
+"aquarium"="حوض سمك";
+"atm"="ماكينة الصراف الآلي";
+"bakery"="مخبز";
+"bank"="مصرف";
+"beach"="شاطئ بحر";
+"brewery"="مصنع الجعة";
+"cafe"="كافيه";
+"campground"="أرض المخيم";
+"carRental"="تاجير سيارة";
+"evCharger"="شاحن EV";
+"fireStation"="محطة الاطفاء";
+"fitnessCenter"="مركز اللياقة البدنية";
+"foodMarket"="سوق المواد الغذائية";
+"gasStation"="محطة غاز";
+"hospital"="مستشفى";
+"hotel"="الفندق";
+"laundry"="غسيل ملابس";
+"library"="مكتبة";
+"marina"="مارينا";
+"movieTheater"="مسرح فيلم";
+"museum"="متحف";
+"nationalPark"="متنزه قومي";
+"nightlife"="الحياة الليلية";
+"park"="موقف";
+"parking"="موقف سيارات";
+"pharmacy"="صيدلية";
+"police"="شرطة";
+"postOffice"="مكتب البريد";
+"publicTransport"="المواصلا ت العامة";
+"restaurant"="مطعم";
+"restroom"="مرحاض";
+"school"="مدرسة";
+"stadium"="ملعب";
+"store"="متجر";
+"theater"="مسرح";
+"university"="جامعة";
+"winery"="مصنع الخمرة";
+"zoo"="حديقة حيوان";
+"LocationPickerViewController.ActionType.center.title"="ثابت";
+"LocationPickerViewController.ActionType.click.title"="الضغط";

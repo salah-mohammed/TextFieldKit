@@ -8,7 +8,7 @@
 import UIKit
 import SwiftUI
 
-@available(iOS 16.0, *)
+@available(iOS 15.5, *)
 public struct SUITextViewView: View {
     public var placeholder:String
     public var text: Binding<String>
@@ -85,7 +85,7 @@ public struct SUITextViewView: View {
                     TextEditor.init(text:text)
                         .padding(.zero)
                         .focused($textFocused)
-                        .scrollContentBackground(.hidden)
+//                        .scrollContentBackground(.hidden)
                         .font(Font.system(size:18, weight: .thin, design: .default))
                         .onChange(of:textFocused, perform: { newValue in
                             self.onEditingChanged?(newValue);

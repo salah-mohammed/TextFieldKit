@@ -1,0 +1,34 @@
+{
+  "name": "LocationPicker",
+  "version": "0.0.5",
+  "summary": "LocationPicker",
+  "description": "SalahUtility",
+  "homepage": "https://github.com/salah-mohammed/LocationPicker",
+  "license": "MIT (library librarylibrary library library library)",
+  "authors": {
+    "salah mohamed": "salah.mohamed_1995@hotmail.com"
+  },
+  "platforms": {
+    "ios": "13.0"
+  },
+  "source": {
+    "git": "https://github.com/salah-mohammed/LocationPicker.git",
+    "tag": "0.0.5",
+    "branch": "master"
+  },
+  "source_files": [
+    "*",
+    "LocationPicker/*"
+  ],
+  "exclude_files": "Classes/Exclude",
+  "resource_bundles": {
+    "LocationPicker": [
+      "LocationPicker/Resources/**/*.{xib,xcassets,json,imageset,bundle,strings,storyboard}",
+      "LocationPicker/View/*.{lproj,storybard}"
+    ]
+  },
+  "requires_arc": true,
+  "pod_target_xcconfig": {
+    "SWIFT_VERSION": "5.0"
+  }
+}

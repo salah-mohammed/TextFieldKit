@@ -1,0 +1,545 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CEb-bs-QPn">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="0wP-Kg-hvs">
+            <objects>
+                <navigationController id="CEb-bs-QPn" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="FGs-Qg-CVb">
+                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="QyZ-86-p5k"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PGP-9X-tVO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1145" y="80"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TextFieldKitExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mvQ-vh-osh">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="exc-LZ-9qn">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="720"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="44b-eb-oLy" customClass="TextFieldView" customModule="TextFieldKit">
+                                                <rect key="frame" x="16" y="32" width="382" height="60"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="55" id="dBU-kL-tMb"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="isP-pt-FJR" customClass="TextFieldView" customModule="TextFieldKit">
+                                                <rect key="frame" x="16" y="100" width="382" height="60"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="55" id="PN8-le-X5o"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z9V-oM-QI2" customClass="DropDownTextField" customModule="TextFieldKit">
+                                                <rect key="frame" x="16" y="168" width="382" height="60"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="55" id="aoo-5k-jVH"/>
+                                                </constraints>
+                                            </view>
+                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H8Q-Kb-EaH" customClass="PhoneNumberField" customModule="TextFieldKit">
+                                                <rect key="frame" x="16" y="232" width="382" height="55"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="55" id="jWM-23-0ei"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vvt-Nf-o92" customClass="TextViewView" customModule="TextFieldKit">
+                                                <rect key="frame" x="16" y="236" width="382" height="200"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="rf4-q2-hhh"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="txtOther" destination="44b-eb-oLy" id="2lD-Rd-mDp"/>
+                                                </connections>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gsm-Pn-UC2" customClass="TextViewView" customModule="TextFieldKit">
+                                                <rect key="frame" x="16" y="444" width="382" height="150"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="150" id="xI9-fB-oLz"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="txtOther" destination="44b-eb-oLy" id="7cK-5s-0G3"/>
+                                                </connections>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ud-kS-Qwb" customClass="CutomUIField" customModule="TextFieldKitExample" customModuleProvider="target">
+                                                <rect key="frame" x="16" y="602" width="382" height="60"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="55" id="Tdp-zD-sg6"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pOm-JD-6D1">
+                                                <rect key="frame" x="16" y="670" width="382" height="50"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" priority="1" constant="200" id="4Aj-lI-UuD"/>
+                                        </constraints>
+                                        <directionalEdgeInsets key="directionalLayoutMargins" top="32" leading="16" bottom="0.0" trailing="16"/>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="exc-LZ-9qn" secondAttribute="bottom" id="B7d-qa-0Uv"/>
+                                    <constraint firstAttribute="trailing" secondItem="exc-LZ-9qn" secondAttribute="trailing" id="N4K-a6-ran"/>
+                                    <constraint firstItem="exc-LZ-9qn" firstAttribute="width" secondItem="mvQ-vh-osh" secondAttribute="width" id="PqN-LX-98v"/>
+                                    <constraint firstItem="exc-LZ-9qn" firstAttribute="top" secondItem="mvQ-vh-osh" secondAttribute="top" id="Xz0-62-Dgg"/>
+                                    <constraint firstItem="exc-LZ-9qn" firstAttribute="leading" secondItem="mvQ-vh-osh" secondAttribute="leading" id="gFV-z4-kaO"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="mvQ-vh-osh" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="5AP-1H-DGa"/>
+                            <constraint firstItem="mvQ-vh-osh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="FpG-Y7-Q9c"/>
+                            <constraint firstAttribute="bottom" secondItem="mvQ-vh-osh" secondAttribute="bottom" id="VCS-AP-qbd"/>
+                            <constraint firstAttribute="trailing" secondItem="mvQ-vh-osh" secondAttribute="trailing" id="zhb-Lj-nGy"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="gaQ-cU-g5D" appends="YES" id="ZeA-Au-VNH"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" id="ixy-ry-aze">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="qz6-gN-Hmc">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Cw9-9I-Tfn">
+                                <rect key="frame" x="302" y="4.5" width="92" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Second"/>
+                                <connections>
+                                    <segue destination="Aqe-o7-JwV" kind="show" id="Zwv-I9-upO"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="txtAddress" destination="vvt-Nf-o92" id="Kuy-ae-1tP"/>
+                        <outlet property="txtCity" destination="Z9V-oM-QI2" id="d8Q-61-5iQ"/>
+                        <outlet property="txtEducation" destination="Gsm-Pn-UC2" id="mPm-Sb-OkA"/>
+                        <outlet property="txtFirstName" destination="44b-eb-oLy" id="PdY-O9-7gO"/>
+                        <outlet property="txtLastName" destination="isP-pt-FJR" id="gjX-RI-PV0"/>
+                        <outlet property="txtPhoneNumber" destination="H8Q-Kb-EaH" id="lBG-A5-Q0Q"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="gaQ-cU-g5D">
+                    <connections>
+                        <action selector="tapGesture:" destination="BYZ-38-t0r" id="7Zi-iX-s23"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="20" y="80"/>
+        </scene>
+        <!--Second View Controller-->
+        <scene sceneID="ven-fJ-Zmh">
+            <objects>
+                <viewController storyboardIdentifier="SecondViewController" id="Aqe-o7-JwV" customClass="SecondViewController" customModule="TextFieldKitExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="j7g-mg-tdf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eRM-ZY-h4d">
+                                <rect key="frame" x="0.0" y="92" width="414" height="770"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="yJH-z2-LnY">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gHF-A3-84l" customClass="TextFieldView" customModule="TextFieldKit">
+                                                <rect key="frame" x="16" y="32" width="382" height="65"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="55" id="mgs-r3-tcp"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qwx-NP-I7k" customClass="TextFieldView" customModule="TextFieldKit">
+                                                <rect key="frame" x="16" y="105" width="382" height="65"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="55" id="Xwt-pQ-8dG"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GIE-oa-5F1" customClass="DropDownTextField" customModule="TextFieldKit">
+                                                <rect key="frame" x="16" y="178" width="382" height="65"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="55" id="oEz-9N-NNH"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sdd-70-KZK" customClass="PhoneNumberField" customModule="TextFieldKit">
+                                                <rect key="frame" x="16" y="251" width="382" height="65"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="55" id="ma0-JV-Igd"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZVr-65-aZg" customClass="AdvancedPhoneNumber" customModule="TextFieldKit">
+                                                <rect key="frame" x="16" y="324" width="382" height="65"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="55" id="Hkc-yT-Yum"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dui-SX-tWH" customClass="TextViewView" customModule="TextFieldKit">
+                                                <rect key="frame" x="16" y="397" width="382" height="200"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="5jL-Da-FB3"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="txtOther" destination="gHF-A3-84l" id="TBL-ML-mPv"/>
+                                                </connections>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VZm-kb-Kzz" customClass="TextViewView" customModule="TextFieldKit">
+                                                <rect key="frame" x="16" y="605" width="382" height="150"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="150" id="w9X-K6-G9S"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="txtOther" destination="gHF-A3-84l" id="vVJ-gD-QJu"/>
+                                                </connections>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DNd-bu-c5W">
+                                                <rect key="frame" x="16" y="763" width="382" height="50"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" priority="1" constant="200" id="sSt-Yz-39e"/>
+                                        </constraints>
+                                        <directionalEdgeInsets key="directionalLayoutMargins" top="32" leading="16" bottom="0.0" trailing="16"/>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="yJH-z2-LnY" secondAttribute="trailing" id="CGb-2S-LkB"/>
+                                    <constraint firstItem="yJH-z2-LnY" firstAttribute="top" secondItem="eRM-ZY-h4d" secondAttribute="top" id="Mrn-gd-nxy"/>
+                                    <constraint firstItem="yJH-z2-LnY" firstAttribute="width" secondItem="eRM-ZY-h4d" secondAttribute="width" id="f4c-eX-RhU"/>
+                                    <constraint firstItem="yJH-z2-LnY" firstAttribute="leading" secondItem="eRM-ZY-h4d" secondAttribute="leading" id="m01-1M-1b2"/>
+                                    <constraint firstAttribute="bottom" secondItem="yJH-z2-LnY" secondAttribute="bottom" id="vbz-KL-Wna"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="JHV-dl-AOM"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="eRM-ZY-h4d" firstAttribute="top" secondItem="JHV-dl-AOM" secondAttribute="top" id="ZMn-w5-Hdk"/>
+                            <constraint firstItem="JHV-dl-AOM" firstAttribute="bottom" secondItem="eRM-ZY-h4d" secondAttribute="bottom" id="epG-he-9xP"/>
+                            <constraint firstItem="eRM-ZY-h4d" firstAttribute="leading" secondItem="JHV-dl-AOM" secondAttribute="leading" id="fJ3-Vd-HRp"/>
+                            <constraint firstItem="JHV-dl-AOM" firstAttribute="trailing" secondItem="eRM-ZY-h4d" secondAttribute="trailing" id="nih-UM-dTq"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="wZx-6Q-819" appends="YES" id="HMf-pC-4fL"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" id="pYB-Kv-EIs">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="4CE-Aj-tNX">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Zua-Yq-g5c">
+                                <rect key="frame" x="302" y="4.5" width="92" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Thired"/>
+                                <connections>
+                                    <segue destination="k1A-ed-Wxp" kind="push" id="7rR-qh-Qjm"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="txtAddress" destination="Dui-SX-tWH" id="Vun-sd-YrP"/>
+                        <outlet property="txtAdvancedPhoneNumber" destination="ZVr-65-aZg" id="Ray-I1-g9T"/>
+                        <outlet property="txtCity" destination="GIE-oa-5F1" id="4Xq-5U-IIZ"/>
+                        <outlet property="txtEducation" destination="VZm-kb-Kzz" id="pQk-xp-8cO"/>
+                        <outlet property="txtFirstName" destination="gHF-A3-84l" id="UG8-qq-KDe"/>
+                        <outlet property="txtLastName" destination="qwx-NP-I7k" id="RPC-V0-10p"/>
+                        <outlet property="txtPhoneNumber" destination="sdd-70-KZK" id="DaV-jY-bmN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Zw-N2-NUo" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="wZx-6Q-819">
+                    <connections>
+                        <action selector="tapGesture:" destination="Aqe-o7-JwV" id="qyI-qW-FSP"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="687" y="80"/>
+        </scene>
+        <!--Thired View Controller-->
+        <scene sceneID="hku-yK-qZG">
+            <objects>
+                <viewController storyboardIdentifier="ThiredViewController" id="k1A-ed-Wxp" customClass="ThiredViewController" customModule="TextFieldKitExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fS7-3F-Eb2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="5Vf-u3-T6B">
+                                <rect key="frame" x="0.0" y="92" width="414" height="770"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9o5-It-gSJ" customClass="TextViewView" customModule="TextFieldKit">
+                                        <rect key="frame" x="16" y="32" width="382" height="200"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="PHb-AV-jd2"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BQy-kg-8il" customClass="TextViewView" customModule="TextFieldKit">
+                                        <rect key="frame" x="16" y="240" width="382" height="150"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="150" id="uCU-yO-HrM"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q9N-b9-wVy">
+                                        <rect key="frame" x="16" y="398" width="382" height="372"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                </subviews>
+                                <directionalEdgeInsets key="directionalLayoutMargins" top="32" leading="16" bottom="0.0" trailing="16"/>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="FKd-Oq-OVC"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="5Vf-u3-T6B" firstAttribute="leading" secondItem="FKd-Oq-OVC" secondAttribute="leading" id="7SE-QN-gRD"/>
+                            <constraint firstItem="5Vf-u3-T6B" firstAttribute="top" secondItem="FKd-Oq-OVC" secondAttribute="top" id="PUo-gn-9Go"/>
+                            <constraint firstItem="FKd-Oq-OVC" firstAttribute="trailing" secondItem="5Vf-u3-T6B" secondAttribute="trailing" id="gtF-FU-3g7"/>
+                            <constraint firstItem="FKd-Oq-OVC" firstAttribute="bottom" secondItem="5Vf-u3-T6B" secondAttribute="bottom" id="qfc-MV-0Fn"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="T2z-hX-fnT" appends="YES" id="E2e-ti-zqU"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" id="p5m-qb-yPE">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="BjY-Lc-Yx1">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="HSU-IT-7oN">
+                                <rect key="frame" x="302" y="4.5" width="92" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Forth"/>
+                                <connections>
+                                    <segue destination="E7X-LB-I4K" kind="show" id="su2-nC-CNj"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="txtAddress" destination="9o5-It-gSJ" id="XB6-3v-54K"/>
+                        <outlet property="txtEducation" destination="BQy-kg-8il" id="dAd-S5-6EF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ehl-Tl-185" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="T2z-hX-fnT">
+                    <connections>
+                        <action selector="tapGesture:" destination="k1A-ed-Wxp" id="hpV-TH-58g"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1394" y="80"/>
+        </scene>
+        <!--Forth View Controller-->
+        <scene sceneID="xkZ-xO-kaS">
+            <objects>
+                <viewController storyboardIdentifier="ForthViewController" id="E7X-LB-I4K" customClass="ForthViewController" customModule="TextFieldKitExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Jvn-jC-c2I">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bzZ-5r-iWk">
+                                <rect key="frame" x="0.0" y="92" width="414" height="770"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="FR3-3R-ffH">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1481"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jWC-Xk-N0g" customClass="AdvancedPhoneNumber" customModule="TextFieldKit">
+                                                <rect key="frame" x="16" y="32" width="382" height="55"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="55" id="CK0-rf-KZs"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vh5-NY-kuB" customClass="LocationTextField" customModule="TextFieldKit">
+                                                <rect key="frame" x="16" y="95" width="382" height="55"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="55" id="wea-VL-ief"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BM6-2Q-VdC" customClass="PasswordField" customModule="TextFieldKit">
+                                                <rect key="frame" x="16" y="158" width="382" height="55"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="55" id="jR4-YD-8h5"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z8O-hk-rKY" customClass="NewPasswordField" customModule="TextFieldKit">
+                                                <rect key="frame" x="16" y="221" width="382" height="55"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="55" id="K9R-Vi-rrI"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KMF-5K-l7e" customClass="ConfirmPasswordField" customModule="TextFieldKit">
+                                                <rect key="frame" x="16" y="284" width="382" height="55"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="55" id="dqw-mG-8si"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="txtNewPasswordField" destination="z8O-hk-rKY" id="n8c-qM-cBh"/>
+                                                </connections>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="57P-Ay-NOI" customClass="FullNameField" customModule="TextFieldKit">
+                                                <rect key="frame" x="16" y="347" width="382" height="200"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="1qd-pa-w9R"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FFv-CM-K8c" customClass="EmailField" customModule="TextFieldKit">
+                                                <rect key="frame" x="16" y="555" width="382" height="55"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="55" id="zDq-hv-dbu"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jfj-nO-OXV" customClass="TitleField" customModule="TextFieldKit">
+                                                <rect key="frame" x="16" y="618" width="382" height="55"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="55" id="KOr-0Z-bU4"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="csw-So-9mv" customClass="CustomCityField" customModule="TextFieldKitExample" customModuleProvider="target">
+                                                <rect key="frame" x="16" y="681" width="382" height="55"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="55" id="aOY-9G-yme"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jfF-xK-Jrz" customClass="DropDownTextField" customModule="TextFieldKit">
+                                                <rect key="frame" x="16" y="744" width="382" height="55"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="55" id="gfL-KF-y8L"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ppx-GS-rne" customClass="RequirementsField" customModule="TextFieldKit">
+                                                <rect key="frame" x="16" y="807" width="382" height="300"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="300" id="fbO-y9-c2U"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="txtOther" destination="57P-Ay-NOI" id="ykU-Ha-UDM"/>
+                                                </connections>
+                                            </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dqo-ki-LOF">
+                                                <rect key="frame" x="16" y="1115" width="382" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="n7m-rD-EW5"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                <connections>
+                                                    <action selector="btnValid:" destination="E7X-LB-I4K" eventType="touchUpInside" id="VXc-nP-svd"/>
+                                                </connections>
+                                            </button>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gmX-2W-bld">
+                                                <rect key="frame" x="16" y="1173" width="382" height="300"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="300" id="ZXl-Bu-oWo"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kQ0-8P-dlF">
+                                                <rect key="frame" x="16" y="1481" width="382" height="0.0"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" priority="999" constant="100" id="Jo1-FY-l4h"/>
+                                        </constraints>
+                                        <directionalEdgeInsets key="directionalLayoutMargins" top="32" leading="16" bottom="0.0" trailing="16"/>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="FR3-3R-ffH" firstAttribute="top" secondItem="bzZ-5r-iWk" secondAttribute="top" id="4Yk-uF-jql"/>
+                                    <constraint firstAttribute="trailing" secondItem="FR3-3R-ffH" secondAttribute="trailing" id="CxB-VK-kfw"/>
+                                    <constraint firstItem="FR3-3R-ffH" firstAttribute="width" secondItem="bzZ-5r-iWk" secondAttribute="width" id="PGH-FR-r9i"/>
+                                    <constraint firstAttribute="bottom" secondItem="FR3-3R-ffH" secondAttribute="bottom" id="e53-8x-L7w"/>
+                                    <constraint firstItem="FR3-3R-ffH" firstAttribute="leading" secondItem="bzZ-5r-iWk" secondAttribute="leading" id="uSw-S8-JoY"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="sUf-Wr-lTH"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="sUf-Wr-lTH" firstAttribute="bottom" secondItem="bzZ-5r-iWk" secondAttribute="bottom" id="43S-Dt-Ls0"/>
+                            <constraint firstItem="bzZ-5r-iWk" firstAttribute="top" secondItem="sUf-Wr-lTH" secondAttribute="top" id="9nr-wO-f82"/>
+                            <constraint firstItem="bzZ-5r-iWk" firstAttribute="leading" secondItem="sUf-Wr-lTH" secondAttribute="leading" id="NXq-Rb-b2K"/>
+                            <constraint firstItem="sUf-Wr-lTH" firstAttribute="trailing" secondItem="bzZ-5r-iWk" secondAttribute="trailing" id="w1q-Ej-SUd"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="lhy-Ig-VyW" appends="YES" id="OWi-4l-er5"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" id="acs-Eg-XfI"/>
+                    <connections>
+                        <outlet property="txtAdvancedPhoneNumber" destination="jWC-Xk-N0g" id="BKJ-Bm-uvF"/>
+                        <outlet property="txtCity" destination="csw-So-9mv" id="6gl-4Y-lQD"/>
+                        <outlet property="txtConfirmPassword" destination="KMF-5K-l7e" id="lQx-w4-b8Y"/>
+                        <outlet property="txtEmail" destination="FFv-CM-K8c" id="9cS-wb-668"/>
+                        <outlet property="txtFullName" destination="57P-Ay-NOI" id="XVS-nB-LiM"/>
+                        <outlet property="txtLocationTextField" destination="vh5-NY-kuB" id="BnG-cQ-KWT"/>
+                        <outlet property="txtNewPassword" destination="z8O-hk-rKY" id="3Ky-NZ-OVi"/>
+                        <outlet property="txtPasswordField" destination="BM6-2Q-VdC" id="fN0-Jy-lul"/>
+                        <outlet property="txtRequirements" destination="ppx-GS-rne" id="gEA-cN-yrd"/>
+                        <outlet property="txtTitle" destination="jfj-nO-OXV" id="S5i-du-gft"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lRg-kc-sBF" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="lhy-Ig-VyW">
+                    <connections>
+                        <action selector="tapGesture:" destination="E7X-LB-I4K" id="Dk1-hJ-zCb"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="2148" y="80"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -8,7 +8,7 @@
 import UIKit
 import SwiftUI
 
-@available(iOS 16.0, *)
+@available(iOS 15.5, *)
 public struct SUITextFieldView: View {
     public var placeholder:String?
     public var text: Binding<String>
