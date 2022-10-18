@@ -53,32 +53,34 @@ struct ContentView: View {
                     .imageScale(.large)
                     .foregroundColor(.accentColor)
                 Text("Hello, world!")
-                SUITextFieldView(placeholder: nil,
+                SUITextFieldView(placeholder:"Username",
                                  text:username(),
                                  error:$viewModel.userNameError,
                                  iconName:"ic_userOnlineTutor",
                                  onEditingChanged:self.viewModel.onEditingChangedUsername(),
-                                 validation:Username())
-                SUITextFieldView(placeholder: nil,
+                                 validation:nil)
+                SUITextFieldView(placeholder:"FullName",
                                  text:fullName(),
                                  error:$viewModel.fullNameError,
                                  onEditingChanged:self.viewModel.onEditingChangedFullName(),
-                                 validation:FullName())
-                SUITextFieldView(placeholder:nil,
+                                 validation:nil)
+                SUITextFieldView(placeholder:"FirstName",
                                  text:firstName(),
                                  error:$viewModel.firstNameError,
                                  onEditingChanged:self.viewModel.onEditingChangedFirstName(),
-                                 validation:FirstName());
-                SUITextViewView.init(placeholder: nil,
+                                 validation:nil);
+                SUITextViewView.init(placeholder:"Requirements",
                                      text:requirements(),
                                      error:$viewModel.requirementsError,
                                      iconName:"ic_userOnlineTutor",
                                      onEditingChanged:self.viewModel.onEditingChangedRequirements(),
-                                     validation:Requirements())
-                Button.init(action: self.viewModel.save(), label:{Text("Save")})
+                                     validation:nil)
+                Button.init(action: self.viewModel.save(), label:{
+                    Text("Save")}
+                )
             }
             .padding()
-        }.frame(maxWidth:.infinity,maxHeight:.infinity).background(Color.gray.opacity(0.5)).gesture(TapGesture()
+        }.frame(maxWidth:.infinity,maxHeight:.infinity).gesture(TapGesture()
             .onEnded { _ in
                 UIApplication.shared.endEditing();
             })

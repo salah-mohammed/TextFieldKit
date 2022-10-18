@@ -7,14 +7,15 @@
 
 import UIKit
 import SwiftUI
-
-@available(iOS 15.5, *)
+public typealias OnEditingValiadtionChanged = (Bool,GeneralConnection?) -> Void
+@available(iOS 16, *)
 public struct SUITextViewView: View {
     public var placeholder:String
     public var text: Binding<String>
     public var error:Binding<String>?
     @State public var iconName:String?
     public var onEditingChanged:((Bool) -> Void)?
+    public var onEditingValidationChanged:((Bool,GeneralConnection?) -> Void)?
     @FocusState private var textFocused: Bool
     public var style:FieldStyle = SUITextViewView.style ?? FieldStyle.init()
     public static var style:FieldStyle?
@@ -26,8 +27,10 @@ public struct SUITextViewView: View {
                 iconName:String?=nil,
                 onEditingChanged:((Bool) -> Void)?=nil,
                 style:FieldStyle?=nil,
-                validation:GeneralConnection?=nil) {
-        self.placeholder = placeholder ?? validation?.fieldType.title ?? ""
+                validation:(GeneralConnection?,(Bool,GeneralConnection?) -> Void)?=nil) {
+        self.validation = validation?.0
+        self.placeholder = placeholder ?? validation?.0?.fieldType.title ?? ""
+        self.onEditingValidationChanged = validation?.1
         self.text=text;
         self.error=error;
         self.iconName=iconName;
@@ -82,14 +85,26 @@ public struct SUITextViewView: View {
                         Spacer()
                         }
                     }
-                    TextEditor.init(text:text)
-                        .padding(.zero)
-                        .focused($textFocused)
-//                        .scrollContentBackground(.hidden)
-                        .font(Font.system(size:18, weight: .thin, design: .default))
-                        .onChange(of:textFocused, perform: { newValue in
-                            self.onEditingChanged?(newValue);
-                        })
+                    ZStack{
+                        TextEditor.init(text:text)
+                            .padding(.zero)
+                            .focused($textFocused)
+                            .scrollContentBackground(.hidden)
+                            .font(Font.system(size:18, weight: .thin, design: .default))
+                            .onChange(of:textFocused, perform: { newValue in
+                                self.onEditingChanged?(newValue);
+                                self.onEditingValidationChanged?(newValue,self.validation);
+                            })
+                        if text.wrappedValue.count == 0 {
+                            VStack(){
+                                HStack{
+                                    Text(self.placeholder).foregroundColor(UIColor.placeholderText.bs_color)
+                                    Spacer()
+                                }
+                                Spacer();
+                            }
+                        }
+                    }
                 }
             Rectangle.init()
                     .frame(height:self.style.indicatorHeight)

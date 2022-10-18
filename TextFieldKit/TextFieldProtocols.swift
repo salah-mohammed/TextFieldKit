@@ -11,12 +11,16 @@ import Foundation
 public protocol Field{
     var fieldType:FieldType {get};
 }
-public protocol SUIField:ObservableObject{
-    var fieldType:FieldType {get};
+//public protocol SUIField:ObservableObject{
+//    var fieldType:FieldType {get};
+//}
+@objc protocol ObjcPrintable {
+    @objc optional func canPrint() -> Bool
 }
 // MARK: FieldValiadtion
-public protocol FieldValiadtion{
+ public protocol FieldValiadtion{
     var messages:[FieldError] {get};
+
 }
 // MARK: GeneralFieldViewProrocol
 public protocol GeneralFieldViewProrocol{
@@ -37,8 +41,7 @@ public protocol CutomFieldProrocol{
 // MARK: GeneralConnection
 
 public protocol GeneralConnection:Field,FieldValiadtion{
-
 }
-public protocol SUIGeneralConnection:SUIField,FieldValiadtion{
-
-}
+//public protocol SUIGeneralConnection:SUIField,FieldValiadtion{
+////    var handler:((Bool,FieldValiadtion) -> Void)
+//}

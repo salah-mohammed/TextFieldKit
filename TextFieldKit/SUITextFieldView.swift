@@ -15,6 +15,7 @@ public struct SUITextFieldView: View {
     public var error:Binding<String>?
     @State public var iconName:String?
     public var onEditingChanged:((Bool) -> Void)?
+    public var onEditingValidationChanged:((Bool,GeneralConnection?) -> Void)?
     @State private var changed:Bool=false;
     public var style:FieldStyle = SUITextFieldView.style ?? FieldStyle.init()
     public static var style:FieldStyle?
@@ -26,8 +27,11 @@ public struct SUITextFieldView: View {
                 iconName:String?=nil,
                 onEditingChanged:((Bool) -> Void)?=nil,
                 style:FieldStyle?=nil,
-                validation:GeneralConnection) {
-        self.placeholder = placeholder ?? validation.fieldType.title
+                validation:(GeneralConnection,(Bool,GeneralConnection?) -> Void)?=nil) {
+//        self.validation?.text = text
+        self.validation = validation?.0
+        self.placeholder = placeholder ?? validation?.0.fieldType.title
+        self.onEditingValidationChanged = validation?.1
         self.text=text;
         self.error=error;
         self.iconName=iconName;
@@ -79,6 +83,7 @@ public struct SUITextFieldView: View {
                     TextField(placeholder ?? "n", text:text, onEditingChanged: { (changed) in
                         self.changed=changed
                         self.onEditingChanged?(changed);
+                        onEditingValidationChanged?(changed,self.validation);
                         print("Username onEditingChanged - \(changed)")
                     }) {
                         print("Username onCommit")

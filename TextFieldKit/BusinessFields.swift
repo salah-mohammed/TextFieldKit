@@ -16,6 +16,9 @@ import LocationPicker
 
 // MARK: NewPasswordField
 open class NewPasswordField:TextFieldView,GeneralConnection{
+    public func messagesSUI(_ text:String?) -> [FieldError] {
+        return []
+    }
     public var fieldType: FieldType{
         return .newPassword
     }
@@ -30,6 +33,10 @@ open class NewPasswordField:TextFieldView,GeneralConnection{
 }
 // MARK: ConfirmPasswordField
 open class ConfirmPasswordField:TextFieldView,GeneralConnection{
+    public func messagesSUI(_ text: String?) -> [FieldError] {
+    return []
+    }
+
     public var fieldType: FieldType{
         return .confirmPassword
     }
@@ -46,11 +53,14 @@ open class ConfirmPasswordField:TextFieldView,GeneralConnection{
 }
 // MARK: PasswordField
 open class PasswordField:TextFieldView,GeneralConnection{
+    public func messagesSUI(_ text: String?) -> [FieldError] {
+        return self.emptyError()
+    }
     public var fieldType: FieldType{
         return .password
     }
     public var messages:[FieldError]{
-        return self.emptyError()
+        return self.messagesSUI(self.text)
     }
     open override func awakeFromNib() {
         super.awakeFromNib();
@@ -61,11 +71,14 @@ open class PasswordField:TextFieldView,GeneralConnection{
 }
 // MARK: UserNameField
 open class UserNameField:TextFieldView,GeneralConnection{
+    public func messagesSUI(_ text: String?) -> [FieldError] {
+        return self.emptyError()
+    }
     public var fieldType: FieldType{
         return .username
     }
     public var messages:[FieldError]{
-        return self.emptyError()
+        return self.messagesSUI(self.text);
     }
     open override func awakeFromNib() {
         super.awakeFromNib();
@@ -74,11 +87,14 @@ open class UserNameField:TextFieldView,GeneralConnection{
 }
 // MARK: FullNameField
 open class FullNameField:TextFieldView,GeneralConnection{
+    public func messagesSUI(_ text: String?) -> [FieldError] {
+        return self.emptyError()
+    }
     public var fieldType: FieldType{
         return .fullName
     }
     public var messages:[FieldError]{
-        return self.emptyError()
+        return self.messagesSUI(self.text);
     }
     open override func awakeFromNib() {
         super.awakeFromNib();
@@ -87,11 +103,14 @@ open class FullNameField:TextFieldView,GeneralConnection{
 }
 // MARK: EmailField
 open class EmailField:TextFieldView,GeneralConnection{
+    public func messagesSUI(_ text: String?) -> [FieldError] {
+        return self.email();
+    }
     public var fieldType: FieldType{
         return .email
     }
     public var messages:[FieldError]{
-        return self.email();
+        return self.messagesSUI(self.text);
     }
     open override func awakeFromNib() {
         super.awakeFromNib();
@@ -100,11 +119,14 @@ open class EmailField:TextFieldView,GeneralConnection{
 }
 // MARK: TitleField
 open class TitleField:TextFieldView,GeneralConnection{
+    public func messagesSUI(_ text: String?) -> [FieldError] {
+    return []
+    }
     public var fieldType: FieldType{
         return .title
     }
     public var messages:[FieldError]{
-        return self.emptyError()
+        return messagesSUI(self.text)
     }
     open override func awakeFromNib() {
         super.awakeFromNib();
@@ -113,11 +135,14 @@ open class TitleField:TextFieldView,GeneralConnection{
 }
 // MARK: DescriptionField
 open class DescriptionField:TextViewView,GeneralConnection{
+    public func messagesSUI(_ text: String?) -> [FieldError] {
+    return []
+    }
     public var fieldType: FieldType{
         return .description
     }
     public var messages:[FieldError]{
-        return self.emptyError()
+        return messagesSUI(self.text)
     }
     open override func awakeFromNib() {
         super.awakeFromNib();
@@ -126,11 +151,14 @@ open class DescriptionField:TextViewView,GeneralConnection{
 }
 // MARK: AddressField
 open class AddressField:TextFieldView,GeneralConnection{
+    public func messagesSUI(_ text: String?) -> [FieldError] {
+    return []
+    }
     public var fieldType: FieldType{
         return .address
     }
     public var messages:[FieldError]{
-        return self.emptyError()
+        return messagesSUI(self.text)
     }
     open override func awakeFromNib() {
         super.awakeFromNib();
@@ -139,11 +167,14 @@ open class AddressField:TextFieldView,GeneralConnection{
 }
 // MARK: RequirementsField
 open class RequirementsField:TextViewView,GeneralConnection{
+    public func messagesSUI(_ text: String?) -> [FieldError] {
+    return []
+    }
     public var fieldType: FieldType{
         return .requirements
     }
     public var messages:[FieldError]{
-        return self.emptyError()
+        return messagesSUI(self.text)
     }
     open override func awakeFromNib() {
         super.awakeFromNib();
@@ -153,6 +184,9 @@ open class RequirementsField:TextViewView,GeneralConnection{
 #if canImport(PhoneKit)
 // MARK: CustomePhoneNumber
 open class AdvancedPhoneNumber:PhoneNumberField,GeneralConnection{
+    public func messagesSUI(_ text: String?) -> [FieldError] {
+    return []
+    }
     public var fieldType: FieldType{
         return FieldType.phoneNumber
     }
@@ -185,6 +219,9 @@ open class AdvancedPhoneNumber:PhoneNumberField,GeneralConnection{
 #endif
 #if canImport(LocationPicker)
 open class LocationTextField:DropDownTextField,GeneralConnection{
+    public func messagesSUI(_ text: String?) -> [FieldError] {
+    return []
+    }
     public var fieldType: FieldType{
         return .location
     }
@@ -229,32 +266,44 @@ open class LocationTextField:DropDownTextField,GeneralConnection{
 
 // MARK: CutomeDropDownTextField
 open class CutomeDropDownTextField:DropDownTextField,FieldValiadtion{
+    public func messagesSUI(_ text: String?) -> [FieldError] {
+    return []
+    }
     public var messages:[FieldError]{
-        return self.emptyError()
+        return messagesSUI(self.text)
     }
 }
 // MARK: CityField
 open class CityField:DropDownTextField,GeneralConnection{
+    public func messagesSUI(_ text: String?) -> [FieldError] {
+    return []
+    }
     public var fieldType: FieldType{
         return .city
     }
     public var messages:[FieldError]{
-        return self.emptyError()
+        return messagesSUI(self.text)
     }
 }
 // MARK: RegionField
 open class RegionField:DropDownTextField,GeneralConnection,FieldValiadtion{
+    public func messagesSUI(_ text: String?) -> [FieldError] {
+    return []
+    }
     public var fieldType: FieldType{
         return .region
     }
     public var messages:[FieldError]{
-        return self.emptyError()
+        return messagesSUI(self.text)
     }
 }
 // MARK: CutomeTextView
 open class CutomeTextView:TextFieldView,FieldValiadtion{
+    public func messagesSUI(_ text: String?) -> [FieldError] {
+    return self.emptyError()
+    }
     public var messages:[FieldError]{
-        return self.emptyError()
+        return messagesSUI(self.text)
     }
 }
 

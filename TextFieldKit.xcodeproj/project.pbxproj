@@ -55,6 +55,8 @@
 		4EF57CA6279FEED2000CFD0E /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF57CA5279FEED2000CFD0E /* Regex.swift */; };
 		4EF57CA827A011DC000CFD0E /* ForthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF57CA727A011DC000CFD0E /* ForthViewController.swift */; };
 		50133A85298BCA6866BD8538 /* Pods_TextFieldKitSwiftUIExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8C2FB58F4427B4C3D408067 /* Pods_TextFieldKitSwiftUIExample.framework */; };
+		8BBEE7BA28FAFA4000DFDA29 /* SecondContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBEE7B828FAFA4000DFDA29 /* SecondContentViewModel.swift */; };
+		8BBEE7BB28FAFA4000DFDA29 /* SecondContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBEE7B928FAFA4000DFDA29 /* SecondContentView.swift */; };
 		8FA29984B62E3E43B77E22B8 /* Pods_TextFieldKitExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE1283F15A683755B1336DDE /* Pods_TextFieldKitExample.framework */; };
 		AA204D4AFE59CDED92717038 /* Pods_TextFieldKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CE6D6682AE22280744A437A /* Pods_TextFieldKit.framework */; };
 /* End PBXBuildFile section */
@@ -153,6 +155,8 @@
 		4EE9876F28F1853B001275F3 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		4EF57CA5279FEED2000CFD0E /* Regex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Regex.swift; sourceTree = "<group>"; };
 		4EF57CA727A011DC000CFD0E /* ForthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForthViewController.swift; sourceTree = "<group>"; };
+		8BBEE7B828FAFA4000DFDA29 /* SecondContentViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondContentViewModel.swift; sourceTree = "<group>"; };
+		8BBEE7B928FAFA4000DFDA29 /* SecondContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondContentView.swift; sourceTree = "<group>"; };
 		8F6567E059F82800E6C3387E /* Pods-TextFieldKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TextFieldKit.debug.xcconfig"; path = "Target Support Files/Pods-TextFieldKit/Pods-TextFieldKit.debug.xcconfig"; sourceTree = "<group>"; };
 		AC6AE9A068B84A0F58EAD619 /* Pods-TextFieldKitExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TextFieldKitExample.release.xcconfig"; path = "Target Support Files/Pods-TextFieldKitExample/Pods-TextFieldKitExample.release.xcconfig"; sourceTree = "<group>"; };
 		BE1283F15A683755B1336DDE /* Pods_TextFieldKitExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TextFieldKitExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -302,8 +306,8 @@
 			children = (
 				4ECAA1D628F013D600FBDD86 /* Info.plist */,
 				4EDD5D4B28EB8C1000837705 /* TextFieldKitSwiftUIExampleApp.swift */,
-				4EDD5D4D28EB8C1000837705 /* ContentView.swift */,
-				4EE9876F28F1853B001275F3 /* ContentViewModel.swift */,
+				8BBEE7B728FAFA4000DFDA29 /* SecondContentView */,
+				8BBEE7B628FAFA2D00DFDA29 /* ContentView */,
 				4EDD5D4F28EB8C1200837705 /* Assets.xcassets */,
 				4EDD5D5128EB8C1200837705 /* Preview Content */,
 			);
@@ -316,6 +320,24 @@
 				4EDD5D5228EB8C1200837705 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		8BBEE7B628FAFA2D00DFDA29 /* ContentView */ = {
+			isa = PBXGroup;
+			children = (
+				4EDD5D4D28EB8C1000837705 /* ContentView.swift */,
+				4EE9876F28F1853B001275F3 /* ContentViewModel.swift */,
+			);
+			path = ContentView;
+			sourceTree = "<group>";
+		};
+		8BBEE7B728FAFA4000DFDA29 /* SecondContentView */ = {
+			isa = PBXGroup;
+			children = (
+				8BBEE7B828FAFA4000DFDA29 /* SecondContentViewModel.swift */,
+				8BBEE7B928FAFA4000DFDA29 /* SecondContentView.swift */,
+			);
+			path = SecondContentView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -620,7 +642,9 @@
 			files = (
 				4EE9877028F1853B001275F3 /* ContentViewModel.swift in Sources */,
 				4EE1033728F09F7300766C84 /* AppStyle.swift in Sources */,
+				8BBEE7BA28FAFA4000DFDA29 /* SecondContentViewModel.swift in Sources */,
 				4EDD5D4E28EB8C1000837705 /* ContentView.swift in Sources */,
+				8BBEE7BB28FAFA4000DFDA29 /* SecondContentView.swift in Sources */,
 				4EDD5D4C28EB8C1000837705 /* TextFieldKitSwiftUIExampleApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -896,7 +920,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -929,7 +953,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

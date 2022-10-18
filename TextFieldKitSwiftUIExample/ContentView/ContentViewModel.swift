@@ -24,7 +24,7 @@ class ContentViewModel:NSObject,ObservableObject{
     }
     func save()->(()->Void){
         return {
-            
+            UIApplication.shared.endEditing();
         }
     }
     func onEditingChangedFullName()->OnEditingChanged{

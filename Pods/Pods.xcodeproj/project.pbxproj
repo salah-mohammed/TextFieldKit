@@ -59,7 +59,7 @@
 		85172D5ECC1FE01C3664678971A5F81A /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3AE97504D9C80548A42D177032544A /* AlertView.swift */; };
 		88B20FE968630C00BF887E408F1E151A /* PhoneKit.h in Headers */ = {isa = PBXBuildFile; fileRef = E13A9241E8B643F059F5DC32D1A20DC0 /* PhoneKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8A7147C8609C27C9E6A98371812D2A34 /* SearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6657EE865C232BB7A82D75472C7FCCD /* SearchView.xib */; };
-		8E696CFBEE7BF8C5CA385B68ADA7DD77 /* PhoneKit-iOS16.0-PhoneKit in Resources */ = {isa = PBXBuildFile; fileRef = 07B82C4E6C631E9FBE92EBD8CDD6B0D4 /* PhoneKit-iOS16.0-PhoneKit */; };
+		8E696CFBEE7BF8C5CA385B68ADA7DD77 /* PhoneKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 07B82C4E6C631E9FBE92EBD8CDD6B0D4 /* PhoneKit.bundle */; };
 		8FED1D5A77B227C02F76363A19B205B4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		90249CC7B3602C9D5B58F442A45078AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4F688D1AC324B5A2A1335667E539572 /* Assets.xcassets */; };
 		92997A06D49D82430E04A845A3A9165C /* Pods-TextFieldKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A2CF4D70EB71E3E881DB7255076B31 /* Pods-TextFieldKit-dummy.m */; };
@@ -69,13 +69,13 @@
 		9BFE3FF0B9246C6FED2C690CD2819EC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA4D6B95C0A07A3450FF9FDBE24CFD68 /* Assets.xcassets */; };
 		9E3EC0F1588528148019A7F5E8426790 /* SearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6657EE865C232BB7A82D75472C7FCCD /* SearchView.xib */; };
 		9E5B751C604745C49C21F00C9B55EC35 /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD9C7123852D49A7E3D7BCDE2087FB4 /* LocationTableViewCell.swift */; };
-		A0853D84F447CB0264528330C4FFF2CD /* LocationPicker-iOS16.0-LocationPicker in Resources */ = {isa = PBXBuildFile; fileRef = 1A4C410BAB3DC6E2139832A9A2CB9090 /* LocationPicker-iOS16.0-LocationPicker */; };
+		A0853D84F447CB0264528330C4FFF2CD /* LocationPicker.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1A4C410BAB3DC6E2139832A9A2CB9090 /* LocationPicker.bundle */; };
 		A7CBC21853B655AD2F5F0F5236BF6517 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		AB395C41FEB8D7A524E5A6F440E6E392 /* LocationPicker-iOS13.0-LocationPicker in Resources */ = {isa = PBXBuildFile; fileRef = 1C7E8616AE23C016A41C5BB57A50E6C0 /* LocationPicker-iOS13.0-LocationPicker */; };
+		AB395C41FEB8D7A524E5A6F440E6E392 /* LocationPicker.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1C7E8616AE23C016A41C5BB57A50E6C0 /* LocationPicker.bundle */; };
 		ABCEBF4BC54F2D499E10B48E04F1E7F4 /* LICENSE in Sources */ = {isa = PBXBuildFile; fileRef = BB7740551DDC534E0D8C892A2FC465FB /* LICENSE */; };
 		B0D3EC04A3ADBDE99594E85316E95633 /* LocationPicker.podspec in Sources */ = {isa = PBXBuildFile; fileRef = 10945B1B325B0913AC554EDD1F0A307B /* LocationPicker.podspec */; };
 		B25D2FEE01BEBEEC70CA1386E5E3F901 /* AlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6B60D7E34B4D2C0E5F3EE8CD16DD93D /* AlertView.xib */; };
-		B97A316CF43B1FB917A18217C7AA7B67 /* PhoneKit-iOS13.0-PhoneKit in Resources */ = {isa = PBXBuildFile; fileRef = 5F679FD9B931D099D3DC036F6157E437 /* PhoneKit-iOS13.0-PhoneKit */; };
+		B97A316CF43B1FB917A18217C7AA7B67 /* PhoneKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5F679FD9B931D099D3DC036F6157E437 /* PhoneKit.bundle */; };
 		BB3DD10E610B23016475B53CF4794E49 /* CountryCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B1F6423B2AF8F8EC4E83905300D18F /* CountryCode.swift */; };
 		BF4B8025F347B3647EEB93E3CC46892A /* LocationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968851B24F292893CBD390825849A9BE /* LocationItem.swift */; };
 		C2B6347593D80C50540B17679EA26FD6 /* CountryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0707DF5074B44A88B04E1A37043E7B80 /* CountryViewController.swift */; };
@@ -177,14 +177,14 @@
 
 /* Begin PBXFileReference section */
 		0707DF5074B44A88B04E1A37043E7B80 /* CountryViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CountryViewController.swift; path = PhoneKit/CountryViewController.swift; sourceTree = "<group>"; };
-		07B82C4E6C631E9FBE92EBD8CDD6B0D4 /* PhoneKit-iOS16.0-PhoneKit */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "PhoneKit-iOS16.0-PhoneKit"; path = PhoneKit.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		07B82C4E6C631E9FBE92EBD8CDD6B0D4 /* PhoneKit.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhoneKit.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D12DB922F8518E27DB9E25CEEEDE896 /* Pods-TextFieldKitExample-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TextFieldKitExample-acknowledgements.plist"; sourceTree = "<group>"; };
 		0FB4AF243320AA1BC75E690437D2FE6F /* Pods-TextFieldKitExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TextFieldKitExample.release.xcconfig"; sourceTree = "<group>"; };
-		10945B1B325B0913AC554EDD1F0A307B /* LocationPicker.podspec */ = {isa = PBXFileReference; includeInIndex = 1; path = LocationPicker.podspec; sourceTree = "<group>"; };
+		10945B1B325B0913AC554EDD1F0A307B /* LocationPicker.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LocationPicker.podspec; sourceTree = "<group>"; };
 		1747C06058F64F1E5C621603C03319C2 /* CountryListManager.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = CountryListManager.bundle; path = PhoneKit/Resources/CountryListManager.bundle; sourceTree = "<group>"; };
 		18A2CF4D70EB71E3E881DB7255076B31 /* Pods-TextFieldKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TextFieldKit-dummy.m"; sourceTree = "<group>"; };
-		1A4C410BAB3DC6E2139832A9A2CB9090 /* LocationPicker-iOS16.0-LocationPicker */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "LocationPicker-iOS16.0-LocationPicker"; path = LocationPicker.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		1C7E8616AE23C016A41C5BB57A50E6C0 /* LocationPicker-iOS13.0-LocationPicker */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "LocationPicker-iOS13.0-LocationPicker"; path = LocationPicker.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A4C410BAB3DC6E2139832A9A2CB9090 /* LocationPicker.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocationPicker.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C7E8616AE23C016A41C5BB57A50E6C0 /* LocationPicker.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocationPicker.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FAC67CD9458286A3AE3BDCD61E69AE1 /* LocationPicker-iOS13.0 */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "LocationPicker-iOS13.0"; path = LocationPicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FF888DB008A46ECB96401E4C611775F /* Pods-TextFieldKitExample-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TextFieldKitExample-umbrella.h"; sourceTree = "<group>"; };
 		20F471B9940309A9D827B5D35103E536 /* Pods-TextFieldKitSwiftUIExample-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TextFieldKitSwiftUIExample-Info.plist"; sourceTree = "<group>"; };
@@ -201,14 +201,14 @@
 		40500666CA6FE7365D89798A47B56C7E /* LocationPicker-iOS16.0-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "LocationPicker-iOS16.0-prefix.pch"; path = "../LocationPicker-iOS16.0/LocationPicker-iOS16.0-prefix.pch"; sourceTree = "<group>"; };
 		4338002CC6E050F6A1966D52F1769F58 /* SVGCountryFlags.zip */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.zip; path = SVGCountryFlags.zip; sourceTree = "<group>"; };
 		44664F8268EA603EBAD440CF3F729825 /* LocationPicker-iOS13.0-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LocationPicker-iOS13.0-umbrella.h"; sourceTree = "<group>"; };
-		464335517C3A2EE3036AA4BE8CCC6559 /* countryCodes.json */ = {isa = PBXFileReference; includeInIndex = 1; name = countryCodes.json; path = PhoneKit/Resources/CountryListManager.bundle/countryCodes.json; sourceTree = "<group>"; };
+		464335517C3A2EE3036AA4BE8CCC6559 /* countryCodes.json */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.json; name = countryCodes.json; path = PhoneKit/Resources/CountryListManager.bundle/countryCodes.json; sourceTree = "<group>"; };
 		46A76308265C2C85E9F31CD7087A1C2F /* Pods-TextFieldKitSwiftUIExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TextFieldKitSwiftUIExample.debug.xcconfig"; sourceTree = "<group>"; };
 		49C952C4726B71CF4EA024E025503FA9 /* PhoneKit-iOS16.0-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "PhoneKit-iOS16.0-umbrella.h"; path = "../PhoneKit-iOS16.0/PhoneKit-iOS16.0-umbrella.h"; sourceTree = "<group>"; };
 		4E687DC9CF60CEEE2C2E294467581A62 /* Localizable.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4FD9C7123852D49A7E3D7BCDE2087FB4 /* LocationTableViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LocationTableViewCell.swift; path = LocationPicker/LocationTableViewCell.swift; sourceTree = "<group>"; };
 		50E590798FCB42424CFD99CB47ABC34D /* ResourceBundle-PhoneKit-PhoneKit-iOS13.0-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-PhoneKit-PhoneKit-iOS13.0-Info.plist"; sourceTree = "<group>"; };
 		5C528B4BA580DCB63BA93674C922E2C9 /* Pods-TextFieldKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TextFieldKit.modulemap"; sourceTree = "<group>"; };
-		5F679FD9B931D099D3DC036F6157E437 /* PhoneKit-iOS13.0-PhoneKit */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "PhoneKit-iOS13.0-PhoneKit"; path = PhoneKit.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F679FD9B931D099D3DC036F6157E437 /* PhoneKit.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhoneKit.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		602749C859193124D47D2A4A9B77F7B0 /* PhoneKit-iOS16.0-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "PhoneKit-iOS16.0-dummy.m"; path = "../PhoneKit-iOS16.0/PhoneKit-iOS16.0-dummy.m"; sourceTree = "<group>"; };
 		64C59C8D964EE84C3456F142A2020226 /* LocationPicker-iOS16.0.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "LocationPicker-iOS16.0.release.xcconfig"; path = "../LocationPicker-iOS16.0/LocationPicker-iOS16.0.release.xcconfig"; sourceTree = "<group>"; };
 		6647141CA8D499ECB8AEB8B0F34B97AB /* LocationPickerViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LocationPickerViewController.swift; path = LocationPicker/LocationPickerViewController.swift; sourceTree = "<group>"; };
@@ -218,11 +218,11 @@
 		7190830D909048D84B5709849C5E8321 /* PhoneKit-iOS13.0.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "PhoneKit-iOS13.0.debug.xcconfig"; sourceTree = "<group>"; };
 		71AE523DB747BF750F7A36C1663DBD7E /* PhoneKitEx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PhoneKitEx.swift; path = PhoneKit/PhoneKitEx.swift; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		736DD44140FB5B7633D5BF5C697141AB /* Podfile.lock */ = {isa = PBXFileReference; includeInIndex = 1; path = Podfile.lock; sourceTree = "<group>"; };
+		736DD44140FB5B7633D5BF5C697141AB /* Podfile.lock */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = Podfile.lock; sourceTree = "<group>"; };
 		739C1AB6A778D1837C711E3A2357286D /* PhoneKit-iOS13.0 */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "PhoneKit-iOS13.0"; path = PhoneKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		74516481540272AE81AC56D965E662CF /* LocationPicker-iOS13.0.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "LocationPicker-iOS13.0.modulemap"; sourceTree = "<group>"; };
 		79196DB285A231E3AD66721D5852B728 /* Pods-TextFieldKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TextFieldKit-Info.plist"; sourceTree = "<group>"; };
-		7939879D95E0963CE4FACB7E7CF90029 /* PhoneKit.podspec */ = {isa = PBXFileReference; includeInIndex = 1; path = PhoneKit.podspec; sourceTree = "<group>"; };
+		7939879D95E0963CE4FACB7E7CF90029 /* PhoneKit.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = PhoneKit.podspec; sourceTree = "<group>"; };
 		7D949B466C74F465602D69AA5CD6C63A /* SearchView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SearchView.swift; path = LocationPicker/SearchView.swift; sourceTree = "<group>"; };
 		80E84A8C7027E8E3EF124FFACA27102B /* LocationPicker-iOS13.0.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "LocationPicker-iOS13.0.release.xcconfig"; sourceTree = "<group>"; };
 		84974E197C0F5C8656147B95567E6991 /* PhoneKit-iOS16.0.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "PhoneKit-iOS16.0.release.xcconfig"; path = "../PhoneKit-iOS16.0/PhoneKit-iOS16.0.release.xcconfig"; sourceTree = "<group>"; };
@@ -238,7 +238,7 @@
 		98FAAA8BBB4F997A108998CF3BA151FF /* LocationPicker-iOS16.0-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "LocationPicker-iOS16.0-dummy.m"; path = "../LocationPicker-iOS16.0/LocationPicker-iOS16.0-dummy.m"; sourceTree = "<group>"; };
 		9AC93087A67D9C087CE140AFE9973F68 /* Pods-TextFieldKit-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TextFieldKit-acknowledgements.markdown"; sourceTree = "<group>"; };
 		9B9B2BB457EC2AD85EF4B6B58DB497F0 /* LocationPicker-iOS13.0-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "LocationPicker-iOS13.0-Info.plist"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A005B3FD197455265C933B47D2D789B8 /* Localizable.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A193A5085D63097EC171BCA9E7F36281 /* Pods-TextFieldKitSwiftUIExample-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TextFieldKitSwiftUIExample-acknowledgements.plist"; sourceTree = "<group>"; };
 		A58191905F1B1B5D4C4806BAB43F2C43 /* LocationPickerEx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LocationPickerEx.swift; path = LocationPicker/LocationPickerEx.swift; sourceTree = "<group>"; };
@@ -249,10 +249,10 @@
 		B3A75EB011F449813EA315578F26A24E /* Pods-TextFieldKitExample-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TextFieldKitExample-frameworks.sh"; sourceTree = "<group>"; };
 		B3F2D84C564063D6B9CF6777BCFC646E /* CountryTableViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CountryTableViewCell.swift; path = PhoneKit/CountryTableViewCell.swift; sourceTree = "<group>"; };
 		B415B75BF478A3AE82614A9EDD3F6C74 /* Pods-TextFieldKitExample-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TextFieldKitExample-dummy.m"; sourceTree = "<group>"; };
-		B6009D74110BD10DE1CF3A8E7AD51FFD /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; path = Podfile; sourceTree = "<group>"; };
+		B6009D74110BD10DE1CF3A8E7AD51FFD /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		B82C34D85D64E5BB84E7E0FE8CCB8068 /* Pods-TextFieldKit */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-TextFieldKit"; path = Pods_TextFieldKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA4D6B95C0A07A3450FF9FDBE24CFD68 /* Assets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = LocationPicker/Resources/Assets.xcassets; sourceTree = "<group>"; };
-		BB7740551DDC534E0D8C892A2FC465FB /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		BB7740551DDC534E0D8C892A2FC465FB /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		C0C18C029C48DDB93D4C79B09AEA645E /* LocationPicker-iOS13.0-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LocationPicker-iOS13.0-prefix.pch"; sourceTree = "<group>"; };
 		C20402165533063A4C8EABEE3B801A56 /* PhoneKit-iOS13.0.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "PhoneKit-iOS13.0.release.xcconfig"; sourceTree = "<group>"; };
 		C44D988A9D138E19B84081232D64EB6F /* PhoneKit-iOS13.0.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "PhoneKit-iOS13.0.modulemap"; sourceTree = "<group>"; };
@@ -277,7 +277,7 @@
 		E75693E3E19CAC6658D491E76E998E2D /* Pods-TextFieldKitSwiftUIExample-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TextFieldKitSwiftUIExample-dummy.m"; sourceTree = "<group>"; };
 		E8B1F6423B2AF8F8EC4E83905300D18F /* CountryCode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CountryCode.swift; path = PhoneKit/CountryCode.swift; sourceTree = "<group>"; };
 		EA95110D43978B682B5F9583AD73EDC5 /* Pods-TextFieldKitExample.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TextFieldKitExample.modulemap"; sourceTree = "<group>"; };
-		EADDFE854F4D34D7C323E5AAAC0E8593 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		EADDFE854F4D34D7C323E5AAAC0E8593 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		EC769C72FA5BD4B049B1BE72753B85B0 /* ResourceBundle-LocationPicker-LocationPicker-iOS16.0-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = "ResourceBundle-LocationPicker-LocationPicker-iOS16.0-Info.plist"; path = "../LocationPicker-iOS16.0/ResourceBundle-LocationPicker-LocationPicker-iOS16.0-Info.plist"; sourceTree = "<group>"; };
 		ECAB16EA6E3F6334C3850F5FA1943831 /* LocationPicker-iOS16.0-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = "LocationPicker-iOS16.0-Info.plist"; path = "../LocationPicker-iOS16.0/LocationPicker-iOS16.0-Info.plist"; sourceTree = "<group>"; };
 		F017FB29EB6F50B5C77653E369595082 /* LocationPicker-iOS13.0.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "LocationPicker-iOS13.0.debug.xcconfig"; sourceTree = "<group>"; };
@@ -489,13 +489,13 @@
 			isa = PBXGroup;
 			children = (
 				1FAC67CD9458286A3AE3BDCD61E69AE1 /* LocationPicker-iOS13.0 */,
-				1C7E8616AE23C016A41C5BB57A50E6C0 /* LocationPicker-iOS13.0-LocationPicker */,
+				1C7E8616AE23C016A41C5BB57A50E6C0 /* LocationPicker.bundle */,
 				98798921B353536EF7CAC429EB62B68B /* LocationPicker-iOS16.0 */,
-				1A4C410BAB3DC6E2139832A9A2CB9090 /* LocationPicker-iOS16.0-LocationPicker */,
+				1A4C410BAB3DC6E2139832A9A2CB9090 /* LocationPicker.bundle */,
 				739C1AB6A778D1837C711E3A2357286D /* PhoneKit-iOS13.0 */,
-				5F679FD9B931D099D3DC036F6157E437 /* PhoneKit-iOS13.0-PhoneKit */,
+				5F679FD9B931D099D3DC036F6157E437 /* PhoneKit.bundle */,
 				CC7C59246B033D0F182869A1A6B29669 /* PhoneKit-iOS16.0 */,
-				07B82C4E6C631E9FBE92EBD8CDD6B0D4 /* PhoneKit-iOS16.0-PhoneKit */,
+				07B82C4E6C631E9FBE92EBD8CDD6B0D4 /* PhoneKit.bundle */,
 				B82C34D85D64E5BB84E7E0FE8CCB8068 /* Pods-TextFieldKit */,
 				68178548FCF141A11ACCE0621CBC9D40 /* Pods-TextFieldKitExample */,
 				26C6BEB803D733442F1ECA4D8315F0F1 /* Pods-TextFieldKitSwiftUIExample */,
@@ -533,7 +533,6 @@
 				7022AD4039E7260B4565FC9DFEC88DD0 /* Resources */,
 				09FD6E48D2E11C6C6B66E96B1F8DADA9 /* Support Files */,
 			);
-			name = PhoneKit;
 			path = PhoneKit;
 			sourceTree = "<group>";
 		};
@@ -572,7 +571,6 @@
 				C277F7963787A8B2198039FBEF048050 /* Resources */,
 				53EA190B932ACB096E94828C14C0E15A /* Support Files */,
 			);
-			name = LocationPicker;
 			path = LocationPicker;
 			sourceTree = "<group>";
 		};
@@ -702,7 +700,7 @@
 			);
 			name = "LocationPicker-iOS16.0-LocationPicker";
 			productName = LocationPicker;
-			productReference = 1A4C410BAB3DC6E2139832A9A2CB9090 /* LocationPicker-iOS16.0-LocationPicker */;
+			productReference = 1A4C410BAB3DC6E2139832A9A2CB9090 /* LocationPicker.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
 		701BAEFCF19232F7EAE95433024CD715 /* Pods-TextFieldKitExample */ = {
@@ -758,7 +756,7 @@
 			);
 			name = "PhoneKit-iOS13.0-PhoneKit";
 			productName = PhoneKit;
-			productReference = 5F679FD9B931D099D3DC036F6157E437 /* PhoneKit-iOS13.0-PhoneKit */;
+			productReference = 5F679FD9B931D099D3DC036F6157E437 /* PhoneKit.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
 		A44548C617A69D82FE3346C92CF70E2B /* LocationPicker-iOS13.0-LocationPicker */ = {
@@ -775,7 +773,7 @@
 			);
 			name = "LocationPicker-iOS13.0-LocationPicker";
 			productName = LocationPicker;
-			productReference = 1C7E8616AE23C016A41C5BB57A50E6C0 /* LocationPicker-iOS13.0-LocationPicker */;
+			productReference = 1C7E8616AE23C016A41C5BB57A50E6C0 /* LocationPicker.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
 		AE48444DD6C786C0DDC00413673CF0D6 /* Pods-TextFieldKitSwiftUIExample */ = {
@@ -832,7 +830,7 @@
 			);
 			name = "PhoneKit-iOS16.0-PhoneKit";
 			productName = PhoneKit;
-			productReference = 07B82C4E6C631E9FBE92EBD8CDD6B0D4 /* PhoneKit-iOS16.0-PhoneKit */;
+			productReference = 07B82C4E6C631E9FBE92EBD8CDD6B0D4 /* PhoneKit.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
 		D309D7B1B528FE1223C15BD568D11586 /* PhoneKit-iOS13.0 */ = {
@@ -916,7 +914,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB395C41FEB8D7A524E5A6F440E6E392 /* LocationPicker-iOS13.0-LocationPicker in Resources */,
+				AB395C41FEB8D7A524E5A6F440E6E392 /* LocationPicker.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -949,7 +947,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8E696CFBEE7BF8C5CA385B68ADA7DD77 /* PhoneKit-iOS16.0-PhoneKit in Resources */,
+				8E696CFBEE7BF8C5CA385B68ADA7DD77 /* PhoneKit.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -957,7 +955,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0853D84F447CB0264528330C4FFF2CD /* LocationPicker-iOS16.0-LocationPicker in Resources */,
+				A0853D84F447CB0264528330C4FFF2CD /* LocationPicker.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1011,7 +1009,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B97A316CF43B1FB917A18217C7AA7B67 /* PhoneKit-iOS13.0-PhoneKit in Resources */,
+				B97A316CF43B1FB917A18217C7AA7B67 /* PhoneKit.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1316,6 +1314,7 @@
 			baseConfigurationReference = 64C59C8D964EE84C3456F142A2020226 /* LocationPicker-iOS16.0.release.xcconfig */;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/LocationPicker-iOS16.0";
+				DEVELOPMENT_TEAM = 8C7RSZ7C3V;
 				IBSC_MODULE = LocationPicker;
 				INFOPLIST_FILE = "Target Support Files/LocationPicker-iOS16.0/ResourceBundle-LocationPicker-LocationPicker-iOS16.0-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -1332,6 +1331,7 @@
 			baseConfigurationReference = C20402165533063A4C8EABEE3B801A56 /* PhoneKit-iOS13.0.release.xcconfig */;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/PhoneKit-iOS13.0";
+				DEVELOPMENT_TEAM = 8C7RSZ7C3V;
 				IBSC_MODULE = PhoneKit;
 				INFOPLIST_FILE = "Target Support Files/PhoneKit-iOS13.0/ResourceBundle-PhoneKit-PhoneKit-iOS13.0-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -1529,6 +1529,7 @@
 			baseConfigurationReference = 3F5962FA44E69238C6CF0553611AB417 /* PhoneKit-iOS16.0.debug.xcconfig */;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/PhoneKit-iOS16.0";
+				DEVELOPMENT_TEAM = 8C7RSZ7C3V;
 				IBSC_MODULE = PhoneKit;
 				INFOPLIST_FILE = "Target Support Files/PhoneKit-iOS16.0/ResourceBundle-PhoneKit-PhoneKit-iOS16.0-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -1580,6 +1581,7 @@
 			baseConfigurationReference = 80E84A8C7027E8E3EF124FFACA27102B /* LocationPicker-iOS13.0.release.xcconfig */;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/LocationPicker-iOS13.0";
+				DEVELOPMENT_TEAM = 8C7RSZ7C3V;
 				IBSC_MODULE = LocationPicker;
 				INFOPLIST_FILE = "Target Support Files/LocationPicker-iOS13.0/ResourceBundle-LocationPicker-LocationPicker-iOS13.0-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -1759,6 +1761,7 @@
 			baseConfigurationReference = CB250FD63657D5EAA539B6AAB99FDC45 /* LocationPicker-iOS16.0.debug.xcconfig */;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/LocationPicker-iOS16.0";
+				DEVELOPMENT_TEAM = 8C7RSZ7C3V;
 				IBSC_MODULE = LocationPicker;
 				INFOPLIST_FILE = "Target Support Files/LocationPicker-iOS16.0/ResourceBundle-LocationPicker-LocationPicker-iOS16.0-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -1775,6 +1778,7 @@
 			baseConfigurationReference = 84974E197C0F5C8656147B95567E6991 /* PhoneKit-iOS16.0.release.xcconfig */;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/PhoneKit-iOS16.0";
+				DEVELOPMENT_TEAM = 8C7RSZ7C3V;
 				IBSC_MODULE = PhoneKit;
 				INFOPLIST_FILE = "Target Support Files/PhoneKit-iOS16.0/ResourceBundle-PhoneKit-PhoneKit-iOS16.0-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -1791,6 +1795,7 @@
 			baseConfigurationReference = F017FB29EB6F50B5C77653E369595082 /* LocationPicker-iOS13.0.debug.xcconfig */;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/LocationPicker-iOS13.0";
+				DEVELOPMENT_TEAM = 8C7RSZ7C3V;
 				IBSC_MODULE = LocationPicker;
 				INFOPLIST_FILE = "Target Support Files/LocationPicker-iOS13.0/ResourceBundle-LocationPicker-LocationPicker-iOS13.0-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -1988,6 +1993,7 @@
 			baseConfigurationReference = 7190830D909048D84B5709849C5E8321 /* PhoneKit-iOS13.0.debug.xcconfig */;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/PhoneKit-iOS13.0";
+				DEVELOPMENT_TEAM = 8C7RSZ7C3V;
 				IBSC_MODULE = PhoneKit;
 				INFOPLIST_FILE = "Target Support Files/PhoneKit-iOS13.0/ResourceBundle-PhoneKit-PhoneKit-iOS13.0-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
