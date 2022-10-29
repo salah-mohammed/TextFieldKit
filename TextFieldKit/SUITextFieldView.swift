@@ -85,14 +85,14 @@ public struct SUITextFieldView: View {
                         if let iconName:String = iconName{
                             Image(iconName)
                         }
-                        TextField(placeholder ?? "n", text:text, onEditingChanged: { (changed) in
+                        TextField(placeholder ?? "", text:text, onEditingChanged: { (changed) in
                             self.changed=changed
                             self.onEditingChanged?(changed);
                             onEditingValidationChanged?(changed,self.validation);
                             print("Username onEditingChanged - \(changed)")
                         }) {
                             print("Username onCommit")
-                        }.foregroundColor(textColor()).disabled(dropDownData?.imageName != nil).allowsHitTesting(dropDownData?.imageName != nil)
+                        }.foregroundColor(textColor()).disabled(dropDownData?.imageName != nil).allowsHitTesting(dropDownData?.imageName == nil)
                     }
                     if let imageName:String=dropDownData?.imageName{
                         Spacer().frame(width:dropDownData?.spaceBettwenTextAndImage ?? 0.0)
@@ -111,9 +111,13 @@ public struct SUITextFieldView: View {
                     }
                 }
             }
-        }.frame(minHeight:55).allowsHitTesting(dropDownData?.imageName != nil).onTapGesture {
-            dropDownData?.action();
-          }
+        }.frame(minHeight:55).highPriorityGesture(
+            TapGesture()
+                .onEnded { _ in
+                    self.dropDownData?.action();
+                    print("a")
+                }
+        ).disabled(false)
     }
 }
 
