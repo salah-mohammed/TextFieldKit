@@ -55,6 +55,7 @@
 		4EF57CA6279FEED2000CFD0E /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF57CA5279FEED2000CFD0E /* Regex.swift */; };
 		4EF57CA827A011DC000CFD0E /* ForthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF57CA727A011DC000CFD0E /* ForthViewController.swift */; };
 		50133A85298BCA6866BD8538 /* Pods_TextFieldKitSwiftUIExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8C2FB58F4427B4C3D408067 /* Pods_TextFieldKitSwiftUIExample.framework */; };
+		8B091F50290D0B6800D38C91 /* SUIPhoneNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B091F4F290D0B6800D38C91 /* SUIPhoneNumberView.swift */; };
 		8BBEE7BA28FAFA4000DFDA29 /* SecondContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBEE7B828FAFA4000DFDA29 /* SecondContentViewModel.swift */; };
 		8BBEE7BB28FAFA4000DFDA29 /* SecondContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBEE7B928FAFA4000DFDA29 /* SecondContentView.swift */; };
 		8FA29984B62E3E43B77E22B8 /* Pods_TextFieldKitExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE1283F15A683755B1336DDE /* Pods_TextFieldKitExample.framework */; };
@@ -155,6 +156,7 @@
 		4EE9876F28F1853B001275F3 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		4EF57CA5279FEED2000CFD0E /* Regex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Regex.swift; sourceTree = "<group>"; };
 		4EF57CA727A011DC000CFD0E /* ForthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForthViewController.swift; sourceTree = "<group>"; };
+		8B091F4F290D0B6800D38C91 /* SUIPhoneNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUIPhoneNumberView.swift; sourceTree = "<group>"; };
 		8BBEE7B828FAFA4000DFDA29 /* SecondContentViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondContentViewModel.swift; sourceTree = "<group>"; };
 		8BBEE7B928FAFA4000DFDA29 /* SecondContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondContentView.swift; sourceTree = "<group>"; };
 		8F6567E059F82800E6C3387E /* Pods-TextFieldKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TextFieldKit.debug.xcconfig"; path = "Target Support Files/Pods-TextFieldKit/Pods-TextFieldKit.debug.xcconfig"; sourceTree = "<group>"; };
@@ -249,6 +251,7 @@
 				4EB6F39227A7E3E2006A01BE /* FieldValiadtion.swift */,
 				4ECAA1CF28F00D5600FBDD86 /* SUITextFieldView.swift */,
 				4EE9876828F16ECA001275F3 /* SUITextViewView.swift */,
+				8B091F4F290D0B6800D38C91 /* SUIPhoneNumberView.swift */,
 				4EE9876D28F1720A001275F3 /* SUIBusinessFields.swift */,
 				4EA57E212746588800C183A2 /* Resources */,
 				4E2DF74D274D32190020AE25 /* UITextViewEx.swift */,
@@ -604,6 +607,7 @@
 			files = (
 				4EAA5E6A28E6C4DF00080992 /* FieldStyle.swift in Sources */,
 				4EE9876E28F1720A001275F3 /* SUIBusinessFields.swift in Sources */,
+				8B091F50290D0B6800D38C91 /* SUIPhoneNumberView.swift in Sources */,
 				4EAA5E7028E6D0A800080992 /* TextFieldProtocols.swift in Sources */,
 				4EA57E2527466D5C00C183A2 /* DropDownTextField.swift in Sources */,
 				4E2DF749274D111B0020AE25 /* UITextView+Placeholder.m in Sources */,

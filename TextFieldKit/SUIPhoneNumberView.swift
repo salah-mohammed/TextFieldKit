@@ -1,34 +1,31 @@
 //
-//  SUITextFieldView.swift
+//  SUIPhoneNumberView.swift
 //  TextFieldKit
 //
-//  Created by Salah on 10/7/22.
+//  Created by SalahMohamed on 29/10/2022.
 //
 
-import UIKit
+import Foundation
 import SwiftUI
-public typealias DropDownData = (imageName:String?, spaceBettwenTextAndImage:CGFloat?,tralling:CGFloat?,action:()->Void);
-public typealias PhoneData = (imageName:UIImage?, code:String,action:()->Void);
+
 @available(iOS 15.5, *)
-public struct SUITextFieldView: View {
+public struct SUIPhoneNumberView: View {
     public var placeholder:String?
     public var text: Binding<String>
     public var error:Binding<String>?
-    public var iconName:String?
+    @State public var iconName:String?
     public var onEditingChanged:((Bool) -> Void)?
     public var onEditingValidationChanged:((Bool,GeneralConnection?) -> Void)?
     @State private var changed:Bool=false;
     public var style:FieldStyle = SUITextFieldView.style ?? FieldStyle.init()
     public static var style:FieldStyle?
     public var validation:GeneralConnection?
-    private var dropDownData:DropDownData?
 
     
     public init(placeholder:String?=nil,
                 text:Binding<String>,
                 error:Binding<String>?=nil,
                 iconName:String?=nil,
-                dropDownData:DropDownData?=nil,
                 onEditingChanged:((Bool) -> Void)?=nil,
                 style:FieldStyle?=nil,
                 validation:(GeneralConnection,(Bool,GeneralConnection?) -> Void)?=nil) {
@@ -39,7 +36,6 @@ public struct SUITextFieldView: View {
         self.text=text;
         self.error=error;
         self.iconName=iconName;
-        self.dropDownData=dropDownData;
         self.onEditingChanged=onEditingChanged;
         self.style=style ?? SUITextFieldView.style ?? FieldStyle.init()
     }
@@ -93,12 +89,9 @@ public struct SUITextFieldView: View {
                             print("Username onEditingChanged - \(changed)")
                         }) {
                             print("Username onCommit")
-                        }.foregroundColor(textColor()).disabled(dropDownData?.imageName != nil).allowsHitTesting(dropDownData?.imageName == nil)
+                        }.foregroundColor(textColor())
                     }
-                    if let imageName:String=dropDownData?.imageName{
-                        Spacer().frame(width:dropDownData?.spaceBettwenTextAndImage ?? 0.0)
-                        Image(imageName).padding([.trailing],dropDownData?.tralling)
-                    }
+       
                 }
             Rectangle.init()
                     .frame(height:self.style.indicatorHeight)
@@ -115,31 +108,8 @@ public struct SUITextFieldView: View {
         }.frame(minHeight:55).highPriorityGesture(
             TapGesture()
                 .onEnded { _ in
-                    self.dropDownData?.action();
-                    print("a")
+          
                 }
         ).disabled(false)
     }
 }
-
-
-/*
- protocol ItemViewModel: ObservableObject {
-     @Published var title: String
-
-     func save()
-     func delete()
- }
-
- extension ItemViewModel {
-     @Published var title = "Some default Title"
-
-     func save() {
-         // some default behaviour
-     }
-
-     func delete() {
-         // some default behaviour
-     }
- }
- */
