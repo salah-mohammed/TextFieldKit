@@ -14,12 +14,15 @@ class ContentViewModel:NSObject,ObservableObject{
     @Published  var userName:String="Ahmed"
     @Published  var requirements:String=""
     @Published  var city:String=""
+    @Published  var phoneNumber:String=""
+    @Published  var countryCode:String="+966"
 
     @Published  var fullNameError:String=""
     @Published  var firstNameError:String=""
     @Published  var userNameError:String=""
     @Published  var requirementsError:String=""
     @Published  var cityError:String=""
+    @Published  var phoneNumberError:String=""
 
     override init() {
         super.init();
@@ -33,6 +36,11 @@ class ContentViewModel:NSObject,ObservableObject{
     func cityPicker()->()->Void{
         return {
             self.city = "New yourk"
+        }
+    }
+    func countryPicker()->()->Void{
+        return {
+            self.countryCode = "+972"
         }
     }
     func onEditingChangedFullName()->OnEditingChanged{

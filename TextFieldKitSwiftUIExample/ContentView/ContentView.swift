@@ -50,6 +50,12 @@ struct ContentView: View {
         set: {viewModel.city = $0 }
     )
     }
+    func phoneNumber()->Binding<String> {
+     return .init(
+        get: {viewModel.phoneNumber },
+        set: {viewModel.phoneNumber = $0 }
+    )
+    }
     @StateObject var viewModel = ContentViewModel.init()
 
     var body: some View {
@@ -82,6 +88,12 @@ struct ContentView: View {
                                  dropDownData:("ic_drop_down",nil,nil,self.viewModel.cityPicker()),
                                  onEditingChanged:self.viewModel.onEditingChangedCity(),
                                  validation:nil);
+                SUIPhoneNumberView(placeholder:nil,
+                                 text:phoneNumber(),
+                                   error:$viewModel.phoneNumberError,
+                                   phoneData:(UIImage.init(named:"AE"),self.viewModel.countryCode,self.viewModel.countryPicker()),
+                                 onEditingChanged:nil,
+                                 validation:nil)
                 SUITextViewView.init(placeholder:"Requirements",
                                      text:requirements(),
                                      error:$viewModel.requirementsError,

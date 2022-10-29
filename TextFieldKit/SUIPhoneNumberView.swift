@@ -7,13 +7,14 @@
 
 import Foundation
 import SwiftUI
-
+public typealias PhoneData = (image:UIImage?,code:String?,action:()->Void);
 @available(iOS 15.5, *)
 public struct SUIPhoneNumberView: View {
     public var placeholder:String?
     public var text: Binding<String>
     public var error:Binding<String>?
     @State public var iconName:String?
+    var phoneData:PhoneData?
     public var onEditingChanged:((Bool) -> Void)?
     public var onEditingValidationChanged:((Bool,GeneralConnection?) -> Void)?
     @State private var changed:Bool=false;
@@ -26,6 +27,7 @@ public struct SUIPhoneNumberView: View {
                 text:Binding<String>,
                 error:Binding<String>?=nil,
                 iconName:String?=nil,
+                phoneData:PhoneData?=nil,
                 onEditingChanged:((Bool) -> Void)?=nil,
                 style:FieldStyle?=nil,
                 validation:(GeneralConnection,(Bool,GeneralConnection?) -> Void)?=nil) {
@@ -36,6 +38,7 @@ public struct SUIPhoneNumberView: View {
         self.text=text;
         self.error=error;
         self.iconName=iconName;
+        self.phoneData=phoneData;
         self.onEditingChanged=onEditingChanged;
         self.style=style ?? SUITextFieldView.style ?? FieldStyle.init()
     }
@@ -82,6 +85,18 @@ public struct SUIPhoneNumberView: View {
                         if let iconName:String = iconName{
                             Image(iconName)
                         }
+                        HStack{
+                            if let image:UIImage = phoneData?.image{
+                                Image.init(uiImage:image);
+                            }
+                            if let code:String = phoneData?.code{
+                                Text(code)
+                            }
+                        }.highPriorityGesture(TapGesture().onEnded({
+                            self.phoneData?.action();
+                        }))
+                
+                        Rectangle().frame(width:1).frame(height:20).foregroundColor(Color.gray.opacity(0.7))
                         TextField(placeholder ?? "", text:text, onEditingChanged: { (changed) in
                             self.changed=changed
                             self.onEditingChanged?(changed);
@@ -105,11 +120,6 @@ public struct SUIPhoneNumberView: View {
                     }
                 }
             }
-        }.frame(minHeight:55).highPriorityGesture(
-            TapGesture()
-                .onEnded { _ in
-          
-                }
-        ).disabled(false)
+        }.frame(minHeight:55)
     }
 }

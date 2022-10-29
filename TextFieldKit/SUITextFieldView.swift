@@ -8,7 +8,6 @@
 import UIKit
 import SwiftUI
 public typealias DropDownData = (imageName:String?, spaceBettwenTextAndImage:CGFloat?,tralling:CGFloat?,action:()->Void);
-public typealias PhoneData = (imageName:UIImage?, code:String,action:()->Void);
 @available(iOS 15.5, *)
 public struct SUITextFieldView: View {
     public var placeholder:String?
