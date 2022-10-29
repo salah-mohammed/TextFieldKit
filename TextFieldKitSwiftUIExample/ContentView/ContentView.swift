@@ -91,7 +91,7 @@ struct ContentView: View {
                 SUIPhoneNumberView(placeholder:nil,
                                  text:phoneNumber(),
                                    error:$viewModel.phoneNumberError,
-                                   phoneData:(UIImage.init(named:"AE"),self.viewModel.countryCode,self.viewModel.countryPicker()),
+                                   phoneData:(UIImage.init(named:self.viewModel.countryCode),self.viewModel.countryCode,self.viewModel.countryPicker()),
                                  onEditingChanged:nil,
                                  validation:nil)
                 SUITextViewView.init(placeholder:"Requirements",

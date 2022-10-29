@@ -40,7 +40,7 @@ class ContentViewModel:NSObject,ObservableObject{
     }
     func countryPicker()->()->Void{
         return {
-            self.countryCode = "+972"
+            self.countryCode = "+971"
         }
     }
     func onEditingChangedFullName()->OnEditingChanged{

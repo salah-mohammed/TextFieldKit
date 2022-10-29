@@ -87,7 +87,11 @@ public struct SUIPhoneNumberView: View {
                         }
                         HStack{
                             if let image:UIImage = phoneData?.image{
-                                Image.init(uiImage:image);
+                                Image.init(uiImage:image)
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(maxWidth:63,maxHeight:45)
+                                    .clipped()
                             }
                             if let code:String = phoneData?.code{
                                 Text(code)
