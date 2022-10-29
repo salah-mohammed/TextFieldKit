@@ -7,7 +7,7 @@
 
 import UIKit
 import SwiftUI
-
+public typealias DropDownData = (imageName:String?, spaceBettwenTextAndImage:CGFloat?,tralling:CGFloat?,action:()->Void);
 @available(iOS 15.5, *)
 public struct SUITextFieldView: View {
     public var placeholder:String?
@@ -20,11 +20,14 @@ public struct SUITextFieldView: View {
     public var style:FieldStyle = SUITextFieldView.style ?? FieldStyle.init()
     public static var style:FieldStyle?
     public var validation:GeneralConnection?
+    private var dropDownData:DropDownData?
 
+    
     public init(placeholder:String?=nil,
                 text:Binding<String>,
                 error:Binding<String>?=nil,
                 iconName:String?=nil,
+                dropDownData:DropDownData?=nil,
                 onEditingChanged:((Bool) -> Void)?=nil,
                 style:FieldStyle?=nil,
                 validation:(GeneralConnection,(Bool,GeneralConnection?) -> Void)?=nil) {
@@ -35,6 +38,7 @@ public struct SUITextFieldView: View {
         self.text=text;
         self.error=error;
         self.iconName=iconName;
+        self.dropDownData=dropDownData;
         self.onEditingChanged=onEditingChanged;
         self.style=style ?? SUITextFieldView.style ?? FieldStyle.init()
     }
@@ -76,18 +80,24 @@ public struct SUITextFieldView: View {
                         .frame(maxWidth:.infinity,alignment:.leading)
                     }
                 }
-                HStack(spacing:self.style.spaceBetweenIconAndField){
-                    if let iconName:String = iconName{
-                        Image(iconName)
+                HStack(spacing:0){
+                    HStack(spacing:self.style.spaceBetweenIconAndField){
+                        if let iconName:String = iconName{
+                            Image(iconName)
+                        }
+                        TextField(placeholder ?? "n", text:text, onEditingChanged: { (changed) in
+                            self.changed=changed
+                            self.onEditingChanged?(changed);
+                            onEditingValidationChanged?(changed,self.validation);
+                            print("Username onEditingChanged - \(changed)")
+                        }) {
+                            print("Username onCommit")
+                        }.foregroundColor(textColor()).disabled(dropDownData?.imageName != nil).allowsHitTesting(dropDownData?.imageName != nil)
                     }
-                    TextField(placeholder ?? "n", text:text, onEditingChanged: { (changed) in
-                        self.changed=changed
-                        self.onEditingChanged?(changed);
-                        onEditingValidationChanged?(changed,self.validation);
-                        print("Username onEditingChanged - \(changed)")
-                    }) {
-                        print("Username onCommit")
-                    }.foregroundColor(textColor())
+                    if let imageName:String=dropDownData?.imageName{
+                        Spacer().frame(width:dropDownData?.spaceBettwenTextAndImage ?? 0.0)
+                        Image(imageName).padding([.trailing],dropDownData?.tralling)
+                    }
                 }
             Rectangle.init()
                     .frame(height:self.style.indicatorHeight)
@@ -100,10 +110,10 @@ public struct SUITextFieldView: View {
                         .font(Font.system(size: 11))
                     }
                 }
-            }.onTapGesture {
-                
             }
-        }.frame(minHeight:55)
+        }.frame(minHeight:55).allowsHitTesting(dropDownData?.imageName != nil).onTapGesture {
+            dropDownData?.action();
+          }
     }
 }
 

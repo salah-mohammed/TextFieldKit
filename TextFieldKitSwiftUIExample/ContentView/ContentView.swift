@@ -44,11 +44,18 @@ struct ContentView: View {
         set: {viewModel.requirements = $0 }
     )
     }
+    func city()->Binding<String> {
+     return .init(
+        get: {viewModel.city },
+        set: {viewModel.city = $0 }
+    )
+    }
     @StateObject var viewModel = ContentViewModel.init()
 
     var body: some View {
         ZStack{
             VStack(spacing:0) {
+                Image("ic_drop_down")
                 Image(systemName: "globe")
                     .imageScale(.large)
                     .foregroundColor(.accentColor)
@@ -68,6 +75,12 @@ struct ContentView: View {
                                  text:firstName(),
                                  error:$viewModel.firstNameError,
                                  onEditingChanged:self.viewModel.onEditingChangedFirstName(),
+                                 validation:nil);
+                SUITextFieldView(placeholder:"City",
+                                 text:city(),
+                                 error:$viewModel.cityError,
+                                 dropDownData:("ic_drop_down",nil,nil,self.viewModel.cityPicker()),
+                                 onEditingChanged:self.viewModel.onEditingChangedCity(),
                                  validation:nil);
                 SUITextViewView.init(placeholder:"Requirements",
                                      text:requirements(),

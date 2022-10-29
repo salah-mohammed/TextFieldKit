@@ -13,11 +13,14 @@ class ContentViewModel:NSObject,ObservableObject{
     @Published  var firstName:String="Ahmed"
     @Published  var userName:String="Ahmed"
     @Published  var requirements:String=""
+    @Published  var city:String=""
 
     @Published  var fullNameError:String=""
     @Published  var firstNameError:String=""
     @Published  var userNameError:String=""
     @Published  var requirementsError:String=""
+    @Published  var cityError:String=""
+
     override init() {
         super.init();
         
@@ -25,6 +28,11 @@ class ContentViewModel:NSObject,ObservableObject{
     func save()->(()->Void){
         return {
             UIApplication.shared.endEditing();
+        }
+    }
+    func cityPicker()->()->Void{
+        return {
+            self.city = "New yourk"
         }
     }
     func onEditingChangedFullName()->OnEditingChanged{
@@ -43,6 +51,11 @@ class ContentViewModel:NSObject,ObservableObject{
         }
     }
     func onEditingChangedRequirements()->OnEditingChanged{
+        return { value in
+            self.requirementsError = "error Requirements";
+        }
+    }
+    func onEditingChangedCity()->OnEditingChanged{
         return { value in
             self.requirementsError = "error Requirements";
         }
