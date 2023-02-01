@@ -176,10 +176,12 @@ code_sign_if_enabled() {
 }
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/AppTexts/AppTexts.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/LocationPicker-iOS13.0/LocationPicker.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/PhoneKit-iOS13.0/PhoneKit.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/AppTexts/AppTexts.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/LocationPicker-iOS13.0/LocationPicker.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/PhoneKit-iOS13.0/PhoneKit.framework"
 fi
