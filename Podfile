@@ -4,9 +4,9 @@
 target 'TextFieldKit' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
-  pod 'PhoneKit',:git => "https://github.com/salah-mohammed/PhoneKit.git"
-  pod 'LocationPicker', :git => 'https://github.com/salah-mohammed/LocationPicker.git'
-  pod 'AppTexts', :git => 'https://github.com/salah-mohammed/AppTexts.git'
+#  pod 'PhoneKit',:git => "https://github.com/salah-mohammed/PhoneKit.git"
+#  pod 'LocationPicker', :git => 'https://github.com/salah-mohammed/LocationPicker.git'
+#  pod 'AppTexts', :git => 'https://github.com/salah-mohammed/AppTexts.git'
 
   # Pods for TextFieldKit
 
@@ -14,8 +14,8 @@ end
 target 'TextFieldKitSwiftUIExample' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
-  pod 'PhoneKit',:git => "https://github.com/salah-mohammed/PhoneKit.git"
-  pod 'LocationPicker', :git => 'https://github.com/salah-mohammed/LocationPicker.git'
+#  pod 'PhoneKit',:git => "https://github.com/salah-mohammed/PhoneKit.git"
+#  pod 'LocationPicker', :git => 'https://github.com/salah-mohammed/LocationPicker.git'
 
   # Pods for TextFieldKit
 
