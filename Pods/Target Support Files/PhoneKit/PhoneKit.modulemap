@@ -1,5 +1,5 @@
 framework module PhoneKit {
-  umbrella header "PhoneKit-iOS13.0-umbrella.h"
+  umbrella header "PhoneKit-umbrella.h"
 
   export *
   module * { export * }

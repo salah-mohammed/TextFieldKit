@@ -1,6 +1,0 @@
-framework module PhoneKit {
-  umbrella header "PhoneKit-iOS16.0-umbrella.h"
-
-  export *
-  module * { export * }
-}

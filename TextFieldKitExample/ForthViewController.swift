@@ -7,6 +7,10 @@
 
 import UIKit
 import TextFieldKit
+enum UserType:Int{
+case user=0
+case company=1
+}
 class ForthViewController: UIViewController {
     @IBOutlet weak var txtAdvancedPhoneNumber:AdvancedPhoneNumber!
     @IBOutlet weak var txtLocationTextField:LocationTextField!
@@ -18,7 +22,22 @@ class ForthViewController: UIViewController {
     @IBOutlet weak var txtPasswordField:PasswordField!
     @IBOutlet weak var txtEmail:EmailField!
     @IBOutlet weak var txtCity:CustomCityField!
-    var fields:[FieldValiadtion]{
+    @IBOutlet weak var segmentedControl:UISegmentedControl!
+    var userType:UserType?{
+        didSet{
+            if let userType:UserType=userType{
+            self.segmentedControl.selectedSegmentIndex=userType.rawValue
+            }
+        }
+    }
+    var userFields:[FieldValiadtion]{
+    return [
+        txtFullName,
+        txtPasswordField,
+        txtNewPassword,
+        txtConfirmPassword]
+    }
+    var companyFields:[FieldValiadtion]{
     return [
         txtAdvancedPhoneNumber,
         txtLocationTextField,
@@ -31,8 +50,12 @@ class ForthViewController: UIViewController {
         txtCity,
         txtRequirements]
     }
+    var fields:[FieldValiadtion]{
+        return  self.userType == .user ? self.userFields:self.companyFields
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.userType = .user;
         txtFullName.fieldDidEnd = { _ in
             self.txtFullName.error = "AA"
         }
@@ -57,6 +80,9 @@ class ForthViewController: UIViewController {
     }
     @IBAction func tapGesture(_ sender:Any){
         self.view.endEditing(true);
+    }
+    @IBAction func btnUserType(_ sender:UISegmentedControl){
+        self.userType = UserType.init(rawValue:sender.selectedSegmentIndex)
     }
     @IBAction func btnValid(_ sender:Any?){
         if self.fields.flatMap({$0.messages}).valid == false{

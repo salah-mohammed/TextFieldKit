@@ -1,5 +1,5 @@
 framework module LocationPicker {
-  umbrella header "LocationPicker-iOS13.0-umbrella.h"
+  umbrella header "LocationPicker-umbrella.h"
 
   export *
   module * { export * }
