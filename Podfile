@@ -6,7 +6,6 @@ target 'TextFieldKit' do
   use_frameworks!
   pod 'PhoneKit',:git => "https://github.com/salah-mohammed/PhoneKit.git"
   pod 'LocationPicker', :git => 'https://github.com/salah-mohammed/LocationPicker.git'
-#  pod 'AppTexts', :git => 'https://github.com/salah-mohammed/AppTexts.git'
 
   # Pods for TextFieldKit
 
