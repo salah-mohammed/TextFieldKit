@@ -1,6 +1,6 @@
 {
   "name": "PhoneKit",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "summary": "PhoneKit",
   "description": "PhoneKit",
   "homepage": "https://github.com/salah-mohammed/PhoneKit",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/salah-mohammed/PhoneKit.git",
-    "tag": "0.0.6",
+    "tag": "0.0.7",
     "branch": "master"
   },
   "source_files": [

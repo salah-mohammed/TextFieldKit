@@ -23,7 +23,6 @@ public typealias CancelHandler = ()->Void
 
 extension Bundle {
     static var module: Bundle? = {
-        
         //firstBundle -> this will used when libarary used in example
         if let firstBundle = Bundle(path: "\(Bundle.main.bundlePath)/Frameworks/PhoneKit.framework/PhoneKit.bundle"),FileManager.default.fileExists(atPath: firstBundle.bundlePath){
         
@@ -33,7 +32,9 @@ extension Bundle {
 if let secondBundle:Bundle = Bundle(path: "\(Bundle.main.bundlePath)/Frameworks/PhoneKit.framework"),FileManager.default.fileExists(atPath: secondBundle.bundlePath){
             return secondBundle;
     }
-      return nil
+    return Bundle.allFrameworks.first { bundle in
+            return bundle.bundlePath.contains("PhoneKit");
+        }
     }()
 }
 
@@ -108,3 +109,14 @@ extension UIAlertController{
     }
 }
 
+ enum AppRegularExpression:String{
+    case phone = "[+]+[0-9 ]{1,}|[00]+[0-9 ]{1,}|[0-9 ]{9,}"
+    case empty="^[. ]*$"
+    case isNumberOnly="^[0-9]"
+    public var regex:AppRegex{
+        return AppRegex.init(self.rawValue);
+    }
+    public func  matches(_ input:String)->Bool{
+    return self.regex.matches(input:input)
+    }
+}
