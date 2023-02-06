@@ -30,6 +30,20 @@ class ForthViewController: UIViewController {
             }
         }
     }
+    // all
+    var allFields:[FieldValiadtion]{
+    return  [txtAdvancedPhoneNumber,
+                 txtLocationTextField,
+                 txtFullName,
+                 txtPasswordField,
+                 txtNewPassword,
+                 txtConfirmPassword,
+                 txtEmail,
+                 txtTitle,
+                 txtCity,
+                 txtRequirements]
+    }
+    // userCheck
     var userFields:[FieldValiadtion]{
     return [
         txtFullName,
@@ -37,6 +51,7 @@ class ForthViewController: UIViewController {
         txtNewPassword,
         txtConfirmPassword]
     }
+    // companyCheck
     var companyFields:[FieldValiadtion]{
     return [
         txtAdvancedPhoneNumber,
@@ -50,26 +65,16 @@ class ForthViewController: UIViewController {
         txtCity,
         txtRequirements]
     }
+    // currentCheck
     var fields:[FieldValiadtion]{
         return  self.userType == .user ? self.userFields:self.companyFields
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.userType = .user;
-        txtFullName.fieldDidEnd = { _ in
-            self.txtFullName.error = "AA"
-        }
-        txtCity.placeholder = "City";
-        txtCity.icon = UIImage.init(named:"ic_setting_phone")
-        txtCity.dropDownIcon = UIImage.init(named:"ic_drop_down")
-
-        txtCity.dropDownHandler = { textfield in
-        self.txtCity.object = "Cairo";
-        }
-//        txtRegion.placeholder="Region";
-//        txtRegion.dropDownHandler = { textfield in
-//        self.txtRegion.text = "ahrammat";
-//        }
+        setupView();
+        localized();
+        setupData();
+        fetchData();
 
         // Do any additional setup after loading the view.
     }
@@ -91,4 +96,39 @@ class ForthViewController: UIViewController {
     }
 }
 
+// MARK: - Base Methods
+extension ForthViewController{
+    func setupView(){
+        txtCity.icon = UIImage.init(named:"ic_setting_phone")
+        txtCity.dropDownIcon = UIImage.init(named:"ic_drop_down")
+    }
+    func localized(){
+        txtCity.placeholder = "City";
 
+    }
+    func setupData(){
+        self.userType = .user;
+        txtFullName.fieldDidEnd = { _ in
+            self.txtFullName.error = "AA"
+        }
+        txtCity.dropDownHandler = { textfield in
+        self.txtCity.object = "Cairo";
+        }
+//        for field in self.allFields{
+//            if self.fields.contains(where: {return $0 == field}){
+//                let messages = (field as? FieldValiadtion)?.messages
+//                (field as? TextFieldView)?.error = messages?.valid == false ? messages?.string ?? "":nil
+//                (field as? TextViewView)?.error = messages?.valid == false ? messages?.string ?? "":nil
+//            }else{
+//                field.fieldDidEnd=nil
+//            }
+//        }
+    }
+    func fetchData(){
+        
+    }
+}
+// MARK: - Networking Methods
+extension ForthViewController{
+    
+}
