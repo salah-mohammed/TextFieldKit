@@ -60,55 +60,57 @@ struct ContentView: View {
 
     var body: some View {
         ZStack{
-            VStack(spacing:0) {
-                Image("ic_drop_down")
-                Image(systemName: "globe")
-                    .imageScale(.large)
-                    .foregroundColor(.accentColor)
-                Text("Hello, world!")
-                SUITextFieldView(placeholder:"Username",
-                                 text:username(),
-                                 error:$viewModel.userNameError,
-                                 iconName:"ic_userOnlineTutor",
-                                 onEditingChanged:self.viewModel.onEditingChangedUsername(),
-                                 validation:nil)
-                SUITextFieldView(placeholder:"FullName",
-                                 text:fullName(),
-                                 error:$viewModel.fullNameError,
-                                 onEditingChanged:self.viewModel.onEditingChangedFullName(),
-                                 validation:nil)
-                SUITextFieldView(placeholder:"FirstName",
-                                 text:firstName(),
-                                 error:$viewModel.firstNameError,
-                                 onEditingChanged:self.viewModel.onEditingChangedFirstName(),
-                                 validation:nil);
-                SUITextFieldView(placeholder:"City",
-                                 text:city(),
-                                 error:$viewModel.cityError,
-                                 dropDownData:("ic_drop_down",nil,nil,self.viewModel.cityPicker()),
-                                 onEditingChanged:self.viewModel.onEditingChangedCity(),
-                                 validation:nil);
-                SUIPhoneNumberView(placeholder:nil,
-                                 text:phoneNumber(),
-                                   error:$viewModel.phoneNumberError,
-                                   phoneData:(UIImage.init(named:self.viewModel.countryCode),self.viewModel.countryCode,self.viewModel.countryPicker()),
-                                 onEditingChanged:nil,
-                                 validation:nil)
-                SUITextViewView.init(placeholder:"Requirements",
-                                     text:requirements(),
-                                     error:$viewModel.requirementsError,
+            ScrollView{
+                VStack(spacing:0) {
+                    Image("ic_drop_down")
+                    Image(systemName: "globe")
+                        .imageScale(.large)
+                        .foregroundColor(.accentColor)
+                    Text("Hello, world!")
+                    SUITextFieldView(placeholder:"Username",
+                                     text:username(),
+                                     error:$viewModel.userNameError,
                                      iconName:"ic_userOnlineTutor",
-                                     onEditingChanged:self.viewModel.onEditingChangedRequirements(),
+                                     onEditingChanged:self.viewModel.onEditingChangedUsername(),
                                      validation:nil)
-                Button.init(action: self.viewModel.save(), label:{
-                    Text("Save")}
-                )
-            }
-            .padding()
-        }.frame(maxWidth:.infinity,maxHeight:.infinity).gesture(TapGesture()
-            .onEnded { _ in
-                UIApplication.shared.endEditing();
-            })
+                    SUITextFieldView(placeholder:"FullName",
+                                     text:fullName(),
+                                     error:$viewModel.fullNameError,
+                                     onEditingChanged:self.viewModel.onEditingChangedFullName(),
+                                     validation:nil)
+                    SUITextFieldView(placeholder:"FirstName",
+                                     text:firstName(),
+                                     error:$viewModel.firstNameError,
+                                     onEditingChanged:self.viewModel.onEditingChangedFirstName(),
+                                     validation:nil);
+                    SUITextFieldView(placeholder:"City",
+                                     text:city(),
+                                     error:$viewModel.cityError,
+                                     dropDownData:("ic_drop_down",nil,nil,self.viewModel.cityPicker()),
+                                     onEditingChanged:self.viewModel.onEditingChangedCity(),
+                                     validation:nil);
+                    SUIPhoneNumberView(placeholder:nil,
+                                       text:phoneNumber(),
+                                       error:$viewModel.phoneNumberError,
+                                       phoneData:(UIImage.init(named:self.viewModel.countryCode),self.viewModel.countryCode,self.viewModel.countryPicker()),
+                                       onEditingChanged:nil,
+                                       validation:nil)
+                    SUITextViewView.init(placeholder:"Requirements",
+                                         text:requirements(),
+                                         error:$viewModel.requirementsError,
+                                         iconName:"ic_userOnlineTutor",
+                                         onEditingChanged:self.viewModel.onEditingChangedRequirements(),
+                                         validation:nil)
+                    Button.init(action: self.viewModel.save(), label:{
+                        Text("Save")}
+                    )
+                }
+                .padding()
+            }.frame(maxWidth:.infinity,maxHeight:.infinity).gesture(TapGesture()
+                .onEnded { _ in
+                    UIApplication.shared.endEditing();
+                })
+        }
     }
 }
 

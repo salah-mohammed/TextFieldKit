@@ -120,7 +120,7 @@ open class EmailField:TextFieldView,GeneralConnection{
 // MARK: TitleField
 open class TitleField:TextFieldView,GeneralConnection{
     public func messagesSUI(_ text: String?) -> [FieldError] {
-    return []
+    return self.emptyError()
     }
     public var fieldType: FieldType{
         return .title
@@ -136,7 +136,7 @@ open class TitleField:TextFieldView,GeneralConnection{
 // MARK: DescriptionField
 open class DescriptionField:TextViewView,GeneralConnection{
     public func messagesSUI(_ text: String?) -> [FieldError] {
-    return []
+    return self.emptyError()
     }
     public var fieldType: FieldType{
         return .description
@@ -152,7 +152,7 @@ open class DescriptionField:TextViewView,GeneralConnection{
 // MARK: AddressField
 open class AddressField:TextFieldView,GeneralConnection{
     public func messagesSUI(_ text: String?) -> [FieldError] {
-    return []
+    return self.emptyError()
     }
     public var fieldType: FieldType{
         return .address
@@ -168,7 +168,7 @@ open class AddressField:TextFieldView,GeneralConnection{
 // MARK: RequirementsField
 open class RequirementsField:TextViewView,GeneralConnection{
     public func messagesSUI(_ text: String?) -> [FieldError] {
-    return []
+    return self.emptyError()
     }
     public var fieldType: FieldType{
         return .requirements
@@ -276,7 +276,7 @@ open class CutomeDropDownTextField:DropDownTextField,FieldValiadtion{
 // MARK: CityField
 open class CityField:DropDownTextField,GeneralConnection{
     public func messagesSUI(_ text: String?) -> [FieldError] {
-    return []
+        return self.emptyError()
     }
     public var fieldType: FieldType{
         return .city
@@ -288,7 +288,7 @@ open class CityField:DropDownTextField,GeneralConnection{
 // MARK: RegionField
 open class RegionField:DropDownTextField,GeneralConnection,FieldValiadtion{
     public func messagesSUI(_ text: String?) -> [FieldError] {
-    return []
+        return self.emptyError()
     }
     public var fieldType: FieldType{
         return .region

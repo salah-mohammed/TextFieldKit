@@ -71,147 +71,173 @@ import SwiftUI
 //}
 
 
-public class Username:GeneralConnection{
+public class Username:NSObject,GeneralConnection{
+    public var error: String?
+    
     public var fieldType: TextFieldKit.FieldType{
         return .username
     }
     public var messages: [TextFieldKit.FieldError]{
     return []
     }
-    public init() {
-        
+    public override init() {
+        super.init()
     }
 }
-public class FullName:GeneralConnection{
+public class FullName:NSObject,GeneralConnection{
+    public var error: String?
+    
     public var fieldType: TextFieldKit.FieldType{
         return .fullName
     }
     public var messages: [TextFieldKit.FieldError]{
     return []
     }
-    public init() {
-        
+    public override init() {
+        super.init()
     }
 }
-public class FirstName:GeneralConnection{
+public class FirstName:NSObject,GeneralConnection{
+    public var error: String?
+    
     public var fieldType: TextFieldKit.FieldType{
         return .firstName
     }
     public var messages: [TextFieldKit.FieldError]{
     return []
     }
-    public init() {
-        
+    public override init() {
+        super.init()
     }
 }
-public class LastName:GeneralConnection{
+public class LastName:NSObject,GeneralConnection{
+    public var error: String?
+    
     public var fieldType: TextFieldKit.FieldType{
         return .lastName
     }
     public var messages: [TextFieldKit.FieldError]{
     return []
     }
-    public init() {
-        
+    public override init() {
+        super.init()
     }
 }
-public class Email:GeneralConnection{
+public class Email:NSObject,GeneralConnection{
+    public var error: String?
+    
     public var fieldType: TextFieldKit.FieldType{
         return .email
     }
     public var messages: [TextFieldKit.FieldError]{
     return []
     }
-    public init() {
-        
+    public override init() {
+        super.init()
     }
 }
-public class Requirements:GeneralConnection{
+public class Requirements:NSObject,GeneralConnection{
+    public var error: String?
+    
     public var fieldType: TextFieldKit.FieldType{
         return .requirements
     }
     public var messages: [TextFieldKit.FieldError]{
     return []
     }
-    public init() {
-        
+    public override init() {
+        super.init()
     }
 }
-public class City:GeneralConnection{
+public class City:NSObject,GeneralConnection{
+    public var error: String?
+    
     public var fieldType: TextFieldKit.FieldType{
         return .city
     }
     public var messages: [TextFieldKit.FieldError]{
     return []
     }
-    public init() {
-        
+    public override init() {
+        super.init()
     }
 }
-public class Region:GeneralConnection{
+public class Region:NSObject,GeneralConnection{
+    public var error: String?
+    
     public var fieldType: TextFieldKit.FieldType{
         return .region
     }
     public var messages: [TextFieldKit.FieldError]{
     return []
     }
-    public init() {
-        
+    public override init() {
+        super.init()
     }
 }
-public class Location:GeneralConnection{
+public class Location:NSObject,GeneralConnection{
+    public var error: String?
+    
     public var fieldType: TextFieldKit.FieldType{
         return .location
     }
     public var messages: [TextFieldKit.FieldError]{
     return []
     }
-    public init() {
-        
+    public override init() {
+        super.init()
     }
 }
-public class Address:GeneralConnection{
+public class Address:NSObject,GeneralConnection{
+    public var error: String?
+    
     public var fieldType: TextFieldKit.FieldType{
         return .address
     }
     public var messages: [TextFieldKit.FieldError]{
     return []
     }
-    public init() {
-        
+    public override init() {
+        super.init()
     }
 }
-public class Description:GeneralConnection{
+public class Description:NSObject,GeneralConnection{
+    public var error: String?
+    
     public var fieldType: TextFieldKit.FieldType{
         return .description
     }
     public var messages: [TextFieldKit.FieldError]{
     return []
     }
-    public init() {
-        
+    public override init() {
+        super.init()
     }
 }
-public class Title:GeneralConnection{
+public class Title:NSObject,GeneralConnection{
+    public var error: String?
+    
     public var fieldType: TextFieldKit.FieldType{
         return .title
     }
     public var messages: [TextFieldKit.FieldError]{
     return []
     }
-    public init() {
-        
+    public override init() {
+        super.init()
     }
 }
-public class Password:GeneralConnection{
+public class Password:NSObject,GeneralConnection{
+    public var error: String?
+    
     public var fieldType: TextFieldKit.FieldType{
         return .password
     }
     public var messages: [TextFieldKit.FieldError]{
     return []
     }
-    public init() {
-        
+    public override init() {
+        super.init()
     }
 }
 //case newPassword="NewPassword"

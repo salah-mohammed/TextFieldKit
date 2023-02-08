@@ -11,6 +11,8 @@ enum UserType:Int{
 case user=0
 case company=1
 }
+
+
 class ForthViewController: UIViewController {
     @IBOutlet weak var txtAdvancedPhoneNumber:AdvancedPhoneNumber!
     @IBOutlet weak var txtLocationTextField:LocationTextField!
@@ -23,6 +25,7 @@ class ForthViewController: UIViewController {
     @IBOutlet weak var txtEmail:EmailField!
     @IBOutlet weak var txtCity:CustomCityField!
     @IBOutlet weak var segmentedControl:UISegmentedControl!
+    
     var userType:UserType?{
         didSet{
             if let userType:UserType=userType{
@@ -31,18 +34,19 @@ class ForthViewController: UIViewController {
         }
     }
     // all
-    var allFields:[FieldValiadtion]{
-    return  [txtAdvancedPhoneNumber,
-                 txtLocationTextField,
-                 txtFullName,
-                 txtPasswordField,
-                 txtNewPassword,
-                 txtConfirmPassword,
-                 txtEmail,
-                 txtTitle,
-                 txtCity,
-                 txtRequirements]
-    }
+    var allFields:[GeneralFieldViewProrocol]{
+    return [
+    txtAdvancedPhoneNumber,
+    txtLocationTextField,
+    txtFullName,
+    txtPasswordField,
+    txtNewPassword,
+    txtConfirmPassword,
+    txtEmail,
+    txtTitle,
+    txtCity,
+    txtRequirements]
+   }
     // userCheck
     var userFields:[FieldValiadtion]{
     return [
@@ -88,8 +92,10 @@ class ForthViewController: UIViewController {
     }
     @IBAction func btnUserType(_ sender:UISegmentedControl){
         self.userType = UserType.init(rawValue:sender.selectedSegmentIndex)
+        self.allFields.clearErrors()
     }
     @IBAction func btnValid(_ sender:Any?){
+        check(requiredFields:self.fields,allField:self.allFields);
         if self.fields.flatMap({$0.messages}).valid == false{
             self.fields.flatMap({$0.messages}).showAlert(self, handler: nil);
         }
@@ -109,20 +115,11 @@ extension ForthViewController{
     func setupData(){
         self.userType = .user;
         txtFullName.fieldDidEnd = { _ in
-            self.txtFullName.error = "AA"
+
         }
         txtCity.dropDownHandler = { textfield in
         self.txtCity.object = "Cairo";
         }
-//        for field in self.allFields{
-//            if self.fields.contains(where: {return $0 == field}){
-//                let messages = (field as? FieldValiadtion)?.messages
-//                (field as? TextFieldView)?.error = messages?.valid == false ? messages?.string ?? "":nil
-//                (field as? TextViewView)?.error = messages?.valid == false ? messages?.string ?? "":nil
-//            }else{
-//                field.fieldDidEnd=nil
-//            }
-//        }
     }
     func fetchData(){
         

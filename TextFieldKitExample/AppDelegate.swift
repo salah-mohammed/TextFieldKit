@@ -24,13 +24,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         TextFieldView.fieldDidEnd = { field in
         let messages = (field as? FieldValiadtion)?.messages
-            (field as? TextFieldView)?.error = messages?.valid == false ? messages?.string ?? "":nil
+        (field as GeneralFieldViewProrocol).error = messages?.valid == false ? messages?.string ?? "":nil
         }
         TextViewView.fieldDidEnd = { field in
         let messages = (field as? FieldValiadtion)?.messages
-        (field as? TextFieldView)?.error = messages?.valid == false ? messages?.string ?? "":nil
+        (field as GeneralFieldViewProrocol).error = messages?.valid == false ? messages?.string ?? "":nil
         }
-       
         // Override point for customization after application launch.
         return true
     }

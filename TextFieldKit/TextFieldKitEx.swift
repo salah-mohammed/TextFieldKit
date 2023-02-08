@@ -100,27 +100,70 @@ extension String{
 
 
 // MARK: FieldType
-public enum FieldType:String{
-case firstName="Firstname"
-case lastName="Lastname"
-case username="Username"
-case fullName="FullName"
-case password="Password"
-case newPassword="NewPassword"
-case confirmPassword="ConfirmPassword"
-case email="Email"
-case title="Title"
-case description="Description"
-case address="Address"
-case requirements="Requirements"
-case phoneNumber="PhoneNumber"
-case location="Location"
-case city="City"
-case region="Region"
-
+public enum FieldType{
+case firstName
+case lastName
+case username
+case fullName
+case password
+case newPassword
+case confirmPassword
+case email
+case title
+case description
+case address
+case requirements
+case phoneNumber
+case location
+case city
+case region
+case cutome(String)
 var title:String{
-    return self.rawValue.customLocalize_;
+    switch self{
+    case .cutome(let value):
+        return value
+    default:
+        return self.key.customLocalize_
+    }
 }
+    var key:String{
+        switch self{
+        case .firstName:
+            return "Firstname"
+        case .lastName:
+            return "Lastname"
+        case .username:
+            return "Username"
+        case .fullName:
+            return "FullName"
+        case .password:
+            return "Password"
+        case .newPassword:
+            return "NewPassword"
+        case .confirmPassword:
+            return "ConfirmPassword"
+        case .email:
+            return "Email"
+        case .title:
+            return "Title"
+        case .description:
+            return "Description"
+        case .address:
+            return "Address"
+        case .requirements:
+            return "Requirements"
+        case .phoneNumber:
+            return "PhoneNumber"
+        case .location:
+            return "Location"
+        case .city:
+            return "City"
+        case .region:
+            return "Region"
+        case .cutome(let value):
+            return value
+        }
+    }
 }
 
 // MARK: FieldError
@@ -147,9 +190,6 @@ var message:String{
 }
 }
 
-public extension Array where Element == FieldValiadtion {
-
-}
 
 public extension Array where Element == FieldError {
     var valid:Bool{
@@ -179,3 +219,29 @@ extension UIColor{
     }
 }
 #endif
+
+//public extension Array where Element == FieldValiadtion {
+//    func check(){
+//        for field in self{
+//            let contains = self.contains(where: {return $0 == field})
+//                let messages = (field as FieldValiadtion).messages
+//            (field as FieldValiadtion).error = (messages.valid == true || contains == false) ? nil:messages.string
+//        }
+//    }
+//}
+public func check(requiredFields:[FieldValiadtion],
+           allField:[GeneralFieldViewProrocol]){
+    for field in allField{
+        let contains = requiredFields.contains(where: {return $0 == field})
+        let messages = (field as? FieldValiadtion)?.messages ?? []
+        field.error = (messages.valid == true || contains == false) ? nil:messages.string
+    }
+}
+
+public extension Array where Element == GeneralFieldViewProrocol {
+    func clearErrors(){
+        for field in self{
+            field.error=nil
+        }
+    }
+}

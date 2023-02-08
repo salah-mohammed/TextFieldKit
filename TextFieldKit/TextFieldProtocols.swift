@@ -18,15 +18,14 @@ public protocol Field{
     @objc optional func canPrint() -> Bool
 }
 // MARK: FieldValiadtion
- public protocol FieldValiadtion{
+public protocol FieldValiadtion:NSObject{
     var messages:[FieldError] {get};
-
 }
 // MARK: GeneralFieldViewProrocol
-public protocol GeneralFieldViewProrocol{
+public protocol GeneralFieldViewProrocol:NSObject{
 var text:String? {set get};
 var placeholder:String? {set get};
-var error:String? {set get};
+var error:String?{set get};
 }
 public protocol CutomFieldProrocol{
     
