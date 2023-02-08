@@ -18,7 +18,6 @@
 		4E46B77B272A8B7D00DCB3B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E46B779272A8B7D00DCB3B4 /* Main.storyboard */; };
 		4E46B77D272A8B8100DCB3B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E46B77C272A8B8100DCB3B4 /* Assets.xcassets */; };
 		4E46B780272A8B8100DCB3B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E46B77E272A8B8100DCB3B4 /* LaunchScreen.storyboard */; };
-		4E61539E278C5A7E008F8320 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4E61539D278C5A7E008F8320 /* Localizable.strings */; };
 		4EA57E172746537600C183A2 /* TextViewView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EA57E152746537600C183A2 /* TextViewView.xib */; };
 		4EA57E182746537600C183A2 /* TextViewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA57E162746537600C183A2 /* TextViewView.swift */; };
 		4EA57E19274654B500C183A2 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E46B787272A900300DCB3B4 /* TextFieldView.swift */; };
@@ -58,6 +57,7 @@
 		8B31E6DC299416E400AA7421 /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF57CA5279FEED2000CFD0E /* Regex.swift */; };
 		8B31E6DD299416E600AA7421 /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF57CA5279FEED2000CFD0E /* Regex.swift */; };
 		8B31E6DF2994176F00AA7421 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B31E6DE2994176F00AA7421 /* Extensions.swift */; };
+		8B31E6E42994317300AA7421 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8B31E6E62994317300AA7421 /* Localizable.strings */; };
 		8BBEE7BA28FAFA4000DFDA29 /* SecondContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBEE7B828FAFA4000DFDA29 /* SecondContentViewModel.swift */; };
 		8BBEE7BB28FAFA4000DFDA29 /* SecondContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBEE7B928FAFA4000DFDA29 /* SecondContentView.swift */; };
 		8FA29984B62E3E43B77E22B8 /* Pods_TextFieldKitExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE1283F15A683755B1336DDE /* Pods_TextFieldKitExample.framework */; };
@@ -127,7 +127,6 @@
 		4E46B781272A8B8100DCB3B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E46B786272A900300DCB3B4 /* TextFieldView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextFieldView.xib; sourceTree = "<group>"; };
 		4E46B787272A900300DCB3B4 /* TextFieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
-		4E61539D278C5A7E008F8320 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		4EA57E152746537600C183A2 /* TextViewView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextViewView.xib; sourceTree = "<group>"; };
 		4EA57E162746537600C183A2 /* TextViewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewView.swift; sourceTree = "<group>"; };
 		4EA57E22274658B900C183A2 /* TextFieldKitEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldKitEx.swift; sourceTree = "<group>"; };
@@ -160,6 +159,9 @@
 		8B091F4F290D0B6800D38C91 /* SUIPhoneNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUIPhoneNumberView.swift; sourceTree = "<group>"; };
 		8B31E6DA2994128F00AA7421 /* PhoneNumberField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneNumberField.swift; sourceTree = "<group>"; };
 		8B31E6DE2994176F00AA7421 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		8B31E6E52994317300AA7421 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8B31E6E72994317600AA7421 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8B31E6E8299431A700AA7421 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8BBEE7B828FAFA4000DFDA29 /* SecondContentViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondContentViewModel.swift; sourceTree = "<group>"; };
 		8BBEE7B928FAFA4000DFDA29 /* SecondContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondContentView.swift; sourceTree = "<group>"; };
 		8F6567E059F82800E6C3387E /* Pods-TextFieldKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TextFieldKit.debug.xcconfig"; path = "Target Support Files/Pods-TextFieldKit/Pods-TextFieldKit.debug.xcconfig"; sourceTree = "<group>"; };
@@ -296,7 +298,7 @@
 				4EA57E152746537600C183A2 /* TextViewView.xib */,
 				4EA57E2627466DD600C183A2 /* DropDownTextField.xib */,
 				4E46B766272A8B2300DCB3B4 /* Info.plist */,
-				4E61539D278C5A7E008F8320 /* Localizable.strings */,
+				8B31E6E62994317300AA7421 /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -484,6 +486,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ar,
 			);
 			mainGroup = 4E46B758272A8B2300DCB3B4;
 			productRefGroup = 4E46B763272A8B2300DCB3B4 /* Products */;
@@ -502,7 +505,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E61539E278C5A7E008F8320 /* Localizable.strings in Resources */,
+				8B31E6E42994317300AA7421 /* Localizable.strings in Resources */,
 				4EA57E2727466DD600C183A2 /* DropDownTextField.xib in Resources */,
 				4EA57E1A274654B800C183A2 /* TextFieldView.xib in Resources */,
 				4EC35BE727A1548700DD42D6 /* Assets.xcassets in Resources */,
@@ -723,6 +726,16 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		8B31E6E62994317300AA7421 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8B31E6E52994317300AA7421 /* en */,
+				8B31E6E72994317600AA7421 /* ar */,
+				8B31E6E8299431A700AA7421 /* Base */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -730,6 +743,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -794,6 +808,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

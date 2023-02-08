@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  TextFieldKit
+
+  Created by Salah on 1/10/22.
+  
+*/
+
+"Error"="Error";
+"Ok"="Ok";
+
+// validation
+"NotValid"="Sorry, Invalid %@";
+"FieldRequired"="Sorry, The %@ Field is required";
+"Required"="Sorry, The %@ is required";
+"PleaseChoose"="Sorry, choose %@ please";
+"PleaseEnter"="Sorry, please enter %@";

@@ -7,6 +7,7 @@
 
 import Foundation
 import TextFieldKit
+import AppTexts
 #if canImport(PhoneKit)
 import PhoneKit
 #endif
@@ -23,7 +24,7 @@ extension GeneralFieldViewProrocol where Self: GeneralConnection {
             messages.append(.required(self.title))
         }else
         if (self.text?.count ?? 0) < 6 {
-            messages.append(.passwordLessThan6)
+            messages.append(.other(AppTexts.PasswordMustHave6))
         }
         return messages;
     }
@@ -33,7 +34,7 @@ extension GeneralFieldViewProrocol where Self: GeneralConnection {
             messages.append(.required(self.title))
         }else
         if txtNewPasswordField?.text != self.text {
-            messages.append(.passwordNotMatch)
+            messages.append(.other(AppTexts.PasswordNotMatch))
         }
         return messages;
     }
@@ -76,7 +77,7 @@ extension GeneralFieldViewProrocol where Self: FieldValiadtion {
     // validation
     func emptyError()->[FieldError]{
         if ((self.text?.count ?? 0) == 0)  || (self.text?.isEmpty ?? true){
-        return [.required(self.placeholder ?? "")]
+            return [.fieldRequired(self.placeholder ?? "")]
         }
         return []
     }

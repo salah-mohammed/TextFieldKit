@@ -80,99 +80,31 @@ extension String{
     }
 }
 
-
-// MARK: FieldType
-//public enum FieldType{
-//case firstName
-//case lastName
-//case username
-//case fullName
-//case password
-//case newPassword
-//case confirmPassword
-//case email
-//case title
-//case description
-//case address
-//case requirements
-//case phoneNumber
-//case location
-//case city
-//case region
-//case cutome(String)
-//var title:String{
-//    switch self{
-//    case .cutome(let value):
-//        return value
-//    default:
-//        return self.key.customLocalize_
-//    }
-//}
-//    var key:String{
-//        switch self{
-//        case .firstName:
-//            return "Firstname"
-//        case .lastName:
-//            return "Lastname"
-//        case .username:
-//            return "Username"
-//        case .fullName:
-//            return "FullName"
-//        case .password:
-//            return "Password"
-//        case .newPassword:
-//            return "NewPassword"
-//        case .confirmPassword:
-//            return "ConfirmPassword"
-//        case .email:
-//            return "Email"
-//        case .title:
-//            return "Title"
-//        case .description:
-//            return "Description"
-//        case .address:
-//            return "Address"
-//        case .requirements:
-//            return "Requirements"
-//        case .phoneNumber:
-//            return "PhoneNumber"
-//        case .location:
-//            return "Location"
-//        case .city:
-//            return "City"
-//        case .region:
-//            return "Region"
-//        case .cutome(let value):
-//            return value
-//        }
-//    }
-//}
-
+public protocol FieldErrorProtocol{
+    var message:String{get}
+}
 // MARK: FieldError
-public enum FieldError{
+public enum FieldError:FieldErrorProtocol{
 case required(_ name:String)
+case fieldRequired(_ name:String)
 case notValid(_ name:String)
 case choose(_ name:String)
-case passwordNotMatch
-case passwordLessThan6
+case enter(_ name:String)
 case other(_ message:String)
-    //fieldRequired
-    //pleaseChoose
-    //pleaseEnter
-var message:String{
+public var message:String{
     switch self{
-    case .required( let name):
-        return "TextFeildValidation".cutomelocalizedWith(variables:name)
-    case .notValid( let name):
-        return "NotValid".cutomelocalizedWith(variables:name)
-    case .passwordNotMatch:
-        return "PasswordNotMatch".customLocalize_
-    case .passwordLessThan6:
-        return "PasswordMustHave6".customLocalize_
+    case .required( let fieldName):
+        return "Required".cutomelocalizedWith(variables:fieldName)
+    case .fieldRequired( let fieldName):
+        return "FieldRequired".cutomelocalizedWith(variables:fieldName)
+    case .notValid( let fieldName):
+        return "NotValid".cutomelocalizedWith(variables:fieldName)
+    case .choose(let fieldName):
+        return "PleaseChoose".cutomelocalizedWith(variables:fieldName)
+    case .enter(let fieldName):
+        return "PleaseEnter".cutomelocalizedWith(variables:fieldName)
     case .other(let message):
         return message
-    case .choose(_):
-        return ""
     }
 }
 }
