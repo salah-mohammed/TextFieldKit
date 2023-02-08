@@ -33,7 +33,7 @@ public struct SUITextFieldView: View {
                 validation:(GeneralConnection,(Bool,GeneralConnection?) -> Void)?=nil) {
 //        self.validation?.text = text
         self.validation = validation?.0
-        self.placeholder = placeholder ?? validation?.0.fieldType.title
+        self.placeholder = placeholder ?? validation?.0.title
         self.onEditingValidationChanged = validation?.1
         self.text=text;
         self.error=error;

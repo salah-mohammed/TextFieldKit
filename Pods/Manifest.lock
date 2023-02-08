@@ -1,29 +1,37 @@
 PODS:
+  - AppTexts (0.0.1)
   - LocationPicker (0.0.5)
   - PhoneKit (0.0.7)
 
 DEPENDENCIES:
+  - AppTexts (from `https://github.com/salah-mohammed/AppTexts`)
   - LocationPicker (from `https://github.com/salah-mohammed/LocationPicker.git`)
   - PhoneKit (from `https://github.com/salah-mohammed/PhoneKit.git`)
 
 EXTERNAL SOURCES:
+  AppTexts:
+    :git: https://github.com/salah-mohammed/AppTexts
   LocationPicker:
     :git: https://github.com/salah-mohammed/LocationPicker.git
   PhoneKit:
     :git: https://github.com/salah-mohammed/PhoneKit.git
 
 CHECKOUT OPTIONS:
+  AppTexts:
+    :commit: 0c6a7bd5aa4fbdc5df7e225e3e5bae7d68a1e6bc
+    :git: https://github.com/salah-mohammed/AppTexts
   LocationPicker:
-    :commit: 1e136f20838122a77f145b8f088dd9102226475b
+    :commit: 3af9c914bd4757ca1d5bc77f6bfdea377a3ef252
     :git: https://github.com/salah-mohammed/LocationPicker.git
   PhoneKit:
     :commit: e9a94528bf1354dc470309d2d45e8b5c9260a7c7
     :git: https://github.com/salah-mohammed/PhoneKit.git
 
 SPEC CHECKSUMS:
+  AppTexts: 44546f1c429ac7a166e0ed96dafd3bb65ca9a25c
   LocationPicker: f082493d4aaab1bdf20a1fa07234ca643382ae7b
   PhoneKit: 46661f20fc98104f2c49ce66b34ee57b423c19b8
 
-PODFILE CHECKSUM: 52bd221c3ce8f2810161bcaaaf30d08a9e96cc23
+PODFILE CHECKSUM: 8ece7903805011af05eab1eaf5fb4084f44d7c75
 
 COCOAPODS: 1.11.3

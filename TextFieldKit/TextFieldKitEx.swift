@@ -35,11 +35,7 @@ extension UIView{
             return nil
         }
 }
-extension CLLocationCoordinate2D{
-    var stringValue:String{
-        return "\(self.latitude),\(self.longitude)"
-    }
-}
+
 extension Bundle {
     static var module: Bundle? = {
         //firstBundle -> this will used when libarary used in example
@@ -58,30 +54,16 @@ if let secondBundle:Bundle = Bundle(path: "\(Bundle.main.bundlePath)/Frameworks/
       return nil
     }()
 }
-public enum RegularExpression:String{
-    case email="[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-    case phone = "[+]+[0-9 ]{1,}|[00]+[0-9 ]{1,}|[0-9 ]{9,}"
-    case empty=".*[^ ].*"
-    var regex:Regex{
-        return Regex.init(self.rawValue);
-    }
-    func  matches(_ input:String)->Bool{
-    return self.regex.matches(input:input)
-    }
-}
+
 extension String{
     static var fieldsType:[String]{
-     return ["TextFieldView","TextViewView","DropDownTextField","PhoneNumberField"]
+     return ["TextFieldView","TextViewView","DropDownTextField"]
     }
     var customLocalize_ : String {
        return NSLocalizedString(self, tableName: nil, bundle:Bundle.module ?? Bundle.main, value: "", comment: "")
    }
     public func cutomelocalizedWith(variables: CVarArg...) -> String {
         return String(format: self.customLocalize_, arguments: variables)
-    }
-    
-    var isEmpty:Bool{
-        return (RegularExpression.empty.matches(self)==false)
     }
     func height(withConstrainedWidth width: CGFloat, font: UIFont) -> CGFloat {
         let constraintRect = CGSize(width: width, height: .greatestFiniteMagnitude)
@@ -100,83 +82,86 @@ extension String{
 
 
 // MARK: FieldType
-public enum FieldType{
-case firstName
-case lastName
-case username
-case fullName
-case password
-case newPassword
-case confirmPassword
-case email
-case title
-case description
-case address
-case requirements
-case phoneNumber
-case location
-case city
-case region
-case cutome(String)
-var title:String{
-    switch self{
-    case .cutome(let value):
-        return value
-    default:
-        return self.key.customLocalize_
-    }
-}
-    var key:String{
-        switch self{
-        case .firstName:
-            return "Firstname"
-        case .lastName:
-            return "Lastname"
-        case .username:
-            return "Username"
-        case .fullName:
-            return "FullName"
-        case .password:
-            return "Password"
-        case .newPassword:
-            return "NewPassword"
-        case .confirmPassword:
-            return "ConfirmPassword"
-        case .email:
-            return "Email"
-        case .title:
-            return "Title"
-        case .description:
-            return "Description"
-        case .address:
-            return "Address"
-        case .requirements:
-            return "Requirements"
-        case .phoneNumber:
-            return "PhoneNumber"
-        case .location:
-            return "Location"
-        case .city:
-            return "City"
-        case .region:
-            return "Region"
-        case .cutome(let value):
-            return value
-        }
-    }
-}
+//public enum FieldType{
+//case firstName
+//case lastName
+//case username
+//case fullName
+//case password
+//case newPassword
+//case confirmPassword
+//case email
+//case title
+//case description
+//case address
+//case requirements
+//case phoneNumber
+//case location
+//case city
+//case region
+//case cutome(String)
+//var title:String{
+//    switch self{
+//    case .cutome(let value):
+//        return value
+//    default:
+//        return self.key.customLocalize_
+//    }
+//}
+//    var key:String{
+//        switch self{
+//        case .firstName:
+//            return "Firstname"
+//        case .lastName:
+//            return "Lastname"
+//        case .username:
+//            return "Username"
+//        case .fullName:
+//            return "FullName"
+//        case .password:
+//            return "Password"
+//        case .newPassword:
+//            return "NewPassword"
+//        case .confirmPassword:
+//            return "ConfirmPassword"
+//        case .email:
+//            return "Email"
+//        case .title:
+//            return "Title"
+//        case .description:
+//            return "Description"
+//        case .address:
+//            return "Address"
+//        case .requirements:
+//            return "Requirements"
+//        case .phoneNumber:
+//            return "PhoneNumber"
+//        case .location:
+//            return "Location"
+//        case .city:
+//            return "City"
+//        case .region:
+//            return "Region"
+//        case .cutome(let value):
+//            return value
+//        }
+//    }
+//}
 
 // MARK: FieldError
 public enum FieldError{
-case empty(_ name:String)
+case required(_ name:String)
 case notValid(_ name:String)
+case choose(_ name:String)
 case passwordNotMatch
 case passwordLessThan6
 case other(_ message:String)
+    //fieldRequired
+    //pleaseChoose
+    //pleaseEnter
 var message:String{
-    
     switch self{
-    case .empty( let name):
+    case .required( let name):
         return "TextFeildValidation".cutomelocalizedWith(variables:name)
     case .notValid( let name):
         return "NotValid".cutomelocalizedWith(variables:name)
@@ -186,10 +171,11 @@ var message:String{
         return "PasswordMustHave6".customLocalize_
     case .other(let message):
         return message
+    case .choose(_):
+        return ""
     }
 }
 }
-
 
 public extension Array where Element == FieldError {
     var valid:Bool{
@@ -209,9 +195,6 @@ public extension Array where Element == FieldError {
     }
 }
 
-//extension Array where Self:GeneralFieldViewProrocol {
-//
-//}
 #if canImport(SwiftUI)
 extension UIColor{
     var bs_color:Color{
@@ -220,15 +203,6 @@ extension UIColor{
 }
 #endif
 
-//public extension Array where Element == FieldValiadtion {
-//    func check(){
-//        for field in self{
-//            let contains = self.contains(where: {return $0 == field})
-//                let messages = (field as FieldValiadtion).messages
-//            (field as FieldValiadtion).error = (messages.valid == true || contains == false) ? nil:messages.string
-//        }
-//    }
-//}
 public func check(requiredFields:[FieldValiadtion],
            allField:[GeneralFieldViewProrocol]){
     for field in allField{

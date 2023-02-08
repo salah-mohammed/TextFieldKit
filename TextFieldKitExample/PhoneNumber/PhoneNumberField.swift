@@ -8,7 +8,8 @@
 
 
 import UIKit
-
+import AppTexts
+import TextFieldKit
 @IBDesignable
 open class PhoneNumberField: TextFieldView {
     open override var nibName: String{
@@ -39,13 +40,13 @@ open class PhoneNumberField: TextFieldView {
      }
     open override func awakeFromNib() {
         super.awakeFromNib();
-        self.placeholder=FieldType.phoneNumber.title;
+        self.placeholder=AppTexts.PhoneNumber;
         self.txtField.delegate=self;
         let tempFlag = self.flag
         self.flag = tempFlag;
         let tempCountryCode = self.countryCode
         self.countryCode = tempCountryCode;
-        let tempCountryCodeColor = self.countryCodeColor ?? UIColor.bs_frameWorkInit(named:"CountryCode")
+        let tempCountryCodeColor = self.countryCodeColor ?? UIColor(named:"CountryCode")
         self.countryCodeColor = tempCountryCodeColor;
     }
     @IBAction func btnCountryCode(_ sender:UIButton){

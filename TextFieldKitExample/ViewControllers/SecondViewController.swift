@@ -20,7 +20,6 @@ class SecondViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
 //        self.txtFirstName.style = AppDelegate.style;
         txtFirstName.icon = UIImage.init(named:"ic_setting_phone")
         txtFirstName.placeholder = "FirstName";

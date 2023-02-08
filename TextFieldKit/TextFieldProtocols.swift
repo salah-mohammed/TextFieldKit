@@ -9,7 +9,7 @@ import Foundation
 
 // MARK: Field
 public protocol Field{
-    var fieldType:FieldType {get};
+    var title:String{get};
 }
 //public protocol SUIField:ObservableObject{
 //    var fieldType:FieldType {get};
@@ -38,7 +38,6 @@ public protocol CutomFieldProrocol{
 
 }
 // MARK: GeneralConnection
-
 public protocol GeneralConnection:Field,FieldValiadtion{
 }
 //public protocol SUIGeneralConnection:SUIField,FieldValiadtion{

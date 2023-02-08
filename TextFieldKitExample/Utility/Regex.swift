@@ -5,7 +5,7 @@
 //  Created by Salah on 1/26/21.
 //  Copyright © 2021 Salah. All rights reserved.
 //
-
+import Foundation
 open class Regex {
   private var internalExpression: NSRegularExpression?
   private var pattern: String?
@@ -29,27 +29,5 @@ open class Regex {
         output=internalExpression?.stringByReplacingMatches(in: output, options:.reportProgress, range:NSMakeRange(0,input.count), withTemplate: replacement) ?? "";
         return output;
     }
-    
-//    func replacement(input:String,replacementCharacter:String) -> String {
-//        var output=input;
-//        let matches = self.internalExpression.matches(in:output, range:NSMakeRange(0,input.count)).first!
-//        for matche in [matches] {
-//            var  subString = String(input[Range(matche.range, in: input)!])
-//            print(subString)
-//            print("\n");
-//            print(matche.range.length);
-//            print("\n");
-//
-////            var template = "";
-////            for index in 0...(matche.range.length-1){
-////                template.append(replacementCharacter)
-////            }
-//            print(output)
-//            print("\n");
-//            output = self.internalExpression.replacementString(for: matche, in: input, offset:0, template:replacementCharacter)
-//            print(output);
-//            print("\n");
-//        }
-//        return output;
-//    }
+
 }

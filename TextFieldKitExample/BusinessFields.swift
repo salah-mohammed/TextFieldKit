@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import TextFieldKit
+import AppTexts
 #if canImport(PhoneKit)
 import PhoneKit
 
@@ -16,29 +18,22 @@ import LocationPicker
 
 // MARK: NewPasswordField
 open class NewPasswordField:TextFieldView,GeneralConnection{
-    public func messagesSUI(_ text:String?) -> [FieldError] {
-        return []
-    }
-    public var fieldType: FieldType{
-        return .newPassword
+    public var title: String{
+        return AppTexts.NewPassword
     }
     public var messages:[FieldError]{
         return self.newPassword();
     }
     open override func awakeFromNib() {
         super.awakeFromNib();
-        self.placeholder=self.fieldType.title
+        self.placeholder=self.title
         self.txtField.isSecureTextEntry=true;
     }
 }
 // MARK: ConfirmPasswordField
 open class ConfirmPasswordField:TextFieldView,GeneralConnection{
-    public func messagesSUI(_ text: String?) -> [FieldError] {
-    return []
-    }
-
-    public var fieldType: FieldType{
-        return .confirmPassword
+    public var title:String{
+        return AppTexts.ConfirmPassword
     }
     @IBOutlet weak open var txtNewPasswordField: NewPasswordField?
     
@@ -47,148 +42,121 @@ open class ConfirmPasswordField:TextFieldView,GeneralConnection{
     }
     open override func awakeFromNib() {
         super.awakeFromNib();
-        self.placeholder=self.fieldType.title
+        self.placeholder=self.title
         self.txtField.isSecureTextEntry=true;
     }
 }
 // MARK: PasswordField
 open class PasswordField:TextFieldView,GeneralConnection{
-    public func messagesSUI(_ text: String?) -> [FieldError] {
-        return self.emptyError()
-    }
-    public var fieldType: FieldType{
-        return .password
+    public var title: String{
+        return AppTexts.Password
     }
     public var messages:[FieldError]{
-        return self.messagesSUI(self.text)
+        return self.emptyError()
     }
     open override func awakeFromNib() {
         super.awakeFromNib();
-        self.placeholder=self.fieldType.title
+        self.placeholder=self.title
         self.txtField.isSecureTextEntry=true;
         // secure
     }
 }
 // MARK: UserNameField
 open class UserNameField:TextFieldView,GeneralConnection{
-    public func messagesSUI(_ text: String?) -> [FieldError] {
-        return self.emptyError()
-    }
-    public var fieldType: FieldType{
-        return .username
+    public var title:String{
+        return AppTexts.UserName
     }
     public var messages:[FieldError]{
-        return self.messagesSUI(self.text);
+        return self.emptyError()
     }
     open override func awakeFromNib() {
         super.awakeFromNib();
-        self.placeholder=self.fieldType.title
+        self.placeholder=self.title
     }
 }
 // MARK: FullNameField
 open class FullNameField:TextFieldView,GeneralConnection{
-    public func messagesSUI(_ text: String?) -> [FieldError] {
-        return self.emptyError()
-    }
-    public var fieldType: FieldType{
-        return .fullName
+    public var title:String{
+        return AppTexts.FullName
     }
     public var messages:[FieldError]{
-        return self.messagesSUI(self.text);
+        return self.emptyError()
     }
     open override func awakeFromNib() {
         super.awakeFromNib();
-        self.placeholder=self.fieldType.title
+        self.placeholder=self.title
     }
 }
 // MARK: EmailField
 open class EmailField:TextFieldView,GeneralConnection{
-    public func messagesSUI(_ text: String?) -> [FieldError] {
-        return self.email();
-    }
-    public var fieldType: FieldType{
-        return .email
+    public var title:String{
+        return AppTexts.Email
     }
     public var messages:[FieldError]{
-        return self.messagesSUI(self.text);
+        return self.email();
     }
     open override func awakeFromNib() {
         super.awakeFromNib();
-        self.placeholder=self.fieldType.title
+        self.placeholder=self.title
     }
 }
 // MARK: TitleField
 open class TitleField:TextFieldView,GeneralConnection{
-    public func messagesSUI(_ text: String?) -> [FieldError] {
-    return self.emptyError()
-    }
-    public var fieldType: FieldType{
-        return .title
+    public var title: String{
+        return AppTexts.Title
     }
     public var messages:[FieldError]{
-        return messagesSUI(self.text)
+        return self.emptyError()
     }
     open override func awakeFromNib() {
         super.awakeFromNib();
-        self.placeholder=self.fieldType.title
+        self.placeholder=self.title
     }
 }
 // MARK: DescriptionField
 open class DescriptionField:TextViewView,GeneralConnection{
-    public func messagesSUI(_ text: String?) -> [FieldError] {
-    return self.emptyError()
-    }
-    public var fieldType: FieldType{
-        return .description
+    public var title:String{
+        return AppTexts.Description
     }
     public var messages:[FieldError]{
-        return messagesSUI(self.text)
+        return self.emptyError()
     }
     open override func awakeFromNib() {
         super.awakeFromNib();
-        self.placeholder=self.fieldType.title
+        self.placeholder=self.title
     }
 }
 // MARK: AddressField
 open class AddressField:TextFieldView,GeneralConnection{
-    public func messagesSUI(_ text: String?) -> [FieldError] {
-    return self.emptyError()
-    }
-    public var fieldType: FieldType{
-        return .address
+    public var title:String{
+        return AppTexts.Address
     }
     public var messages:[FieldError]{
-        return messagesSUI(self.text)
+        return self.emptyError()
     }
     open override func awakeFromNib() {
         super.awakeFromNib();
-        self.placeholder=self.fieldType.title
+        self.placeholder=self.title
     }
 }
 // MARK: RequirementsField
 open class RequirementsField:TextViewView,GeneralConnection{
-    public func messagesSUI(_ text: String?) -> [FieldError] {
-    return self.emptyError()
-    }
-    public var fieldType: FieldType{
-        return .requirements
+    public var title:String{
+        return AppTexts.Requirements
     }
     public var messages:[FieldError]{
-        return messagesSUI(self.text)
+        return self.emptyError()
     }
     open override func awakeFromNib() {
         super.awakeFromNib();
-        self.placeholder=self.fieldType.title
+        self.placeholder=self.title
     }
 }
 #if canImport(PhoneKit)
 // MARK: CustomePhoneNumber
 open class AdvancedPhoneNumber:PhoneNumberField,GeneralConnection{
-    public func messagesSUI(_ text: String?) -> [FieldError] {
-    return []
-    }
-    public var fieldType: FieldType{
-        return FieldType.phoneNumber
+    public var title: String{
+        return AppTexts.PhoneNumber
     }
     
     public var messages: [FieldError]{
@@ -205,7 +173,7 @@ open class AdvancedPhoneNumber:PhoneNumberField,GeneralConnection{
     
     open override func awakeFromNib() {
         super.awakeFromNib();
-        self.viewController = self.bs_parent;
+        self.viewController = self.parent;
         self.countryObject=CountryListManager.shared.currentCountry
         self.countryPickerHandler = { textfield in
             UIAlertController.showCountryPicker(self,self.viewController) { (object) in
@@ -219,18 +187,15 @@ open class AdvancedPhoneNumber:PhoneNumberField,GeneralConnection{
 #endif
 #if canImport(LocationPicker)
 open class LocationTextField:DropDownTextField,GeneralConnection{
-    public func messagesSUI(_ text: String?) -> [FieldError] {
-    return []
-    }
-    public var fieldType: FieldType{
-        return .location
+    public var title: String{
+        return AppTexts.Location
     }
     public var messages: [FieldError]{
         return self.location();
     }
     public var locationItem:LocationItem?{
         didSet{
-            self.text = locationItem?.title ?? locationItem?.subtitle ?? self.locationItem?.coordinate?.stringValue ?? ""
+            self.text = locationItem?.title ?? locationItem?.subtitle ?? self.locationItem?.coordinate?.lp_stringValue ?? ""
         }
     }
     open var viewController:UIViewController?
@@ -241,8 +206,8 @@ open class LocationTextField:DropDownTextField,GeneralConnection{
     var locationPicker:LocationPickerViewController?
     open override func awakeFromNib(){
         super.awakeFromNib();
-        self.placeholder = self.fieldType.title;
-        self.viewController = self.bs_parent;
+        self.placeholder = self.title;
+        self.viewController = self.parent;
 
         self.dropDownHandler = { textfield in
             if let vc:LocationPickerViewController = LocationPickerViewController.initPicker(self.locationItem, nil){
@@ -264,46 +229,22 @@ open class LocationTextField:DropDownTextField,GeneralConnection{
 }
 #endif
 
-// MARK: CutomeDropDownTextField
-open class CutomeDropDownTextField:DropDownTextField,FieldValiadtion{
-    public func messagesSUI(_ text: String?) -> [FieldError] {
-    return []
-    }
-    public var messages:[FieldError]{
-        return messagesSUI(self.text)
-    }
-}
 // MARK: CityField
 open class CityField:DropDownTextField,GeneralConnection{
-    public func messagesSUI(_ text: String?) -> [FieldError] {
-        return self.emptyError()
-    }
-    public var fieldType: FieldType{
-        return .city
+    public var title: String{
+        return AppTexts.City
     }
     public var messages:[FieldError]{
-        return messagesSUI(self.text)
+        return self.emptyError()
     }
 }
 // MARK: RegionField
 open class RegionField:DropDownTextField,GeneralConnection,FieldValiadtion{
-    public func messagesSUI(_ text: String?) -> [FieldError] {
+    public var title:String{
+        return AppTexts.Region
+    }
+    public var messages:[FieldError]{
         return self.emptyError()
-    }
-    public var fieldType: FieldType{
-        return .region
-    }
-    public var messages:[FieldError]{
-        return messagesSUI(self.text)
-    }
-}
-// MARK: CutomeTextView
-open class CutomeTextView:TextFieldView,FieldValiadtion{
-    public func messagesSUI(_ text: String?) -> [FieldError] {
-    return self.emptyError()
-    }
-    public var messages:[FieldError]{
-        return messagesSUI(self.text)
     }
 }
 

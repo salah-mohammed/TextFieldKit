@@ -60,7 +60,7 @@
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="55" id="aoo-5k-jVH"/>
                                                 </constraints>
                                             </view>
-                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H8Q-Kb-EaH" customClass="PhoneNumberField" customModule="TextFieldKit">
+                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H8Q-Kb-EaH" customClass="PhoneNumberField" customModule="TextFieldKitExample" customModuleProvider="target">
                                                 <rect key="frame" x="16" y="232" width="382" height="55"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
@@ -193,14 +193,14 @@
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="55" id="oEz-9N-NNH"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sdd-70-KZK" customClass="PhoneNumberField" customModule="TextFieldKit">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sdd-70-KZK" customClass="PhoneNumberField" customModule="TextFieldKitExample" customModuleProvider="target">
                                                 <rect key="frame" x="16" y="251" width="382" height="65"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="55" id="ma0-JV-Igd"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZVr-65-aZg" customClass="AdvancedPhoneNumber" customModule="TextFieldKit">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZVr-65-aZg" customClass="AdvancedPhoneNumber" customModule="TextFieldKitExample" customModuleProvider="target">
                                                 <rect key="frame" x="16" y="324" width="382" height="65"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
@@ -377,7 +377,7 @@
                                 <rect key="frame" x="0.0" y="92" width="414" height="770"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="FR3-3R-ffH">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1091"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1028"/>
                                         <subviews>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ctG-aa-zYv">
                                                 <rect key="frame" x="16" y="32" width="382" height="41"/>
@@ -392,35 +392,35 @@
                                                     <action selector="btnUserType:" destination="E7X-LB-I4K" eventType="valueChanged" id="zGG-ch-afi"/>
                                                 </connections>
                                             </segmentedControl>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jWC-Xk-N0g" customClass="AdvancedPhoneNumber" customModule="TextFieldKit">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jWC-Xk-N0g" customClass="AdvancedPhoneNumber" customModule="TextFieldKitExample" customModuleProvider="target">
                                                 <rect key="frame" x="16" y="80" width="382" height="55"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="55" id="CK0-rf-KZs"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vh5-NY-kuB" customClass="LocationTextField" customModule="TextFieldKit">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vh5-NY-kuB" customClass="LocationTextField" customModule="TextFieldKitExample" customModuleProvider="target">
                                                 <rect key="frame" x="16" y="143" width="382" height="55"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="55" id="wea-VL-ief"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BM6-2Q-VdC" customClass="PasswordField" customModule="TextFieldKit">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BM6-2Q-VdC" customClass="PasswordField" customModule="TextFieldKitExample" customModuleProvider="target">
                                                 <rect key="frame" x="16" y="206" width="382" height="55"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="55" id="jR4-YD-8h5"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z8O-hk-rKY" customClass="NewPasswordField" customModule="TextFieldKit">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z8O-hk-rKY" customClass="NewPasswordField" customModule="TextFieldKitExample" customModuleProvider="target">
                                                 <rect key="frame" x="16" y="269" width="382" height="55"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="55" id="K9R-Vi-rrI"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KMF-5K-l7e" customClass="ConfirmPasswordField" customModule="TextFieldKit">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KMF-5K-l7e" customClass="ConfirmPasswordField" customModule="TextFieldKitExample" customModuleProvider="target">
                                                 <rect key="frame" x="16" y="332" width="382" height="55"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
@@ -430,21 +430,21 @@
                                                     <outlet property="txtNewPasswordField" destination="z8O-hk-rKY" id="n8c-qM-cBh"/>
                                                 </connections>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="57P-Ay-NOI" customClass="FullNameField" customModule="TextFieldKit">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="57P-Ay-NOI" customClass="FullNameField" customModule="TextFieldKitExample" customModuleProvider="target">
                                                 <rect key="frame" x="16" y="395" width="382" height="70"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="70" id="fC1-40-pKe"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FFv-CM-K8c" customClass="EmailField" customModule="TextFieldKit">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FFv-CM-K8c" customClass="EmailField" customModule="TextFieldKitExample" customModuleProvider="target">
                                                 <rect key="frame" x="16" y="473" width="382" height="55"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="55" id="zDq-hv-dbu"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jfj-nO-OXV" customClass="TitleField" customModule="TextFieldKit">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jfj-nO-OXV" customClass="TitleField" customModule="TextFieldKitExample" customModuleProvider="target">
                                                 <rect key="frame" x="16" y="536" width="382" height="55"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
@@ -458,15 +458,8 @@
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="55" id="aOY-9G-yme"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jfF-xK-Jrz" customClass="DropDownTextField" customModule="TextFieldKit">
-                                                <rect key="frame" x="16" y="662" width="382" height="55"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="55" id="gfL-KF-y8L"/>
-                                                </constraints>
-                                            </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ppx-GS-rne" customClass="RequirementsField" customModule="TextFieldKit">
-                                                <rect key="frame" x="16" y="725" width="382" height="300"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ppx-GS-rne" customClass="RequirementsField" customModule="TextFieldKitExample" customModuleProvider="target">
+                                                <rect key="frame" x="16" y="662" width="382" height="300"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="300" id="fbO-y9-c2U"/>
@@ -476,7 +469,7 @@
                                                 </connections>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dqo-ki-LOF">
-                                                <rect key="frame" x="16" y="1033" width="382" height="50"/>
+                                                <rect key="frame" x="16" y="970" width="382" height="50"/>
                                                 <color key="backgroundColor" systemColor="tintColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="n7m-rD-EW5"/>
@@ -490,7 +483,7 @@
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kQ0-8P-dlF">
-                                                <rect key="frame" x="16" y="1091" width="382" height="0.0"/>
+                                                <rect key="frame" x="16" y="1028" width="382" height="0.0"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             </view>
                                         </subviews>
