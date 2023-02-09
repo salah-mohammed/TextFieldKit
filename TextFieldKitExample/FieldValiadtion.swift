@@ -24,7 +24,7 @@ extension GeneralFieldViewProrocol where Self: GeneralConnection {
             messages.append(.required(self.title))
         }else
         if (self.text?.count ?? 0) < 6 {
-            messages.append(.other(AppTexts.PasswordMustHave6))
+            messages.append(.otherRequired(AppTexts.PasswordMustHave6))
         }
         return messages;
     }
@@ -34,7 +34,7 @@ extension GeneralFieldViewProrocol where Self: GeneralConnection {
             messages.append(.required(self.title))
         }else
         if txtNewPasswordField?.text != self.text {
-            messages.append(.other(AppTexts.PasswordNotMatch))
+            messages.append(.otherRequired(AppTexts.PasswordNotMatch))
         }
         return messages;
     }

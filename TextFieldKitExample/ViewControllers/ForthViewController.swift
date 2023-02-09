@@ -73,6 +73,7 @@ class ForthViewController: UIViewController {
     var fields:[FieldValiadtion]{
         return  self.userType == .user ? self.userFields:self.companyFields
     }
+    var fieldsManager:FieldsManager = FieldsManager();
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView();
@@ -92,10 +93,10 @@ class ForthViewController: UIViewController {
     }
     @IBAction func btnUserType(_ sender:UISegmentedControl){
         self.userType = UserType.init(rawValue:sender.selectedSegmentIndex)
-        self.allFields.clearErrors()
+        self.fieldsManager.clearErrors()
     }
     @IBAction func btnValid(_ sender:Any?){
-        check(requiredFields:self.fields,allField:self.allFields);
+        self.fieldsManager.checkAll()
         if self.fields.flatMap({$0.messages}).valid == false{
             self.fields.flatMap({$0.messages}).showAlert(self, handler: nil);
         }
@@ -113,6 +114,12 @@ extension ForthViewController{
 
     }
     func setupData(){
+        self.fieldsManager.fieldsHandler={
+            return self.allFields
+        }
+        self.fieldsManager.requiredFieldsHandler={
+            return self.fields
+        }
         self.userType = .user;
         txtFullName.fieldDidEnd = { _ in
 

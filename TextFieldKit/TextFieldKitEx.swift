@@ -90,7 +90,8 @@ case fieldRequired(_ name:String)
 case notValid(_ name:String)
 case choose(_ name:String)
 case enter(_ name:String)
-case other(_ message:String)
+case otherRequired(_ message:String)
+case otherValid(_ message:String)
 public var message:String{
     switch self{
     case .required( let fieldName):
@@ -103,10 +104,30 @@ public var message:String{
         return "PleaseChoose".cutomelocalizedWith(variables:fieldName)
     case .enter(let fieldName):
         return "PleaseEnter".cutomelocalizedWith(variables:fieldName)
-    case .other(let message):
+    case .otherRequired(let message):
+        return message
+    case .otherValid(let message):
         return message
     }
 }
+    var isRequired:Bool{
+        switch self{
+        case .required(let field):
+            return true
+        case .fieldRequired(_):
+            return true
+        case .notValid(_):
+            return false
+        case .choose(_):
+            return true
+        case .enter(_):
+            return false
+        case .otherRequired(_):
+            return true
+        case .otherValid(_):
+            return false
+        }
+    }
 }
 
 public extension Array where Element == FieldError {
@@ -135,19 +156,61 @@ extension UIColor{
 }
 #endif
 
-public func check(requiredFields:[FieldValiadtion],
-           allField:[GeneralFieldViewProrocol]){
-    for field in allField{
-        let contains = requiredFields.contains(where: {return $0 == field})
-        let messages = (field as? FieldValiadtion)?.messages ?? []
-        field.error = (messages.valid == true || contains == false) ? nil:messages.string
-    }
-}
+
 
 public extension Array where Element == GeneralFieldViewProrocol {
     func clearErrors(){
         for field in self{
             field.error=nil
         }
+    }
+}
+public class FieldsManager{
+    public typealias FieldsHandler=()->[GeneralFieldViewProrocol]
+    public typealias RequiredFieldsHandler=()->[FieldValiadtion]
+    public var fieldsHandler:FieldsHandler?{
+        didSet{
+            for field in self.allFields{
+                (field as? TextFieldView)?.fieldDidEnd = { field in
+                    self.checkField(field: field)
+                }
+                TextViewView.fieldDidEnd = { field in
+                    self.checkField(field: field)
+                }
+            }
+        }
+    }
+    public var requiredFieldsHandler:RequiredFieldsHandler?
+    
+    var allFields:[GeneralFieldViewProrocol]{
+        return self.fieldsHandler?() ?? []
+    }
+    var requiredFields:[FieldValiadtion]{
+        return self.requiredFieldsHandler?() ?? []
+    }
+    init(fieldsHandler:FieldsHandler?,requiredFieldsHandler:@escaping RequiredFieldsHandler) {
+        self.fieldsHandler = fieldsHandler
+        self.requiredFieldsHandler = requiredFieldsHandler
+    }
+    public init(){
+        
+    }
+     public func checkAll(){
+        for field in allFields{
+            self.checkField(field:field)
+        }
+    }
+    func checkField(field:GeneralFieldViewProrocol){
+        let contains = requiredFields.contains(where: {return $0 == field})
+        let messages = (field as? FieldValiadtion)?.messages ?? []
+        let isNotRequired = messages.filter({$0.isRequired == false}) // validation error
+        var errorMessage:String = messages.string
+        if isNotRequired.count > 0{
+            errorMessage = isNotRequired.string
+        }
+        field.error = (messages.valid == true || (contains == false && isNotRequired.count == 0)) ? nil:errorMessage
+    }
+    public func clearErrors(){
+        self.allFields.clearErrors()
     }
 }
