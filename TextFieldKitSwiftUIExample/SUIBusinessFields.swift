@@ -9,15 +9,23 @@ import UIKit
 import SwiftUI
 import TextFieldKit
 import AppTexts
-public class Username:NSObject,GeneralConnection{
+public class Username:NSObject,GeneralConnection,ObservableObject{
+    @Published var text:String?
+
     public var title: String{
         return AppTexts.UserName
     }
     public var messages: [TextFieldKit.FieldError]{
-    return []
+        if self.text?.isEmpty ?? true{
+            return [.fieldRequired(self.title)]
+        }
+        return []
     }
     public override init() {
         super.init()
+    }
+    public  init(text:String?) {
+        self.text=text
     }
 }
 public class FullName:NSObject,GeneralConnection{

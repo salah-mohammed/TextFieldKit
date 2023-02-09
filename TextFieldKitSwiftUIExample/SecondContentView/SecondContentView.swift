@@ -30,11 +30,12 @@ struct SecondContentView: View {
     func requirements()->Binding<String> {
      return .init(
         get: {viewModel.requirements },
-        set: {viewModel.requirements = $0 }
+        set: {viewModel.requirements = $0
+            userNameV.text = $0}
     )
     }
     @StateObject var viewModel = SecondContentViewModel.init()
-
+   var  userNameV = Username()
     var body: some View {
         ZStack{
             VStack(spacing:0) {
@@ -47,7 +48,7 @@ struct SecondContentView: View {
                                  error:$viewModel.userNameError,
                                  iconName:"ic_userOnlineTutor",
                                  onEditingChanged:nil,
-                                 validation:(Username(),self.viewModel.onEditingChangedUsername()))
+                                 validation:(userNameV,self.viewModel.onEditingChangedUsername()))
                 SUITextFieldView(placeholder: nil,
                                  text:fullName(),
                                  error:$viewModel.fullNameError,

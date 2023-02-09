@@ -58,6 +58,7 @@
 		8B31E6DD299416E600AA7421 /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF57CA5279FEED2000CFD0E /* Regex.swift */; };
 		8B31E6DF2994176F00AA7421 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B31E6DE2994176F00AA7421 /* Extensions.swift */; };
 		8B31E6E42994317300AA7421 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8B31E6E62994317300AA7421 /* Localizable.strings */; };
+		8B6C686B2994FC4600862549 /* SUIBusinessFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE9876D28F1720A001275F3 /* SUIBusinessFields.swift */; };
 		8BBEE7BA28FAFA4000DFDA29 /* SecondContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBEE7B828FAFA4000DFDA29 /* SecondContentViewModel.swift */; };
 		8BBEE7BB28FAFA4000DFDA29 /* SecondContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBEE7B928FAFA4000DFDA29 /* SecondContentView.swift */; };
 		8FA29984B62E3E43B77E22B8 /* Pods_TextFieldKitExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE1283F15A683755B1336DDE /* Pods_TextFieldKitExample.framework */; };
@@ -663,6 +664,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4EF57CA827A011DC000CFD0E /* ForthViewController.swift in Sources */,
+				8B6C686B2994FC4600862549 /* SUIBusinessFields.swift in Sources */,
 				4EA60C20274FD85400AC9745 /* SecondViewController.swift in Sources */,
 				4E46B778272A8B7D00DCB3B4 /* ViewController.swift in Sources */,
 				4E46B774272A8B7D00DCB3B4 /* AppDelegate.swift in Sources */,

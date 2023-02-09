@@ -18,6 +18,7 @@ class SecondContentViewModel:NSObject,ObservableObject{
     @Published  var firstNameError:String=""
     @Published  var userNameError:String=""
     @Published  var requirementsError:String=""
+    
     override init() {
         super.init();
         

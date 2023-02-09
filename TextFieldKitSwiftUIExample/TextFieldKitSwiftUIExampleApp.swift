@@ -12,8 +12,8 @@ struct TextFieldKitSwiftUIExampleApp: App {
     @Environment(\.scenePhase) private var lifecycle
     var body: some Scene {
         WindowGroup {
-            ContentView()
-//            SecondContentView()
+//            ContentView()
+            SecondContentView()
         }.onChange(of: lifecycle) { (lifecycle) in
             SUITextFieldView.style = AppStyle.textFieldStyle
             SUITextViewView.style = AppStyle.textFieldStyle
