@@ -12,7 +12,7 @@ public typealias PhoneData = (image:UIImage?,code:String?,action:()->Void);
 public struct SUIPhoneNumberView: View {
     public var placeholder:String?
     public var text: Binding<String>
-    public var error:Binding<String>?
+    public var error:Binding<String?>?
     @State public var iconName:String?
     var phoneData:PhoneData?
     public var onEditingChanged:((Bool) -> Void)?
@@ -25,7 +25,7 @@ public struct SUIPhoneNumberView: View {
     
     public init(placeholder:String?=nil,
                 text:Binding<String>,
-                error:Binding<String>?=nil,
+                error:Binding<String?>?=nil,
                 iconName:String?=nil,
                 phoneData:PhoneData?=nil,
                 onEditingChanged:((Bool) -> Void)?=nil,

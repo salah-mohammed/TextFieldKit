@@ -9,70 +9,94 @@ import UIKit
 import SwiftUI
 import TextFieldKit
 import AppTexts
-public class Username:NSObject,GeneralConnection,ObservableObject{
-    @Published var text:String?
+public class BaseValidation:NSObject,ObservableObject{
+    
+}
+public class Username:BaseValidation,GeneralConnection,GeneralFieldViewProrocol{
+    @Published public var text:String?
+    @Published public var placeholder: String?
+    @Published public var error: String?
 
     public var title: String{
         return AppTexts.UserName
     }
     public var messages: [TextFieldKit.FieldError]{
-        if self.text?.isEmpty ?? true{
-            return [.fieldRequired(self.title)]
-        }
-        return []
+        return self.emptyError()
     }
     public override init() {
         super.init()
-    }
-    public  init(text:String?) {
-        self.text=text
+        self.placeholder=self.title
     }
 }
-public class FullName:NSObject,GeneralConnection{
+public class FullName:BaseValidation,GeneralConnection,GeneralFieldViewProrocol{
+    @Published public var text:String?
+    @Published public var placeholder: String?
+    @Published public var error: String?
+
     public var title: String{
         return AppTexts.FullName
     }
     public var messages: [TextFieldKit.FieldError]{
-    return []
+        return self.emptyError()
     }
     public override init() {
         super.init()
+        self.placeholder=self.title
     }
 }
-public class FirstName:NSObject,GeneralConnection{
+public class FirstName:BaseValidation,GeneralConnection,GeneralFieldViewProrocol{
+    @Published public var text:String?
+    @Published public var placeholder: String?
+    @Published public var error: String?
+
     public var title: String{
         return AppTexts.FirstName
     }
     public var messages: [TextFieldKit.FieldError]{
-    return []
+        return self.emptyError()
     }
     public override init() {
         super.init()
+        self.placeholder=self.title
     }
 }
-public class LastName:NSObject,GeneralConnection{
+public class LastName:BaseValidation,GeneralConnection,GeneralFieldViewProrocol{
+    @Published public var text:String?
+    @Published public var placeholder: String?
+    @Published public var error: String?
+
     public var title: String{
         return AppTexts.LastName
     }
     public var messages: [TextFieldKit.FieldError]{
-    return []
+        return self.emptyError()
     }
     public override init() {
         super.init()
+        self.placeholder=self.title
     }
 }
-public class Email:NSObject,GeneralConnection{
+public class Email:BaseValidation,GeneralConnection,GeneralFieldViewProrocol{
+    @Published public var text:String?
+    @Published public var placeholder: String?
+    @Published public var error: String?
+
     public var title: String{
         return AppTexts.Email
     }
     public var messages: [TextFieldKit.FieldError]{
-    return []
+        return self.email()
     }
     public override init() {
         super.init()
+        self.placeholder=self.title
     }
 }
-public class Requirements:NSObject,GeneralConnection{
+public class Requirements:BaseValidation,GeneralConnection,GeneralFieldViewProrocol{
+    @Published public var text:String?
+    @Published public var placeholder: String?
+    @Published public var error: String?
+
     public var title: String{
         return AppTexts.Requirements
     }
@@ -81,75 +105,110 @@ public class Requirements:NSObject,GeneralConnection{
     }
     public override init() {
         super.init()
+        self.placeholder=self.title
     }
 }
-public class City:NSObject,GeneralConnection{
+public class City:BaseValidation,GeneralConnection,GeneralFieldViewProrocol{
+    @Published public var text:String?
+    @Published public var placeholder: String?
+    @Published public var error: String?
+
     public var title: String{
         return AppTexts.City
     }
     public var messages: [TextFieldKit.FieldError]{
-    return []
+        return self.emptyError()
     }
     public override init() {
         super.init()
+        self.placeholder=self.title
     }
 }
-public class Region:NSObject,GeneralConnection{
+public class Region:BaseValidation,GeneralConnection,GeneralFieldViewProrocol{
+    @Published public var text:String?
+    @Published public var placeholder: String?
+    @Published public var error: String?
+
     public var title: String{
         return AppTexts.Region
     }
     public var messages: [TextFieldKit.FieldError]{
-    return []
+        return self.emptyError()
     }
     public override init() {
         super.init()
+    self.placeholder=self.title
     }
 }
-public class Location:NSObject,GeneralConnection{
+public class Location:BaseValidation,GeneralConnection,GeneralFieldViewProrocol{
+    @Published public var text:String?
+    @Published public var placeholder: String?
+    @Published public var error: String?
+
     public var title: String{
         return AppTexts.Location
     }
     public var messages: [TextFieldKit.FieldError]{
-    return []
+        return self.emptyError()
     }
     public override init() {
         super.init()
+    self.placeholder=self.title
     }
 }
-public class Address:NSObject,GeneralConnection{
+public class Address:BaseValidation,GeneralConnection,GeneralFieldViewProrocol{
+    @Published public var text:String?
+    @Published public var placeholder: String?
+    @Published public var error: String?
+
     public var title: String{
         return AppTexts.Address
     }
     public var messages: [TextFieldKit.FieldError]{
-    return []
+        return self.emptyError()
     }
     public override init() {
         super.init()
+        self.placeholder=self.title
     }
 }
-public class Description:NSObject,GeneralConnection{
+public class Description:BaseValidation,GeneralConnection,GeneralFieldViewProrocol{
+    @Published public var text:String?
+    @Published public var placeholder: String?
+    @Published public var error: String?
+
     public var title: String{
         return AppTexts.Description
     }
     public var messages: [TextFieldKit.FieldError]{
-    return []
+        return self.emptyError()
     }
     public override init() {
         super.init()
+    self.placeholder=self.title
     }
 }
-public class Title:NSObject,GeneralConnection{
+public class Title:BaseValidation,GeneralConnection,GeneralFieldViewProrocol{
+    @Published public var text:String?
+    @Published public var placeholder: String?
+    @Published public var error: String?
+
     public var title: String{
         return AppTexts.Title
     }
     public var messages: [TextFieldKit.FieldError]{
-    return []
+        return self.emptyError()
     }
     public override init() {
         super.init()
+    self.placeholder=self.title
     }
 }
-public class Password:NSObject,GeneralConnection{
+public class Password:BaseValidation,GeneralConnection,GeneralFieldViewProrocol{
+    @Published public var text:String?
+    @Published public var placeholder: String?
+    @Published public var error: String?
+
     public var title: String{
         return AppTexts.Password
     }
@@ -158,6 +217,7 @@ public class Password:NSObject,GeneralConnection{
     }
     public override init() {
         super.init()
+    self.placeholder=self.title
     }
 }
 //case newPassword="NewPassword"

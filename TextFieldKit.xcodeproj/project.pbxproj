@@ -52,13 +52,16 @@
 		8B31E6D22994047800AA7421 /* SUIBusinessFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE9876D28F1720A001275F3 /* SUIBusinessFields.swift */; };
 		8B31E6D42994087C00AA7421 /* PhoneNumberField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EB6807A274A56D800363E69 /* PhoneNumberField.xib */; };
 		8B31E6D5299409A300AA7421 /* BusinessFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDF13FD278AFE840095A02D /* BusinessFields.swift */; };
-		8B31E6D62994103300AA7421 /* FieldValiadtion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB6F39227A7E3E2006A01BE /* FieldValiadtion.swift */; };
+		8B31E6D62994103300AA7421 /* UIKitFieldValiadtion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB6F39227A7E3E2006A01BE /* UIKitFieldValiadtion.swift */; };
 		8B31E6DB2994128F00AA7421 /* PhoneNumberField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B31E6DA2994128F00AA7421 /* PhoneNumberField.swift */; };
 		8B31E6DC299416E400AA7421 /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF57CA5279FEED2000CFD0E /* Regex.swift */; };
 		8B31E6DD299416E600AA7421 /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF57CA5279FEED2000CFD0E /* Regex.swift */; };
 		8B31E6DF2994176F00AA7421 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B31E6DE2994176F00AA7421 /* Extensions.swift */; };
 		8B31E6E42994317300AA7421 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8B31E6E62994317300AA7421 /* Localizable.strings */; };
 		8B6C686B2994FC4600862549 /* SUIBusinessFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE9876D28F1720A001275F3 /* SUIBusinessFields.swift */; };
+		8B6C686C2995042400862549 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B31E6DE2994176F00AA7421 /* Extensions.swift */; };
+		8B6C686F2995087600862549 /* FieldValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6C686E2995087600862549 /* FieldValidation.swift */; };
+		8B6C68702995087A00862549 /* FieldValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6C686E2995087600862549 /* FieldValidation.swift */; };
 		8BBEE7BA28FAFA4000DFDA29 /* SecondContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBEE7B828FAFA4000DFDA29 /* SecondContentViewModel.swift */; };
 		8BBEE7BB28FAFA4000DFDA29 /* SecondContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBEE7B928FAFA4000DFDA29 /* SecondContentView.swift */; };
 		8FA29984B62E3E43B77E22B8 /* Pods_TextFieldKitExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE1283F15A683755B1336DDE /* Pods_TextFieldKitExample.framework */; };
@@ -141,7 +144,7 @@
 		4EAA5E6F28E6D0A800080992 /* TextFieldProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldProtocols.swift; sourceTree = "<group>"; };
 		4EB6807A274A56D800363E69 /* PhoneNumberField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhoneNumberField.xib; sourceTree = "<group>"; };
 		4EB6F39027A7DD99006A01BE /* AppFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFields.swift; sourceTree = "<group>"; };
-		4EB6F39227A7E3E2006A01BE /* FieldValiadtion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldValiadtion.swift; sourceTree = "<group>"; };
+		4EB6F39227A7E3E2006A01BE /* UIKitFieldValiadtion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitFieldValiadtion.swift; sourceTree = "<group>"; };
 		4EC35BE627A1548700DD42D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4ECAA1CF28F00D5600FBDD86 /* SUITextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUITextFieldView.swift; sourceTree = "<group>"; };
 		4ECAA1D628F013D600FBDD86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -163,6 +166,7 @@
 		8B31E6E52994317300AA7421 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8B31E6E72994317600AA7421 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8B31E6E8299431A700AA7421 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8B6C686E2995087600862549 /* FieldValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldValidation.swift; sourceTree = "<group>"; };
 		8BBEE7B828FAFA4000DFDA29 /* SecondContentViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondContentViewModel.swift; sourceTree = "<group>"; };
 		8BBEE7B928FAFA4000DFDA29 /* SecondContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondContentView.swift; sourceTree = "<group>"; };
 		8F6567E059F82800E6C3387E /* Pods-TextFieldKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TextFieldKit.debug.xcconfig"; path = "Target Support Files/Pods-TextFieldKit/Pods-TextFieldKit.debug.xcconfig"; sourceTree = "<group>"; };
@@ -269,7 +273,7 @@
 				8B31E6D82994123E00AA7421 /* ViewControllers */,
 				4EB6F39027A7DD99006A01BE /* AppFields.swift */,
 				4EDF13FD278AFE840095A02D /* BusinessFields.swift */,
-				4EB6F39227A7E3E2006A01BE /* FieldValiadtion.swift */,
+				4EB6F39227A7E3E2006A01BE /* UIKitFieldValiadtion.swift */,
 				8B31E6D92994127800AA7421 /* PhoneNumber */,
 				8B31E6E1299417B400AA7421 /* CutomUIField */,
 				4E46B779272A8B7D00DCB3B4 /* Main.storyboard */,
@@ -277,6 +281,7 @@
 				4E46B77E272A8B8100DCB3B4 /* LaunchScreen.storyboard */,
 				4E46B781272A8B8100DCB3B4 /* Info.plist */,
 				4ECAA1D728F0172100FBDD86 /* AppStyle.swift */,
+				8B6C686E2995087600862549 /* FieldValidation.swift */,
 			);
 			path = TextFieldKitExample;
 			sourceTree = "<group>";
@@ -671,13 +676,14 @@
 				4E46B776272A8B7D00DCB3B4 /* SceneDelegate.swift in Sources */,
 				4EA60C22274FD9BE00AC9745 /* ThiredViewController.swift in Sources */,
 				8B31E6D5299409A300AA7421 /* BusinessFields.swift in Sources */,
-				8B31E6D62994103300AA7421 /* FieldValiadtion.swift in Sources */,
+				8B31E6D62994103300AA7421 /* UIKitFieldValiadtion.swift in Sources */,
 				8B31E6DB2994128F00AA7421 /* PhoneNumberField.swift in Sources */,
 				4ECAA1D828F0172100FBDD86 /* AppStyle.swift in Sources */,
 				4EB6F39127A7DD9A006A01BE /* AppFields.swift in Sources */,
 				4EAA5E6C28E6C62D00080992 /* CutomUIField.swift in Sources */,
 				8B31E6DC299416E400AA7421 /* Regex.swift in Sources */,
 				8B31E6DF2994176F00AA7421 /* Extensions.swift in Sources */,
+				8B6C686F2995087600862549 /* FieldValidation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -686,6 +692,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4EE9877028F1853B001275F3 /* ContentViewModel.swift in Sources */,
+				8B6C686C2995042400862549 /* Extensions.swift in Sources */,
 				8B31E6DD299416E600AA7421 /* Regex.swift in Sources */,
 				4EE1033728F09F7300766C84 /* AppStyle.swift in Sources */,
 				8BBEE7BA28FAFA4000DFDA29 /* SecondContentViewModel.swift in Sources */,
@@ -693,6 +700,7 @@
 				4EDD5D4E28EB8C1000837705 /* ContentView.swift in Sources */,
 				8BBEE7BB28FAFA4000DFDA29 /* SecondContentView.swift in Sources */,
 				4EDD5D4C28EB8C1000837705 /* TextFieldKitSwiftUIExampleApp.swift in Sources */,
+				8B6C68702995087A00862549 /* FieldValidation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

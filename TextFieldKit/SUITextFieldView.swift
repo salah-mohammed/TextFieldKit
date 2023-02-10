@@ -12,7 +12,7 @@ public typealias DropDownData = (imageName:String?, spaceBettwenTextAndImage:CGF
 public struct SUITextFieldView: View {
     public var placeholder:String?
     public var text: Binding<String>
-    public var error:Binding<String>?
+    public var error:Binding<String?>?
     public var iconName:String?
     public var onEditingChanged:((Bool) -> Void)?
     public var onEditingValidationChanged:((Bool,GeneralConnection?) -> Void)?
@@ -25,7 +25,7 @@ public struct SUITextFieldView: View {
     
     public init(placeholder:String?=nil,
                 text:Binding<String>,
-                error:Binding<String>?=nil,
+                error:Binding<String?>?=nil,
                 iconName:String?=nil,
                 dropDownData:DropDownData?=nil,
                 onEditingChanged:((Bool) -> Void)?=nil,

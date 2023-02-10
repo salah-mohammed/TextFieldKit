@@ -17,12 +17,12 @@ class ContentViewModel:NSObject,ObservableObject{
     @Published  var phoneNumber:String=""
     @Published  var countryCode:String="+966"
 
-    @Published  var fullNameError:String=""
-    @Published  var firstNameError:String=""
-    @Published  var userNameError:String=""
-    @Published  var requirementsError:String=""
-    @Published  var cityError:String=""
-    @Published  var phoneNumberError:String=""
+    @Published  var fullNameError:String?=""
+    @Published  var firstNameError:String?=""
+    @Published  var userNameError:String?=""
+    @Published  var requirementsError:String?=""
+    @Published  var cityError:String?=""
+    @Published  var phoneNumberError:String?=""
 
     override init() {
         super.init();

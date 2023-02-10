@@ -9,69 +9,101 @@ import SwiftUI
 import TextFieldKit
 
 struct SecondContentView: View {
+    func email()->Binding<String> {
+     return .init(
+        get: {
+        viewModel.emailValidation.text ?? ""
+        },
+        set: {
+            viewModel.emailValidation.text = $0
+        }
+    )
+    }
     func fullName()->Binding<String> {
      return .init(
-        get: {viewModel.fullName },
-        set: {viewModel.fullName = $0 }
+        get: {
+            viewModel.fullNameValidation.text ?? ""
+        },
+        set: {
+            viewModel.fullNameValidation.text = $0
+        }
     )
     }
     func firstName()->Binding<String> {
      return .init(
-        get: {viewModel.firstName },
-        set: {viewModel.firstName = $0 }
+        get: {
+            viewModel.firstNameValidation.text ?? ""
+        },
+        set: {
+            self.viewModel.firstNameValidation.text = $0 
+        }
     )
     }
     func username()->Binding<String> {
      return .init(
-        get: {viewModel.userName },
-        set: {viewModel.userName = $0 }
+        get: {
+            viewModel.userNameValidation.text ?? ""
+        },
+        set: {
+            viewModel.userNameValidation.text = $0
+        }
     )
     }
     func requirements()->Binding<String> {
      return .init(
-        get: {viewModel.requirements },
-        set: {viewModel.requirements = $0
-            userNameV.text = $0}
+        get: {
+            viewModel.requirementsValidation.text ?? ""
+        },
+        set: {
+            viewModel.requirementsValidation.text = $0}
     )
     }
     @StateObject var viewModel = SecondContentViewModel.init()
-   var  userNameV = Username()
+
     var body: some View {
         ZStack{
-            VStack(spacing:0) {
-                Image(systemName: "globe")
-                    .imageScale(.large)
-                    .foregroundColor(.accentColor)
-                Text("Hello, world!")
-                SUITextFieldView(placeholder: nil,
-                                 text:username(),
-                                 error:$viewModel.userNameError,
-                                 iconName:"ic_userOnlineTutor",
-                                 onEditingChanged:nil,
-                                 validation:(userNameV,self.viewModel.onEditingChangedUsername()))
-                SUITextFieldView(placeholder: nil,
-                                 text:fullName(),
-                                 error:$viewModel.fullNameError,
-                                 onEditingChanged:nil,
-                                 validation:(FullName(),self.viewModel.onEditingChangedFullName()))
-                SUITextFieldView(placeholder:nil,
-                                 text:firstName(),
-                                 error:$viewModel.firstNameError,
-                                 onEditingChanged:nil,
-                                 validation:(FirstName(),self.viewModel.onEditingChangedFirstName()))
-                SUITextViewView.init(placeholder: nil,
-                                     text:requirements(),
-                                     error:$viewModel.requirementsError,
+            ScrollView{
+                VStack(spacing:0) {
+                    Image(systemName: "globe")
+                        .imageScale(.large)
+                        .foregroundColor(.accentColor)
+                    Text("Hello, world!")
+                    SUITextFieldView(placeholder: nil,
+                                     text:email(),
+                                     error:$viewModel.emailValidation.error,
                                      iconName:"ic_userOnlineTutor",
                                      onEditingChanged:nil,
-                                     validation:(Requirements(),self.viewModel.onEditingChangedRequirements()))
-//                Button.init(action: self.viewModel.save(), label:{Text("Save")})
-            }
-            .padding()
-        }.frame(maxWidth:.infinity,maxHeight:.infinity).background(Color.gray.opacity(0.5)).gesture(TapGesture()
-            .onEnded { _ in
-                UIApplication.shared.endEditing();
-            })
+                                     validation:(self.viewModel.emailValidation,self.viewModel.onEditingChangedEmail()))
+                    SUITextFieldView(placeholder: nil,
+                                     text:username(),
+                                     error:$viewModel.userNameValidation.error,
+                                     iconName:"ic_userOnlineTutor",
+                                     onEditingChanged:nil,
+                                     validation:(self.viewModel.userNameValidation,self.viewModel.onEditingChangedUsername()))
+                    SUITextFieldView(placeholder: nil,
+                                     text:fullName(),
+                                     error:$viewModel.fullNameValidation.error,
+                                     onEditingChanged:nil,
+                                     validation:(self.viewModel.fullNameValidation,self.viewModel.onEditingChangedFullName()))
+                    SUITextFieldView(placeholder:nil,
+                                     text:firstName(),
+                                     error:$viewModel.firstNameValidation.error,
+                                     onEditingChanged:nil,
+                                     validation:(self.viewModel.firstNameValidation,self.viewModel.onEditingChangedFirstName()))
+                    SUITextViewView.init(placeholder: nil,
+                                         text:requirements(),
+                                         error:$viewModel.requirementsValidation.error,
+                                         iconName:"ic_userOnlineTutor",
+                                         onEditingChanged:nil,
+                                         validation:(self.viewModel.requirementsValidation,self.viewModel.onEditingChangedRequirements()))
+                    Button.init(action: self.viewModel.save(), label:{Text("Save")})
+                }
+                .padding()
+            }.frame(maxWidth:.infinity,maxHeight:.infinity).background(Color.gray.opacity(0.5)).gesture(TapGesture()
+                .onEnded { _ in
+                    UIApplication.shared.endEditing();
+                })
+        }
     }
 }
 

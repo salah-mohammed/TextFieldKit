@@ -12,7 +12,7 @@ public typealias OnEditingValiadtionChanged = (Bool,GeneralConnection?) -> Void
 public struct SUITextViewView: View {
     public var placeholder:String
     public var text: Binding<String>
-    public var error:Binding<String>?
+    public var error:Binding<String?>?
     @State public var iconName:String?
     public var onEditingChanged:((Bool) -> Void)?
     public var onEditingValidationChanged:((Bool,GeneralConnection?) -> Void)?
@@ -23,7 +23,7 @@ public struct SUITextViewView: View {
 
     public init(placeholder:String?,
                 text:Binding<String>,
-                error:Binding<String>?=nil,
+                error:Binding<String?>?=nil,
                 iconName:String?=nil,
                 onEditingChanged:((Bool) -> Void)?=nil,
                 style:FieldStyle?=nil,

@@ -8,44 +8,65 @@
 import UIKit
 import SwiftUI
 import TextFieldKit
-class SecondContentViewModel:NSObject,ObservableObject{
-    @Published  var fullName:String="Ahmed"
-    @Published  var firstName:String="Ahmed"
-    @Published  var userName:String="Ahmed"
-    @Published  var requirements:String=""
 
-    @Published  var fullNameError:String=""
-    @Published  var firstNameError:String=""
-    @Published  var userNameError:String=""
-    @Published  var requirementsError:String=""
-    
+typealias Item = ObservableObject
+
+public class BaseViewModel:NSObject,ObservableObject{
+    private var nestedObservableObjects:[Any]=[Any]()
+    public override init() {
+        super.init();
+    }
+    func appendNested(_ element:BaseValidation){
+        let value = element.objectWillChange.sink { [weak self] (_) in
+            self?.objectWillChange.send()
+        }
+        self.nestedObservableObjects.append(value)
+    }
+}
+
+class SecondContentViewModel:BaseViewModel{
+    @Published var userNameValidation = Username()
+    @Published var fullNameValidation = FullName()
+    @Published var firstNameValidation = FirstName()
+    @Published var requirementsValidation = Requirements()
+    @Published var emailValidation = Email()
     override init() {
         super.init();
-        
+        self.appendNested(userNameValidation);
+        self.appendNested(fullNameValidation);
+        self.appendNested(firstNameValidation);
+        self.appendNested(requirementsValidation);
+        self.appendNested(emailValidation);
     }
     func save()->(()->Void){
         return {
             
         }
     }
+    func onEditingChangedEmail()->OnEditingValiadtionChanged{
+        return { value,validation  in
+            self.emailValidation.error = validation?.messages.string ?? "";
+        }
+    }
+
     func onEditingChangedFullName()->OnEditingValiadtionChanged{
         return { value,validation  in
-            self.fullNameError = validation?.messages.string ?? "";
+            self.fullNameValidation.error = validation?.messages.string ?? "";
         }
     }
     func onEditingChangedFirstName()->OnEditingValiadtionChanged{
         return { value,validation in
-            self.firstNameError = validation?.messages.string ?? "";
+            self.firstNameValidation.error = validation?.messages.string ?? "";
         }
     }
     func onEditingChangedUsername()->OnEditingValiadtionChanged{
         return { value,validation in
-            self.userNameError = validation?.messages.string ?? "";
+            self.userNameValidation.error = validation?.messages.string ?? "";
         }
     }
     func onEditingChangedRequirements()->OnEditingValiadtionChanged{
         return { value,validation in
-            self.requirementsError = validation?.messages.string ?? "";
+            self.requirementsValidation.error = validation?.messages.string ?? "";
         }
     }
 }
