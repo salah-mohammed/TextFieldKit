@@ -62,7 +62,20 @@ class SecondContentViewModel:BaseViewModel{
     }
     func save()->(()->Void){
         return {
-             self.fieldsManager.checkAll();
+            let all = self.fieldsManager.checkAll();
+            if all.valid == false{
+                all.showAlert(self.topMostController()!, handler: nil);
+            }
         }
+    }
+    func topMostController() -> UIViewController? {
+        guard let window = UIApplication.shared.keyWindow, let rootViewController = window.rootViewController else {
+            return nil
+        }
+        var topController = rootViewController
+        while let newTopController = topController.presentedViewController {
+            topController = newTopController
+        }
+        return topController
     }
 }
