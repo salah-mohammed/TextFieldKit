@@ -10,6 +10,10 @@ import TextFieldKit
 import UIKit
 // this for app busines only
 class CustomCityField:DropDownTextField,FieldValiadtion{
+    var title: String{
+     return ""
+    }
+    
     var object:Any?{
         didSet{
             if let object:String = object as? String{

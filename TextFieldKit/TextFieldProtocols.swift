@@ -10,6 +10,7 @@ import Foundation
 public protocol FieldValiadtion:NSObject{
     var messages:[FieldError] {get};
     var title:String{get};
+    var error:String?{set get};
 }
 // MARK: GeneralFieldViewProrocol
 public protocol GeneralFieldViewProrocol:NSObject{

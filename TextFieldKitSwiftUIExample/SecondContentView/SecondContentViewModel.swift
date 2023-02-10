@@ -37,7 +37,7 @@ class SecondContentViewModel:BaseViewModel{
         userNameValidation,
         fullNameValidation]
     }
-    var allFields:[GeneralFieldViewProrocol]{
+    var allFields:[FieldValiadtion]{
     return [
         userNameValidation,
         fullNameValidation,

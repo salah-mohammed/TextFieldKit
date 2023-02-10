@@ -158,7 +158,7 @@ extension UIColor{
 
 
 
-public extension Array where Element == GeneralFieldViewProrocol {
+public extension Array where Element == FieldValiadtion {
     func clearErrors(){
         for field in self{
             field.error=nil
@@ -166,18 +166,18 @@ public extension Array where Element == GeneralFieldViewProrocol {
     }
 }
 public class FieldsManager{
-    public typealias FieldsHandler=()->[GeneralFieldViewProrocol]
+    public typealias FieldsHandler=()->[FieldValiadtion]
     public typealias RequiredFieldsHandler=()->[FieldValiadtion]
     public var fieldsHandler:FieldsHandler?{
         didSet{
             for var field  in self.allFields{
-                field.fieldDidEnd = { field in
+                (field as? GeneralFieldViewProrocol)?.fieldDidEnd = { internalFeild in
                     self.checkField(field: field)
                 }
-                field.fieldDidEnd = { field in
+                (field as? GeneralFieldViewProrocol)?.fieldDidEnd = { internalFeild in
                     self.checkField(field: field)
                 }
-                field.onEditingChanged = { v,fieldd in
+                (field as? GeneralFieldViewProrocol)?.onEditingChanged = { changed,internalFeild in
                     self.checkField(field:field)
                 }
             }
@@ -185,7 +185,7 @@ public class FieldsManager{
     }
     public var requiredFieldsHandler:RequiredFieldsHandler?
     
-    var allFields:[GeneralFieldViewProrocol]{
+    var allFields:[FieldValiadtion]{
         return self.fieldsHandler?() ?? []
     }
     var requiredFields:[FieldValiadtion]{
@@ -198,20 +198,24 @@ public class FieldsManager{
     public init(){
         
     }
-     public func checkAll(){
+     public func checkAll()->[FieldError]{
+        var messages:[FieldError] = [FieldError]();
         for field in allFields{
-            self.checkField(field:field)
+        messages.append(contentsOf:self.checkField(field:field));
         }
+    return messages
     }
-    func checkField(field:GeneralFieldViewProrocol){
+    @discardableResult func checkField(field:FieldValiadtion)->[FieldError]{
         let contains = requiredFields.contains(where: {return $0 == field})
-        let messages = (field as? FieldValiadtion)?.messages ?? []
+        var messages = field.messages
         let isNotRequired = messages.filter({$0.isRequired == false}) // validation error
-        var errorMessage:String = messages.string
         if isNotRequired.count > 0{
-            errorMessage = isNotRequired.string
+            messages = isNotRequired
         }
-        field.error = (messages.valid == true || (contains == false && isNotRequired.count == 0)) ? nil:errorMessage
+        var newMessages:[FieldError]=[FieldError]()
+        newMessages = (messages.valid == true || (contains == false && isNotRequired.count == 0)) ? []:messages
+        field.error = newMessages.count > 0 ? newMessages.string:nil
+        return newMessages
     }
     public func clearErrors(){
         self.allFields.clearErrors()

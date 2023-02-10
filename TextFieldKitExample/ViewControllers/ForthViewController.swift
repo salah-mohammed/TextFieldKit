@@ -34,7 +34,7 @@ class ForthViewController: UIViewController {
         }
     }
     // all
-    var allFields:[GeneralFieldViewProrocol]{
+    var allFields:[FieldValiadtion]{
     return [
     txtAdvancedPhoneNumber,
     txtLocationTextField,
@@ -96,9 +96,9 @@ class ForthViewController: UIViewController {
         self.fieldsManager.clearErrors()
     }
     @IBAction func btnValid(_ sender:Any?){
-        self.fieldsManager.checkAll()
-        if self.fields.flatMap({$0.messages}).valid == false{
-            self.fields.flatMap({$0.messages}).showAlert(self, handler: nil);
+        let all = self.fieldsManager.checkAll();
+        if all.valid == false{
+            all.showAlert(self, handler: nil);
         }
     }
 }
