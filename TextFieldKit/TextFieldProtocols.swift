@@ -39,6 +39,9 @@ public protocol CutomFieldProrocol{
 }
 // MARK: GeneralConnection
 public protocol GeneralConnection:Field,FieldValiadtion{
+#if canImport(SwiftUI)
+    func onEditingChanged()->OnEditingValiadtionChanged;
+#endif
 }
 //public protocol SUIGeneralConnection:SUIField,FieldValiadtion{
 ////    var handler:((Bool,FieldValiadtion) -> Void)

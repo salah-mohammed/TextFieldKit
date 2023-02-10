@@ -73,29 +73,29 @@ struct SecondContentView: View {
                                      error:$viewModel.emailValidation.error,
                                      iconName:"ic_userOnlineTutor",
                                      onEditingChanged:nil,
-                                     validation:(self.viewModel.emailValidation,self.viewModel.onEditingChangedEmail()))
+                                     validation:(self.viewModel.emailValidation,nil))
                     SUITextFieldView(placeholder: nil,
                                      text:username(),
                                      error:$viewModel.userNameValidation.error,
                                      iconName:"ic_userOnlineTutor",
                                      onEditingChanged:nil,
-                                     validation:(self.viewModel.userNameValidation,self.viewModel.onEditingChangedUsername()))
+                                     validation:(self.viewModel.userNameValidation,nil))
                     SUITextFieldView(placeholder: nil,
                                      text:fullName(),
                                      error:$viewModel.fullNameValidation.error,
                                      onEditingChanged:nil,
-                                     validation:(self.viewModel.fullNameValidation,self.viewModel.onEditingChangedFullName()))
+                                     validation:(self.viewModel.fullNameValidation,nil))
                     SUITextFieldView(placeholder:nil,
                                      text:firstName(),
                                      error:$viewModel.firstNameValidation.error,
                                      onEditingChanged:nil,
-                                     validation:(self.viewModel.firstNameValidation,self.viewModel.onEditingChangedFirstName()))
+                                     validation:(self.viewModel.firstNameValidation,nil))
                     SUITextViewView.init(placeholder: nil,
                                          text:requirements(),
                                          error:$viewModel.requirementsValidation.error,
                                          iconName:"ic_userOnlineTutor",
                                          onEditingChanged:nil,
-                                         validation:(self.viewModel.requirementsValidation,self.viewModel.onEditingChangedRequirements()))
+                                         validation:(self.viewModel.requirementsValidation,nil))
                     Button.init(action: self.viewModel.save(), label:{Text("Save")})
                 }
                 .padding()

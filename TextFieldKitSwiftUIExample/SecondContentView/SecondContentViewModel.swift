@@ -43,30 +43,4 @@ class SecondContentViewModel:BaseViewModel{
             
         }
     }
-    func onEditingChangedEmail()->OnEditingValiadtionChanged{
-        return { value,validation  in
-            self.emailValidation.error = validation?.messages.string ?? "";
-        }
-    }
-
-    func onEditingChangedFullName()->OnEditingValiadtionChanged{
-        return { value,validation  in
-            self.fullNameValidation.error = validation?.messages.string ?? "";
-        }
-    }
-    func onEditingChangedFirstName()->OnEditingValiadtionChanged{
-        return { value,validation in
-            self.firstNameValidation.error = validation?.messages.string ?? "";
-        }
-    }
-    func onEditingChangedUsername()->OnEditingValiadtionChanged{
-        return { value,validation in
-            self.userNameValidation.error = validation?.messages.string ?? "";
-        }
-    }
-    func onEditingChangedRequirements()->OnEditingValiadtionChanged{
-        return { value,validation in
-            self.requirementsValidation.error = validation?.messages.string ?? "";
-        }
-    }
 }

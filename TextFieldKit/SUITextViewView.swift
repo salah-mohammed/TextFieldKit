@@ -27,10 +27,10 @@ public struct SUITextViewView: View {
                 iconName:String?=nil,
                 onEditingChanged:((Bool) -> Void)?=nil,
                 style:FieldStyle?=nil,
-                validation:(GeneralConnection?,(Bool,GeneralConnection?) -> Void)?=nil) {
+                validation:(GeneralConnection?,((Bool,GeneralConnection?) -> Void)?)?=nil) {
         self.validation = validation?.0
         self.placeholder = placeholder ?? validation?.0?.title ?? ""
-        self.onEditingValidationChanged = validation?.1
+        self.onEditingValidationChanged = validation?.1 ?? validation?.0?.onEditingChanged()
         self.text=text;
         self.error=error;
         self.iconName=iconName;
