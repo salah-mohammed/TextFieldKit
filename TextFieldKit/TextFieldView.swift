@@ -12,10 +12,10 @@ import UIKit
 import PhoneKit
 #endif
 
-
-
 public typealias FieldHandler = (GeneralFieldViewProrocol)->Void
-open class TextFieldView: UIView,GeneralFieldViewProrocol,CutomFieldProrocol {
+open class TextFieldView: UIView,GeneralFieldViewProrocol,FieldStyleProrocol {
+    public var onEditingChanged: OnEditingValiadtionChanged?
+    
     // MARK:Customisable
     open var nibName:String{
         return "TextFieldView";
@@ -92,13 +92,13 @@ open class TextFieldView: UIView,GeneralFieldViewProrocol,CutomFieldProrocol {
             self.layoutConstraintHeightOfIndicator?.constant = indicatorHeight
         }
     }
-    open var fieldDidEnd:FieldHandler?=TextFieldView.fieldDidEnd
-    open var fieldValueChanged:FieldHandler?=TextFieldView.fieldValueChanged
-    open var fieldDidBegin:FieldHandler?=TextFieldView.fieldDidBegin
+    open var fieldDidEnd:FieldHandler?//=TextFieldView.fieldDidEnd
+    open var fieldValueChanged:FieldHandler?//=TextFieldView.fieldValueChanged
+    open var fieldDidBegin:FieldHandler?//=TextFieldView.fieldDidBegin
     var tapGestureRecognizer:UITapGestureRecognizer?
-    public static var fieldDidEnd:FieldHandler?
-    public static var fieldValueChanged:FieldHandler?
-    public static var fieldDidBegin:FieldHandler?
+//    public static var fieldDidEnd:FieldHandler?
+//    public static var fieldValueChanged:FieldHandler?
+//    public static var fieldDidBegin:FieldHandler?
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

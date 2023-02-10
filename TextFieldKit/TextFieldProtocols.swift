@@ -6,28 +6,21 @@
 //
 
 import Foundation
-
-// MARK: Field
-public protocol Field{
-    var title:String{get};
-}
-//public protocol SUIField:ObservableObject{
-//    var fieldType:FieldType {get};
-//}
-@objc protocol ObjcPrintable {
-    @objc optional func canPrint() -> Bool
-}
 // MARK: FieldValiadtion
 public protocol FieldValiadtion:NSObject{
     var messages:[FieldError] {get};
+    var title:String{get};
 }
 // MARK: GeneralFieldViewProrocol
 public protocol GeneralFieldViewProrocol:NSObject{
 var text:String? {set get};
 var placeholder:String? {set get};
 var error:String?{set get};
+    
+var fieldDidEnd:FieldHandler?{set get}
+var onEditingChanged:OnEditingValiadtionChanged?{set get}
 }
-public protocol CutomFieldProrocol{
+public protocol FieldStyleProrocol{
     
      // for style
      func cutomLayoutSubviews();
@@ -38,10 +31,8 @@ public protocol CutomFieldProrocol{
 
 }
 // MARK: GeneralConnection
-public protocol GeneralConnection:Field,FieldValiadtion{
-#if canImport(SwiftUI)
-    func onEditingChanged()->OnEditingValiadtionChanged;
-#endif
+public protocol GeneralConnection:GeneralFieldViewProrocol,FieldValiadtion{
+
 }
 //public protocol SUIGeneralConnection:SUIField,FieldValiadtion{
 ////    var handler:((Bool,FieldValiadtion) -> Void)

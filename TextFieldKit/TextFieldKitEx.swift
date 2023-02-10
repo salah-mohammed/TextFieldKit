@@ -170,12 +170,15 @@ public class FieldsManager{
     public typealias RequiredFieldsHandler=()->[FieldValiadtion]
     public var fieldsHandler:FieldsHandler?{
         didSet{
-            for field in self.allFields{
-                (field as? TextFieldView)?.fieldDidEnd = { field in
+            for var field  in self.allFields{
+                field.fieldDidEnd = { field in
                     self.checkField(field: field)
                 }
-                TextViewView.fieldDidEnd = { field in
+                field.fieldDidEnd = { field in
                     self.checkField(field: field)
+                }
+                field.onEditingChanged = { v,fieldd in
+                    self.checkField(field:field)
                 }
             }
         }

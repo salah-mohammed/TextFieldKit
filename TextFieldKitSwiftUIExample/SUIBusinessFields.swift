@@ -10,9 +10,13 @@ import SwiftUI
 import TextFieldKit
 import AppTexts
 public class BaseValidation:NSObject,ObservableObject{
-    
+    public var onEditingChanged:OnEditingValiadtionChanged?
+    public var fieldDidEnd: TextFieldKit.FieldHandler?
+
+
 }
 public class Username:BaseValidation,GeneralConnection,GeneralFieldViewProrocol{
+    
     @Published public var text:String?
     @Published public var placeholder: String?
     @Published public var error: String?
@@ -27,13 +31,13 @@ public class Username:BaseValidation,GeneralConnection,GeneralFieldViewProrocol{
         super.init()
         self.placeholder=self.title
     }
-    public func onEditingChanged()->OnEditingValiadtionChanged{
-        return { value,validation  in
-            if value == false{
-                self.error = validation?.messages.string ?? "";
-            }
-        }
-    }
+//    public func onEditingChanged()->OnEditingValiadtionChanged{
+//        return { value,validation  in
+//            if value == false{
+//                self.error = validation?.messages.string ?? "";
+//            }
+//        }
+//    }
 }
 public class FullName:BaseValidation,GeneralConnection,GeneralFieldViewProrocol{
     @Published public var text:String?
@@ -50,13 +54,13 @@ public class FullName:BaseValidation,GeneralConnection,GeneralFieldViewProrocol{
         super.init()
         self.placeholder=self.title
     }
-    public func onEditingChanged()->OnEditingValiadtionChanged{
-        return { value,validation  in
-            if value == false{
-                self.error = validation?.messages.string ?? "";
-            }
-        }
-    }
+//    public func onEditingChanged()->OnEditingValiadtionChanged{
+//        return { value,validation  in
+//            if value == false{
+//                self.error = validation?.messages.string ?? "";
+//            }
+//        }
+//    }
 }
 public class FirstName:BaseValidation,GeneralConnection,GeneralFieldViewProrocol{
     @Published public var text:String?
@@ -73,13 +77,13 @@ public class FirstName:BaseValidation,GeneralConnection,GeneralFieldViewProrocol
         super.init()
         self.placeholder=self.title
     }
-    public func onEditingChanged()->OnEditingValiadtionChanged{
-        return { value,validation  in
-            if value == false{
-                self.error = validation?.messages.string ?? "";
-            }
-        }
-    }
+//    public func onEditingChanged()->OnEditingValiadtionChanged{
+//        return { value,validation  in
+//            if value == false{
+//                self.error = validation?.messages.string ?? "";
+//            }
+//        }
+//    }
 }
 public class LastName:BaseValidation,GeneralConnection,GeneralFieldViewProrocol{
     @Published public var text:String?
@@ -96,13 +100,13 @@ public class LastName:BaseValidation,GeneralConnection,GeneralFieldViewProrocol{
         super.init()
         self.placeholder=self.title
     }
-    public func onEditingChanged()->OnEditingValiadtionChanged{
-        return { value,validation  in
-            if value == false{
-                self.error = validation?.messages.string ?? "";
-            }
-        }
-    }
+//    public func onEditingChanged()->OnEditingValiadtionChanged{
+//        return { value,validation  in
+//            if value == false{
+//                self.error = validation?.messages.string ?? "";
+//            }
+//        }
+//    }
 }
 public class Email:BaseValidation,GeneralConnection,GeneralFieldViewProrocol{
     @Published public var text:String?
@@ -119,15 +123,16 @@ public class Email:BaseValidation,GeneralConnection,GeneralFieldViewProrocol{
         super.init()
         self.placeholder=self.title
     }
-    public func onEditingChanged()->OnEditingValiadtionChanged{
-        return { value,validation  in
-            if value == false{
-                self.error = validation?.messages.string ?? "";
-            }
-        }
-    }
+//    public func onEditingChanged()->OnEditingValiadtionChanged{
+//        return { value,validation  in
+//            if value == false{
+//                self.error = validation?.messages.string ?? "";
+//            }
+//        }
+//    }
 }
 public class Requirements:BaseValidation,GeneralConnection,GeneralFieldViewProrocol{
+    
     @Published public var text:String?
     @Published public var placeholder: String?
     @Published public var error: String?
@@ -142,13 +147,13 @@ public class Requirements:BaseValidation,GeneralConnection,GeneralFieldViewProro
         super.init()
         self.placeholder=self.title
     }
-    public func onEditingChanged()->OnEditingValiadtionChanged{
-        return { value,validation  in
-            if value == false{
-                self.error = validation?.messages.string ?? "";
-            }
-        }
-    }
+//    public func onEditingChanged()->OnEditingValiadtionChanged{
+//        return { value,validation  in
+//            if value == false{
+//                self.error = validation?.messages.string ?? "";
+//            }
+//        }
+//    }
 }
 public class City:BaseValidation,GeneralConnection,GeneralFieldViewProrocol{
     @Published public var text:String?
@@ -165,13 +170,13 @@ public class City:BaseValidation,GeneralConnection,GeneralFieldViewProrocol{
         super.init()
         self.placeholder=self.title
     }
-    public func onEditingChanged()->OnEditingValiadtionChanged{
-        return { value,validation  in
-            if value == false{
-                self.error = validation?.messages.string ?? "";
-            }
-        }
-    }
+//    public func onEditingChanged()->OnEditingValiadtionChanged{
+//        return { value,validation  in
+//            if value == false{
+//                self.error = validation?.messages.string ?? "";
+//            }
+//        }
+//    }
 }
 public class Region:BaseValidation,GeneralConnection,GeneralFieldViewProrocol{
     @Published public var text:String?
@@ -188,13 +193,13 @@ public class Region:BaseValidation,GeneralConnection,GeneralFieldViewProrocol{
         super.init()
     self.placeholder=self.title
     }
-    public func onEditingChanged()->OnEditingValiadtionChanged{
-        return { value,validation  in
-            if value == false{
-                self.error = validation?.messages.string ?? "";
-            }
-        }
-    }
+//    public func onEditingChanged()->OnEditingValiadtionChanged{
+//        return { value,validation  in
+//            if value == false{
+//                self.error = validation?.messages.string ?? "";
+//            }
+//        }
+//    }
 }
 public class Location:BaseValidation,GeneralConnection,GeneralFieldViewProrocol{
     @Published public var text:String?
@@ -211,13 +216,13 @@ public class Location:BaseValidation,GeneralConnection,GeneralFieldViewProrocol{
         super.init()
     self.placeholder=self.title
     }
-    public func onEditingChanged()->OnEditingValiadtionChanged{
-        return { value,validation  in
-            if value == false{
-                self.error = validation?.messages.string ?? "";
-            }
-        }
-    }
+//    public func onEditingChanged()->OnEditingValiadtionChanged{
+//        return { value,validation  in
+//            if value == false{
+//                self.error = validation?.messages.string ?? "";
+//            }
+//        }
+//    }
 }
 public class Address:BaseValidation,GeneralConnection,GeneralFieldViewProrocol{
     @Published public var text:String?
@@ -234,13 +239,13 @@ public class Address:BaseValidation,GeneralConnection,GeneralFieldViewProrocol{
         super.init()
         self.placeholder=self.title
     }
-    public func onEditingChanged()->OnEditingValiadtionChanged{
-        return { value,validation  in
-            if value == false{
-                self.error = validation?.messages.string ?? "";
-            }
-        }
-    }
+//    public func onEditingChanged()->OnEditingValiadtionChanged{
+//        return { value,validation  in
+//            if value == false{
+//                self.error = validation?.messages.string ?? "";
+//            }
+//        }
+//    }
 }
 public class Description:BaseValidation,GeneralConnection,GeneralFieldViewProrocol{
     @Published public var text:String?
@@ -257,13 +262,13 @@ public class Description:BaseValidation,GeneralConnection,GeneralFieldViewProroc
         super.init()
     self.placeholder=self.title
     }
-    public func onEditingChanged()->OnEditingValiadtionChanged{
-        return { value,validation  in
-            if value == false{
-                self.error = validation?.messages.string ?? "";
-            }
-        }
-    }
+//    public func onEditingChanged()->OnEditingValiadtionChanged{
+//        return { value,validation  in
+//            if value == false{
+//                self.error = validation?.messages.string ?? "";
+//            }
+//        }
+//    }
 }
 public class Title:BaseValidation,GeneralConnection,GeneralFieldViewProrocol{
     @Published public var text:String?
@@ -280,13 +285,13 @@ public class Title:BaseValidation,GeneralConnection,GeneralFieldViewProrocol{
         super.init()
     self.placeholder=self.title
     }
-    public func onEditingChanged()->OnEditingValiadtionChanged{
-        return { value,validation  in
-            if value == false{
-                self.error = validation?.messages.string ?? "";
-            }
-        }
-    }
+//    public func onEditingChanged()->OnEditingValiadtionChanged{
+//        return { value,validation  in
+//            if value == false{
+//                self.error = validation?.messages.string ?? "";
+//            }
+//        }
+//    }
 }
 public class Password:BaseValidation,GeneralConnection,GeneralFieldViewProrocol{
     @Published public var text:String?
@@ -303,13 +308,13 @@ public class Password:BaseValidation,GeneralConnection,GeneralFieldViewProrocol{
         super.init()
     self.placeholder=self.title
     }
-    public func onEditingChanged()->OnEditingValiadtionChanged{
-        return { value,validation  in
-            if value == false{
-                self.error = validation?.messages.string ?? "";
-            }
-        }
-    }
+//    public func onEditingChanged()->OnEditingValiadtionChanged{
+//        return { value,validation  in
+//            if value == false{
+//                self.error = validation?.messages.string ?? "";
+//            }
+//        }
+//    }
 }
 //case newPassword="NewPassword"
 //case confirmPassword="ConfirmPassword"

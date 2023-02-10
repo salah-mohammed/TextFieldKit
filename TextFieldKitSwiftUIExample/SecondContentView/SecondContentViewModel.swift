@@ -30,6 +30,21 @@ class SecondContentViewModel:BaseViewModel{
     @Published var firstNameValidation = FirstName()
     @Published var requirementsValidation = Requirements()
     @Published var emailValidation = Email()
+    var fieldsManager:FieldsManager = FieldsManager();
+    
+    var companyFields:[FieldValiadtion]{
+    return [
+        userNameValidation,
+        fullNameValidation]
+    }
+    var allFields:[GeneralFieldViewProrocol]{
+    return [
+        userNameValidation,
+        fullNameValidation,
+        firstNameValidation,
+        requirementsValidation,
+        emailValidation]
+    }
     override init() {
         super.init();
         self.appendNested(userNameValidation);
@@ -37,10 +52,17 @@ class SecondContentViewModel:BaseViewModel{
         self.appendNested(firstNameValidation);
         self.appendNested(requirementsValidation);
         self.appendNested(emailValidation);
+        fieldsManager.requiredFieldsHandler = {
+            return self.companyFields
+        }
+        self.fieldsManager.fieldsHandler = {
+            return self.allFields;
+        }
+
     }
     func save()->(()->Void){
         return {
-            
+             self.fieldsManager.checkAll();
         }
     }
 }
