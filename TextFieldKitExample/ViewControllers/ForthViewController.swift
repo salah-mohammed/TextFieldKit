@@ -120,7 +120,7 @@ class ForthViewController: UIViewController {
     @IBAction func btnUploadFileId(_ sender:Any){
         viewUploadId.filePicked = Data();
 //        viewUploadId.clearError()
-        self.fieldsManager.checkField(field:viewUploadId)
+        self.fieldsManager.check(field:viewUploadId)
     }
     @IBAction func btnValid(_ sender:Any?){
         let all = self.fieldsManager.checkAll();

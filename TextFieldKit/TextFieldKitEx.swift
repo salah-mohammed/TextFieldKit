@@ -176,13 +176,13 @@ public class FieldsManager{
         didSet{
             for var field  in self.allFields{
                 (field as? GeneralFieldViewProrocol)?.fieldDidEnd = { internalFeild in
-                    self.checkField(field: field)
+                    self.check(field: field)
                 }
                 (field as? GeneralFieldViewProrocol)?.fieldDidEnd = { internalFeild in
-                    self.checkField(field: field)
+                    self.check(field: field)
                 }
                 (field as? GeneralFieldViewProrocol)?.onEditingChanged = { changed,internalFeild in
-                    self.checkField(field:field)
+                    self.check(field:field)
                 }
             }
         }
@@ -205,11 +205,11 @@ public class FieldsManager{
      public func checkAll()->[FieldError]{
         var messages:[FieldError] = [FieldError]();
         for field in allFields{
-        messages.append(contentsOf:self.checkField(field:field));
+        messages.append(contentsOf:self.check(field:field));
         }
     return messages
     }
-    @discardableResult public func checkField(field:FieldValiadtion)->[FieldError]{
+    @discardableResult public func check(field:FieldValiadtion)->[FieldError]{
         let contains = requiredFields.contains(where: {return $0 == field})
         var messages = field.messages
         let isNotRequired = messages.filter({$0.isRequired == false}) // validation error
