@@ -157,11 +157,15 @@ extension UIColor{
 #endif
 
 
-
+public extension FieldValiadtion {
+    func clearError(){
+        self.error=nil
+    }
+}
 public extension Array where Element == FieldValiadtion {
     func clearErrors(){
         for field in self{
-            field.error=nil
+            field.clearError()
         }
     }
 }
@@ -205,7 +209,7 @@ public class FieldsManager{
         }
     return messages
     }
-    @discardableResult func checkField(field:FieldValiadtion)->[FieldError]{
+    @discardableResult public func checkField(field:FieldValiadtion)->[FieldError]{
         let contains = requiredFields.contains(where: {return $0 == field})
         var messages = field.messages
         let isNotRequired = messages.filter({$0.isRequired == false}) // validation error

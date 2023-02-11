@@ -377,7 +377,7 @@
                                 <rect key="frame" x="0.0" y="92" width="414" height="770"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="FR3-3R-ffH">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1028"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1106"/>
                                         <subviews>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ctG-aa-zYv">
                                                 <rect key="frame" x="16" y="32" width="382" height="41"/>
@@ -458,8 +458,35 @@
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="55" id="aOY-9G-yme"/>
                                                 </constraints>
                                             </view>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Yfa-rd-fvL">
+                                                <rect key="frame" x="16" y="662" width="382" height="70"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FN8-nO-XTW" customClass="UoploadView" customModule="TextFieldKitExample" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="50"/>
+                                                        <color key="backgroundColor" red="0.92067920918367352" green="0.93763286564625847" blue="0.95014880952380953" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="Upload Your ID File"/>
+                                                        <connections>
+                                                            <action selector="btnUploadFileId:" destination="E7X-LB-I4K" eventType="touchUpInside" id="sxk-P7-Um7"/>
+                                                            <outlet property="txtTitle" destination="M7O-Wt-VtZ" id="MQm-4A-Zwz"/>
+                                                        </connections>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M7O-Wt-VtZ">
+                                                        <rect key="frame" x="0.0" y="50" width="382" height="20"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="20" id="OCx-dg-OGc"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                        <color key="textColor" systemColor="systemRedColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="70" id="ocU-Sz-Li6"/>
+                                                </constraints>
+                                            </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ppx-GS-rne" customClass="RequirementsField" customModule="TextFieldKitExample" customModuleProvider="target">
-                                                <rect key="frame" x="16" y="662" width="382" height="300"/>
+                                                <rect key="frame" x="16" y="740" width="382" height="300"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="300" id="fbO-y9-c2U"/>
@@ -469,7 +496,7 @@
                                                 </connections>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dqo-ki-LOF">
-                                                <rect key="frame" x="16" y="970" width="382" height="50"/>
+                                                <rect key="frame" x="16" y="1048" width="382" height="50"/>
                                                 <color key="backgroundColor" systemColor="tintColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="n7m-rD-EW5"/>
@@ -483,7 +510,7 @@
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kQ0-8P-dlF">
-                                                <rect key="frame" x="16" y="1028" width="382" height="0.0"/>
+                                                <rect key="frame" x="16" y="1106" width="382" height="0.0"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             </view>
                                         </subviews>
@@ -528,6 +555,7 @@
                         <outlet property="txtPasswordField" destination="BM6-2Q-VdC" id="fN0-Jy-lul"/>
                         <outlet property="txtRequirements" destination="ppx-GS-rne" id="gEA-cN-yrd"/>
                         <outlet property="txtTitle" destination="jfj-nO-OXV" id="S5i-du-gft"/>
+                        <outlet property="viewUploadId" destination="FN8-nO-XTW" id="KSG-si-HNk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lRg-kc-sBF" sceneMemberID="firstResponder"/>
@@ -543,6 +571,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tintColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

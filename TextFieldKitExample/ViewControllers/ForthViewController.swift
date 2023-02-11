@@ -12,7 +12,26 @@ case user=0
 case company=1
 }
 
+class UoploadView:UIButton,FieldValiadtion{
+    var filePicked:Data?=nil
+    @IBOutlet weak var txtTitle:UILabel!
 
+    var messages: [TextFieldKit.FieldError]{
+        if self.filePicked == nil {
+            return [.required(self.title)]
+        }
+     return []
+    }
+    var title: String{
+     return "Id Photo"
+    }
+    var error: String?{
+        didSet{
+            txtTitle.text=error
+        }
+    }
+    
+}
 class ForthViewController: UIViewController {
     @IBOutlet weak var txtAdvancedPhoneNumber:AdvancedPhoneNumber!
     @IBOutlet weak var txtLocationTextField:LocationTextField!
@@ -24,6 +43,7 @@ class ForthViewController: UIViewController {
     @IBOutlet weak var txtPasswordField:PasswordField!
     @IBOutlet weak var txtEmail:EmailField!
     @IBOutlet weak var txtCity:CustomCityField!
+    @IBOutlet weak var viewUploadId:UoploadView!
     @IBOutlet weak var segmentedControl:UISegmentedControl!
     
     var userType:UserType?{
@@ -45,7 +65,8 @@ class ForthViewController: UIViewController {
     txtEmail,
     txtTitle,
     txtCity,
-    txtRequirements]
+    txtRequirements,
+    viewUploadId]
    }
     // userCheck
     var userFields:[FieldValiadtion]{
@@ -67,7 +88,8 @@ class ForthViewController: UIViewController {
         txtEmail,
         txtTitle,
         txtCity,
-        txtRequirements]
+        txtRequirements,
+        viewUploadId]
     }
     // currentCheck
     var fields:[FieldValiadtion]{
@@ -94,6 +116,11 @@ class ForthViewController: UIViewController {
     @IBAction func btnUserType(_ sender:UISegmentedControl){
         self.userType = UserType.init(rawValue:sender.selectedSegmentIndex)
         self.fieldsManager.clearErrors()
+    }
+    @IBAction func btnUploadFileId(_ sender:Any){
+        viewUploadId.filePicked = Data();
+//        viewUploadId.clearError()
+        self.fieldsManager.checkField(field:viewUploadId)
     }
     @IBAction func btnValid(_ sender:Any?){
         let all = self.fieldsManager.checkAll();
