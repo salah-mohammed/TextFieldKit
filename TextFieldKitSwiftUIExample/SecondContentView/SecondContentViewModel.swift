@@ -24,13 +24,13 @@ public class BaseViewModel:NSObject,ObservableObject{
     }
 }
 
-class SecondContentViewModel:BaseViewModel{
-    @Published var userNameValidation = Username()
-    @Published var fullNameValidation = FullName()
-    @Published var firstNameValidation = FirstName()
-    @Published var requirementsValidation = Requirements()
-    @Published var emailValidation = Email()
-    var fieldsManager:FieldsManager = FieldsManager();
+public class SecondContentViewModel:BaseViewModel{
+    @Published public var userNameValidation = Username()
+    @Published public var fullNameValidation = FullName()
+    @Published public var firstNameValidation = FirstName()
+    @Published public var requirementsValidation = Requirements()
+    @Published public var emailValidation = Email()
+    public var fieldsManager:FieldsManager = FieldsManager();
     
     var companyFields:[FieldValiadtion]{
     return [
@@ -45,7 +45,7 @@ class SecondContentViewModel:BaseViewModel{
         requirementsValidation,
         emailValidation]
     }
-    override init() {
+    public override init() {
         super.init();
         self.appendNested(userNameValidation);
         self.appendNested(fullNameValidation);

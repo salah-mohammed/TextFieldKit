@@ -50,6 +50,7 @@
 		50133A85298BCA6866BD8538 /* Pods_TextFieldKitSwiftUIExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8C2FB58F4427B4C3D408067 /* Pods_TextFieldKitSwiftUIExample.framework */; };
 		8B091F50290D0B6800D38C91 /* SUIPhoneNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B091F4F290D0B6800D38C91 /* SUIPhoneNumberView.swift */; };
 		8B104AB829A76B52002A014D /* FieldsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B104AB729A76B52002A014D /* FieldsManager.swift */; };
+		8B104AC029A76CAD002A014D /* TextFieldKitSwiftUIExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B104ABF29A76CAD002A014D /* TextFieldKitSwiftUIExampleTests.swift */; };
 		8B31E6D22994047800AA7421 /* SUIBusinessFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE9876D28F1720A001275F3 /* SUIBusinessFields.swift */; };
 		8B31E6D42994087C00AA7421 /* PhoneNumberField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EB6807A274A56D800363E69 /* PhoneNumberField.xib */; };
 		8B31E6D5299409A300AA7421 /* BusinessFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDF13FD278AFE840095A02D /* BusinessFields.swift */; };
@@ -83,6 +84,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 4E46B761272A8B2300DCB3B4;
 			remoteInfo = TextFieldKit;
+		};
+		8B104AC129A76CAD002A014D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4E46B759272A8B2300DCB3B4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4EDD5D4828EB8C1000837705;
+			remoteInfo = TextFieldKitSwiftUIExample;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -163,6 +171,8 @@
 		4EF57CA727A011DC000CFD0E /* ForthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForthViewController.swift; sourceTree = "<group>"; };
 		8B091F4F290D0B6800D38C91 /* SUIPhoneNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUIPhoneNumberView.swift; sourceTree = "<group>"; };
 		8B104AB729A76B52002A014D /* FieldsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldsManager.swift; sourceTree = "<group>"; };
+		8B104ABD29A76CAD002A014D /* TextFieldKitSwiftUIExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TextFieldKitSwiftUIExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B104ABF29A76CAD002A014D /* TextFieldKitSwiftUIExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldKitSwiftUIExampleTests.swift; sourceTree = "<group>"; };
 		8B31E6DA2994128F00AA7421 /* PhoneNumberField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneNumberField.swift; sourceTree = "<group>"; };
 		8B31E6DE2994176F00AA7421 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		8B31E6E52994317300AA7421 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -206,6 +216,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8B104ABA29A76CAD002A014D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -228,6 +245,7 @@
 				4E46B764272A8B2300DCB3B4 /* TextFieldKit */,
 				4E46B772272A8B7D00DCB3B4 /* TextFieldKitExample */,
 				4EDD5D4A28EB8C1000837705 /* TextFieldKitSwiftUIExample */,
+				8B104ABE29A76CAD002A014D /* TextFieldKitSwiftUIExampleTests */,
 				4E46B763272A8B2300DCB3B4 /* Products */,
 				4EA57E1B2746580400C183A2 /* Frameworks */,
 				1B5D7DBD1650050D2F87D018 /* Pods */,
@@ -240,6 +258,7 @@
 				4E46B762272A8B2300DCB3B4 /* TextFieldKit.framework */,
 				4E46B771272A8B7D00DCB3B4 /* TextFieldKitExample.app */,
 				4EDD5D4928EB8C1000837705 /* TextFieldKitSwiftUIExample.app */,
+				8B104ABD29A76CAD002A014D /* TextFieldKitSwiftUIExampleTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -332,6 +351,14 @@
 				4EDD5D5228EB8C1200837705 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		8B104ABE29A76CAD002A014D /* TextFieldKitSwiftUIExampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				8B104ABF29A76CAD002A014D /* TextFieldKitSwiftUIExampleTests.swift */,
+			);
+			path = TextFieldKitSwiftUIExampleTests;
 			sourceTree = "<group>";
 		};
 		8B31E6D82994123E00AA7421 /* ViewControllers */ = {
@@ -467,6 +494,24 @@
 			productReference = 4EDD5D4928EB8C1000837705 /* TextFieldKitSwiftUIExample.app */;
 			productType = "com.apple.product-type.application";
 		};
+		8B104ABC29A76CAD002A014D /* TextFieldKitSwiftUIExampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8B104AC529A76CAD002A014D /* Build configuration list for PBXNativeTarget "TextFieldKitSwiftUIExampleTests" */;
+			buildPhases = (
+				8B104AB929A76CAD002A014D /* Sources */,
+				8B104ABA29A76CAD002A014D /* Frameworks */,
+				8B104ABB29A76CAD002A014D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8B104AC229A76CAD002A014D /* PBXTargetDependency */,
+			);
+			name = TextFieldKitSwiftUIExampleTests;
+			productName = TextFieldKitSwiftUIExampleTests;
+			productReference = 8B104ABD29A76CAD002A014D /* TextFieldKitSwiftUIExampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -485,6 +530,10 @@
 					};
 					4EDD5D4828EB8C1000837705 = {
 						CreatedOnToolsVersion = 14.0;
+					};
+					8B104ABC29A76CAD002A014D = {
+						CreatedOnToolsVersion = 14.0.1;
+						TestTargetID = 4EDD5D4828EB8C1000837705;
 					};
 				};
 			};
@@ -505,6 +554,7 @@
 				4E46B761272A8B2300DCB3B4 /* TextFieldKit */,
 				4E46B770272A8B7D00DCB3B4 /* TextFieldKitExample */,
 				4EDD5D4828EB8C1000837705 /* TextFieldKitSwiftUIExample */,
+				8B104ABC29A76CAD002A014D /* TextFieldKitSwiftUIExampleTests */,
 			);
 		};
 /* End PBXProject section */
@@ -540,6 +590,13 @@
 			files = (
 				4EDD5D5328EB8C1200837705 /* Preview Assets.xcassets in Resources */,
 				4EDD5D5028EB8C1200837705 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B104ABB29A76CAD002A014D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -708,6 +765,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8B104AB929A76CAD002A014D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B104AC029A76CAD002A014D /* TextFieldKitSwiftUIExampleTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -720,6 +785,11 @@
 			isa = PBXTargetDependency;
 			target = 4E46B761272A8B2300DCB3B4 /* TextFieldKit */;
 			targetProxy = 4ECAA1D328F0134E00FBDD86 /* PBXContainerItemProxy */;
+		};
+		8B104AC229A76CAD002A014D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4EDD5D4828EB8C1000837705 /* TextFieldKitSwiftUIExample */;
+			targetProxy = 8B104AC129A76CAD002A014D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1038,6 +1108,46 @@
 			};
 			name = Release;
 		};
+		8B104AC329A76CAD002A014D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8C7RSZ7C3V;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ad.TextFieldKitSwiftUIExampleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TextFieldKitSwiftUIExample.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TextFieldKitSwiftUIExample";
+			};
+			name = Debug;
+		};
+		8B104AC429A76CAD002A014D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8C7RSZ7C3V;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ad.TextFieldKitSwiftUIExampleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TextFieldKitSwiftUIExample.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TextFieldKitSwiftUIExample";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1073,6 +1183,15 @@
 			buildConfigurations = (
 				4EDD5D5428EB8C1200837705 /* Debug */,
 				4EDD5D5528EB8C1200837705 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8B104AC529A76CAD002A014D /* Build configuration list for PBXNativeTarget "TextFieldKitSwiftUIExampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B104AC329A76CAD002A014D /* Debug */,
+				8B104AC429A76CAD002A014D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
