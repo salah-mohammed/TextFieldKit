@@ -12,39 +12,39 @@ case user=0
 case company=1
 }
 
-class UoploadView:UIButton,FieldValiadtion{
+public class UoploadView:UIButton,FieldValiadtion{
     var filePicked:Data?=nil
     @IBOutlet weak var txtTitle:UILabel!
 
-    var messages: [TextFieldKit.FieldError]{
+    public var messages: [TextFieldKit.FieldError]{
         if self.filePicked == nil {
             return [.required(self.title)]
         }
      return []
     }
-    var title: String{
+    public var title: String{
      return "Id Photo"
     }
-    var error: String?{
+    public var error: String?{
         didSet{
-            txtTitle.text=error
+            txtTitle?.text=error
         }
     }
     
 }
-class ForthViewController: UIViewController {
-    @IBOutlet weak var txtAdvancedPhoneNumber:AdvancedPhoneNumber!
-    @IBOutlet weak var txtLocationTextField:LocationTextField!
-    @IBOutlet weak var txtTitle:TitleField!
-    @IBOutlet weak var txtFullName:FullNameField!
-    @IBOutlet weak var txtRequirements:RequirementsField!
-    @IBOutlet weak var txtNewPassword:NewPasswordField!
-    @IBOutlet weak var txtConfirmPassword:ConfirmPasswordField!
-    @IBOutlet weak var txtPasswordField:PasswordField!
-    @IBOutlet weak var txtEmail:EmailField!
-    @IBOutlet weak var txtCity:CustomCityField!
-    @IBOutlet weak var viewUploadId:UoploadView!
-    @IBOutlet weak var segmentedControl:UISegmentedControl!
+public class ForthViewController: UIViewController {
+    @IBOutlet public weak var txtAdvancedPhoneNumber:AdvancedPhoneNumber!=AdvancedPhoneNumber()
+    @IBOutlet public weak var txtLocationTextField:LocationTextField!=LocationTextField()
+    @IBOutlet public weak var txtTitle:TitleField!=TitleField()
+    @IBOutlet public weak var txtFullName:FullNameField!=FullNameField()
+    @IBOutlet public weak var txtRequirements:RequirementsField!=RequirementsField()
+    @IBOutlet public weak var txtNewPassword:NewPasswordField!=NewPasswordField()
+    @IBOutlet public weak var txtConfirmPassword:ConfirmPasswordField!=ConfirmPasswordField()
+    @IBOutlet public weak var txtPasswordField:PasswordField!=PasswordField()
+    @IBOutlet public weak var txtEmail:EmailField!=EmailField()
+    @IBOutlet public weak var txtCity:CustomCityField!=CustomCityField()
+    @IBOutlet public weak var viewUploadId:UoploadView!=UoploadView()
+    @IBOutlet public weak var segmentedControl:UISegmentedControl!
     
     var userType:UserType?{
         didSet{
@@ -54,7 +54,7 @@ class ForthViewController: UIViewController {
         }
     }
     // all
-    var allFields:[FieldValiadtion]{
+    public var allFields:[FieldValiadtion]{
     return [
     txtAdvancedPhoneNumber,
     txtLocationTextField,
@@ -69,7 +69,7 @@ class ForthViewController: UIViewController {
     viewUploadId]
    }
     // userCheck
-    var userFields:[FieldValiadtion]{
+    public var userFields:[FieldValiadtion]{
     return [
         txtFullName,
         txtPasswordField,
@@ -77,7 +77,7 @@ class ForthViewController: UIViewController {
         txtConfirmPassword]
     }
     // companyCheck
-    var companyFields:[FieldValiadtion]{
+    public var companyFields:[FieldValiadtion]{
     return [
         txtAdvancedPhoneNumber,
         txtLocationTextField,
@@ -92,11 +92,14 @@ class ForthViewController: UIViewController {
         viewUploadId]
     }
     // currentCheck
-    var fields:[FieldValiadtion]{
+    public var fields:[FieldValiadtion]{
         return  self.userType == .user ? self.userFields:self.companyFields
     }
-    var fieldsManager:FieldsManager = FieldsManager();
-    override func viewDidLoad() {
+    public var fieldsManager:FieldsManager = FieldsManager();
+    public static var copy:ForthViewController{
+        return  ForthViewController(nibName: nil, bundle: nil)
+    }
+    public override func viewDidLoad() {
         super.viewDidLoad()
         setupView();
         localized();
@@ -105,7 +108,7 @@ class ForthViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-    override func viewDidAppear(_ animated: Bool) {
+    public override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated);
         
 
@@ -128,6 +131,10 @@ class ForthViewController: UIViewController {
             all.showAlert(self, handler: nil);
         }
     }
+//     init() {
+//        super.init()
+//    }
+   
 }
 
 // MARK: - Base Methods

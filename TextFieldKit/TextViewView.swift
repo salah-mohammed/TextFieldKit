@@ -83,13 +83,21 @@ open class TextViewView:UIView,GeneralFieldViewProrocol,FieldStyleProrocol {
             self.txtField.placeholder = placeholder;
         }
     }
+    var textRepository:String?
     open var text:String?{
         set{
-            self.txtField.text = newValue;
-            self.didEndEditing(txtField.text);
+            self.txtField?.text = newValue;
+            self.didEndEditing(text);
+            if self.txtField == nil {
+                textRepository = newValue
+            }
         }
         get{
-            return self.txtField.text;
+            if self.txtField == nil {
+            return textRepository
+            }else{
+                return self.txtField.text;
+            }
         }
      }
     open var error: String?{
@@ -132,6 +140,9 @@ open class TextViewView:UIView,GeneralFieldViewProrocol,FieldStyleProrocol {
     public static var fieldDidChange:FieldHandler?
     public static var fieldDidBeginEditing:FieldHandler?
     
+    public init() {
+        super.init(frame: CGRect.init())
+    }
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         xibSetup()

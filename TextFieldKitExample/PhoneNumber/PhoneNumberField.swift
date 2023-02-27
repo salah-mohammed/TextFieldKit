@@ -38,6 +38,12 @@ open class PhoneNumberField: TextFieldView {
              self.lblCountryCode.text=countryCode;
          }
      }
+    public override init() {
+        super.init()
+    }
+    required public init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
     open override func awakeFromNib() {
         super.awakeFromNib();
         self.placeholder=AppTexts.PhoneNumber;

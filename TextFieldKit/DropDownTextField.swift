@@ -61,6 +61,12 @@ open class DropDownTextField: TextFieldView {
                 self.stackViewDropDown.directionalLayoutMargins = NSDirectionalEdgeInsets.init(top: 0, leading:spaceBetweenTextAndDropDownIcon, bottom: 0, trailing: trailing)
             }
     }
+    public override init() {
+        super.init()
+    }
+    required public init?(coder aDecoder: NSCoder) {
+       super.init(coder: aDecoder)
+    }
     @IBAction func btnDropdown(_ sender:UIButton){
         dropDownHandler?(self);
     }

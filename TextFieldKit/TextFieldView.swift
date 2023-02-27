@@ -50,13 +50,21 @@ open class TextFieldView: UIView,GeneralFieldViewProrocol,FieldStyleProrocol {
             self.indicatorHeight = self.style.indicatorHeight;
         }
     }
+    var textRepository:String?
     open var text:String?{
         set{
-            self.txtField.text = newValue;
+            self.txtField?.text = newValue;
             self.endEditingField(text);
+            if self.txtField == nil {
+                textRepository = newValue
+            }
         }
         get{
-            return self.txtField.text;
+            if self.txtField == nil {
+            return textRepository
+            }else{
+                return self.txtField.text;
+            }
         }
      }
    open var placeholder:String?{
@@ -100,6 +108,9 @@ open class TextFieldView: UIView,GeneralFieldViewProrocol,FieldStyleProrocol {
 //    public static var fieldValueChanged:FieldHandler?
 //    public static var fieldDidBegin:FieldHandler?
     
+    public init() {
+        super.init(frame: CGRect.init())
+    }
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         xibSetup()
@@ -196,15 +207,15 @@ open class TextFieldView: UIView,GeneralFieldViewProrocol,FieldStyleProrocol {
     // MARK:Customisable
     open func selectedStyle(){
         self.indicatorColor(self.style.selected?.indicatorColor)
-        self.lblTitle.textColor = self.style.selected?.titleColor;
-        self.txtField.textColor = self.style.selected?.textColor
+        self.lblTitle?.textColor = self.style.selected?.titleColor;
+        self.txtField?.textColor = self.style.selected?.textColor
         self.showLabelTitle();
     }
     // MARK:Customisable
     open func normalStyle(){
         self.indicatorColor(self.style.normal?.indicatorColor)
-        self.lblTitle.textColor = self.style.normal?.titleColor;
-        self.txtField.textColor = self.style.normal?.textColor
+        self.lblTitle?.textColor = self.style.normal?.titleColor;
+        self.txtField?.textColor = self.style.normal?.textColor
         if self.style.autoHideTitle{
         self.hideLabelTitle();
         }
@@ -212,8 +223,8 @@ open class TextFieldView: UIView,GeneralFieldViewProrocol,FieldStyleProrocol {
     // MARK:Customisable
     open func filledStyle(){
         self.indicatorColor(self.style.filled?.indicatorColor)
-        self.lblTitle.textColor = self.style.filled?.titleColor;
-        self.txtField.textColor = self.style.filled?.textColor
+        self.lblTitle?.textColor = self.style.filled?.titleColor;
+        self.txtField?.textColor = self.style.filled?.textColor
         self.showLabelTitle();
     }
     func indicatorColor(_ color:UIColor?){
@@ -225,14 +236,14 @@ open class TextFieldView: UIView,GeneralFieldViewProrocol,FieldStyleProrocol {
 //        UIView.transition(with: lblTitle, duration: 0.3,
 //                          options: .allowAnimatedContent,
 //                          animations: {
-            self.lblTitle.isHidden=false;
+            self.lblTitle?.isHidden=false;
 //                      })
     }
     private func hideLabelTitle(){
 //        UIView.transition(with: lblTitle, duration: 0.3,
 //                          options: .allowAnimatedContent,
 //                          animations: {
-            self.lblTitle.isHidden=true;
+            self.lblTitle?.isHidden=true;
 //                      })
     }
 }

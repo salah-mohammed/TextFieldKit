@@ -9,8 +9,8 @@ import Foundation
 import TextFieldKit
 import UIKit
 // this for app busines only
-class CustomCityField:DropDownTextField,FieldValiadtion{
-    var title: String{
+public class CustomCityField:DropDownTextField,FieldValiadtion{
+    public var title: String{
      return ""
     }
     
@@ -21,7 +21,7 @@ class CustomCityField:DropDownTextField,FieldValiadtion{
             }
         }
     }
-    var messages:[FieldError]{
+    public var messages:[FieldError]{
         if self.object == nil {
             return  [.required(self.placeholder ?? ""),.otherRequired("city not correct")]
         }

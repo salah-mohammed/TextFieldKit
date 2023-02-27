@@ -35,7 +35,7 @@ open class ConfirmPasswordField:TextFieldView,GeneralConnection{
     public var title:String{
         return AppTexts.ConfirmPassword
     }
-    @IBOutlet weak open var txtNewPasswordField: NewPasswordField?
+     @IBOutlet weak open var txtNewPasswordField: NewPasswordField?
     
     public var messages:[FieldError]{
         return self.confirmPassword(txtNewPasswordField);
@@ -204,6 +204,7 @@ open class LocationTextField:DropDownTextField,GeneralConnection{
     open var failure: LocationPickerViewController.failureClosure?
     open var cancel: LocationPickerViewController.cancelClosure?
     var locationPicker:LocationPickerViewController?
+    
     open override func awakeFromNib(){
         super.awakeFromNib();
         self.placeholder = self.title;
