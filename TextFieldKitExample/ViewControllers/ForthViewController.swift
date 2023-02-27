@@ -13,6 +13,7 @@ case company=1
 }
 
 public class UoploadView:UIButton,FieldValiadtion{
+    public var getText: (() -> String?)?
     var filePicked:Data?=nil
     @IBOutlet weak var txtTitle:UILabel!
 
@@ -33,18 +34,18 @@ public class UoploadView:UIButton,FieldValiadtion{
     
 }
 public class ForthViewController: UIViewController {
-    @IBOutlet public weak var txtAdvancedPhoneNumber:AdvancedPhoneNumber!=AdvancedPhoneNumber()
-    @IBOutlet public weak var txtLocationTextField:LocationTextField!=LocationTextField()
-    @IBOutlet public weak var txtTitle:TitleField!=TitleField()
-    @IBOutlet public weak var txtFullName:FullNameField!=FullNameField()
-    @IBOutlet public weak var txtRequirements:RequirementsField!=RequirementsField()
-    @IBOutlet public weak var txtNewPassword:NewPasswordField!=NewPasswordField()
-    @IBOutlet public weak var txtConfirmPassword:ConfirmPasswordField!=ConfirmPasswordField()
-    @IBOutlet public weak var txtPasswordField:PasswordField!=PasswordField()
-    @IBOutlet public weak var txtEmail:EmailField!=EmailField()
-    @IBOutlet public weak var txtCity:CustomCityField!=CustomCityField()
-    @IBOutlet public weak var viewUploadId:UoploadView!=UoploadView()
-    @IBOutlet public weak var segmentedControl:UISegmentedControl!
+    @IBOutlet public var txtAdvancedPhoneNumber:AdvancedPhoneNumber!=AdvancedPhoneNumber()
+    @IBOutlet public var txtLocationTextField:LocationTextField!=LocationTextField()
+    @IBOutlet public var txtTitle:TitleField!=TitleField()
+    @IBOutlet public var txtFullName:FullNameField!=FullNameField()
+    @IBOutlet public var txtRequirements:RequirementsField!=RequirementsField()
+    @IBOutlet public var txtNewPassword:NewPasswordField!=NewPasswordField()
+    @IBOutlet public var txtConfirmPassword:ConfirmPasswordField!=ConfirmPasswordField()
+    @IBOutlet public var txtPasswordField:PasswordField!=PasswordField()
+    @IBOutlet public var txtEmail:EmailField!=EmailField()
+    @IBOutlet public var txtCity:CustomCityField!=CustomCityField()
+    @IBOutlet public var viewUploadId:UoploadView!=UoploadView()
+    @IBOutlet public var segmentedControl:UISegmentedControl!
     
     var userType:UserType?{
         didSet{

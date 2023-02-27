@@ -14,6 +14,7 @@ import PhoneKit
 
 public typealias FieldHandler = (GeneralFieldViewProrocol)->Void
 open class TextFieldView: UIView,GeneralFieldViewProrocol,FieldStyleProrocol {
+    
     public var onEditingChanged: OnEditingValiadtionChanged?
     
     // MARK:Customisable
@@ -103,6 +104,8 @@ open class TextFieldView: UIView,GeneralFieldViewProrocol,FieldStyleProrocol {
     open var fieldDidEnd:FieldHandler?//=TextFieldView.fieldDidEnd
     open var fieldValueChanged:FieldHandler?//=TextFieldView.fieldValueChanged
     open var fieldDidBegin:FieldHandler?//=TextFieldView.fieldDidBegin
+    public var fieldValiadtion: FieldValiadtion?
+
     var tapGestureRecognizer:UITapGestureRecognizer?
 //    public static var fieldDidEnd:FieldHandler?
 //    public static var fieldValueChanged:FieldHandler?

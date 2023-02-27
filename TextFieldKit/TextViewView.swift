@@ -139,7 +139,8 @@ open class TextViewView:UIView,GeneralFieldViewProrocol,FieldStyleProrocol {
     public static var fieldDidEnd:FieldHandler?
     public static var fieldDidChange:FieldHandler?
     public static var fieldDidBeginEditing:FieldHandler?
-    
+    public var fieldValiadtion: FieldValiadtion?
+
     public init() {
         super.init(frame: CGRect.init())
     }

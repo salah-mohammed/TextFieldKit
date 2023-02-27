@@ -18,6 +18,7 @@ import LocationPicker
 
 // MARK: NewPasswordField
 open class NewPasswordField:TextFieldView,GeneralConnection{
+    public var getText: (() -> String?)?
     public var title: String{
         return AppTexts.NewPassword
     }
@@ -32,6 +33,7 @@ open class NewPasswordField:TextFieldView,GeneralConnection{
 }
 // MARK: ConfirmPasswordField
 open class ConfirmPasswordField:TextFieldView,GeneralConnection{
+    public var getText: (() -> String?)?
     public var title:String{
         return AppTexts.ConfirmPassword
     }
@@ -48,6 +50,7 @@ open class ConfirmPasswordField:TextFieldView,GeneralConnection{
 }
 // MARK: PasswordField
 open class PasswordField:TextFieldView,GeneralConnection{
+    public var getText: (() -> String?)?
     public var title: String{
         return AppTexts.Password
     }
@@ -63,6 +66,7 @@ open class PasswordField:TextFieldView,GeneralConnection{
 }
 // MARK: UserNameField
 open class UserNameField:TextFieldView,GeneralConnection{
+    public var getText: (() -> String?)?
     public var title:String{
         return AppTexts.UserName
     }
@@ -76,6 +80,7 @@ open class UserNameField:TextFieldView,GeneralConnection{
 }
 // MARK: FullNameField
 open class FullNameField:TextFieldView,GeneralConnection{
+    public var getText: (() -> String?)?
     public var title:String{
         return AppTexts.FullName
     }
@@ -89,6 +94,7 @@ open class FullNameField:TextFieldView,GeneralConnection{
 }
 // MARK: EmailField
 open class EmailField:TextFieldView,GeneralConnection{
+    public var getText: (() -> String?)?
     public var title:String{
         return AppTexts.Email
     }
@@ -102,6 +108,7 @@ open class EmailField:TextFieldView,GeneralConnection{
 }
 // MARK: TitleField
 open class TitleField:TextFieldView,GeneralConnection{
+    public var getText: (() -> String?)?
     public var title: String{
         return AppTexts.Title
     }
@@ -115,6 +122,7 @@ open class TitleField:TextFieldView,GeneralConnection{
 }
 // MARK: DescriptionField
 open class DescriptionField:TextViewView,GeneralConnection{
+    public var getText: (() -> String?)?
     public var title:String{
         return AppTexts.Description
     }
@@ -128,6 +136,7 @@ open class DescriptionField:TextViewView,GeneralConnection{
 }
 // MARK: AddressField
 open class AddressField:TextFieldView,GeneralConnection{
+    public var getText: (() -> String?)?
     public var title:String{
         return AppTexts.Address
     }
@@ -141,6 +150,7 @@ open class AddressField:TextFieldView,GeneralConnection{
 }
 // MARK: RequirementsField
 open class RequirementsField:TextViewView,GeneralConnection{
+    public var getText: (() -> String?)?
     public var title:String{
         return AppTexts.Requirements
     }
@@ -155,6 +165,7 @@ open class RequirementsField:TextViewView,GeneralConnection{
 #if canImport(PhoneKit)
 // MARK: CustomePhoneNumber
 open class AdvancedPhoneNumber:PhoneNumberField,GeneralConnection{
+    public var getText: (() -> String?)?
     public var title: String{
         return AppTexts.PhoneNumber
     }
@@ -187,6 +198,7 @@ open class AdvancedPhoneNumber:PhoneNumberField,GeneralConnection{
 #endif
 #if canImport(LocationPicker)
 open class LocationTextField:DropDownTextField,GeneralConnection{
+    public var getText: (() -> String?)?
     public var title: String{
         return AppTexts.Location
     }
@@ -232,6 +244,7 @@ open class LocationTextField:DropDownTextField,GeneralConnection{
 
 // MARK: CityField
 open class CityField:DropDownTextField,GeneralConnection{
+    public var getText: (() -> String?)?
     public var title: String{
         return AppTexts.City
     }
@@ -241,6 +254,8 @@ open class CityField:DropDownTextField,GeneralConnection{
 }
 // MARK: RegionField
 open class RegionField:DropDownTextField,GeneralConnection,FieldValiadtion{
+    public var getText: (() -> String?)?
+
     public var title:String{
         return AppTexts.Region
     }

@@ -10,6 +10,8 @@ import TextFieldKit
 import UIKit
 // this for app busines only
 public class CustomCityField:DropDownTextField,FieldValiadtion{
+    public var getText: (() -> String?)?
+
     public var title: String{
      return ""
     }

@@ -7,17 +7,21 @@
 
 import Foundation
 // MARK: FieldValiadtion
+//public protocol AdvancedFieldValiadtion:FieldValiadtion{
+//}
 public protocol FieldValiadtion:NSObject{
     var messages:[FieldError] {get};
     var title:String{get};
     var error:String?{set get};
+    var getText:(()->String?)?{set get}
 }
 // MARK: GeneralFieldViewProrocol
 public protocol GeneralFieldViewProrocol:NSObject{
 var text:String? {set get};
 var placeholder:String? {set get};
 var error:String?{set get};
-    
+var fieldValiadtion:FieldValiadtion?{set get}
+
 var fieldDidEnd:FieldHandler?{set get}
 var onEditingChanged:OnEditingValiadtionChanged?{set get}
 }
