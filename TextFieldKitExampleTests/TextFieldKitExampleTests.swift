@@ -35,10 +35,10 @@ final class TextFieldKitExampleTests: XCTestCase {
     }
     func ForthViewControllerUserFourm(){
         self.forthViewController.fieldsManager.requiredFieldsHandler = {
-            return self.forthViewController.userFields
+            return self.forthViewController.userFields.compactMap({$0})
         }
         self.forthViewController.fieldsManager.fieldsHandler = {
-        return self.forthViewController.allFields;
+            return self.forthViewController.allFields.compactMap({$0})
         }
         forthViewController.txtFullName.text=""
         forthViewController.txtPasswordField.text=""

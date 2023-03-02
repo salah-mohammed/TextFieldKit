@@ -36,7 +36,7 @@ extension GeneralFieldViewProrocol where Self: GeneralConnection {
         return messages;
     }
 #endif
-    func confirmPassword(_ txtNewPasswordField:NewPasswordField?)->[FieldError]{
+    func confirmPassword(_ txtNewPasswordField:NewPasswordValidation?)->[FieldError]{
         var messages:[FieldError]=[FieldError]();
         if ((self.text?.count ?? 0) == 0) || (self.text?.isEmpty ?? true){
             messages.append(.required(self.title))

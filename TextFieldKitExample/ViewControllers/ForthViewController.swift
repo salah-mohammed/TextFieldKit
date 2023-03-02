@@ -34,17 +34,17 @@ public class UoploadView:UIButton,FieldValiadtion{
     
 }
 public class ForthViewController: UIViewController {
-    @IBOutlet public var txtAdvancedPhoneNumber:AdvancedPhoneNumber!=AdvancedPhoneNumber()
-    @IBOutlet public var txtLocationTextField:LocationTextField!=LocationTextField()
-    @IBOutlet public var txtTitle:TitleField!=TitleField()
-    @IBOutlet public var txtFullName:FullNameField!=FullNameField()
-    @IBOutlet public var txtRequirements:RequirementsField!=RequirementsField()
-    @IBOutlet public var txtNewPassword:NewPasswordField!=NewPasswordField()
-    @IBOutlet public var txtConfirmPassword:ConfirmPasswordField!=ConfirmPasswordField()
-    @IBOutlet public var txtPasswordField:PasswordField!=PasswordField()
-    @IBOutlet public var txtEmail:EmailField!=EmailField()
-    @IBOutlet public var txtCity:CustomCityField!=CustomCityField()
-    @IBOutlet public var viewUploadId:UoploadView!=UoploadView()
+    @IBOutlet public var txtAdvancedPhoneNumber:AdvancedPhoneNumber!
+    @IBOutlet public var txtLocationTextField:LocationTextField!
+    @IBOutlet public var txtTitle:TitleField!
+    @IBOutlet public var txtFullName:FullNameField!
+    @IBOutlet public var txtRequirements:RequirementsField!
+    @IBOutlet public var txtNewPassword:NewPasswordField!
+    @IBOutlet public var txtConfirmPassword:ConfirmPasswordField!
+    @IBOutlet public var txtPasswordField:PasswordField!
+    @IBOutlet public var txtEmail:EmailField!
+    @IBOutlet public var txtCity:CustomCityField!
+    @IBOutlet public var viewUploadId:UoploadView!
     @IBOutlet public var segmentedControl:UISegmentedControl!
     
     var userType:UserType?{
@@ -55,46 +55,45 @@ public class ForthViewController: UIViewController {
         }
     }
     // all
-    public var allFields:[FieldValiadtion]{
+    public var allFields:[FieldValiadtion?]{
     return [
-    txtAdvancedPhoneNumber,
-    txtLocationTextField,
-    txtFullName,
-    txtPasswordField,
-    txtNewPassword,
-    txtConfirmPassword,
-    txtEmail,
-    txtTitle,
-    txtCity,
-    txtRequirements,
+    txtAdvancedPhoneNumber.field,
+    txtLocationTextField.field,
+    txtFullName.field,
+    txtPasswordField.field,
+    txtNewPassword.field,
+    txtConfirmPassword.field,
+    txtEmail.field,
+    txtTitle.field,
+    txtCity.field,
+    txtRequirements.field,
     viewUploadId]
    }
     // userCheck
-    public var userFields:[FieldValiadtion]{
-    return [
-        txtFullName,
-        txtPasswordField,
-        txtNewPassword,
-        txtConfirmPassword]
+    public var userFields:[FieldValiadtion?]{
+        return [txtFullName.field,
+                txtPasswordField.field,
+                txtNewPassword.field,
+                txtConfirmPassword.field]
     }
     // companyCheck
-    public var companyFields:[FieldValiadtion]{
+    public var companyFields:[FieldValiadtion?]{
     return [
-        txtAdvancedPhoneNumber,
-        txtLocationTextField,
-        txtFullName,
-        txtPasswordField,
-        txtNewPassword,
-        txtConfirmPassword,
-        txtEmail,
-        txtTitle,
-        txtCity,
-        txtRequirements,
+        txtAdvancedPhoneNumber.field,
+        txtLocationTextField.field,
+        txtFullName.field,
+        txtPasswordField.field,
+        txtNewPassword.field,
+        txtConfirmPassword.field,
+        txtEmail.field,
+        txtTitle.field,
+        txtCity.field,
+        txtRequirements.field,
         viewUploadId]
     }
     // currentCheck
     public var fields:[FieldValiadtion]{
-        return  self.userType == .user ? self.userFields:self.companyFields
+        return  (self.userType == .user ? self.userFields:self.companyFields).compactMap({$0})
     }
     public var fieldsManager:FieldsManager = FieldsManager();
     public static var copy:ForthViewController{
@@ -149,11 +148,12 @@ extension ForthViewController{
 
     }
     func setupData(){
+        (self.txtConfirmPassword.field as? ConfirmPasswordField)?.newPasswordValidation=self.txtNewPassword.field
         self.fieldsManager.fieldsHandler={
-            return self.allFields
+            return self.allFields.compactMap({$0})
         }
         self.fieldsManager.requiredFieldsHandler={
-            return self.fields
+            return self.fields.compactMap({$0})
         }
         self.userType = .user;
         txtFullName.fieldDidEnd = { _ in

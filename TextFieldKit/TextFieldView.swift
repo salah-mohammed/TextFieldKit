@@ -12,8 +12,52 @@ import UIKit
 import PhoneKit
 #endif
 
-public typealias FieldHandler = (GeneralFieldViewProrocol)->Void
-open class TextFieldView: UIView,GeneralFieldViewProrocol,FieldStyleProrocol {
+public typealias FieldHandler = (FieldStyleProrocol)->Void
+open class TextFieldView: UIView,FieldStyleProrocol {
+    @objc dynamic public var field:Field?{
+        didSet{
+            self.fieldObservations.removeAll { item in return item.0 == oldValue}
+            self.placeholder=self.field?.title ?? ""
+            let observer1 = field!.observe(
+                \.text,
+                 options: [.old, .new]
+             ) { object, change in
+                 if change.newValue != self.txtField.text{
+                     self.txtField.text  = change.newValue ?? ""
+                 }
+             }
+            let observer2 = observe(
+                \.txtField?.text,
+                 options: [.old, .new]
+             ) { object, change in
+                 if self.field?.text != change.newValue {
+                     self.field?.text = change.newValue ?? ""
+                 }
+             }
+            let observer3 = observe(
+                \.field?.error,
+                 options: [.old, .new]
+             ) { object, change in
+                 if self.error != change.newValue{
+                     self.error = change.newValue ?? ""
+                 }
+             }
+            let observer4 = observe(
+                \.lblError?.text,
+                 options: [.old, .new]
+             ) { object, change in
+                 if self.field?.error != change.newValue{
+                    self.field?.error  = change.newValue ?? ""
+                 }
+             }
+            self.fieldObservations.append((field,observer1))
+            self.fieldObservations.append((field,observer2))
+            self.fieldObservations.append((field,observer3))
+            self.fieldObservations.append((field,observer4))
+        }
+    }
+    var fieldObservations:[(Field?,NSKeyValueObservation)]=[(Field?,NSKeyValueObservation)]()
+
     
     public var onEditingChanged: OnEditingValiadtionChanged?
     
@@ -51,21 +95,13 @@ open class TextFieldView: UIView,GeneralFieldViewProrocol,FieldStyleProrocol {
             self.indicatorHeight = self.style.indicatorHeight;
         }
     }
-    var textRepository:String?
     open var text:String?{
         set{
             self.txtField?.text = newValue;
             self.endEditingField(text);
-            if self.txtField == nil {
-                textRepository = newValue
-            }
         }
         get{
-            if self.txtField == nil {
-            return textRepository
-            }else{
-                return self.txtField.text;
-            }
+            return self.txtField.text;
         }
      }
    open var placeholder:String?{
@@ -104,7 +140,6 @@ open class TextFieldView: UIView,GeneralFieldViewProrocol,FieldStyleProrocol {
     open var fieldDidEnd:FieldHandler?//=TextFieldView.fieldDidEnd
     open var fieldValueChanged:FieldHandler?//=TextFieldView.fieldValueChanged
     open var fieldDidBegin:FieldHandler?//=TextFieldView.fieldDidBegin
-    public var fieldValiadtion: FieldValiadtion?
 
     var tapGestureRecognizer:UITapGestureRecognizer?
 //    public static var fieldDidEnd:FieldHandler?
@@ -183,7 +218,7 @@ open class TextFieldView: UIView,GeneralFieldViewProrocol,FieldStyleProrocol {
     }
     @objc private func textFieldDidEnd(_ txt:UITextField){
         self.endEditingField(txt.text);
-        self.fieldDidEnd?(self);
+        self.field?.fieldDidEnd?(self);
     }
     @objc func tapGestureRecognizerOpenKeyboard(_ sender: UITapGestureRecognizer? = nil) {
     self.txtField.becomeFirstResponder();

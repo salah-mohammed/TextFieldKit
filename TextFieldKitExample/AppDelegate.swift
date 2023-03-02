@@ -51,3 +51,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+
+class UsernameViewModel:NSObject,GeneralConnection{
+    var text: String?
+
+    var placeholder: String?
+
+    var error: String?
+
+    var fieldValiadtion: TextFieldKit.FieldValiadtion?
+
+    var fieldDidEnd: TextFieldKit.FieldHandler?
+
+    var onEditingChanged: TextFieldKit.OnEditingValiadtionChanged?
+
+    var messages: [TextFieldKit.FieldError]{
+      return []
+    }
+
+    var title: String{
+     return "User Name"
+    }
+
+}

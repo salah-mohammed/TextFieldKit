@@ -64,3 +64,24 @@ public class FieldsManager{
         self.allFields.clearErrors()
     }
 }
+
+open class Field:NSObject,GeneralConnection{
+    @objc dynamic open var text: String?
+    
+    open var placeholder: String?
+    
+    @objc dynamic open var error: String?
+     
+    open var fieldDidEnd: FieldHandler?
+    
+    open var onEditingChanged: OnEditingValiadtionChanged?
+    
+    open var messages: [FieldError]{
+      return []
+    }
+    
+    open var title: String{return ""}
+    
+    
+    
+}

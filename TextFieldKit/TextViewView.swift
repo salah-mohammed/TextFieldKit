@@ -28,7 +28,9 @@ public class TextViewStyle:FieldStyle{
     
 }
 @objcMembers
-open class TextViewView:UIView,GeneralFieldViewProrocol,FieldStyleProrocol {
+open class TextViewView:UIView,FieldStyleProrocol {
+    public var field:Field?
+    
     public var onEditingChanged: OnEditingValiadtionChanged?
     
     // MARK:Customisable
@@ -83,21 +85,13 @@ open class TextViewView:UIView,GeneralFieldViewProrocol,FieldStyleProrocol {
             self.txtField.placeholder = placeholder;
         }
     }
-    var textRepository:String?
     open var text:String?{
         set{
             self.txtField?.text = newValue;
             self.didEndEditing(text);
-            if self.txtField == nil {
-                textRepository = newValue
-            }
         }
         get{
-            if self.txtField == nil {
-            return textRepository
-            }else{
-                return self.txtField.text;
-            }
+            return self.txtField.text;
         }
      }
     open var error: String?{
@@ -139,7 +133,6 @@ open class TextViewView:UIView,GeneralFieldViewProrocol,FieldStyleProrocol {
     public static var fieldDidEnd:FieldHandler?
     public static var fieldDidChange:FieldHandler?
     public static var fieldDidBeginEditing:FieldHandler?
-    public var fieldValiadtion: FieldValiadtion?
 
     public init() {
         super.init(frame: CGRect.init())

@@ -17,163 +17,83 @@ import LocationPicker
 #endif
 
 // MARK: NewPasswordField
-open class NewPasswordField:TextFieldView,GeneralConnection{
-    public var getText: (() -> String?)?
-    public var title: String{
-        return AppTexts.NewPassword
-    }
-    public var messages:[FieldError]{
-        return self.newPassword();
-    }
+open class NewPasswordField:TextFieldView{
     open override func awakeFromNib() {
         super.awakeFromNib();
-        self.placeholder=self.title
+        self.field = NewPasswordValidation()
         self.txtField.isSecureTextEntry=true;
+        
     }
 }
 // MARK: ConfirmPasswordField
-open class ConfirmPasswordField:TextFieldView,GeneralConnection{
-    public var getText: (() -> String?)?
-    public var title:String{
-        return AppTexts.ConfirmPassword
-    }
-     @IBOutlet weak open var txtNewPasswordField: NewPasswordField?
-    
-    public var messages:[FieldError]{
-        return self.confirmPassword(txtNewPasswordField);
-    }
+open class ConfirmPasswordField:TextFieldView{
     open override func awakeFromNib() {
         super.awakeFromNib();
-        self.placeholder=self.title
+        self.field = ConfirmPasswordFieldValidation()
         self.txtField.isSecureTextEntry=true;
     }
 }
 // MARK: PasswordField
-open class PasswordField:TextFieldView,GeneralConnection{
-    public var getText: (() -> String?)?
-    public var title: String{
-        return AppTexts.Password
-    }
-    public var messages:[FieldError]{
-        return self.emptyError()
-    }
+open class PasswordField:TextFieldView{
     open override func awakeFromNib() {
         super.awakeFromNib();
-        self.placeholder=self.title
+        self.field = PasswordFieldValidation()
         self.txtField.isSecureTextEntry=true;
         // secure
     }
 }
 // MARK: UserNameField
-open class UserNameField:TextFieldView,GeneralConnection{
-    public var getText: (() -> String?)?
-    public var title:String{
-        return AppTexts.UserName
-    }
-    public var messages:[FieldError]{
-        return self.emptyError()
-    }
+open class UserNameField:TextFieldView{
     open override func awakeFromNib() {
         super.awakeFromNib();
-        self.placeholder=self.title
+        self.field = UserNameFieldValidation()
     }
 }
 // MARK: FullNameField
-open class FullNameField:TextFieldView,GeneralConnection{
-    public var getText: (() -> String?)?
-    public var title:String{
-        return AppTexts.FullName
-    }
-    public var messages:[FieldError]{
-        return self.emptyError()
-    }
+open class FullNameField:TextFieldView{
     open override func awakeFromNib() {
         super.awakeFromNib();
-        self.placeholder=self.title
+        self.field = FullNameFieldValidation()
     }
 }
 // MARK: EmailField
-open class EmailField:TextFieldView,GeneralConnection{
-    public var getText: (() -> String?)?
-    public var title:String{
-        return AppTexts.Email
-    }
-    public var messages:[FieldError]{
-        return self.email();
-    }
+open class EmailField:TextFieldView{
     open override func awakeFromNib() {
         super.awakeFromNib();
-        self.placeholder=self.title
+        self.field = EmailFieldValidation()
     }
 }
 // MARK: TitleField
-open class TitleField:TextFieldView,GeneralConnection{
-    public var getText: (() -> String?)?
-    public var title: String{
-        return AppTexts.Title
-    }
-    public var messages:[FieldError]{
-        return self.emptyError()
-    }
+open class TitleField:TextFieldView{
     open override func awakeFromNib() {
         super.awakeFromNib();
-        self.placeholder=self.title
+        self.field = TitleFieldValidation()
     }
 }
 // MARK: DescriptionField
-open class DescriptionField:TextViewView,GeneralConnection{
-    public var getText: (() -> String?)?
-    public var title:String{
-        return AppTexts.Description
-    }
-    public var messages:[FieldError]{
-        return self.emptyError()
-    }
+open class DescriptionField:TextViewView{
     open override func awakeFromNib() {
         super.awakeFromNib();
-        self.placeholder=self.title
+        self.field = DescriptionFieldValidation()
     }
 }
 // MARK: AddressField
-open class AddressField:TextFieldView,GeneralConnection{
-    public var getText: (() -> String?)?
-    public var title:String{
-        return AppTexts.Address
-    }
-    public var messages:[FieldError]{
-        return self.emptyError()
-    }
+open class AddressField:TextFieldView{
     open override func awakeFromNib() {
         super.awakeFromNib();
-        self.placeholder=self.title
+        self.field = AddressFieldValidation()
     }
 }
 // MARK: RequirementsField
-open class RequirementsField:TextViewView,GeneralConnection{
-    public var getText: (() -> String?)?
-    public var title:String{
-        return AppTexts.Requirements
-    }
-    public var messages:[FieldError]{
-        return self.emptyError()
-    }
+open class RequirementsField:TextViewView{
     open override func awakeFromNib() {
         super.awakeFromNib();
-        self.placeholder=self.title
+        self.field = RequirementsFieldValidation();
     }
 }
 #if canImport(PhoneKit)
 // MARK: CustomePhoneNumber
-open class AdvancedPhoneNumber:PhoneNumberField,GeneralConnection{
-    public var getText: (() -> String?)?
-    public var title: String{
-        return AppTexts.PhoneNumber
-    }
-    
-    public var messages: [FieldError]{
-        return self.phoneNumber();
-    }
-    
+open class AdvancedPhoneNumber:PhoneNumberField{
     open var countryObject:CountryCode?{
         didSet{
             self.countryCode = countryObject?.dial_code;
@@ -197,14 +117,8 @@ open class AdvancedPhoneNumber:PhoneNumberField,GeneralConnection{
 }
 #endif
 #if canImport(LocationPicker)
-open class LocationTextField:DropDownTextField,GeneralConnection{
-    public var getText: (() -> String?)?
-    public var title: String{
-        return AppTexts.Location
-    }
-    public var messages: [FieldError]{
-        return self.location();
-    }
+open class LocationTextField:DropDownTextField{
+    
     public var locationItem:LocationItem?{
         didSet{
             self.text = locationItem?.title ?? locationItem?.subtitle ?? self.locationItem?.coordinate?.lp_stringValue ?? ""
@@ -219,7 +133,7 @@ open class LocationTextField:DropDownTextField,GeneralConnection{
     
     open override func awakeFromNib(){
         super.awakeFromNib();
-        self.placeholder = self.title;
+        self.field = LocationTextFieldValidation()
         self.viewController = self.parent;
 
         self.dropDownHandler = { textfield in
@@ -243,25 +157,169 @@ open class LocationTextField:DropDownTextField,GeneralConnection{
 #endif
 
 // MARK: CityField
-open class CityField:DropDownTextField,GeneralConnection{
-    public var getText: (() -> String?)?
-    public var title: String{
+open class CityField:DropDownTextField{
+    
+    open override func awakeFromNib() {
+        super.awakeFromNib()
+        self.field = CityFieldValidation()
+    }
+}
+// MARK: RegionField
+open class RegionField:DropDownTextField{
+
+    open override func awakeFromNib() {
+        super.awakeFromNib()
+        self.field = RegionFieldValidation()
+    }
+}
+
+/**----------------------------------------------------------------------------------------------------------------------------**/
+
+// MARK: NewPasswordField
+open class NewPasswordValidation:Field{
+
+    public override var title: String{
+        return AppTexts.NewPassword
+    }
+    public override var messages:[FieldError]{
+        return self.newPassword();
+    }
+}
+// MARK: ConfirmPasswordField
+open class ConfirmPasswordFieldValidation:Field{
+    
+    public override var title:String{
+        return AppTexts.ConfirmPassword
+    }
+    var newPasswordValidation:NewPasswordValidation?
+    
+    public override var messages:[FieldError]{
+        return self.confirmPassword(newPasswordValidation);
+    }
+
+}
+// MARK: PasswordField
+open class PasswordFieldValidation:Field{
+    
+    public override var title: String{
+        return AppTexts.Password
+    }
+    public override var messages:[FieldError]{
+        return self.emptyError()
+    }
+}
+// MARK: UserNameField
+open class UserNameFieldValidation:Field{
+    
+    public override var title:String{
+        return AppTexts.UserName
+    }
+    public override var messages:[FieldError]{
+        return self.emptyError()
+    }
+}
+// MARK: FullNameField
+open class FullNameFieldValidation:Field{
+    
+    public override var title:String{
+        return AppTexts.FullName
+    }
+    public override var messages:[FieldError]{
+        return self.emptyError()
+    }
+}
+// MARK: EmailField
+open class EmailFieldValidation:Field{
+    
+    public override var title:String{
+        return AppTexts.Email
+    }
+    public override var messages:[FieldError]{
+        return self.email();
+    }
+}
+// MARK: TitleField
+open class TitleFieldValidation:Field{
+    
+    public override var title: String{
+        return AppTexts.Title
+    }
+    public override var messages:[FieldError]{
+        return self.emptyError()
+    }
+}
+// MARK: DescriptionField
+open class DescriptionFieldValidation:Field{
+    
+    public override var title:String{
+        return AppTexts.Description
+    }
+    public override var messages:[FieldError]{
+        return self.emptyError()
+    }
+}
+// MARK: AddressField
+open class AddressFieldValidation:Field{
+    
+    public override var title:String{
+        return AppTexts.Address
+    }
+    public override var messages:[FieldError]{
+        return self.emptyError()
+    }
+}
+// MARK: RequirementsField
+open class RequirementsFieldValidation:Field{
+    
+    public override var title:String{
+        return AppTexts.Requirements
+    }
+    public override var messages:[FieldError]{
+        return self.emptyError()
+    }
+}
+#if canImport(PhoneKit)
+// MARK: CustomePhoneNumber
+open class AdvancedPhoneNumberValidation:Field{
+    public  override var title: String{
+        return AppTexts.PhoneNumber
+    }
+    public  override var messages: [FieldError]{
+        return []
+    }
+
+}
+#endif
+#if canImport(LocationPicker)
+open class LocationTextFieldValidation:Field{
+    public override var title: String{
+        return AppTexts.Location
+    }
+    public override var messages: [FieldError]{
+        return self.location();
+    }
+}
+#endif
+
+// MARK: CityField
+open class CityFieldValidation:Field{
+    public override var title: String{
         return AppTexts.City
     }
-    public var messages:[FieldError]{
+    public override var messages:[FieldError]{
         return self.emptyError()
     }
 }
 // MARK: RegionField
-open class RegionField:DropDownTextField,GeneralConnection,FieldValiadtion{
-    public var getText: (() -> String?)?
-
-    public var title:String{
+open class RegionFieldValidation:Field{
+    
+    public override var title:String{
         return AppTexts.Region
     }
-    public var messages:[FieldError]{
+    public override var messages:[FieldError]{
         return self.emptyError()
     }
 }
 
 
+//

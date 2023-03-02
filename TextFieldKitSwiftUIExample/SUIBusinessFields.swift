@@ -14,7 +14,7 @@ public class BaseValidation:NSObject,ObservableObject{
     public var fieldDidEnd: TextFieldKit.FieldHandler?
 
 }
-public class Username:BaseValidation,GeneralConnection,GeneralFieldViewProrocol{
+public class Username:BaseValidation,GeneralConnection{
     public var fieldValiadtion: TextFieldKit.FieldValiadtion?
     public var getText: (() -> String?)?
 
@@ -40,7 +40,7 @@ public class Username:BaseValidation,GeneralConnection,GeneralFieldViewProrocol{
 //        }
 //    }
 }
-public class FullName:BaseValidation,GeneralConnection,GeneralFieldViewProrocol{
+public class FullName:BaseValidation,GeneralConnection{
     public var getText: (() -> String?)?
     public var fieldValiadtion: TextFieldKit.FieldValiadtion?
 
@@ -59,7 +59,7 @@ public class FullName:BaseValidation,GeneralConnection,GeneralFieldViewProrocol{
         self.placeholder=self.title
     }
 }
-public class FirstName:BaseValidation,GeneralConnection,GeneralFieldViewProrocol{
+public class FirstName:BaseValidation,GeneralConnection{
     public var getText: (() -> String?)?
     public var fieldValiadtion: TextFieldKit.FieldValiadtion?
 
@@ -79,7 +79,7 @@ public class FirstName:BaseValidation,GeneralConnection,GeneralFieldViewProrocol
     }
 
 }
-public class LastName:BaseValidation,GeneralConnection,GeneralFieldViewProrocol{
+public class LastName:BaseValidation,GeneralConnection{
     public var fieldValiadtion: TextFieldKit.FieldValiadtion?
     public var getText: (() -> String?)?
 
@@ -99,7 +99,7 @@ public class LastName:BaseValidation,GeneralConnection,GeneralFieldViewProrocol{
     }
 
 }
-public class Email:BaseValidation,GeneralConnection,GeneralFieldViewProrocol{
+public class Email:BaseValidation,GeneralConnection{
     public var fieldValiadtion: TextFieldKit.FieldValiadtion?
     public var getText: (() -> String?)?
 
@@ -119,7 +119,7 @@ public class Email:BaseValidation,GeneralConnection,GeneralFieldViewProrocol{
     }
 
 }
-public class Requirements:BaseValidation,GeneralConnection,GeneralFieldViewProrocol{
+public class Requirements:BaseValidation,GeneralConnection{
     public var fieldValiadtion: TextFieldKit.FieldValiadtion?
     public var getText: (() -> String?)?
 
@@ -140,7 +140,7 @@ public class Requirements:BaseValidation,GeneralConnection,GeneralFieldViewProro
     }
 
 }
-public class City:BaseValidation,GeneralConnection,GeneralFieldViewProrocol{
+public class City:BaseValidation,GeneralConnection{
     public var fieldValiadtion: TextFieldKit.FieldValiadtion?
     public var getText: (() -> String?)?
 
@@ -160,7 +160,7 @@ public class City:BaseValidation,GeneralConnection,GeneralFieldViewProrocol{
     }
 
 }
-public class Region:BaseValidation,GeneralConnection,GeneralFieldViewProrocol{
+public class Region:BaseValidation,GeneralConnection{
     public var getText: (() -> String?)?
     public var fieldValiadtion: TextFieldKit.FieldValiadtion?
 
@@ -180,7 +180,7 @@ public class Region:BaseValidation,GeneralConnection,GeneralFieldViewProrocol{
     }
 
 }
-public class Location:BaseValidation,GeneralConnection,GeneralFieldViewProrocol{
+public class Location:BaseValidation,GeneralConnection{
     public var getText: (() -> String?)?
     public var fieldValiadtion: TextFieldKit.FieldValiadtion?
     
@@ -200,7 +200,7 @@ public class Location:BaseValidation,GeneralConnection,GeneralFieldViewProrocol{
     }
 
 }
-public class Address:BaseValidation,GeneralConnection,GeneralFieldViewProrocol{
+public class Address:BaseValidation,GeneralConnection{
     public var getText: (() -> String?)?
     public var fieldValiadtion: TextFieldKit.FieldValiadtion?
     
@@ -220,7 +220,7 @@ public class Address:BaseValidation,GeneralConnection,GeneralFieldViewProrocol{
     }
 
 }
-public class Description:BaseValidation,GeneralConnection,GeneralFieldViewProrocol{
+public class Description:BaseValidation,GeneralConnection{
     public var getText: (() -> String?)?
     public var fieldValiadtion: TextFieldKit.FieldValiadtion?
     
@@ -240,7 +240,7 @@ public class Description:BaseValidation,GeneralConnection,GeneralFieldViewProroc
     }
 
 }
-public class Title:BaseValidation,GeneralConnection,GeneralFieldViewProrocol{
+public class Title:BaseValidation,GeneralConnection{
     public var getText: (() -> String?)?
     public var fieldValiadtion: TextFieldKit.FieldValiadtion?
 
@@ -260,7 +260,7 @@ public class Title:BaseValidation,GeneralConnection,GeneralFieldViewProrocol{
     }
 
 }
-public class Password:BaseValidation,GeneralConnection,GeneralFieldViewProrocol{
+public class Password:BaseValidation,GeneralConnection{
     public var getText: (() -> String?)?
     
     public var fieldValiadtion: TextFieldKit.FieldValiadtion?
