@@ -426,9 +426,6 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="55" id="dqw-mG-8si"/>
                                                 </constraints>
-                                                <connections>
-                                                    <outlet property="txtNewPasswordField" destination="z8O-hk-rKY" id="n8c-qM-cBh"/>
-                                                </connections>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="57P-Ay-NOI" customClass="FullNameField" customModule="TextFieldKitExample" customModuleProvider="target">
                                                 <rect key="frame" x="16" y="395" width="382" height="70"/>

@@ -12,26 +12,25 @@ case user=0
 case company=1
 }
 
-public class UoploadView:UIButton,FieldValiadtion{
-    public var getText: (() -> String?)?
-    var filePicked:Data?=nil
+public class UoploadView:UIButton{
     @IBOutlet weak var txtTitle:UILabel!
+    var filePicked:Data?
+    var field:Field?
+    
+}
 
-    public var messages: [TextFieldKit.FieldError]{
+public class UploadViewValidation:Field{
+    public override var messages: [TextFieldKit.FieldError]{
         if self.filePicked == nil {
             return [.required(self.title)]
         }
      return []
     }
-    public var title: String{
+    public override var title: String{
      return "Id Photo"
     }
-    public var error: String?{
-        didSet{
-            txtTitle?.text=error
-        }
-    }
-    
+    public override var error: String?
+
 }
 public class ForthViewController: UIViewController {
     @IBOutlet public var txtAdvancedPhoneNumber:AdvancedPhoneNumber!
@@ -55,20 +54,7 @@ public class ForthViewController: UIViewController {
         }
     }
     // all
-    public var allFields:[FieldValiadtion?]{
-    return [
-    txtAdvancedPhoneNumber.field,
-    txtLocationTextField.field,
-    txtFullName.field,
-    txtPasswordField.field,
-    txtNewPassword.field,
-    txtConfirmPassword.field,
-    txtEmail.field,
-    txtTitle.field,
-    txtCity.field,
-    txtRequirements.field,
-    viewUploadId]
-   }
+    public var allFields:[FieldValiadtion?]=[FieldValiadtion?]()
     // userCheck
     public var userFields:[FieldValiadtion?]{
         return [txtFullName.field,
@@ -78,8 +64,7 @@ public class ForthViewController: UIViewController {
     }
     // companyCheck
     public var companyFields:[FieldValiadtion?]{
-    return [
-        txtAdvancedPhoneNumber.field,
+        return [txtAdvancedPhoneNumber.field,
         txtLocationTextField.field,
         txtFullName.field,
         txtPasswordField.field,
@@ -89,7 +74,7 @@ public class ForthViewController: UIViewController {
         txtTitle.field,
         txtCity.field,
         txtRequirements.field,
-        viewUploadId]
+        viewUploadId.field]
     }
     // currentCheck
     public var fields:[FieldValiadtion]{
@@ -122,8 +107,9 @@ public class ForthViewController: UIViewController {
     }
     @IBAction func btnUploadFileId(_ sender:Any){
         viewUploadId.filePicked = Data();
-//        viewUploadId.clearError()
-        self.fieldsManager.check(field:viewUploadId)
+        if let field:Field = viewUploadId.field{
+            self.fieldsManager.check(field:field)
+        }
     }
     @IBAction func btnValid(_ sender:Any?){
         let all = self.fieldsManager.checkAll();
@@ -131,9 +117,6 @@ public class ForthViewController: UIViewController {
             all.showAlert(self, handler: nil);
         }
     }
-//     init() {
-//        super.init()
-//    }
    
 }
 
@@ -148,7 +131,7 @@ extension ForthViewController{
 
     }
     func setupData(){
-        (self.txtConfirmPassword.field as? ConfirmPasswordField)?.newPasswordValidation=self.txtNewPassword.field
+        (self.txtConfirmPassword.field as? ConfirmPasswordFieldValidation)?.newPasswordValidation=self.txtNewPassword.field as? NewPasswordValidation
         self.fieldsManager.fieldsHandler={
             return self.allFields.compactMap({$0})
         }
@@ -169,5 +152,17 @@ extension ForthViewController{
 }
 // MARK: - Networking Methods
 extension ForthViewController{
-    
+    func setupFields(){
+        txtAdvancedPhoneNumber.field = AdvancedPhoneNumberValidation()
+        txtLocationTextField.field = LocationTextFieldValidation()
+        txtFullName.field = FullNameFieldValidation()
+        txtPasswordField.field = PasswordFieldValidation()
+        txtNewPassword.field = NewPasswordValidation()
+        txtConfirmPassword.field = ConfirmPasswordFieldValidation()
+        txtEmail.field = EmailFieldValidation()
+        txtTitle.field = TitleFieldValidation()
+        txtCity.field = CityFieldValidation()
+        txtRequirements.field = RequirementsFieldValidation()
+        viewUploadId.field = UploadViewValidation()
+    }
 }
