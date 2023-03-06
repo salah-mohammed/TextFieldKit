@@ -90,7 +90,7 @@ public class ForthViewController: UIViewController {
     public var vmFullName:FullNameFieldValidation=FullNameFieldValidation()
     public var vmRequirements:RequirementsFieldValidation=RequirementsFieldValidation()
     public var vmNewPassword:NewPasswordValidation=NewPasswordValidation()
-    public var vmConfirmPassword:ConfirmPasswordFieldValidation=ConfirmPasswordFieldValidation()
+    lazy public var vmConfirmPassword:ConfirmPasswordFieldValidation=ConfirmPasswordFieldValidation.init(vmNewPassword)
     public var vmPasswordField:PasswordFieldValidation=PasswordFieldValidation()
     public var vmEmail:EmailFieldValidation=EmailFieldValidation()
     public var vmCity:CustomCityFieldValidation=CustomCityFieldValidation()
@@ -196,7 +196,6 @@ extension ForthViewController{
 
     }
     func setupData(){
-        (self.txtConfirmPassword.field as? ConfirmPasswordFieldValidation)?.newPasswordValidation=self.txtNewPassword.field as? NewPasswordValidation
         self.fieldsManager.fieldsHandler={
             return self.allFields.compactMap({$0})
         }

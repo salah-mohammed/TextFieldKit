@@ -44,19 +44,16 @@ final class TextFieldKitExampleTests: XCTestCase {
         forthViewController.vmPasswordField.text=""
         forthViewController.vmNewPassword.text=""
         forthViewController.vmConfirmPassword.text=""
-//        forthViewController.vmConfirmPassword.vmNewPasswordField = forthViewController.vmNewPassword
         XCTAssertEqual(forthViewController.fieldsManager.checkAll().valid, false)
         forthViewController.vmFullName.text="salah"
         forthViewController.vmPasswordField.text="123456"
         forthViewController.vmNewPassword.text="123456"
         forthViewController.vmConfirmPassword.text="123456"
-//        forthViewController.vmConfirmPassword.vmNewPasswordField = forthViewController.vmNewPassword
         XCTAssertEqual(forthViewController.fieldsManager.checkAll().valid, true)
         forthViewController.vmFullName.text="salah"
         forthViewController.vmPasswordField.text="123456"
         forthViewController.vmNewPassword.text="123456"
         forthViewController.vmConfirmPassword.text="12345"
-//        forthViewController.vmConfirmPassword.vmNewPasswordField = forthViewController.vmNewPassword
         XCTAssertEqual(forthViewController.fieldsManager.checkAll().valid, false)
     }
 }

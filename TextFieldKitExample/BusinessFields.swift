@@ -190,11 +190,12 @@ open class ConfirmPasswordFieldValidation:Field{
     public override var messages:[FieldError]{
         return self.confirmPassword(newPasswordValidation);
     }
-
+    init(_ newPasswordValidation: NewPasswordValidation? = nil) {
+        self.newPasswordValidation = newPasswordValidation
+    }
 }
 // MARK: PasswordField
 open class PasswordFieldValidation:Field{
-    
     public override var title: String{
         return AppTexts.Password
     }
