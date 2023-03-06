@@ -13,13 +13,40 @@ case company=1
 }
 
 public class UoploadView:UIButton{
-    @IBOutlet weak var txtTitle:UILabel!
-    var filePicked:Data?
-    var field:Field?
+    var fieldObservations:[(Field?,NSKeyValueObservation?)]=[(Field?,NSKeyValueObservation?)]()
+
+    @IBOutlet weak var lblError:UILabel!
+    var field:UploadViewValidation?{
+        didSet{
+            
+            self.fieldObservations.removeAll { item in return item.0 == oldValue}
+
+            let observer1 = field?.observe(
+                \.text,
+                 options: [.old, .new]
+             ) { object, change in
+                 if change.newValue != self.lblError.text{
+                     self.lblError.text = change.newValue ?? ""
+                 }
+             }
+            let observer2 = observe(
+                \.lblError?.text,
+                 options: [.old, .new]
+             ) { object, change in
+                 if self.field?.error != change.newValue {
+                     self.field?.error = change.newValue ?? ""
+                 }
+             }
+            self.fieldObservations.append((field,observer1))
+            self.fieldObservations.append((field,observer2))
+
+        }
+    }
     
 }
 
 public class UploadViewValidation:Field{
+    var filePicked:Data?
     public override var messages: [TextFieldKit.FieldError]{
         if self.filePicked == nil {
             return [.required(self.title)]
@@ -29,21 +56,48 @@ public class UploadViewValidation:Field{
     public override var title: String{
      return "Id Photo"
     }
-    public override var error: String?
 
 }
 public class ForthViewController: UIViewController {
-    @IBOutlet public var txtAdvancedPhoneNumber:AdvancedPhoneNumber!
-    @IBOutlet public var txtLocationTextField:LocationTextField!
-    @IBOutlet public var txtTitle:TitleField!
-    @IBOutlet public var txtFullName:FullNameField!
-    @IBOutlet public var txtRequirements:RequirementsField!
-    @IBOutlet public var txtNewPassword:NewPasswordField!
-    @IBOutlet public var txtConfirmPassword:ConfirmPasswordField!
-    @IBOutlet public var txtPasswordField:PasswordField!
-    @IBOutlet public var txtEmail:EmailField!
-    @IBOutlet public var txtCity:CustomCityField!
+    @IBOutlet public var txtAdvancedPhoneNumber:AdvancedPhoneNumber!{ didSet{
+        txtAdvancedPhoneNumber.field=vmAdvancedPhoneNumber}}
+    @IBOutlet public var txtLocationTextField:LocationTextField!{ didSet{
+        txtLocationTextField.field=vmLocationTextField}}
+    @IBOutlet public var txtTitle:TitleField!{ didSet{
+        txtTitle.field=vmTitle}}
+    @IBOutlet public var txtFullName:FullNameField!{ didSet{
+        txtFullName.field=vmFullName}}
+    @IBOutlet public var txtRequirements:RequirementsField!{ didSet{
+        txtRequirements.field=vmRequirements}}
+    @IBOutlet public var txtNewPassword:NewPasswordField!{ didSet{
+        txtNewPassword.field=vmNewPassword}}
+    @IBOutlet public var txtConfirmPassword:ConfirmPasswordField!{ didSet{
+        txtConfirmPassword.field=vmConfirmPassword}}
+    @IBOutlet public var txtPasswordField:PasswordField!{ didSet{
+        txtPasswordField.field=vmPasswordField}}
+    @IBOutlet public var txtEmail:EmailField!{ didSet{
+        txtEmail.field=vmEmail}}
+    @IBOutlet public var txtCity:CustomCityField!{ didSet{
+        txtCity.field=vmCity}}
     @IBOutlet public var viewUploadId:UoploadView!
+    { didSet{
+        viewUploadId.field=vmViewUploadId}}
+
+    
+    public var vmAdvancedPhoneNumber:AdvancedPhoneNumberValidation = AdvancedPhoneNumberValidation.init()
+    public var vmLocationTextField:LocationTextFieldValidation=LocationTextFieldValidation()
+    public var vmTitle:TitleFieldValidation=TitleFieldValidation()
+    public var vmFullName:FullNameFieldValidation=FullNameFieldValidation()
+    public var vmRequirements:RequirementsFieldValidation=RequirementsFieldValidation()
+    public var vmNewPassword:NewPasswordValidation=NewPasswordValidation()
+    public var vmConfirmPassword:ConfirmPasswordFieldValidation=ConfirmPasswordFieldValidation()
+    public var vmPasswordField:PasswordFieldValidation=PasswordFieldValidation()
+    public var vmEmail:EmailFieldValidation=EmailFieldValidation()
+    public var vmCity:CustomCityFieldValidation=CustomCityFieldValidation()
+    public var vmViewUploadId:UploadViewValidation=UploadViewValidation()
+    
+    
+    
     @IBOutlet public var segmentedControl:UISegmentedControl!
     
     var userType:UserType?{
@@ -54,31 +108,43 @@ public class ForthViewController: UIViewController {
         }
     }
     // all
-    public var allFields:[FieldValiadtion?]=[FieldValiadtion?]()
+    public var allFields:[FieldValiadtion]{
+         [vmAdvancedPhoneNumber,
+         vmLocationTextField,
+         vmTitle,
+         vmFullName,
+         vmRequirements,
+         vmNewPassword,
+         vmConfirmPassword,
+         vmPasswordField,
+         vmEmail,
+         vmCity,
+         vmViewUploadId]
+    }
     // userCheck
-    public var userFields:[FieldValiadtion?]{
-        return [txtFullName.field,
-                txtPasswordField.field,
-                txtNewPassword.field,
-                txtConfirmPassword.field]
+    public var userFields:[FieldValiadtion]{
+        return [vmFullName,
+                vmPasswordField,
+                vmNewPassword,
+                vmConfirmPassword]
     }
     // companyCheck
-    public var companyFields:[FieldValiadtion?]{
-        return [txtAdvancedPhoneNumber.field,
-        txtLocationTextField.field,
-        txtFullName.field,
-        txtPasswordField.field,
-        txtNewPassword.field,
-        txtConfirmPassword.field,
-        txtEmail.field,
-        txtTitle.field,
-        txtCity.field,
-        txtRequirements.field,
-        viewUploadId.field]
+    public var companyFields:[FieldValiadtion]{
+        return [vmAdvancedPhoneNumber,
+        vmLocationTextField,
+        vmFullName,
+        vmPasswordField,
+        vmNewPassword,
+        vmConfirmPassword,
+        vmEmail,
+        vmTitle,
+        vmCity,
+        vmRequirements,
+        vmViewUploadId]
     }
     // currentCheck
     public var fields:[FieldValiadtion]{
-        return  (self.userType == .user ? self.userFields:self.companyFields).compactMap({$0})
+        return  (self.userType == .user ? self.userFields:self.companyFields)
     }
     public var fieldsManager:FieldsManager = FieldsManager();
     public static var copy:ForthViewController{
@@ -95,7 +161,6 @@ public class ForthViewController: UIViewController {
     }
     public override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated);
-        
 
     }
     @IBAction func tapGesture(_ sender:Any){
@@ -106,7 +171,7 @@ public class ForthViewController: UIViewController {
         self.fieldsManager.clearErrors()
     }
     @IBAction func btnUploadFileId(_ sender:Any){
-        viewUploadId.filePicked = Data();
+        viewUploadId.field?.filePicked = Data();
         if let field:Field = viewUploadId.field{
             self.fieldsManager.check(field:field)
         }
@@ -143,7 +208,7 @@ extension ForthViewController{
 
         }
         txtCity.dropDownHandler = { textfield in
-        self.txtCity.object = "Cairo";
+            self.vmCity.object = "Cairo";
         }
     }
     func fetchData(){
@@ -152,17 +217,5 @@ extension ForthViewController{
 }
 // MARK: - Networking Methods
 extension ForthViewController{
-    func setupFields(){
-        txtAdvancedPhoneNumber.field = AdvancedPhoneNumberValidation()
-        txtLocationTextField.field = LocationTextFieldValidation()
-        txtFullName.field = FullNameFieldValidation()
-        txtPasswordField.field = PasswordFieldValidation()
-        txtNewPassword.field = NewPasswordValidation()
-        txtConfirmPassword.field = ConfirmPasswordFieldValidation()
-        txtEmail.field = EmailFieldValidation()
-        txtTitle.field = TitleFieldValidation()
-        txtCity.field = CityFieldValidation()
-        txtRequirements.field = RequirementsFieldValidation()
-        viewUploadId.field = UploadViewValidation()
-    }
+
 }

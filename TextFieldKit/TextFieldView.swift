@@ -14,51 +14,56 @@ import PhoneKit
 
 public typealias FieldHandler = (FieldStyleProrocol)->Void
 open class TextFieldView: UIView,FieldStyleProrocol {
-    @objc dynamic public var field:Field?{
+    @objc dynamic open var field:Field?{
         didSet{
+            if field == nil {
+                self.fieldObservations.removeAll();
+            }
             self.fieldObservations.removeAll { item in return item.0 == oldValue}
-            self.placeholder=self.field?.title ?? ""
-            let observer1 = field!.observe(
-                \.text,
-                 options: [.old, .new]
-             ) { object, change in
-                 if change.newValue != self.txtField.text{
-                     self.txtField.text  = change.newValue ?? ""
-                 }
-             }
-            let observer2 = observe(
-                \.txtField?.text,
-                 options: [.old, .new]
-             ) { object, change in
-                 if self.field?.text != change.newValue {
-                     self.field?.text = change.newValue ?? ""
-                 }
-             }
-            let observer3 = observe(
-                \.field?.error,
-                 options: [.old, .new]
-             ) { object, change in
-                 if self.error != change.newValue{
-                     self.error = change.newValue ?? ""
-                 }
-             }
-            let observer4 = observe(
-                \.lblError?.text,
-                 options: [.old, .new]
-             ) { object, change in
-                 if self.field?.error != change.newValue{
-                    self.field?.error  = change.newValue ?? ""
-                 }
-             }
-            self.fieldObservations.append((field,observer1))
-            self.fieldObservations.append((field,observer2))
-            self.fieldObservations.append((field,observer3))
-            self.fieldObservations.append((field,observer4))
+            setupObservations();
         }
     }
-    var fieldObservations:[(Field?,NSKeyValueObservation)]=[(Field?,NSKeyValueObservation)]()
+    var fieldObservations:[(Field?,NSKeyValueObservation?)]=[(Field?,NSKeyValueObservation?)]()
 
-    
+    func setupObservations(){
+        self.placeholder=self.field?.title ?? ""
+        let observer1 = field?.observe(
+            \.text,
+             options: [.old, .new]
+         ) { object, change in
+             if change.newValue != self.txtField.text{
+                 self.txtField.text  = change.newValue ?? ""
+             }
+         }
+        let observer2 = observe(
+            \.txtField?.text,
+             options: [.old, .new]
+         ) { object, change in
+             if self.field?.text != change.newValue {
+                 self.field?.text = change.newValue ?? ""
+             }
+         }
+        let observer3 = field?.observe(
+            \.error,
+             options: [.old, .new]
+         ) { object, change in
+             if self.error != change.newValue{
+                 self.error = change.newValue ?? ""
+             }
+         }
+        let observer4 = observe(
+            \.lblError?.text,
+             options: [.old, .new]
+         ) { object, change in
+             if self.field?.error != change.newValue{
+                self.field?.error  = change.newValue ?? ""
+             }
+         }
+        self.fieldObservations.append((field,observer1))
+        self.fieldObservations.append((field,observer2))
+        self.fieldObservations.append((field,observer3))
+        self.fieldObservations.append((field,observer4))
+    }
     public var onEditingChanged: OnEditingValiadtionChanged?
     
     // MARK:Customisable

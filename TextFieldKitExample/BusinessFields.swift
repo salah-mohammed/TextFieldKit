@@ -20,7 +20,6 @@ import LocationPicker
 open class NewPasswordField:TextFieldView{
     open override func awakeFromNib() {
         super.awakeFromNib();
-        self.field = NewPasswordValidation()
         self.txtField.isSecureTextEntry=true;
         
     }
@@ -29,7 +28,6 @@ open class NewPasswordField:TextFieldView{
 open class ConfirmPasswordField:TextFieldView{
     open override func awakeFromNib() {
         super.awakeFromNib();
-        self.field = ConfirmPasswordFieldValidation()
         self.txtField.isSecureTextEntry=true;
     }
 }
@@ -37,7 +35,6 @@ open class ConfirmPasswordField:TextFieldView{
 open class PasswordField:TextFieldView{
     open override func awakeFromNib() {
         super.awakeFromNib();
-        self.field = PasswordFieldValidation()
         self.txtField.isSecureTextEntry=true;
         // secure
     }
@@ -46,58 +43,60 @@ open class PasswordField:TextFieldView{
 open class UserNameField:TextFieldView{
     open override func awakeFromNib() {
         super.awakeFromNib();
-        self.field = UserNameFieldValidation()
     }
 }
 // MARK: FullNameField
 open class FullNameField:TextFieldView{
     open override func awakeFromNib() {
         super.awakeFromNib();
-        self.field = FullNameFieldValidation()
     }
 }
 // MARK: EmailField
 open class EmailField:TextFieldView{
     open override func awakeFromNib() {
         super.awakeFromNib();
-        self.field = EmailFieldValidation()
     }
 }
 // MARK: TitleField
 open class TitleField:TextFieldView{
     open override func awakeFromNib() {
         super.awakeFromNib();
-        self.field = TitleFieldValidation()
     }
 }
 // MARK: DescriptionField
 open class DescriptionField:TextViewView{
     open override func awakeFromNib() {
         super.awakeFromNib();
-        self.field = DescriptionFieldValidation()
     }
 }
 // MARK: AddressField
 open class AddressField:TextFieldView{
     open override func awakeFromNib() {
         super.awakeFromNib();
-        self.field = AddressFieldValidation()
     }
 }
 // MARK: RequirementsField
 open class RequirementsField:TextViewView{
     open override func awakeFromNib() {
         super.awakeFromNib();
-        self.field = RequirementsFieldValidation();
     }
 }
 #if canImport(PhoneKit)
 // MARK: CustomePhoneNumber
 open class AdvancedPhoneNumber:PhoneNumberField{
-    open var countryObject:CountryCode?{
+    open override var field: Field?{
         didSet{
-            self.countryCode = countryObject?.dial_code;
-            self.flag = countryObject?.flag
+            self.countryObject=CountryListManager.shared.currentCountry
+        }
+    }
+    open var countryObject:CountryCode?{
+        set{
+            self.countryCode = newValue?.dial_code;
+            self.flag = newValue?.flag
+            (self.field as? AdvancedPhoneNumberValidation)?.countryObject = newValue
+        }
+        get{
+        return (self.field as? AdvancedPhoneNumberValidation)?.countryObject
         }
     }
     open var viewController:UIViewController?
@@ -105,7 +104,6 @@ open class AdvancedPhoneNumber:PhoneNumberField{
     open override func awakeFromNib() {
         super.awakeFromNib();
         self.viewController = self.parent;
-        self.countryObject=CountryListManager.shared.currentCountry
         self.countryPickerHandler = { textfield in
             UIAlertController.showCountryPicker(self,self.viewController) { (object) in
                 self.countryObject = object;
@@ -133,9 +131,7 @@ open class LocationTextField:DropDownTextField{
     
     open override func awakeFromNib(){
         super.awakeFromNib();
-        self.field = LocationTextFieldValidation()
         self.viewController = self.parent;
-
         self.dropDownHandler = { textfield in
             if let vc:LocationPickerViewController = LocationPickerViewController.initPicker(self.locationItem, nil){
                 vc.failure = self.failure;
@@ -161,7 +157,6 @@ open class CityField:DropDownTextField{
     
     open override func awakeFromNib() {
         super.awakeFromNib()
-        self.field = CityFieldValidation()
     }
 }
 // MARK: RegionField
@@ -169,7 +164,6 @@ open class RegionField:DropDownTextField{
 
     open override func awakeFromNib() {
         super.awakeFromNib()
-        self.field = RegionFieldValidation()
     }
 }
 
@@ -281,13 +275,13 @@ open class RequirementsFieldValidation:Field{
 #if canImport(PhoneKit)
 // MARK: CustomePhoneNumber
 open class AdvancedPhoneNumberValidation:Field{
+    var countryObject:CountryCode?
     public  override var title: String{
         return AppTexts.PhoneNumber
     }
     public  override var messages: [FieldError]{
         return []
     }
-
 }
 #endif
 #if canImport(LocationPicker)

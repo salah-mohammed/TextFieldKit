@@ -7,14 +7,13 @@
 
 import Foundation
 // MARK: FieldValiadtion
-//public protocol AdvancedFieldValiadtion:FieldValiadtion{
-//}
 public protocol FieldValiadtion:NSObject{
     var messages:[FieldError] {get};
     var title:String{get};
     var error:String?{set get};
 }
 // MARK: GeneralFieldViewProrocol
+// MARK: GeneralFieldViewProrocol->Field ViewModel
 public protocol GeneralFieldViewProrocol:NSObject{
 var text:String? {set get};
 var placeholder:String? {set get};
@@ -24,7 +23,6 @@ var fieldDidEnd:FieldHandler?{set get}
 var onEditingChanged:OnEditingValiadtionChanged?{set get}
 }
 public protocol FieldStyleProrocol{
-    
      // for style
      func cutomLayoutSubviews();
      func selectedStyle();
@@ -32,7 +30,6 @@ public protocol FieldStyleProrocol{
      func filledStyle();
      var nibName:String { get}
      var field:Field?{set get}
-
 }
 // MARK: GeneralConnection
 public protocol GeneralConnection:GeneralFieldViewProrocol,FieldValiadtion{

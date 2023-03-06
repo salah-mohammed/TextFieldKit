@@ -81,7 +81,12 @@ open class Field:NSObject,GeneralConnection{
     }
 
     open var title: String{return ""}
-    
-    
-    
+
+//    public func set(_ sender:inout UIView?)->Self {
+//        sender?.field=self
+//        return self
+//    }
+    public override init() {
+        super.init()
+    }
 }

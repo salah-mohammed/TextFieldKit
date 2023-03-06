@@ -9,13 +9,13 @@ import Foundation
 import TextFieldKit
 import UIKit
 // this for app busines only
-public class CustomCityField:DropDownTextField,FieldValiadtion{
-    public var getText: (() -> String?)?
-
-    public var title: String{
-     return ""
-    }
+public class CustomCityField:DropDownTextField{
     
+}
+public class CustomCityFieldValidation:Field{
+    public override var title: String{
+        return "City"
+    }
     var object:Any?{
         didSet{
             if let object:String = object as? String{
@@ -23,7 +23,7 @@ public class CustomCityField:DropDownTextField,FieldValiadtion{
             }
         }
     }
-    public var messages:[FieldError]{
+    public override var messages:[FieldError]{
         if self.object == nil {
             return  [.required(self.placeholder ?? ""),.otherRequired("city not correct")]
         }

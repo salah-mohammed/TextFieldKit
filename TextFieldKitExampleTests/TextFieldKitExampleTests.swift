@@ -40,23 +40,23 @@ final class TextFieldKitExampleTests: XCTestCase {
         self.forthViewController.fieldsManager.fieldsHandler = {
             return self.forthViewController.allFields.compactMap({$0})
         }
-        forthViewController.txtFullName.field?.text=""
-        forthViewController.txtPasswordField.field?.text=""
-        forthViewController.txtNewPassword.field?.text=""
-        forthViewController.txtConfirmPassword.field?.text=""
-//        forthViewController.txtConfirmPassword.txtNewPasswordField = forthViewController.txtNewPassword
+        forthViewController.vmFullName.text=""
+        forthViewController.vmPasswordField.text=""
+        forthViewController.vmNewPassword.text=""
+        forthViewController.vmConfirmPassword.text=""
+//        forthViewController.vmConfirmPassword.vmNewPasswordField = forthViewController.vmNewPassword
         XCTAssertEqual(forthViewController.fieldsManager.checkAll().valid, false)
-        forthViewController.txtFullName.field?.text="salah"
-        forthViewController.txtPasswordField.field?.text="123456"
-        forthViewController.txtNewPassword.field?.text="123456"
-        forthViewController.txtConfirmPassword.field?.text="123456"
-//        forthViewController.txtConfirmPassword.txtNewPasswordField = forthViewController.txtNewPassword
+        forthViewController.vmFullName.text="salah"
+        forthViewController.vmPasswordField.text="123456"
+        forthViewController.vmNewPassword.text="123456"
+        forthViewController.vmConfirmPassword.text="123456"
+//        forthViewController.vmConfirmPassword.vmNewPasswordField = forthViewController.vmNewPassword
         XCTAssertEqual(forthViewController.fieldsManager.checkAll().valid, true)
-        forthViewController.txtFullName.field?.text="salah"
-        forthViewController.txtPasswordField.field?.text="123456"
-        forthViewController.txtNewPassword.field?.text="123456"
-        forthViewController.txtConfirmPassword.field?.text="12345"
-//        forthViewController.txtConfirmPassword.txtNewPasswordField = forthViewController.txtNewPassword
+        forthViewController.vmFullName.text="salah"
+        forthViewController.vmPasswordField.text="123456"
+        forthViewController.vmNewPassword.text="123456"
+        forthViewController.vmConfirmPassword.text="12345"
+//        forthViewController.vmConfirmPassword.vmNewPasswordField = forthViewController.vmNewPassword
         XCTAssertEqual(forthViewController.fieldsManager.checkAll().valid, false)
     }
 }
