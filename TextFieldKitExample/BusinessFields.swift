@@ -19,7 +19,7 @@ import LocationPicker
 // MARK: NewPasswordField
 open class NewPasswordField:TextFieldView,GeneralConnection{
     public var title: String{
-        return AppTexts.NewPassword
+        return AppTexts.Constant.newPassword.string()
     }
     public var messages:[FieldError]{
         return self.newPassword();
@@ -33,7 +33,7 @@ open class NewPasswordField:TextFieldView,GeneralConnection{
 // MARK: ConfirmPasswordField
 open class ConfirmPasswordField:TextFieldView,GeneralConnection{
     public var title:String{
-        return AppTexts.ConfirmPassword
+        return AppTexts.Constant.confirmPassword.string()
     }
      @IBOutlet weak open var txtNewPasswordField: NewPasswordField?
     
@@ -49,7 +49,7 @@ open class ConfirmPasswordField:TextFieldView,GeneralConnection{
 // MARK: PasswordField
 open class PasswordField:TextFieldView,GeneralConnection{
     public var title: String{
-        return AppTexts.Password
+        return AppTexts.Constant.password.string()
     }
     public var messages:[FieldError]{
         return self.emptyError()
@@ -64,7 +64,7 @@ open class PasswordField:TextFieldView,GeneralConnection{
 // MARK: UserNameField
 open class UserNameField:TextFieldView,GeneralConnection{
     public var title:String{
-        return AppTexts.UserName
+        return AppTexts.Constant.userName.string()
     }
     public var messages:[FieldError]{
         return self.emptyError()
@@ -77,7 +77,7 @@ open class UserNameField:TextFieldView,GeneralConnection{
 // MARK: FullNameField
 open class FullNameField:TextFieldView,GeneralConnection{
     public var title:String{
-        return AppTexts.FullName
+        return AppTexts.Constant.fullName.string()
     }
     public var messages:[FieldError]{
         return self.emptyError()
@@ -90,7 +90,7 @@ open class FullNameField:TextFieldView,GeneralConnection{
 // MARK: EmailField
 open class EmailField:TextFieldView,GeneralConnection{
     public var title:String{
-        return AppTexts.Email
+        return AppTexts.Constant.email.string()
     }
     public var messages:[FieldError]{
         return self.email();
@@ -103,7 +103,7 @@ open class EmailField:TextFieldView,GeneralConnection{
 // MARK: TitleField
 open class TitleField:TextFieldView,GeneralConnection{
     public var title: String{
-        return AppTexts.Title
+        return AppTexts.Constant.title.string()
     }
     public var messages:[FieldError]{
         return self.emptyError()
@@ -116,7 +116,7 @@ open class TitleField:TextFieldView,GeneralConnection{
 // MARK: DescriptionField
 open class DescriptionField:TextViewView,GeneralConnection{
     public var title:String{
-        return AppTexts.Description
+        return AppTexts.Constant.description.string()
     }
     public var messages:[FieldError]{
         return self.emptyError()
@@ -129,7 +129,7 @@ open class DescriptionField:TextViewView,GeneralConnection{
 // MARK: AddressField
 open class AddressField:TextFieldView,GeneralConnection{
     public var title:String{
-        return AppTexts.Address
+        return AppTexts.Constant.address.string()
     }
     public var messages:[FieldError]{
         return self.emptyError()
@@ -142,7 +142,7 @@ open class AddressField:TextFieldView,GeneralConnection{
 // MARK: RequirementsField
 open class RequirementsField:TextViewView,GeneralConnection{
     public var title:String{
-        return AppTexts.Requirements
+        return AppTexts.Constant.requirements.string()
     }
     public var messages:[FieldError]{
         return self.emptyError()
@@ -156,7 +156,7 @@ open class RequirementsField:TextViewView,GeneralConnection{
 // MARK: CustomePhoneNumber
 open class AdvancedPhoneNumber:PhoneNumberField,GeneralConnection{
     public var title: String{
-        return AppTexts.PhoneNumber
+        return AppTexts.Constant.mobileNumber.string()
     }
     
     public var messages: [FieldError]{
@@ -188,7 +188,7 @@ open class AdvancedPhoneNumber:PhoneNumberField,GeneralConnection{
 #if canImport(LocationPicker)
 open class LocationTextField:DropDownTextField,GeneralConnection{
     public var title: String{
-        return AppTexts.Location
+        return AppTexts.Constant.location.string()
     }
     public var messages: [FieldError]{
         return self.location();
@@ -233,7 +233,7 @@ open class LocationTextField:DropDownTextField,GeneralConnection{
 // MARK: CityField
 open class CityField:DropDownTextField,GeneralConnection{
     public var title: String{
-        return AppTexts.City
+        return AppTexts.Constant.city.string()
     }
     public var messages:[FieldError]{
         return self.emptyError()
@@ -242,7 +242,7 @@ open class CityField:DropDownTextField,GeneralConnection{
 // MARK: RegionField
 open class RegionField:DropDownTextField,GeneralConnection,FieldValiadtion{
     public var title:String{
-        return AppTexts.Region
+        return AppTexts.Constant.region.string()
     }
     public var messages:[FieldError]{
         return self.emptyError()

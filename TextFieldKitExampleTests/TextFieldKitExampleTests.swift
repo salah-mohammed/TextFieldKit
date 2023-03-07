@@ -8,7 +8,11 @@
 import XCTest
 import TextFieldKit
 import TextFieldKitExample
+import AppTexts
 final class TextFieldKitExampleTests: XCTestCase {
+    var testLangauge:String{
+        return "en"
+       }
     var forthViewController = ForthViewController.copy
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -45,18 +49,59 @@ final class TextFieldKitExampleTests: XCTestCase {
         forthViewController.txtNewPassword.text=""
         forthViewController.txtConfirmPassword.text=""
         forthViewController.txtConfirmPassword.txtNewPasswordField = forthViewController.txtNewPassword
-        XCTAssertEqual(forthViewController.fieldsManager.checkAll().valid, false)
+        let forum1 = forthViewController.fieldsManager.checkAll()
+        XCTAssertEqual(forum1.valid, false)
+        forum1Text(forum1,self.testLangauge)
         forthViewController.txtFullName.text="salah"
         forthViewController.txtPasswordField.text="123456"
         forthViewController.txtNewPassword.text="123456"
         forthViewController.txtConfirmPassword.text="123456"
         forthViewController.txtConfirmPassword.txtNewPasswordField = forthViewController.txtNewPassword
-        XCTAssertEqual(forthViewController.fieldsManager.checkAll().valid, true)
+        let forum2 = forthViewController.fieldsManager.checkAll()
+        XCTAssertEqual(forum2.valid, true)
         forthViewController.txtFullName.text="salah"
         forthViewController.txtPasswordField.text="123456"
         forthViewController.txtNewPassword.text="123456"
         forthViewController.txtConfirmPassword.text="12345"
         forthViewController.txtConfirmPassword.txtNewPasswordField = forthViewController.txtNewPassword
-        XCTAssertEqual(forthViewController.fieldsManager.checkAll().valid, false)
+        let forum3 = forthViewController.fieldsManager.checkAll()
+        XCTAssertEqual(forum3.valid, false)
+        forum3Text(forum3,self.testLangauge)
+    }
+    func forum1Text(_ errors:[FieldError],_ language:String){
+    let stringChecker = StringChecker.init(language)
+    let field0 = Validate.required(forthViewController.txtFullName.title,language)
+    let field1 = Validate.required(forthViewController.txtPasswordField.title,language)
+    let field2 = Validate.required(forthViewController.txtNewPassword.title,language)
+    let field3 = Validate.required(forthViewController.txtConfirmPassword.title,language)
+    XCTAssertEqual(stringChecker.valueCheck(errors[0].message,field0),true)
+    XCTAssertEqual(stringChecker.valueCheck(errors[1].message,field1),true)
+    XCTAssertEqual(stringChecker.valueCheck(errors[2].message,field2),true)
+    XCTAssertEqual(stringChecker.valueCheck(errors[3].message,field3),true)
+    }
+    func forum3Text(_ errors:[FieldError],_ language:String){
+    let stringChecker = StringChecker.init(language)
+    let field0 = AppTexts.Constant.passwordNotMatch.string(language)
+    XCTAssertEqual(stringChecker.valueCheck(errors[0].message,field0),true)
+    }
+}
+
+
+
+class StringChecker:NSObject{
+    var language:String
+    init(_ language:String) {
+        self.language=language
+    }
+    func valueCheck(_ value:String?,_ compared:String?)->Bool{
+        if value == "-" || value == nil{
+            XCTAssertEqual(false,true,"language key error")
+            return false
+        }
+        if compared == "-" || compared == nil{
+            XCTAssertEqual(false,true,"language key error")
+            return false
+        }
+        return (value == compared)
     }
 }
