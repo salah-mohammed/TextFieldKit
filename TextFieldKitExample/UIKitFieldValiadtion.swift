@@ -42,7 +42,7 @@ extension GeneralFieldViewProrocol where Self: GeneralConnection {
             messages.append(.required(self.title))
         }else
         if txtNewPasswordField?.text != self.text {
-            messages.append(.otherRequired(AppTexts.PasswordNotMatch))
+            messages.append(.otherRequired(AppTexts.Constant.passwordNotMatch.string()))
         }
         return messages;
     }

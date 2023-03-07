@@ -23,7 +23,7 @@ public class Username:BaseValidation,GeneralConnection{
     @Published public var error: String?
 
     public var title: String{
-        return AppTexts.UserName
+        return AppTexts.Constant.userName.string()
     }
     public var messages: [TextFieldKit.FieldError]{
         return self.emptyError()
@@ -49,7 +49,7 @@ public class FullName:BaseValidation,GeneralConnection{
     @Published public var error: String?
 
     public var title: String{
-        return AppTexts.FullName
+        return AppTexts.Constant.fullName.string()
     }
     public var messages: [TextFieldKit.FieldError]{
         return self.emptyError()
@@ -68,7 +68,7 @@ public class FirstName:BaseValidation,GeneralConnection{
     @Published public var error: String?
 
     public var title: String{
-        return AppTexts.FirstName
+        return AppTexts.Constant.firstName.string()
     }
     public var messages: [TextFieldKit.FieldError]{
         return self.emptyError()
@@ -88,7 +88,7 @@ public class LastName:BaseValidation,GeneralConnection{
     @Published public var error: String?
 
     public var title: String{
-        return AppTexts.LastName
+        return AppTexts.Constant.lastName.string()
     }
     public var messages: [TextFieldKit.FieldError]{
         return self.emptyError()
@@ -108,7 +108,7 @@ public class Email:BaseValidation,GeneralConnection{
     @Published public var error: String?
 
     public var title: String{
-        return AppTexts.Email
+        return AppTexts.Constant.email.string()
     }
     public var messages: [TextFieldKit.FieldError]{
         return self.email()
@@ -129,7 +129,7 @@ public class Requirements:BaseValidation,GeneralConnection{
     @Published public var error: String?
 
     public var title: String{
-        return AppTexts.Requirements
+        return AppTexts.Constant.requirements.string()
     }
     public var messages: [TextFieldKit.FieldError]{
     return []
@@ -149,7 +149,7 @@ public class City:BaseValidation,GeneralConnection{
     @Published public var error: String?
 
     public var title: String{
-        return AppTexts.City
+        return AppTexts.Constant.city.string()
     }
     public var messages: [TextFieldKit.FieldError]{
         return self.emptyError()
@@ -169,7 +169,7 @@ public class Region:BaseValidation,GeneralConnection{
     @Published public var error: String?
 
     public var title: String{
-        return AppTexts.Region
+        return AppTexts.Constant.region.string()
     }
     public var messages: [TextFieldKit.FieldError]{
         return self.emptyError()
@@ -189,7 +189,7 @@ public class Location:BaseValidation,GeneralConnection{
     @Published public var error: String?
 
     public var title: String{
-        return AppTexts.Location
+        return AppTexts.Constant.location.string()
     }
     public var messages: [TextFieldKit.FieldError]{
         return self.emptyError()
@@ -209,7 +209,7 @@ public class Address:BaseValidation,GeneralConnection{
     @Published public var error: String?
 
     public var title: String{
-        return AppTexts.Address
+        return AppTexts.Constant.address.string()
     }
     public var messages: [TextFieldKit.FieldError]{
         return self.emptyError()
@@ -229,7 +229,7 @@ public class Description:BaseValidation,GeneralConnection{
     @Published public var error: String?
 
     public var title: String{
-        return AppTexts.Description
+        return AppTexts.Constant.description.string()
     }
     public var messages: [TextFieldKit.FieldError]{
         return self.emptyError()
@@ -249,7 +249,7 @@ public class Title:BaseValidation,GeneralConnection{
     @Published public var error: String?
 
     public var title: String{
-        return AppTexts.Title
+        return AppTexts.Constant.title.string()
     }
     public var messages: [TextFieldKit.FieldError]{
         return self.emptyError()
@@ -270,7 +270,7 @@ public class Password:BaseValidation,GeneralConnection{
     @Published public var error: String?
 
     public var title: String{
-        return AppTexts.Password
+        return AppTexts.Constant.password.string()
     }
     public var messages: [TextFieldKit.FieldError]{
     return []

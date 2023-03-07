@@ -20,7 +20,6 @@ public class UoploadView:UIButton{
         didSet{
             
             self.fieldObservations.removeAll { item in return item.0 == oldValue}
-
             let observer1 = field?.observe(
                 \.text,
                  options: [.old, .new]
@@ -98,12 +97,12 @@ public class ForthViewController: UIViewController {
     
     
     
-    @IBOutlet public var segmentedControl:UISegmentedControl!
+    @IBOutlet public var segmentedControl:UISegmentedControl?
     
     var userType:UserType?{
         didSet{
             if let userType:UserType=userType{
-            self.segmentedControl.selectedSegmentIndex=userType.rawValue
+            self.segmentedControl?.selectedSegmentIndex=userType.rawValue
             }
         }
     }
@@ -159,6 +158,14 @@ public class ForthViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil);
+        self.setupFields()
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder);
+    }
     public override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated);
 
@@ -196,13 +203,7 @@ extension ForthViewController{
 
     }
     func setupData(){
-        self.fieldsManager.fieldsHandler={
-            return self.allFields.compactMap({$0})
-        }
-        self.fieldsManager.requiredFieldsHandler={
-            return self.fields.compactMap({$0})
-        }
-        self.userType = .user;
+        setupFields();
         txtFullName.fieldDidEnd = { _ in
 
         }
@@ -216,5 +217,14 @@ extension ForthViewController{
 }
 // MARK: - Networking Methods
 extension ForthViewController{
+    func setupFields(){
+        self.fieldsManager.fieldsHandler={
+            return self.allFields
+        }
+        self.fieldsManager.requiredFieldsHandler={
+            return self.fields
+        }
+        self.userType = .user;
 
+    }
 }

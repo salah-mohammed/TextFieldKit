@@ -4,12 +4,13 @@ PODS:
   - PhoneKit (0.0.7)
 
 DEPENDENCIES:
-  - AppTexts (from `https://github.com/salah-mohammed/AppTexts`)
+  - AppTexts (from `https://github.com/salah-mohammed/AppTexts`, branch `development`)
   - LocationPicker (from `https://github.com/salah-mohammed/LocationPicker.git`)
   - PhoneKit (from `https://github.com/salah-mohammed/PhoneKit.git`)
 
 EXTERNAL SOURCES:
   AppTexts:
+    :branch: development
     :git: https://github.com/salah-mohammed/AppTexts
   LocationPicker:
     :git: https://github.com/salah-mohammed/LocationPicker.git
@@ -18,7 +19,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   AppTexts:
-    :commit: 0c6a7bd5aa4fbdc5df7e225e3e5bae7d68a1e6bc
+    :commit: 163ddfa4657a5644d513d76041210300fec32954
     :git: https://github.com/salah-mohammed/AppTexts
   LocationPicker:
     :commit: 3af9c914bd4757ca1d5bc77f6bfdea377a3ef252
@@ -32,6 +33,6 @@ SPEC CHECKSUMS:
   LocationPicker: f082493d4aaab1bdf20a1fa07234ca643382ae7b
   PhoneKit: 46661f20fc98104f2c49ce66b34ee57b423c19b8
 
-PODFILE CHECKSUM: 8ece7903805011af05eab1eaf5fb4084f44d7c75
+PODFILE CHECKSUM: 146162b20b40f3d9b3a248da7e63b82511c35e79
 
 COCOAPODS: 1.11.3

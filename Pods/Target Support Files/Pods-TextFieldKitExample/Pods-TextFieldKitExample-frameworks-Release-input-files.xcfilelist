@@ -1,4 +1,4 @@
 ${PODS_ROOT}/Target Support Files/Pods-TextFieldKitExample/Pods-TextFieldKitExample-frameworks.sh
-${BUILT_PRODUCTS_DIR}/AppTexts-iOS13.0/AppTexts.framework
+${BUILT_PRODUCTS_DIR}/AppTexts-framework-iOS13.0/AppTexts.framework
 ${BUILT_PRODUCTS_DIR}/LocationPicker/LocationPicker.framework
 ${BUILT_PRODUCTS_DIR}/PhoneKit/PhoneKit.framework
