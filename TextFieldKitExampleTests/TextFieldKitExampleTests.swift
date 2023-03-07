@@ -10,9 +10,9 @@ import TextFieldKit
 import TextFieldKitExample
 import AppTexts
 final class TextFieldKitExampleTests: XCTestCase {
-    var enStringChecker = StringChecker.init("en")
-    var arStringChecker = StringChecker.init("ar")
-
+    var testLangauge:String{
+     return "en"
+    }
     var forthViewController = ForthViewController.copy
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -45,8 +45,7 @@ final class TextFieldKitExampleTests: XCTestCase {
         forthViewController.vmNewPassword.text=""
         forthViewController.vmConfirmPassword.text=""
         let forum1 = forthViewController.fieldsManager.checkAll();
-        forum1TextEn(forum1)
-        forum1TextAr(forum1)
+        forum1Text(forum1,self.testLangauge)
         XCTAssertEqual(forum1.valid, false)
         forthViewController.vmFullName.text="salah"
         forthViewController.vmPasswordField.text="123456"
@@ -59,49 +58,42 @@ final class TextFieldKitExampleTests: XCTestCase {
         forthViewController.vmNewPassword.text="123456"
         forthViewController.vmConfirmPassword.text="12345"
         let forum3 = forthViewController.fieldsManager.checkAll()
-        forum3TextEn(forum3)
-        forum3TextAr(forum3)
+        forum3Text(forum3,self.testLangauge)
         XCTAssertEqual(forum3.valid, false)
-        forthViewController.vmFullName.text="salah"
-        forthViewController.vmPasswordField.text="123456"
-        forthViewController.vmNewPassword.text="123456"
-        forthViewController.vmConfirmPassword.text="12345"
-        let forum4 = forthViewController.fieldsManager.checkAll()
-        forum1TextEn(forum4)
-        forum1TextAr(forum4)
-        XCTAssertEqual(forum4.valid, false)
-        
     }
 
-    func forum1TextEn(_ errors:[FieldError]){
-        XCTAssertEqual(errors[0].message == Validate, true)
-
+    func forum1Text(_ errors:[FieldError],_ language:String){
+    var stringChecker = StringChecker.init(language)
+    let field0 = Validate.required(forthViewController.vmFullName.title,language)
+    let field1 = Validate.required(forthViewController.vmPasswordField.title,language)
+    let field2 = Validate.required(forthViewController.vmNewPassword.title,language)
+    let field3 = Validate.required(forthViewController.vmConfirmPassword.title,language)
+    XCTAssertEqual(stringChecker.valueCheck(errors[0].message,field0),true)
+    XCTAssertEqual(stringChecker.valueCheck(errors[1].message,field1),true)
+    XCTAssertEqual(stringChecker.valueCheck(errors[2].message,field2),true)
+    XCTAssertEqual(stringChecker.valueCheck(errors[3].message,field3),true)
     }
-
-    func forum1TextAr(_ errors:[FieldError]){
-    }
-    func forum3TextEn(_ errors:[FieldError]){
-    }
-    func forum3TextAr(_ errors:[FieldError]){
-    }
-    func forum4TextEn(_ errors:[FieldError]){
-    }
-    func forum4TextAr(_ errors:[FieldError]){
+    func forum3Text(_ errors:[FieldError],_ language:String){
+    var stringChecker = StringChecker.init(language)
+    let field0 = AppTexts.Constant.passwordNotMatch.string(language)
+    XCTAssertEqual(stringChecker.valueCheck(errors[0].message,field0),true)
     }
 }
-//"- Sorry, The Fullname is required\n- Sorry, The New Password is required\n- Sorry, The Confirm Password is required\n- Sorry, The Password is required"
 
 class StringChecker:NSObject{
     var language:String
     init(_ language:String) {
         self.language=language
     }
-    func value(_ key:String)->String?{
-        var tempValue = key.at_localized(language)
-        if tempValue == "-" || tempValue == nil{
+    func valueCheck(_ value:String?,_ compared:String?)->Bool{
+        if value == "-" || value == nil{
             XCTAssertEqual(false,true,"language key error")
-            return nil
+            return false
         }
-        return tempValue
+        if compared == "-" || compared == nil{
+            XCTAssertEqual(false,true,"language key error")
+            return false
+        }
+        return (value == compared)
     }
 }

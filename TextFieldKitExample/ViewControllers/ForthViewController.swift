@@ -113,9 +113,9 @@ public class ForthViewController: UIViewController {
          vmTitle,
          vmFullName,
          vmRequirements,
+         vmPasswordField,
          vmNewPassword,
          vmConfirmPassword,
-         vmPasswordField,
          vmEmail,
          vmCity,
          vmViewUploadId]
