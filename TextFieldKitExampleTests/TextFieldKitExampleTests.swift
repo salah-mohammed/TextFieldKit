@@ -63,7 +63,7 @@ final class TextFieldKitExampleTests: XCTestCase {
     }
 
     func forum1Text(_ errors:[FieldError],_ language:String){
-    var stringChecker = StringChecker.init(language)
+    let stringChecker = StringChecker.init(language)
     let field0 = Validate.required(forthViewController.vmFullName.title,language)
     let field1 = Validate.required(forthViewController.vmPasswordField.title,language)
     let field2 = Validate.required(forthViewController.vmNewPassword.title,language)
@@ -74,7 +74,7 @@ final class TextFieldKitExampleTests: XCTestCase {
     XCTAssertEqual(stringChecker.valueCheck(errors[3].message,field3),true)
     }
     func forum3Text(_ errors:[FieldError],_ language:String){
-    var stringChecker = StringChecker.init(language)
+    let stringChecker = StringChecker.init(language)
     let field0 = AppTexts.Constant.passwordNotMatch.string(language)
     XCTAssertEqual(stringChecker.valueCheck(errors[0].message,field0),true)
     }
