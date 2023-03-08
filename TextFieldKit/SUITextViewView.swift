@@ -7,7 +7,7 @@
 
 import UIKit
 import SwiftUI
-public typealias OnEditingValiadtionChanged = (Bool,GeneralConnection?) -> Void
+public typealias OnEditingValiadtionChanged = (Bool,FieldProrocol?) -> Void
 @available(iOS 16, *)
 public struct SUITextViewView: View {
     public var placeholder:String
@@ -15,11 +15,11 @@ public struct SUITextViewView: View {
     public var error:Binding<String?>?
     @State public var iconName:String?
     public var onEditingChanged:((Bool) -> Void)?
-    public var onEditingValidationChanged:((Bool,GeneralConnection?) -> Void)?
+    public var onEditingValidationChanged:((Bool,FieldProrocol?) -> Void)?
     @FocusState private var textFocused: Bool
     public var style:FieldStyle = SUITextViewView.style ?? FieldStyle.init()
     public static var style:FieldStyle?
-    public var validation:GeneralConnection?
+    public var validation:FieldProrocol?
 
     public init(placeholder:String?,
                 text:Binding<String>,
@@ -27,7 +27,7 @@ public struct SUITextViewView: View {
                 iconName:String?=nil,
                 onEditingChanged:((Bool) -> Void)?=nil,
                 style:FieldStyle?=nil,
-                validation:(GeneralConnection?,((Bool,GeneralConnection?) -> Void)?)?=nil) {
+                validation:(FieldProrocol?,((Bool,FieldProrocol?) -> Void)?)?=nil) {
         self.validation = validation?.0
         self.placeholder = placeholder ?? validation?.0?.title ?? ""
         self.onEditingValidationChanged = validation?.1 ?? validation?.0?.onEditingChanged

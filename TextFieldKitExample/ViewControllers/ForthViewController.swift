@@ -12,7 +12,7 @@ case user=0
 case company=1
 }
 
-public class UoploadView:UIButton,FieldValiadtion{
+public class UoploadView:UIButton,FieldValiadtionProrocol{
     var filePicked:Data?=nil
     @IBOutlet weak var txtTitle:UILabel!
 
@@ -54,7 +54,7 @@ public class ForthViewController: UIViewController {
         }
     }
     // all
-    public var allFields:[FieldValiadtion]{
+    public var allFields:[FieldValiadtionProrocol]{
     return [
     txtAdvancedPhoneNumber,
     txtLocationTextField,
@@ -69,7 +69,7 @@ public class ForthViewController: UIViewController {
     viewUploadId]
    }
     // userCheck
-    public var userFields:[FieldValiadtion]{
+    public var userFields:[FieldValiadtionProrocol]{
     return [
         txtFullName,
         txtPasswordField,
@@ -77,7 +77,7 @@ public class ForthViewController: UIViewController {
         txtConfirmPassword]
     }
     // companyCheck
-    public var companyFields:[FieldValiadtion]{
+    public var companyFields:[FieldValiadtionProrocol]{
     return [
         txtAdvancedPhoneNumber,
         txtLocationTextField,
@@ -92,7 +92,7 @@ public class ForthViewController: UIViewController {
         viewUploadId]
     }
     // currentCheck
-    public var fields:[FieldValiadtion]{
+    public var fields:[FieldValiadtionProrocol]{
         return  self.userType == .user ? self.userFields:self.companyFields
     }
     public var fieldsManager:FieldsManager = FieldsManager();

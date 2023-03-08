@@ -28,7 +28,7 @@ public class TextViewStyle:FieldStyle{
     
 }
 @objcMembers
-open class TextViewView:UIView,GeneralFieldViewProrocol,FieldStyleProrocol {
+open class TextViewView:UIView,FieldDataProrocol,FieldStyleProrocol {
     public var onEditingChanged: OnEditingValiadtionChanged?
     
     // MARK:Customisable

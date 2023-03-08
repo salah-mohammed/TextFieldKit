@@ -157,12 +157,12 @@ extension UIColor{
 #endif
 
 
-public extension FieldValiadtion {
+public extension FieldValiadtionProrocol {
     func clearError(){
         self.error=nil
     }
 }
-public extension Array where Element == FieldValiadtion {
+public extension Array where Element == FieldValiadtionProrocol {
     func clearErrors(){
         for field in self{
             field.clearError()

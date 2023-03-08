@@ -17,7 +17,7 @@ import LocationPicker
 #endif
 
 // MARK: NewPasswordField
-open class NewPasswordField:TextFieldView,GeneralConnection{
+open class NewPasswordField:TextFieldView,FieldProrocol{
     public var title: String{
         return AppTexts.Constant.newPassword.string()
     }
@@ -31,7 +31,7 @@ open class NewPasswordField:TextFieldView,GeneralConnection{
     }
 }
 // MARK: ConfirmPasswordField
-open class ConfirmPasswordField:TextFieldView,GeneralConnection{
+open class ConfirmPasswordField:TextFieldView,FieldProrocol{
     public var title:String{
         return AppTexts.Constant.confirmPassword.string()
     }
@@ -47,7 +47,7 @@ open class ConfirmPasswordField:TextFieldView,GeneralConnection{
     }
 }
 // MARK: PasswordField
-open class PasswordField:TextFieldView,GeneralConnection{
+open class PasswordField:TextFieldView,FieldProrocol{
     public var title: String{
         return AppTexts.Constant.password.string()
     }
@@ -62,7 +62,7 @@ open class PasswordField:TextFieldView,GeneralConnection{
     }
 }
 // MARK: UserNameField
-open class UserNameField:TextFieldView,GeneralConnection{
+open class UserNameField:TextFieldView,FieldProrocol{
     public var title:String{
         return AppTexts.Constant.userName.string()
     }
@@ -75,7 +75,7 @@ open class UserNameField:TextFieldView,GeneralConnection{
     }
 }
 // MARK: FullNameField
-open class FullNameField:TextFieldView,GeneralConnection{
+open class FullNameField:TextFieldView,FieldProrocol{
     public var title:String{
         return AppTexts.Constant.fullName.string()
     }
@@ -88,7 +88,7 @@ open class FullNameField:TextFieldView,GeneralConnection{
     }
 }
 // MARK: EmailField
-open class EmailField:TextFieldView,GeneralConnection{
+open class EmailField:TextFieldView,FieldProrocol{
     public var title:String{
         return AppTexts.Constant.email.string()
     }
@@ -101,7 +101,7 @@ open class EmailField:TextFieldView,GeneralConnection{
     }
 }
 // MARK: TitleField
-open class TitleField:TextFieldView,GeneralConnection{
+open class TitleField:TextFieldView,FieldProrocol{
     public var title: String{
         return AppTexts.Constant.title.string()
     }
@@ -114,7 +114,7 @@ open class TitleField:TextFieldView,GeneralConnection{
     }
 }
 // MARK: DescriptionField
-open class DescriptionField:TextViewView,GeneralConnection{
+open class DescriptionField:TextViewView,FieldProrocol{
     public var title:String{
         return AppTexts.Constant.description.string()
     }
@@ -127,7 +127,7 @@ open class DescriptionField:TextViewView,GeneralConnection{
     }
 }
 // MARK: AddressField
-open class AddressField:TextFieldView,GeneralConnection{
+open class AddressField:TextFieldView,FieldProrocol{
     public var title:String{
         return AppTexts.Constant.address.string()
     }
@@ -140,7 +140,7 @@ open class AddressField:TextFieldView,GeneralConnection{
     }
 }
 // MARK: RequirementsField
-open class RequirementsField:TextViewView,GeneralConnection{
+open class RequirementsField:TextViewView,FieldProrocol{
     public var title:String{
         return AppTexts.Constant.requirements.string()
     }
@@ -154,7 +154,7 @@ open class RequirementsField:TextViewView,GeneralConnection{
 }
 #if canImport(PhoneKit)
 // MARK: CustomePhoneNumber
-open class AdvancedPhoneNumber:PhoneNumberField,GeneralConnection{
+open class AdvancedPhoneNumber:PhoneNumberField,FieldProrocol{
     public var title: String{
         return AppTexts.Constant.mobileNumber.string()
     }
@@ -186,7 +186,7 @@ open class AdvancedPhoneNumber:PhoneNumberField,GeneralConnection{
 }
 #endif
 #if canImport(LocationPicker)
-open class LocationTextField:DropDownTextField,GeneralConnection{
+open class LocationTextField:DropDownTextField,FieldProrocol{
     public var title: String{
         return AppTexts.Constant.location.string()
     }
@@ -231,7 +231,7 @@ open class LocationTextField:DropDownTextField,GeneralConnection{
 #endif
 
 // MARK: CityField
-open class CityField:DropDownTextField,GeneralConnection{
+open class CityField:DropDownTextField,FieldProrocol{
     public var title: String{
         return AppTexts.Constant.city.string()
     }
@@ -240,7 +240,7 @@ open class CityField:DropDownTextField,GeneralConnection{
     }
 }
 // MARK: RegionField
-open class RegionField:DropDownTextField,GeneralConnection,FieldValiadtion{
+open class RegionField:DropDownTextField,FieldProrocol{
     public var title:String{
         return AppTexts.Constant.region.string()
     }

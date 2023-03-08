@@ -8,7 +8,7 @@
 import UIKit
 import TextFieldKit
 import AppTexts
-public extension GeneralFieldViewProrocol where Self: GeneralConnection {
+public extension FieldDataProrocol where Self: FieldProrocol {
      func emptyError()->[FieldError]{
         if ((self.text?.count ?? 0) == 0) || (self.text?.isEmpty ?? true) {
             return [.required(self.title)]

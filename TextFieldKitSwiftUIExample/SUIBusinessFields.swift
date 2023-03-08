@@ -14,7 +14,7 @@ public class BaseValidation:NSObject,ObservableObject{
     public var fieldDidEnd: TextFieldKit.FieldHandler?
 
 }
-public class Username:BaseValidation,GeneralConnection,GeneralFieldViewProrocol{
+public class Username:BaseValidation,FieldProrocol{
     
     @Published public var text:String?
     @Published public var placeholder: String?
@@ -38,7 +38,7 @@ public class Username:BaseValidation,GeneralConnection,GeneralFieldViewProrocol{
 //        }
 //    }
 }
-public class FullName:BaseValidation,GeneralConnection,GeneralFieldViewProrocol{
+public class FullName:BaseValidation,FieldProrocol{
     @Published public var text:String?
     @Published public var placeholder: String?
     @Published public var error: String?
@@ -54,7 +54,7 @@ public class FullName:BaseValidation,GeneralConnection,GeneralFieldViewProrocol{
         self.placeholder=self.title
     }
 }
-public class FirstName:BaseValidation,GeneralConnection,GeneralFieldViewProrocol{
+public class FirstName:BaseValidation,FieldProrocol{
     @Published public var text:String?
     @Published public var placeholder: String?
     @Published public var error: String?
@@ -71,7 +71,7 @@ public class FirstName:BaseValidation,GeneralConnection,GeneralFieldViewProrocol
     }
 
 }
-public class LastName:BaseValidation,GeneralConnection,GeneralFieldViewProrocol{
+public class LastName:BaseValidation,FieldProrocol{
     @Published public var text:String?
     @Published public var placeholder: String?
     @Published public var error: String?
@@ -88,7 +88,7 @@ public class LastName:BaseValidation,GeneralConnection,GeneralFieldViewProrocol{
     }
 
 }
-public class Email:BaseValidation,GeneralConnection,GeneralFieldViewProrocol{
+public class Email:BaseValidation,FieldProrocol{
     @Published public var text:String?
     @Published public var placeholder: String?
     @Published public var error: String?
@@ -105,7 +105,7 @@ public class Email:BaseValidation,GeneralConnection,GeneralFieldViewProrocol{
     }
 
 }
-public class Requirements:BaseValidation,GeneralConnection,GeneralFieldViewProrocol{
+public class Requirements:BaseValidation,FieldProrocol{
     
     @Published public var text:String?
     @Published public var placeholder: String?
@@ -123,7 +123,7 @@ public class Requirements:BaseValidation,GeneralConnection,GeneralFieldViewProro
     }
 
 }
-public class City:BaseValidation,GeneralConnection,GeneralFieldViewProrocol{
+public class City:BaseValidation,FieldProrocol{
     @Published public var text:String?
     @Published public var placeholder: String?
     @Published public var error: String?
@@ -140,7 +140,7 @@ public class City:BaseValidation,GeneralConnection,GeneralFieldViewProrocol{
     }
 
 }
-public class Region:BaseValidation,GeneralConnection,GeneralFieldViewProrocol{
+public class Region:BaseValidation,FieldProrocol{
     @Published public var text:String?
     @Published public var placeholder: String?
     @Published public var error: String?
@@ -157,7 +157,7 @@ public class Region:BaseValidation,GeneralConnection,GeneralFieldViewProrocol{
     }
 
 }
-public class Location:BaseValidation,GeneralConnection,GeneralFieldViewProrocol{
+public class Location:BaseValidation,FieldProrocol{
     @Published public var text:String?
     @Published public var placeholder: String?
     @Published public var error: String?
@@ -174,7 +174,7 @@ public class Location:BaseValidation,GeneralConnection,GeneralFieldViewProrocol{
     }
 
 }
-public class Address:BaseValidation,GeneralConnection,GeneralFieldViewProrocol{
+public class Address:BaseValidation,FieldProrocol{
     @Published public var text:String?
     @Published public var placeholder: String?
     @Published public var error: String?
@@ -191,7 +191,7 @@ public class Address:BaseValidation,GeneralConnection,GeneralFieldViewProrocol{
     }
 
 }
-public class Description:BaseValidation,GeneralConnection,GeneralFieldViewProrocol{
+public class Description:BaseValidation,FieldProrocol{
     @Published public var text:String?
     @Published public var placeholder: String?
     @Published public var error: String?
@@ -208,7 +208,7 @@ public class Description:BaseValidation,GeneralConnection,GeneralFieldViewProroc
     }
 
 }
-public class Title:BaseValidation,GeneralConnection,GeneralFieldViewProrocol{
+public class Title:BaseValidation,FieldProrocol{
     @Published public var text:String?
     @Published public var placeholder: String?
     @Published public var error: String?
@@ -225,7 +225,7 @@ public class Title:BaseValidation,GeneralConnection,GeneralFieldViewProrocol{
     }
 
 }
-public class Password:BaseValidation,GeneralConnection,GeneralFieldViewProrocol{
+public class Password:BaseValidation,FieldProrocol{
     @Published public var text:String?
     @Published public var placeholder: String?
     @Published public var error: String?

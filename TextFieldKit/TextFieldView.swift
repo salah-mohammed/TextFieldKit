@@ -12,8 +12,8 @@ import UIKit
 import PhoneKit
 #endif
 
-public typealias FieldHandler = (GeneralFieldViewProrocol)->Void
-open class TextFieldView: UIView,GeneralFieldViewProrocol,FieldStyleProrocol {
+public typealias FieldHandler = (FieldDataProrocol)->Void
+open class TextFieldView: UIView,FieldDataProrocol,FieldStyleProrocol {
     public var onEditingChanged: OnEditingValiadtionChanged?
     
     // MARK:Customisable

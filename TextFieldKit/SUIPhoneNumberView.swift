@@ -16,11 +16,11 @@ public struct SUIPhoneNumberView: View {
     @State public var iconName:String?
     var phoneData:PhoneData?
     public var onEditingChanged:((Bool) -> Void)?
-    public var onEditingValidationChanged:((Bool,GeneralConnection?) -> Void)?
+    public var onEditingValidationChanged:((Bool,FieldProrocol?) -> Void)?
     @State private var changed:Bool=false;
     public var style:FieldStyle = SUITextFieldView.style ?? FieldStyle.init()
     public static var style:FieldStyle?
-    public var validation:GeneralConnection?
+    public var validation:FieldProrocol?
 
     
     public init(placeholder:String?=nil,
@@ -30,7 +30,7 @@ public struct SUIPhoneNumberView: View {
                 phoneData:PhoneData?=nil,
                 onEditingChanged:((Bool) -> Void)?=nil,
                 style:FieldStyle?=nil,
-                validation:(GeneralConnection,(Bool,GeneralConnection?) -> Void)?=nil) {
+                validation:(FieldProrocol,(Bool,FieldProrocol?) -> Void)?=nil) {
 //        self.validation?.text = text
         self.validation = validation?.0
         self.placeholder = placeholder ?? validation?.0.title
