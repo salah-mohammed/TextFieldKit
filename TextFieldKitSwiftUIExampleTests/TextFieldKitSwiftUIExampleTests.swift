@@ -15,16 +15,16 @@ final class TextFieldKitSwiftUIExampleTests: XCTestCase {
     var email = Email.init();
     var username = Username.init();
 
-    var companyFields:[FieldValiadtion]{
+    var companyFields:[FieldValiadtionProrocol]{
         return [
             fullName,
             email]
     }
-    var userFields:[FieldValiadtion]{
+    var userFields:[FieldValiadtionProrocol]{
     return [fullName,
             username]
     }
-    var allFields:[FieldValiadtion]{
+    var allFields:[FieldValiadtionProrocol]{
         return [
             fullName,
             email,

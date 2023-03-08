@@ -19,7 +19,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   AppTexts:
-    :commit: 163ddfa4657a5644d513d76041210300fec32954
+    :commit: 35abb17386cae9fdf236658cabaa9407d13599b5
     :git: https://github.com/salah-mohammed/AppTexts
   LocationPicker:
     :commit: 3af9c914bd4757ca1d5bc77f6bfdea377a3ef252

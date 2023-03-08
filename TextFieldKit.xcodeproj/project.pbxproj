@@ -528,7 +528,7 @@
 				4EDD5D4628EB8C1000837705 /* Frameworks */,
 				4EDD5D4728EB8C1000837705 /* Resources */,
 				4ECAA1D528F0134E00FBDD86 /* Embed Frameworks */,
-				C7322446AE4CA1778A2716A0 /* [CP] Embed Pods Frameworks */,
+				2F3989810E47B0ED9D3B8129 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -548,7 +548,7 @@
 				8B104AB929A76CAD002A014D /* Sources */,
 				8B104ABA29A76CAD002A014D /* Frameworks */,
 				8B104ABB29A76CAD002A014D /* Resources */,
-				0E6CDCF43D74F86C88AC92F5 /* [CP] Copy Pods Resources */,
+				80B421F700D8DBA2FD5A87A9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -568,7 +568,7 @@
 				8B68199729AC86BF002D5B49 /* Sources */,
 				8B68199829AC86BF002D5B49 /* Frameworks */,
 				8B68199929AC86BF002D5B49 /* Resources */,
-				BECB0468806F0C5920D7BE23 /* [CP] Copy Pods Resources */,
+				5C160A108603C6F50BEAC70D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -683,21 +683,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0E6CDCF43D74F86C88AC92F5 /* [CP] Copy Pods Resources */ = {
+		2F3989810E47B0ED9D3B8129 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TextFieldKitSwiftUIExampleTests/Pods-TextFieldKitSwiftUIExampleTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-TextFieldKitSwiftUIExample/Pods-TextFieldKitSwiftUIExample-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TextFieldKitSwiftUIExampleTests/Pods-TextFieldKitSwiftUIExampleTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-TextFieldKitSwiftUIExample/Pods-TextFieldKitSwiftUIExample-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TextFieldKitSwiftUIExampleTests/Pods-TextFieldKitSwiftUIExampleTests-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TextFieldKitSwiftUIExample/Pods-TextFieldKitSwiftUIExample-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		572CE6CD6BEDDC7B69FF3B39 /* [CP] Embed Pods Frameworks */ = {
@@ -715,6 +715,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TextFieldKitExample/Pods-TextFieldKitExample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5C160A108603C6F50BEAC70D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TextFieldKitExampleTests/Pods-TextFieldKitExampleTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TextFieldKitExampleTests/Pods-TextFieldKitExampleTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TextFieldKitExampleTests/Pods-TextFieldKitExampleTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		5F1B8CC710108928026DD5DE /* [CP] Check Pods Manifest.lock */ = {
@@ -761,21 +778,21 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		BECB0468806F0C5920D7BE23 /* [CP] Copy Pods Resources */ = {
+		80B421F700D8DBA2FD5A87A9 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TextFieldKitExampleTests/Pods-TextFieldKitExampleTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-TextFieldKitSwiftUIExampleTests/Pods-TextFieldKitSwiftUIExampleTests-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TextFieldKitExampleTests/Pods-TextFieldKitExampleTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-TextFieldKitSwiftUIExampleTests/Pods-TextFieldKitSwiftUIExampleTests-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TextFieldKitExampleTests/Pods-TextFieldKitExampleTests-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TextFieldKitSwiftUIExampleTests/Pods-TextFieldKitSwiftUIExampleTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C7240920C014A6F37197C2EE /* [CP] Check Pods Manifest.lock */ = {
@@ -798,23 +815,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C7322446AE4CA1778A2716A0 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TextFieldKitSwiftUIExample/Pods-TextFieldKitSwiftUIExample-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TextFieldKitSwiftUIExample/Pods-TextFieldKitSwiftUIExample-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TextFieldKitSwiftUIExample/Pods-TextFieldKitSwiftUIExample-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CB981F9BEF260F4344DA9C25 /* [CP] Check Pods Manifest.lock */ = {

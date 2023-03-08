@@ -23,7 +23,7 @@ public class Username:BaseValidation,FieldProrocol{
     @Published public var error: String?
 
     public var title: String{
-        return AppTexts.Constant.userName.string()
+        return AppTexts.Constant.userName.string
     }
     public var messages: [TextFieldKit.FieldError]{
         return self.emptyError()
@@ -49,7 +49,7 @@ public class FullName:BaseValidation,FieldProrocol{
     @Published public var error: String?
 
     public var title: String{
-        return AppTexts.Constant.fullName.string()
+        return AppTexts.Constant.fullName.string
     }
     public var messages: [TextFieldKit.FieldError]{
         return self.emptyError()
@@ -68,7 +68,7 @@ public class FirstName:BaseValidation,FieldProrocol{
     @Published public var error: String?
 
     public var title: String{
-        return AppTexts.Constant.firstName.string()
+        return AppTexts.Constant.firstName.string
     }
     public var messages: [TextFieldKit.FieldError]{
         return self.emptyError()
@@ -88,7 +88,7 @@ public class LastName:BaseValidation,FieldProrocol{
     @Published public var error: String?
 
     public var title: String{
-        return AppTexts.Constant.lastName.string()
+        return AppTexts.Constant.lastName.string
     }
     public var messages: [TextFieldKit.FieldError]{
         return self.emptyError()
@@ -108,7 +108,7 @@ public class Email:BaseValidation,FieldProrocol{
     @Published public var error: String?
 
     public var title: String{
-        return AppTexts.Constant.email.string()
+        return AppTexts.Constant.email.string
     }
     public var messages: [TextFieldKit.FieldError]{
         return self.email()
@@ -129,7 +129,7 @@ public class Requirements:BaseValidation,FieldProrocol{
     @Published public var error: String?
 
     public var title: String{
-        return AppTexts.Constant.requirements.string()
+        return AppTexts.Constant.requirements.string
     }
     public var messages: [TextFieldKit.FieldError]{
     return []
@@ -149,7 +149,7 @@ public class City:BaseValidation,FieldProrocol{
     @Published public var error: String?
 
     public var title: String{
-        return AppTexts.Constant.city.string()
+        return AppTexts.Constant.city.string
     }
     public var messages: [TextFieldKit.FieldError]{
         return self.emptyError()
@@ -169,7 +169,7 @@ public class Region:BaseValidation,FieldProrocol{
     @Published public var error: String?
 
     public var title: String{
-        return AppTexts.Constant.region.string()
+        return AppTexts.Constant.region.string
     }
     public var messages: [TextFieldKit.FieldError]{
         return self.emptyError()
@@ -189,7 +189,7 @@ public class Location:BaseValidation,FieldProrocol{
     @Published public var error: String?
 
     public var title: String{
-        return AppTexts.Constant.location.string()
+        return AppTexts.Constant.location.string
     }
     public var messages: [TextFieldKit.FieldError]{
         return self.emptyError()
@@ -209,7 +209,7 @@ public class Address:BaseValidation,FieldProrocol{
     @Published public var error: String?
 
     public var title: String{
-        return AppTexts.Constant.address.string()
+        return AppTexts.Constant.address.string
     }
     public var messages: [TextFieldKit.FieldError]{
         return self.emptyError()
@@ -229,7 +229,7 @@ public class Description:BaseValidation,FieldProrocol{
     @Published public var error: String?
 
     public var title: String{
-        return AppTexts.Constant.description.string()
+        return AppTexts.Constant.description.string
     }
     public var messages: [TextFieldKit.FieldError]{
         return self.emptyError()
@@ -249,7 +249,7 @@ public class Title:BaseValidation,FieldProrocol{
     @Published public var error: String?
 
     public var title: String{
-        return AppTexts.Constant.title.string()
+        return AppTexts.Constant.title.string
     }
     public var messages: [TextFieldKit.FieldError]{
         return self.emptyError()
@@ -270,7 +270,7 @@ public class Password:BaseValidation,FieldProrocol{
     @Published public var error: String?
 
     public var title: String{
-        return AppTexts.Constant.password.string()
+        return AppTexts.Constant.password.string
     }
     public var messages: [TextFieldKit.FieldError]{
     return []

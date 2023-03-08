@@ -173,7 +173,7 @@ open class RegionField:DropDownTextField{
 open class NewPasswordValidation:Field{
 
     public override var title: String{
-        return AppTexts.Constant.newPassword.string()
+        return AppTexts.Constant.newPassword.string
     }
     public override var messages:[FieldError]{
         return self.newPassword();
@@ -183,7 +183,7 @@ open class NewPasswordValidation:Field{
 open class ConfirmPasswordFieldValidation:Field{
     
     public override var title:String{
-        return AppTexts.Constant.confirmPassword.string()
+        return AppTexts.Constant.confirmPassword.string
     }
     var newPasswordValidation:NewPasswordValidation?
     
@@ -197,7 +197,7 @@ open class ConfirmPasswordFieldValidation:Field{
 // MARK: PasswordField
 open class PasswordFieldValidation:Field{
     public override var title: String{
-        return AppTexts.Constant.password.string()
+        return AppTexts.Constant.password.string
     }
     public override var messages:[FieldError]{
         return self.emptyError()
@@ -207,7 +207,7 @@ open class PasswordFieldValidation:Field{
 open class UserNameFieldValidation:Field{
     
     public override var title:String{
-        return AppTexts.Constant.userName.string()
+        return AppTexts.Constant.userName.string
     }
     public override var messages:[FieldError]{
         return self.emptyError()
@@ -217,7 +217,7 @@ open class UserNameFieldValidation:Field{
 open class FullNameFieldValidation:Field{
     
     public override var title:String{
-        return AppTexts.Constant.fullName.string()
+        return AppTexts.Constant.fullName.string
     }
     public override var messages:[FieldError]{
         return self.emptyError()
@@ -227,7 +227,7 @@ open class FullNameFieldValidation:Field{
 open class EmailFieldValidation:Field{
     
     public override var title:String{
-        return AppTexts.Constant.email.string()
+        return AppTexts.Constant.email.string
     }
     public override var messages:[FieldError]{
         return self.email();
@@ -237,7 +237,7 @@ open class EmailFieldValidation:Field{
 open class TitleFieldValidation:Field{
     
     public override var title: String{
-        return AppTexts.Constant.title.string()
+        return AppTexts.Constant.title.string
     }
     public override var messages:[FieldError]{
         return self.emptyError()
@@ -247,7 +247,7 @@ open class TitleFieldValidation:Field{
 open class DescriptionFieldValidation:Field{
     
     public override var title:String{
-        return AppTexts.Constant.description.string()
+        return AppTexts.Constant.description.string
     }
     public override var messages:[FieldError]{
         return self.emptyError()
@@ -257,7 +257,7 @@ open class DescriptionFieldValidation:Field{
 open class AddressFieldValidation:Field{
     
     public override var title:String{
-        return AppTexts.Constant.address.string()
+        return AppTexts.Constant.address.string
     }
     public override var messages:[FieldError]{
         return self.emptyError()
@@ -267,7 +267,7 @@ open class AddressFieldValidation:Field{
 open class RequirementsFieldValidation:Field{
     
     public override var title:String{
-        return AppTexts.Constant.requirements.string()
+        return AppTexts.Constant.requirements.string
     }
     public override var messages:[FieldError]{
         return self.emptyError()
@@ -278,7 +278,7 @@ open class RequirementsFieldValidation:Field{
 open class AdvancedPhoneNumberValidation:Field{
     var countryObject:CountryCode?
     public  override var title: String{
-        return AppTexts.Constant.mobileNumber.string()
+        return AppTexts.Constant.mobileNumber.string
     }
     public  override var messages: [FieldError]{
         return []
@@ -288,7 +288,7 @@ open class AdvancedPhoneNumberValidation:Field{
 #if canImport(LocationPicker)
 open class LocationTextFieldValidation:Field{
     public override var title: String{
-        return AppTexts.Constant.location.string()
+        return AppTexts.Constant.location.string
     }
     public override var messages: [FieldError]{
         return self.location();
@@ -299,7 +299,7 @@ open class LocationTextFieldValidation:Field{
 // MARK: CityField
 open class CityFieldValidation:Field{
     public override var title: String{
-        return AppTexts.Constant.city.string()
+        return AppTexts.Constant.city.string
     }
     public override var messages:[FieldError]{
         return self.emptyError()
@@ -309,7 +309,7 @@ open class CityFieldValidation:Field{
 open class RegionFieldValidation:Field{
     
     public override var title:String{
-        return AppTexts.Constant.region.string()
+        return AppTexts.Constant.region.string
     }
     public override var messages:[FieldError]{
         return self.emptyError()
