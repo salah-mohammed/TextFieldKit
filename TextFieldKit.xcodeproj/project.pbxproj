@@ -61,6 +61,7 @@
 		8B31E6DD299416E600AA7421 /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF57CA5279FEED2000CFD0E /* Regex.swift */; };
 		8B31E6DF2994176F00AA7421 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B31E6DE2994176F00AA7421 /* Extensions.swift */; };
 		8B31E6E42994317300AA7421 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8B31E6E62994317300AA7421 /* Localizable.strings */; };
+		8B4D611329B8916F00190149 /* Field.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4D611229B8916F00190149 /* Field.swift */; };
 		8B68199E29AC86BF002D5B49 /* TextFieldKitExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B68199D29AC86BF002D5B49 /* TextFieldKitExampleTests.swift */; };
 		8B6C686B2994FC4600862549 /* SUIBusinessFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE9876D28F1720A001275F3 /* SUIBusinessFields.swift */; };
 		8B6C686C2995042400862549 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B31E6DE2994176F00AA7421 /* Extensions.swift */; };
@@ -191,6 +192,7 @@
 		8B31E6E52994317300AA7421 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8B31E6E72994317600AA7421 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8B31E6E8299431A700AA7421 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8B4D611229B8916F00190149 /* Field.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Field.swift; sourceTree = "<group>"; };
 		8B68199B29AC86BF002D5B49 /* TextFieldKitExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TextFieldKitExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B68199D29AC86BF002D5B49 /* TextFieldKitExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldKitExampleTests.swift; sourceTree = "<group>"; };
 		8B6C686E2995087600862549 /* FieldValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldValidation.swift; sourceTree = "<group>"; };
@@ -315,6 +317,7 @@
 				4EA57E212746588800C183A2 /* Resources */,
 				4E2DF74D274D32190020AE25 /* UITextViewEx.swift */,
 				8B104AB729A76B52002A014D /* FieldsManager.swift */,
+				8B4D611229B8916F00190149 /* Field.swift */,
 			);
 			path = TextFieldKit;
 			sourceTree = "<group>";
@@ -872,6 +875,7 @@
 				4EA57E2527466D5C00C183A2 /* DropDownTextField.swift in Sources */,
 				4E2DF749274D111B0020AE25 /* UITextView+Placeholder.m in Sources */,
 				4EE9876C28F171B4001275F3 /* SUITextFieldView.swift in Sources */,
+				8B4D611329B8916F00190149 /* Field.swift in Sources */,
 				4E2DF74E274D32190020AE25 /* UITextViewEx.swift in Sources */,
 				4EA57E19274654B500C183A2 /* TextFieldView.swift in Sources */,
 				4EA57E182746537600C183A2 /* TextViewView.swift in Sources */,

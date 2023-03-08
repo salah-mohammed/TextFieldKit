@@ -12,8 +12,7 @@ public protocol FieldValiadtionProrocol:NSObject{
     var title:String{get};
     var error:String?{set get};
 }
-// MARK: GeneralFieldViewProrocol
-// MARK: GeneralFieldViewProrocol->Field ViewModel
+// MARK: FieldDataProrocol->Field ViewModel
 public protocol FieldDataProrocol:NSObject{
 var text:String? {set get};
 var placeholder:String? {set get};
@@ -22,6 +21,7 @@ var fieldDidEnd:FieldHandler?{set get}
 // for swiftUI
 var onEditingChanged:OnEditingValiadtionChanged?{set get}
 }
+// MARK: FieldStyleProrocol
 public protocol FieldStyleProrocol{
      // for style
      func cutomLayoutSubviews();
@@ -31,7 +31,7 @@ public protocol FieldStyleProrocol{
      var nibName:String { get}
      var field:Field?{set get}
 }
-// MARK: GeneralConnection
+// MARK: FieldProrocol
 public protocol FieldProrocol:FieldDataProrocol,FieldValiadtionProrocol{
 
 }
