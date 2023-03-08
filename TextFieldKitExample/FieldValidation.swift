@@ -21,7 +21,7 @@ public extension FieldDataProrocol where Self: FieldProrocol {
             messages.append(.required(self.title))
         }else
         if (self.text?.count ?? 0) < 6 {
-            messages.append(.otherRequired(AppTexts.Constant.passwordMustHave6.string()))
+            messages.append(.otherRequired(AppTexts.Constant.passwordMustHave6.string))
         }
         return messages;
     }

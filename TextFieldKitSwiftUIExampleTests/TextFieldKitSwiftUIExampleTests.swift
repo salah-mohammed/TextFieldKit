@@ -10,9 +10,6 @@ import AppTexts
 import TextFieldKitSwiftUIExample
 import TextFieldKit
 final class TextFieldKitSwiftUIExampleTests: XCTestCase {
-    var testLangauge:String{
-      return "en"
-     }
     var secondContentViewModel:SecondContentViewModel=SecondContentViewModel()
 
 
@@ -66,28 +63,18 @@ final class TextFieldKitSwiftUIExampleTests: XCTestCase {
         secondContentViewModel.emailValidation.text="salah"
         let fourm3 = secondContentViewModel.fieldsManager.checkAll()
         XCTAssertEqual(fourm3.valid, false)
-        forum3Text(fourm3,self.testLangauge)
+        forum3Text(fourm3)
 
     }
-    func forum1Text(_ errors:[FieldError],_ language:String){
-    let stringChecker = StringChecker.init(language)
+    func forum1Text(_ errors:[FieldError]){
     let userNameField = Validate.required(secondContentViewModel.userNameValidation.title,language)
     let fullNameField = Validate.required(secondContentViewModel.fullNameValidation.title,language)
-    XCTAssertEqual(stringChecker.valueCheck(errors[0].message,userNameField),true)
-    XCTAssertEqual(stringChecker.valueCheck(errors[1].message,fullNameField),true)
+    XCTAssertEqual(valueCheck(errors[0].message,userNameField),true)
+    XCTAssertEqual(valueCheck(errors[1].message,fullNameField),true)
     }
-    func forum3Text(_ errors:[FieldError],_ language:String){
-    let stringChecker = StringChecker.init(language)
+    func forum3Text(_ errors:[FieldError]){
     let emailField = FieldError.notValid(secondContentViewModel.emailValidation.title).message
-    XCTAssertEqual(stringChecker.valueCheck(errors[0].message,emailField),true)
-    }
-}
-
-
-class StringChecker:NSObject{
-    var language:String
-    init(_ language:String) {
-        self.language=language
+    XCTAssertEqual(valueCheck(errors[0].message,emailField),true)
     }
     func valueCheck(_ value:String?,_ compared:String?)->Bool{
         if value == "-" || value == nil{
@@ -101,6 +88,9 @@ class StringChecker:NSObject{
         return (value == compared)
     }
 }
+
+
+
 
 
 

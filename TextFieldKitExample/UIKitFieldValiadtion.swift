@@ -42,7 +42,7 @@ extension FieldDataProrocol where Self: FieldProrocol {
             messages.append(.required(self.title))
         }else
         if txtNewPasswordField?.text != self.text {
-            messages.append(.otherRequired(AppTexts.Constant.passwordNotMatch.string()))
+            messages.append(.otherRequired(AppTexts.Constant.passwordNotMatch.string))
         }
         return messages;
     }

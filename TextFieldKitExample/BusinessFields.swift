@@ -19,7 +19,7 @@ import LocationPicker
 // MARK: NewPasswordField
 open class NewPasswordField:TextFieldView,FieldProrocol{
     public var title: String{
-        return AppTexts.Constant.newPassword.string()
+        return AppTexts.Constant.newPassword.string
     }
     public var messages:[FieldError]{
         return self.newPassword();
@@ -33,7 +33,7 @@ open class NewPasswordField:TextFieldView,FieldProrocol{
 // MARK: ConfirmPasswordField
 open class ConfirmPasswordField:TextFieldView,FieldProrocol{
     public var title:String{
-        return AppTexts.Constant.confirmPassword.string()
+        return AppTexts.Constant.confirmPassword.string
     }
      @IBOutlet weak open var txtNewPasswordField: NewPasswordField?
     
@@ -49,7 +49,7 @@ open class ConfirmPasswordField:TextFieldView,FieldProrocol{
 // MARK: PasswordField
 open class PasswordField:TextFieldView,FieldProrocol{
     public var title: String{
-        return AppTexts.Constant.password.string()
+        return AppTexts.Constant.password.string
     }
     public var messages:[FieldError]{
         return self.emptyError()
@@ -64,7 +64,7 @@ open class PasswordField:TextFieldView,FieldProrocol{
 // MARK: UserNameField
 open class UserNameField:TextFieldView,FieldProrocol{
     public var title:String{
-        return AppTexts.Constant.userName.string()
+        return AppTexts.Constant.userName.string
     }
     public var messages:[FieldError]{
         return self.emptyError()
@@ -77,7 +77,7 @@ open class UserNameField:TextFieldView,FieldProrocol{
 // MARK: FullNameField
 open class FullNameField:TextFieldView,FieldProrocol{
     public var title:String{
-        return AppTexts.Constant.fullName.string()
+        return AppTexts.Constant.fullName.string
     }
     public var messages:[FieldError]{
         return self.emptyError()
@@ -90,7 +90,7 @@ open class FullNameField:TextFieldView,FieldProrocol{
 // MARK: EmailField
 open class EmailField:TextFieldView,FieldProrocol{
     public var title:String{
-        return AppTexts.Constant.email.string()
+        return AppTexts.Constant.email.string
     }
     public var messages:[FieldError]{
         return self.email();
@@ -103,7 +103,7 @@ open class EmailField:TextFieldView,FieldProrocol{
 // MARK: TitleField
 open class TitleField:TextFieldView,FieldProrocol{
     public var title: String{
-        return AppTexts.Constant.title.string()
+        return AppTexts.Constant.title.string
     }
     public var messages:[FieldError]{
         return self.emptyError()
@@ -116,7 +116,7 @@ open class TitleField:TextFieldView,FieldProrocol{
 // MARK: DescriptionField
 open class DescriptionField:TextViewView,FieldProrocol{
     public var title:String{
-        return AppTexts.Constant.description.string()
+        return AppTexts.Constant.description.string
     }
     public var messages:[FieldError]{
         return self.emptyError()
@@ -129,7 +129,7 @@ open class DescriptionField:TextViewView,FieldProrocol{
 // MARK: AddressField
 open class AddressField:TextFieldView,FieldProrocol{
     public var title:String{
-        return AppTexts.Constant.address.string()
+        return AppTexts.Constant.address.string
     }
     public var messages:[FieldError]{
         return self.emptyError()
@@ -142,7 +142,7 @@ open class AddressField:TextFieldView,FieldProrocol{
 // MARK: RequirementsField
 open class RequirementsField:TextViewView,FieldProrocol{
     public var title:String{
-        return AppTexts.Constant.requirements.string()
+        return AppTexts.Constant.requirements.string
     }
     public var messages:[FieldError]{
         return self.emptyError()
@@ -156,7 +156,7 @@ open class RequirementsField:TextViewView,FieldProrocol{
 // MARK: CustomePhoneNumber
 open class AdvancedPhoneNumber:PhoneNumberField,FieldProrocol{
     public var title: String{
-        return AppTexts.Constant.mobileNumber.string()
+        return AppTexts.Constant.mobileNumber.string
     }
     
     public var messages: [FieldError]{
@@ -188,7 +188,7 @@ open class AdvancedPhoneNumber:PhoneNumberField,FieldProrocol{
 #if canImport(LocationPicker)
 open class LocationTextField:DropDownTextField,FieldProrocol{
     public var title: String{
-        return AppTexts.Constant.location.string()
+        return AppTexts.Constant.location.string
     }
     public var messages: [FieldError]{
         return self.location();
@@ -233,7 +233,7 @@ open class LocationTextField:DropDownTextField,FieldProrocol{
 // MARK: CityField
 open class CityField:DropDownTextField,FieldProrocol{
     public var title: String{
-        return AppTexts.Constant.city.string()
+        return AppTexts.Constant.city.string
     }
     public var messages:[FieldError]{
         return self.emptyError()
@@ -242,7 +242,7 @@ open class CityField:DropDownTextField,FieldProrocol{
 // MARK: RegionField
 open class RegionField:DropDownTextField,FieldProrocol{
     public var title:String{
-        return AppTexts.Constant.region.string()
+        return AppTexts.Constant.region.string
     }
     public var messages:[FieldError]{
         return self.emptyError()

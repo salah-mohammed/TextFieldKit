@@ -46,7 +46,7 @@ open class PhoneNumberField: TextFieldView {
     }
     open override func awakeFromNib() {
         super.awakeFromNib();
-        self.placeholder=AppTexts.Constant.mobileNumber.string();
+        self.placeholder=AppTexts.Constant.mobileNumber.string;
         self.txtField.delegate=self;
         let tempFlag = self.flag
         self.flag = tempFlag;
