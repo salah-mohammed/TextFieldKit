@@ -9,18 +9,18 @@ import UIKit
 
 public typealias Fourm = FieldsManager;
 public class FieldsManager{
-    public typealias FieldsHandler=()->[FieldValiadtion]
-    public typealias RequiredFieldsHandler=()->[FieldValiadtion]
+    public typealias FieldsHandler=()->[FieldValiadtionProrocol]
+    public typealias RequiredFieldsHandler=()->[FieldValiadtionProrocol]
     public var fieldsHandler:FieldsHandler?{
         didSet{
             for var field  in self.allFields{
-                (field as? GeneralFieldViewProrocol)?.fieldDidEnd = { internalFeild in
+                (field as? FieldDataProrocol)?.fieldDidEnd = { internalFeild in
                     self.check(field: field)
                 }
-                (field as? GeneralFieldViewProrocol)?.fieldDidEnd = { internalFeild in
+                (field as? FieldDataProrocol)?.fieldDidEnd = { internalFeild in
                     self.check(field: field)
                 }
-                (field as? GeneralFieldViewProrocol)?.onEditingChanged = { changed,internalFeild in
+                (field as? FieldDataProrocol)?.onEditingChanged = { changed,internalFeild in
                     self.check(field:field)
                 }
             }
@@ -28,10 +28,10 @@ public class FieldsManager{
     }
     public var requiredFieldsHandler:RequiredFieldsHandler?
     
-    var allFields:[FieldValiadtion]{
+    var allFields:[FieldValiadtionProrocol]{
         return self.fieldsHandler?() ?? []
     }
-    var requiredFields:[FieldValiadtion]{
+    var requiredFields:[FieldValiadtionProrocol]{
         return self.requiredFieldsHandler?() ?? []
     }
     init(fieldsHandler:FieldsHandler?,requiredFieldsHandler:@escaping RequiredFieldsHandler) {
@@ -48,7 +48,7 @@ public class FieldsManager{
         }
     return messages
     }
-    @discardableResult public func check(field:FieldValiadtion)->[FieldError]{
+    @discardableResult public func check(field:FieldValiadtionProrocol)->[FieldError]{
         let contains = requiredFields.contains(where: {return $0 == field})
         var messages = field.messages
         let isNotRequired = messages.filter({$0.isRequired == false}) // validation error
@@ -65,7 +65,7 @@ public class FieldsManager{
     }
 }
 
-open class Field:NSObject,GeneralConnection{
+open class Field:NSObject,FieldProrocol{
     @objc dynamic open var text: String?
     
     open var placeholder: String?

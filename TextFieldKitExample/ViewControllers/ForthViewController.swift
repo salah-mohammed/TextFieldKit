@@ -107,7 +107,7 @@ public class ForthViewController: UIViewController {
         }
     }
     // all
-    public var allFields:[FieldValiadtion]{
+    public var allFields:[FieldValiadtionProrocol]{
          [vmAdvancedPhoneNumber,
          vmLocationTextField,
          vmTitle,
@@ -121,14 +121,14 @@ public class ForthViewController: UIViewController {
          vmViewUploadId]
     }
     // userCheck
-    public var userFields:[FieldValiadtion]{
+    public var userFields:[FieldValiadtionProrocol]{
         return [vmFullName,
                 vmPasswordField,
                 vmNewPassword,
                 vmConfirmPassword]
     }
     // companyCheck
-    public var companyFields:[FieldValiadtion]{
+    public var companyFields:[FieldValiadtionProrocol]{
         return [vmAdvancedPhoneNumber,
         vmLocationTextField,
         vmFullName,
@@ -142,7 +142,7 @@ public class ForthViewController: UIViewController {
         vmViewUploadId]
     }
     // currentCheck
-    public var fields:[FieldValiadtion]{
+    public var fields:[FieldValiadtionProrocol]{
         return  (self.userType == .user ? self.userFields:self.companyFields)
     }
     public var fieldsManager:FieldsManager = FieldsManager();

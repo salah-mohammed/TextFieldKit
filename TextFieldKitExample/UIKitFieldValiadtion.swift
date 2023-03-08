@@ -11,7 +11,7 @@ import AppTexts
 #if canImport(PhoneKit)
 import PhoneKit
 #endif
-extension GeneralFieldViewProrocol where Self: GeneralConnection {
+extension FieldDataProrocol where Self: FieldProrocol {
 #if canImport(PhoneKit)
     func phoneNumber()->[FieldError]{
         var messages:[FieldError]=[FieldError]();

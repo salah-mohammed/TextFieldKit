@@ -47,30 +47,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
-
-
-}
-
-
-class UsernameViewModel:NSObject,GeneralConnection{
-    var text: String?
-
-    var placeholder: String?
-
-    var error: String?
-
-    var fieldValiadtion: TextFieldKit.FieldValiadtion?
-
-    var fieldDidEnd: TextFieldKit.FieldHandler?
-
-    var onEditingChanged: TextFieldKit.OnEditingValiadtionChanged?
-
-    var messages: [TextFieldKit.FieldError]{
-      return []
-    }
-
-    var title: String{
-     return "User Name"
-    }
-
 }

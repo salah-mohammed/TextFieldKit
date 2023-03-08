@@ -15,11 +15,11 @@ public struct SUITextFieldView: View {
     public var error:Binding<String?>?
     public var iconName:String?
     public var onEditingChanged:((Bool) -> Void)?
-    public var onEditingValidationChanged:((Bool,GeneralConnection?) -> Void)?
+    public var onEditingValidationChanged:((Bool,FieldProrocol?) -> Void)?
     @State private var changed:Bool=false;
     public var style:FieldStyle = SUITextFieldView.style ?? FieldStyle.init()
     public static var style:FieldStyle?
-    public var validation:GeneralConnection?
+    public var validation:FieldProrocol?
     private var dropDownData:DropDownData?
 
     
@@ -30,7 +30,7 @@ public struct SUITextFieldView: View {
                 dropDownData:DropDownData?=nil,
                 onEditingChanged:((Bool) -> Void)?=nil,
                 style:FieldStyle?=nil,
-                validation:(GeneralConnection,((Bool,GeneralConnection?) -> Void)?)?=nil) {
+                validation:(FieldProrocol,((Bool,FieldProrocol?) -> Void)?)?=nil) {
 //        self.validation?.text = text
         self.validation = validation?.0
         self.placeholder = placeholder ?? validation?.0.title

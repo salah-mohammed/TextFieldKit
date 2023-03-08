@@ -7,14 +7,14 @@
 
 import Foundation
 // MARK: FieldValiadtion
-public protocol FieldValiadtion:NSObject{
+public protocol FieldValiadtionProrocol:NSObject{
     var messages:[FieldError] {get};
     var title:String{get};
     var error:String?{set get};
 }
 // MARK: GeneralFieldViewProrocol
 // MARK: GeneralFieldViewProrocol->Field ViewModel
-public protocol GeneralFieldViewProrocol:NSObject{
+public protocol FieldDataProrocol:NSObject{
 var text:String? {set get};
 var placeholder:String? {set get};
 var error:String?{set get};
@@ -32,7 +32,7 @@ public protocol FieldStyleProrocol{
      var field:Field?{set get}
 }
 // MARK: GeneralConnection
-public protocol GeneralConnection:GeneralFieldViewProrocol,FieldValiadtion{
+public protocol FieldProrocol:FieldDataProrocol,FieldValiadtionProrocol{
 
 }
 //public protocol SUIGeneralConnection:SUIField,FieldValiadtion{

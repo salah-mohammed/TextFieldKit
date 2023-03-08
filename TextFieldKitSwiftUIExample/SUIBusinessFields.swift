@@ -14,8 +14,8 @@ public class BaseValidation:NSObject,ObservableObject{
     public var fieldDidEnd: TextFieldKit.FieldHandler?
 
 }
-public class Username:BaseValidation,GeneralConnection{
-    public var fieldValiadtion: TextFieldKit.FieldValiadtion?
+public class Username:BaseValidation,FieldProrocol{
+    public var fieldValiadtion: TextFieldKit.FieldValiadtionProrocol?
     public var getText: (() -> String?)?
 
     @Published public var text:String?
@@ -40,9 +40,9 @@ public class Username:BaseValidation,GeneralConnection{
 //        }
 //    }
 }
-public class FullName:BaseValidation,GeneralConnection{
+public class FullName:BaseValidation,FieldProrocol{
     public var getText: (() -> String?)?
-    public var fieldValiadtion: TextFieldKit.FieldValiadtion?
+    public var fieldValiadtion: TextFieldKit.FieldValiadtionProrocol?
 
     @Published public var text:String?
     @Published public var placeholder: String?
@@ -59,9 +59,9 @@ public class FullName:BaseValidation,GeneralConnection{
         self.placeholder=self.title
     }
 }
-public class FirstName:BaseValidation,GeneralConnection{
+public class FirstName:BaseValidation,FieldProrocol{
     public var getText: (() -> String?)?
-    public var fieldValiadtion: TextFieldKit.FieldValiadtion?
+    public var fieldValiadtion: TextFieldKit.FieldValiadtionProrocol?
 
     @Published public var text:String?
     @Published public var placeholder: String?
@@ -79,8 +79,8 @@ public class FirstName:BaseValidation,GeneralConnection{
     }
 
 }
-public class LastName:BaseValidation,GeneralConnection{
-    public var fieldValiadtion: TextFieldKit.FieldValiadtion?
+public class LastName:BaseValidation,FieldProrocol{
+    public var fieldValiadtion: TextFieldKit.FieldValiadtionProrocol?
     public var getText: (() -> String?)?
 
     @Published public var text:String?
@@ -99,8 +99,8 @@ public class LastName:BaseValidation,GeneralConnection{
     }
 
 }
-public class Email:BaseValidation,GeneralConnection{
-    public var fieldValiadtion: TextFieldKit.FieldValiadtion?
+public class Email:BaseValidation,FieldProrocol{
+    public var fieldValiadtion: TextFieldKit.FieldValiadtionProrocol?
     public var getText: (() -> String?)?
 
     @Published public var text:String?
@@ -119,8 +119,8 @@ public class Email:BaseValidation,GeneralConnection{
     }
 
 }
-public class Requirements:BaseValidation,GeneralConnection{
-    public var fieldValiadtion: TextFieldKit.FieldValiadtion?
+public class Requirements:BaseValidation,FieldProrocol{
+    public var fieldValiadtion: TextFieldKit.FieldValiadtionProrocol?
     public var getText: (() -> String?)?
 
     
@@ -140,8 +140,8 @@ public class Requirements:BaseValidation,GeneralConnection{
     }
 
 }
-public class City:BaseValidation,GeneralConnection{
-    public var fieldValiadtion: TextFieldKit.FieldValiadtion?
+public class City:BaseValidation,FieldProrocol{
+    public var fieldValiadtion: TextFieldKit.FieldValiadtionProrocol?
     public var getText: (() -> String?)?
 
     @Published public var text:String?
@@ -160,9 +160,9 @@ public class City:BaseValidation,GeneralConnection{
     }
 
 }
-public class Region:BaseValidation,GeneralConnection{
+public class Region:BaseValidation,FieldProrocol{
     public var getText: (() -> String?)?
-    public var fieldValiadtion: TextFieldKit.FieldValiadtion?
+    public var fieldValiadtion: TextFieldKit.FieldValiadtionProrocol?
 
     @Published public var text:String?
     @Published public var placeholder: String?
@@ -180,9 +180,9 @@ public class Region:BaseValidation,GeneralConnection{
     }
 
 }
-public class Location:BaseValidation,GeneralConnection{
+public class Location:BaseValidation,FieldProrocol{
     public var getText: (() -> String?)?
-    public var fieldValiadtion: TextFieldKit.FieldValiadtion?
+    public var fieldValiadtion: TextFieldKit.FieldValiadtionProrocol?
     
     @Published public var text:String?
     @Published public var placeholder: String?
@@ -200,9 +200,9 @@ public class Location:BaseValidation,GeneralConnection{
     }
 
 }
-public class Address:BaseValidation,GeneralConnection{
+public class Address:BaseValidation,FieldProrocol{
     public var getText: (() -> String?)?
-    public var fieldValiadtion: TextFieldKit.FieldValiadtion?
+    public var fieldValiadtion: TextFieldKit.FieldValiadtionProrocol?
     
     @Published public var text:String?
     @Published public var placeholder: String?
@@ -220,9 +220,9 @@ public class Address:BaseValidation,GeneralConnection{
     }
 
 }
-public class Description:BaseValidation,GeneralConnection{
+public class Description:BaseValidation,FieldProrocol{
     public var getText: (() -> String?)?
-    public var fieldValiadtion: TextFieldKit.FieldValiadtion?
+    public var fieldValiadtion: TextFieldKit.FieldValiadtionProrocol?
     
     @Published public var text:String?
     @Published public var placeholder: String?
@@ -240,9 +240,9 @@ public class Description:BaseValidation,GeneralConnection{
     }
 
 }
-public class Title:BaseValidation,GeneralConnection{
+public class Title:BaseValidation,FieldProrocol{
     public var getText: (() -> String?)?
-    public var fieldValiadtion: TextFieldKit.FieldValiadtion?
+    public var fieldValiadtion: TextFieldKit.FieldValiadtionProrocol?
 
     @Published public var text:String?
     @Published public var placeholder: String?
@@ -260,10 +260,10 @@ public class Title:BaseValidation,GeneralConnection{
     }
 
 }
-public class Password:BaseValidation,GeneralConnection{
+public class Password:BaseValidation,FieldProrocol{
     public var getText: (() -> String?)?
     
-    public var fieldValiadtion: TextFieldKit.FieldValiadtion?
+    public var fieldValiadtion: TextFieldKit.FieldValiadtionProrocol?
 
     @Published public var text:String?
     @Published public var placeholder: String?
