@@ -32,12 +32,12 @@ public class SecondContentViewModel:BaseViewModel{
     @Published public var emailValidation = Email()
     public var fieldsManager:FieldsManager = FieldsManager();
     
-    var companyFields:[FieldValiadtion]{
+    var companyFields:[FieldValiadtionProrocol]{
     return [
         userNameValidation,
         fullNameValidation]
     }
-    var allFields:[FieldValiadtion]{
+    var allFields:[FieldValiadtionProrocol]{
     return [
         userNameValidation,
         fullNameValidation,
