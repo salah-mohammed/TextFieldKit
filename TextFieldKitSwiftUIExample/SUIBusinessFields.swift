@@ -69,7 +69,6 @@ public class FirstName:BaseValidation,FieldProrocol{
         super.init()
         self.placeholder=self.title
     }
-
 }
 public class LastName:BaseValidation,FieldProrocol{
     @Published public var text:String?
