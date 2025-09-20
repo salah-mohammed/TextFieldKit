@@ -9,235 +9,188 @@ import UIKit
 import SwiftUI
 import TextFieldKit
 import AppTexts
-public class BaseValidation:NSObject,ObservableObject{
-    public var onEditingChanged:OnEditingValiadtionChanged?
-    public var fieldDidEnd: TextFieldKit.FieldHandler?
-
-}
-public class Username:BaseValidation,FieldProrocol{
+open class ViewModelField: NSObject, ObservableObject, FieldProrocol {
+    @Published open var text: String = ""
+    @Published open var placeholder: String?
+    @Published open var error: String?
     
-    @Published public var text:String?
-    @Published public var placeholder: String?
-    @Published public var error: String?
-
-    public var title: String{
-        return AppTexts.Constant.userName.string
+    open func defaultValue() {
+        self.text = ""
     }
-    public var messages: [TextFieldKit.FieldError]{
-        return self.emptyError()
-    }
-    public override init() {
-        super.init()
-        self.placeholder=self.title
-    }
-//    public func onEditingChanged()->OnEditingValiadtionChanged{
-//        return { value,validation  in
-//            if value == false{
-//                self.error = validation?.messages.string ?? "";
-//            }
-//        }
-//    }
-}
-public class FullName:BaseValidation,FieldProrocol{
-    @Published public var text:String?
-    @Published public var placeholder: String?
-    @Published public var error: String?
-
-    public var title: String{
-        return AppTexts.Constant.fullName.string
-    }
-    public var messages: [TextFieldKit.FieldError]{
-        return self.emptyError()
-    }
-    public override init() {
-        super.init()
-        self.placeholder=self.title
-    }
-}
-public class FirstName:BaseValidation,FieldProrocol{
-    @Published public var text:String?
-    @Published public var placeholder: String?
-    @Published public var error: String?
-
-    public var title: String{
-        return AppTexts.Constant.firstName.string
-    }
-    public var messages: [TextFieldKit.FieldError]{
-        return self.emptyError()
-    }
-    public override init() {
-        super.init()
-        self.placeholder=self.title
-    }
-}
-public class LastName:BaseValidation,FieldProrocol{
-    @Published public var text:String?
-    @Published public var placeholder: String?
-    @Published public var error: String?
-
-    public var title: String{
-        return AppTexts.Constant.lastName.string
-    }
-    public var messages: [TextFieldKit.FieldError]{
-        return self.emptyError()
-    }
-    public override init() {
-        super.init()
-        self.placeholder=self.title
-    }
-
-}
-public class Email:BaseValidation,FieldProrocol{
-    @Published public var text:String?
-    @Published public var placeholder: String?
-    @Published public var error: String?
-
-    public var title: String{
-        return AppTexts.Constant.email.string
-    }
-    public var messages: [TextFieldKit.FieldError]{
-        return self.email()
-    }
-    public override init() {
-        super.init()
-        self.placeholder=self.title
-    }
-
-}
-public class Requirements:BaseValidation,FieldProrocol{
     
-    @Published public var text:String?
-    @Published public var placeholder: String?
-    @Published public var error: String?
-
-    public var title: String{
-        return AppTexts.Constant.requirements.string
-    }
-    public var messages: [TextFieldKit.FieldError]{
-    return []
-    }
-    public override init() {
-        super.init()
-        self.placeholder=self.title
-    }
-
+    open var messages: [String] { return [] }
+    
+    open var title: String { "" }
+    
+    open var onEditingChanged: OnEditingValiadtionChanged?
+    open var fieldDidEnd: TextFieldKit.FieldHandler?
 }
-public class City:BaseValidation,FieldProrocol{
-    @Published public var text:String?
-    @Published public var placeholder: String?
-    @Published public var error: String?
 
-    public var title: String{
-        return AppTexts.Constant.city.string
+open class Username: ViewModelField {
+    open override var title: String {
+        AppTexts.Constant.userName.string
     }
-    public var messages: [TextFieldKit.FieldError]{
-        return self.emptyError()
+    open override var messages: [String] {
+        []
     }
     public override init() {
         super.init()
-        self.placeholder=self.title
+        self.placeholder = self.title
     }
-
 }
-public class Region:BaseValidation,FieldProrocol{
-    @Published public var text:String?
-    @Published public var placeholder: String?
-    @Published public var error: String?
 
-    public var title: String{
-        return AppTexts.Constant.region.string
+public class FullName: ViewModelField {
+    public override var title: String {
+        AppTexts.Constant.fullName.string
     }
-    public var messages: [TextFieldKit.FieldError]{
-        return self.emptyError()
+    public override var messages: [String] {
+        []
     }
     public override init() {
         super.init()
-    self.placeholder=self.title
+        self.placeholder = self.title
     }
-
 }
-public class Location:BaseValidation,FieldProrocol{
-    @Published public var text:String?
-    @Published public var placeholder: String?
-    @Published public var error: String?
 
-    public var title: String{
-        return AppTexts.Constant.location.string
+public class FirstName: ViewModelField {
+    public override var title: String {
+        AppTexts.Constant.firstName.string
     }
-    public var messages: [TextFieldKit.FieldError]{
-        return self.emptyError()
+    public override var messages: [String] {
+        []
     }
     public override init() {
         super.init()
-    self.placeholder=self.title
+        self.placeholder = self.title
     }
-
 }
-public class Address:BaseValidation,FieldProrocol{
-    @Published public var text:String?
-    @Published public var placeholder: String?
-    @Published public var error: String?
 
-    public var title: String{
-        return AppTexts.Constant.address.string
+public class LastName: ViewModelField {
+    public override var title: String {
+        AppTexts.Constant.lastName.string
     }
-    public var messages: [TextFieldKit.FieldError]{
-        return self.emptyError()
+    public override var messages: [String] {
+        []
     }
     public override init() {
         super.init()
-        self.placeholder=self.title
+        self.placeholder = self.title
     }
-
 }
-public class Description:BaseValidation,FieldProrocol{
-    @Published public var text:String?
-    @Published public var placeholder: String?
-    @Published public var error: String?
 
-    public var title: String{
-        return AppTexts.Constant.description.string
+public class Email: ViewModelField {
+    public override var title: String {
+        AppTexts.Constant.email.string
     }
-    public var messages: [TextFieldKit.FieldError]{
-        return self.emptyError()
+    public override var messages: [String] {
+        []
     }
     public override init() {
         super.init()
-    self.placeholder=self.title
+        self.placeholder = self.title
     }
-
 }
-public class Title:BaseValidation,FieldProrocol{
-    @Published public var text:String?
-    @Published public var placeholder: String?
-    @Published public var error: String?
 
-    public var title: String{
-        return AppTexts.Constant.title.string
+public class Requirements: ViewModelField {
+    public override var title: String {
+        AppTexts.Constant.requirements.string
     }
-    public var messages: [TextFieldKit.FieldError]{
-        return self.emptyError()
+    public override var messages: [String] {
+        []
     }
     public override init() {
         super.init()
-    self.placeholder=self.title
+        self.placeholder = self.title
     }
-
 }
-public class Password:BaseValidation,FieldProrocol{
-    @Published public var text:String?
-    @Published public var placeholder: String?
-    @Published public var error: String?
 
-    public var title: String{
-        return AppTexts.Constant.password.string
+public class City: ViewModelField {
+    public override var title: String {
+        AppTexts.Constant.city.string
     }
-    public var messages: [TextFieldKit.FieldError]{
-    return []
+    public override var messages: [String] {
+        []
     }
     public override init() {
         super.init()
-    self.placeholder=self.title
+        self.placeholder = self.title
     }
+}
 
+public class Region: ViewModelField {
+    public override var title: String {
+        AppTexts.Constant.region.string
+    }
+    public override var messages: [String] {
+        []
+    }
+    public override init() {
+        super.init()
+        self.placeholder = self.title
+    }
+}
+
+public class Location: ViewModelField {
+    public override var title: String {
+        AppTexts.Constant.location.string
+    }
+    public override var messages: [String] {
+        []
+    }
+    public override init() {
+        super.init()
+        self.placeholder = self.title
+    }
+}
+
+public class Address: ViewModelField {
+    public override var title: String {
+        AppTexts.Constant.address.string
+    }
+    public override var messages: [String] {
+        []
+    }
+    public override init() {
+        super.init()
+        self.placeholder = self.title
+    }
+}
+
+public class Description: ViewModelField {
+    public override var title: String {
+        AppTexts.Constant.description.string
+    }
+    public override var messages: [String] {
+        []
+    }
+    public override init() {
+        super.init()
+        self.placeholder = self.title
+    }
+}
+
+public class Title: ViewModelField {
+    public override var title: String {
+        AppTexts.Constant.title.string
+    }
+    public override var messages: [String] {
+        []
+    }
+    public override init() {
+        super.init()
+        self.placeholder = self.title
+    }
+}
+
+public class Password: ViewModelField {
+    public override var title: String {
+        AppTexts.Constant.password.string
+    }
+    public override var messages: [String] {
+        []
+    }
+    public override init() {
+        super.init()
+        self.placeholder = self.title
+    }
 }

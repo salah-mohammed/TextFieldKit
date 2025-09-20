@@ -29,6 +29,10 @@ public class TextViewStyle:FieldStyle{
 }
 @objcMembers
 open class TextViewView:UIView,FieldDataProrocol,FieldStyleProrocol {
+    public func defaultValue() {
+        self.text=""
+    }
+    
     public var onEditingChanged: OnEditingValiadtionChanged?
     
     // MARK:Customisable
@@ -84,7 +88,7 @@ open class TextViewView:UIView,FieldDataProrocol,FieldStyleProrocol {
         }
     }
     var textRepository:String?
-    open var text:String?{
+    open var text:String{
         set{
             self.txtField?.text = newValue;
             self.didEndEditing(text);
@@ -94,7 +98,7 @@ open class TextViewView:UIView,FieldDataProrocol,FieldStyleProrocol {
         }
         get{
             if self.txtField == nil {
-            return textRepository
+            return textRepository ?? ""
             }else{
                 return self.txtField.text;
             }

@@ -80,74 +80,81 @@ extension String{
     }
 }
 
-public protocol FieldErrorProtocol{
-    var message:String{get}
-}
-// MARK: FieldError
-public enum FieldError:FieldErrorProtocol{
-case required(_ name:String)
-case fieldRequired(_ name:String)
-case notValid(_ name:String)
-case choose(_ name:String)
-case enter(_ name:String)
-case otherRequired(_ message:String)
-case otherValid(_ message:String)
-public var message:String{
-    switch self{
-    case .required( let fieldName):
-        return "Required".cutomelocalizedWith(variables:fieldName)
-    case .fieldRequired( let fieldName):
-        return "FieldRequired".cutomelocalizedWith(variables:fieldName)
-    case .notValid( let fieldName):
-        return "NotValid".cutomelocalizedWith(variables:fieldName)
-    case .choose(let fieldName):
-        return "PleaseChoose".cutomelocalizedWith(variables:fieldName)
-    case .enter(let fieldName):
-        return "PleaseEnter".cutomelocalizedWith(variables:fieldName)
-    case .otherRequired(let message):
-        return message
-    case .otherValid(let message):
-        return message
-    }
-}
-    var isRequired:Bool{
-        switch self{
-        case .required(let field):
-            return true
-        case .fieldRequired(_):
-            return true
-        case .notValid(_):
-            return false
-        case .choose(_):
-            return true
-        case .enter(_):
-            return false
-        case .otherRequired(_):
-            return true
-        case .otherValid(_):
-            return false
+//public protocol FieldErrorProtocol{
+//    var message:String{get}
+//}
+//// MARK: FieldError
+//public enum FieldError:FieldErrorProtocol{
+//case required(_ name:String)
+//case fieldRequired(_ name:String)
+//case notValid(_ name:String)
+//case choose(_ name:String)
+//case enter(_ name:String)
+//case otherRequired(_ message:String)
+//case otherValid(_ message:String)
+//public var message:String{
+//    switch self{
+//    case .required( let fieldName):
+//        return "Required".cutomelocalizedWith(variables:fieldName)
+//    case .fieldRequired( let fieldName):
+//        return "FieldRequired".cutomelocalizedWith(variables:fieldName)
+//    case .notValid( let fieldName):
+//        return "NotValid".cutomelocalizedWith(variables:fieldName)
+//    case .choose(let fieldName):
+//        return "PleaseChoose".cutomelocalizedWith(variables:fieldName)
+//    case .enter(let fieldName):
+//        return "PleaseEnter".cutomelocalizedWith(variables:fieldName)
+//    case .otherRequired(let message):
+//        return message
+//    case .otherValid(let message):
+//        return message
+//    }
+//}
+//    var isRequired:Bool{
+//        switch self{
+//        case .required(let field):
+//            return true
+//        case .fieldRequired(_):
+//            return true
+//        case .notValid(_):
+//            return false
+//        case .choose(_):
+//            return true
+//        case .enter(_):
+//            return false
+//        case .otherRequired(_):
+//            return true
+//        case .otherValid(_):
+//            return false
+//        }
+//    }
+//}
+//
+//public extension Array where Element == FieldError {
+//    var valid:Bool{
+//        return (self.count == 0);
+//    }
+//    var strings:[String]{
+//    return self.map {"- "+$0.message}
+//    }
+//    var string:String{
+//        return self.strings.joined(separator:"\n");
+//    }
+//    public func showAlert(_ viewController:UIViewController,handler:((UIAlertAction)->Void)?){
+//    let errors = self.string;
+//    let alert = UIAlertController.init(title:"Error".customLocalize_, message: errors, preferredStyle:.alert)
+//    alert.addAction(UIAlertAction.init(title:"Ok".customLocalize_, style: .default, handler: handler));
+//    viewController.present(alert, animated: true, completion: nil);
+//    }
+//}
+public extension Array where Element == String {
+        public func showAlert(_ viewController:UIViewController,handler:((UIAlertAction)->Void)?){
+        let errors = self.string;
+        let alert = UIAlertController.init(title:"Error".customLocalize_, message: errors, preferredStyle:.alert)
+        alert.addAction(UIAlertAction.init(title:"Ok".customLocalize_, style: .default, handler: handler));
+        viewController.present(alert, animated: true, completion: nil);
         }
-    }
 }
-
-public extension Array where Element == FieldError {
-    var valid:Bool{
-        return (self.count == 0);
-    }
-    var strings:[String]{
-    return self.map {"- "+$0.message}
-    }
-    var string:String{
-        return self.strings.joined(separator:"\n");
-    }
-    public func showAlert(_ viewController:UIViewController,handler:((UIAlertAction)->Void)?){
-    let errors = self.string;
-    let alert = UIAlertController.init(title:"Error".customLocalize_, message: errors, preferredStyle:.alert)
-    alert.addAction(UIAlertAction.init(title:"Ok".customLocalize_, style: .default, handler: handler));
-    viewController.present(alert, animated: true, completion: nil);
-    }
-}
-
 #if canImport(SwiftUI)
 extension UIColor{
     var bs_color:Color{
@@ -155,6 +162,16 @@ extension UIColor{
     }
 }
 #endif
+
+public extension Array where Element == String {
+    var valid:Bool{
+        return (self.count == 0);
+    }
+    var string:String{
+        return self.joined(separator:"\n");
+    }
+}
+
 
 
 public extension FieldValiadtionProrocol {

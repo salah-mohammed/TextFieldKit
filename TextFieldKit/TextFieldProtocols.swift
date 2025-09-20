@@ -8,18 +8,19 @@
 import Foundation
 // MARK: FieldValiadtion
 public protocol FieldValiadtionProrocol:NSObject{
-    var messages:[FieldError] {get};
+    var messages:[String] {get};
     var title:String{get};
     var error:String?{set get};
 }
 // MARK: GeneralFieldViewProrocol
 public protocol FieldDataProrocol:NSObject{
-var text:String? {set get};
-var placeholder:String? {set get};
-var error:String?{set get};
-    
-var fieldDidEnd:FieldHandler?{set get}
-var onEditingChanged:OnEditingValiadtionChanged?{set get}
+    var text:String {set get};
+    var placeholder:String? {set get};
+    var error:String?{set get};
+
+    var fieldDidEnd:FieldHandler?{set get}
+    var onEditingChanged:OnEditingValiadtionChanged?{set get}
+    func defaultValue()
 }
 public protocol FieldStyleProrocol{
      // for style

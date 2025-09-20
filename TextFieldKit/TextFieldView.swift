@@ -14,6 +14,9 @@ import PhoneKit
 
 public typealias FieldHandler = (FieldDataProrocol)->Void
 open class TextFieldView: UIView,FieldDataProrocol,FieldStyleProrocol {
+    public func defaultValue() {
+        self.text=""
+    }
     public var onEditingChanged: OnEditingValiadtionChanged?
     
     // MARK:Customisable
@@ -51,7 +54,7 @@ open class TextFieldView: UIView,FieldDataProrocol,FieldStyleProrocol {
         }
     }
     var textRepository:String?
-    open var text:String?{
+    open var text:String{
         set{
             self.txtField?.text = newValue;
             self.endEditingField(text);
@@ -61,9 +64,9 @@ open class TextFieldView: UIView,FieldDataProrocol,FieldStyleProrocol {
         }
         get{
             if self.txtField == nil {
-            return textRepository
+            return textRepository ?? ""
             }else{
-                return self.txtField.text;
+                return self.txtField.text ?? "";
             }
         }
      }
